@@ -28,4 +28,10 @@ public class LevelLoader : MonoBehaviour
     {
         SceneManager.LoadScene(_currentSceneIndex + 1);
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game...");
+        Application.Quit();
+    }
 }

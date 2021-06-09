@@ -137,11 +137,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1905936737, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: _maxSpawnDelay
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1905936737, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: _minSpawnDelay
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 495419141784095460, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: m_RootOrder
@@ -225,11 +225,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1905936737, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: _maxSpawnDelay
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1905936737, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: _minSpawnDelay
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 495419141784095460, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: m_RootOrder
@@ -290,11 +290,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1905936737, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: _maxSpawnDelay
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1905936737, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: _minSpawnDelay
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 495419141784095460, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: m_RootOrder
@@ -478,11 +478,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1905936737, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: _maxSpawnDelay
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1905936737, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: _minSpawnDelay
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 495419141784095460, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: m_RootOrder
@@ -1159,11 +1159,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1905936737, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: _maxSpawnDelay
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1905936737, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: _minSpawnDelay
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 495419141784095460, guid: 0588835fb0cdda2449d8c76c4ef1226f, type: 3}
       propertyPath: m_RootOrder

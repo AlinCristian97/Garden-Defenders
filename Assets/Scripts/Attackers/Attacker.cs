@@ -6,6 +6,13 @@ using UnityEngine;
 public class Attacker : MonoBehaviour
 {
     [Range(0f, 5f)] private float _currentSpeed = 1f;
+    private GameObject _currentTarget;
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -15,5 +22,11 @@ public class Attacker : MonoBehaviour
     public void SetMovementSpeed(float speed)
     {
         _currentSpeed = speed;
+    }
+
+    public void Attack(GameObject target)
+    {
+        _animator.SetBool("IsAttacking", true);
+        _currentTarget = target;
     }
 }

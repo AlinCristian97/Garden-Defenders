@@ -17,6 +17,15 @@ public class Attacker : MonoBehaviour
     private void Update()
     {
         transform.Translate(Vector2.left * (_currentSpeed * Time.deltaTime));
+        UpdateAnimationState();
+    }
+
+    private void UpdateAnimationState()
+    {
+        if (!_currentTarget)
+        {
+            _animator.SetBool("IsAttacking", false);
+        }
     }
 
     public void SetMovementSpeed(float speed)
@@ -28,5 +37,17 @@ public class Attacker : MonoBehaviour
     {
         _animator.SetBool("IsAttacking", true);
         _currentTarget = target;
+    }
+
+    public void StrikeCurrentTarget(float damage)
+    {
+        if (!_currentTarget) { return; }
+
+        Health health = _currentTarget.GetComponent<Health>();
+
+        if (health)
+        {
+            health.DealDamage(damage);
+        }
     }
 }

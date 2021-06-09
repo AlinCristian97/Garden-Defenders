@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6585956409773286159}
   - component: {fileID: -2919173270742829711}
   - component: {fileID: 1150289048163770031}
+  - component: {fileID: 8248284492655531936}
   m_Layer: 0
   m_Name: Cactus
   m_TagString: Untagged
@@ -78,7 +79,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0439594, y: 0.96336704}
+  m_Size: {x: 0.97108066, y: 0.8523153}
   m_EdgeRadius: 0
 --- !u!114 &-2919173270742829711
 MonoBehaviour:
@@ -107,6 +108,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectile: {fileID: 5400070937294140120, guid: 977af885813f48644bda30020a804d3a, type: 3}
   _shootPoint: {fileID: 3904101345266761311}
+--- !u!114 &8248284492655531936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904101345222811975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a3dd3ed6fb4e849873da6cfe3fc665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 75
+  _deathVFX: {fileID: 0}
 --- !u!1 &3904101345266761311
 GameObject:
   m_ObjectHideFlags: 0

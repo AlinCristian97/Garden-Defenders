@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelController : MonoBehaviour
 {
     [SerializeField] private GameObject _winLabel;
+    [SerializeField] private GameObject _loseLabel;
     [SerializeField] private float _waitToLoad;
 
     private int _numberOfAttackers = 0;
@@ -14,6 +15,7 @@ public class LevelController : MonoBehaviour
     private void Start()
     {
         _winLabel.SetActive(false);
+        _loseLabel.SetActive(false);
     }
 
     public void AttackerSpawned()
@@ -54,5 +56,11 @@ public class LevelController : MonoBehaviour
         {
             spawner.StopSpawning();
         }
+    }
+    
+    public void HandleLoseCondition()
+    {
+        _loseLabel.SetActive(true);
+        Time.timeScale = 0;
     }
 }

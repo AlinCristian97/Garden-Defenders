@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _winLabel: {fileID: 0}
+  _loseLabel: {fileID: 0}
   _waitToLoad: 4
 --- !u!114 &3674448469471928304
 MonoBehaviour:

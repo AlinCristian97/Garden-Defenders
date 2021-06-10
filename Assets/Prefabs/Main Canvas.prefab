@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a87c6eba2dd68418f4e37aa853f7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelTime: 3
+  _levelTime: 10
 --- !u!1 &1831045689
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 1605184803340755637}
   - component: {fileID: 1605184803340755636}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Main Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

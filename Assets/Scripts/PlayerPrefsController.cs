@@ -19,7 +19,7 @@ public class PlayerPrefsController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Master volume is out of range");
+            Debug.LogWarning("Master volume is out of range");
         }
     }
 

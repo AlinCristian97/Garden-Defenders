@@ -18,11 +18,6 @@ public class LevelController : MonoBehaviour
         _loseLabel.SetActive(false);
     }
 
-    public void AttackerSpawned()
-    {
-        _numberOfAttackers++;
-    }
-    
     public void AttackerKilled()
     {
         _numberOfAttackers--;

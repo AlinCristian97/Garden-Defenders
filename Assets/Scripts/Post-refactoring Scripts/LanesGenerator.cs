@@ -9,6 +9,8 @@ public class BuildableGridGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject _tilePrefab;
     [SerializeField] private Transform _tileParent;
+    
+    //TODO: Make field const after finishing the level
     [SerializeField] [Range(80f, 180f)] private float _marginsSideInPixels = 100f;
 
     private const byte BUILDABLE_AREA_GRID_ROW_COUNT = 5;
@@ -123,4 +125,8 @@ public class BuildableGridGenerator : MonoBehaviour
 
         return sideSizeInWorldPoints;
     }
+    
+    
+    //TODO: Find mechanism to select specific rows by getting the center-position of a Tile in a Row etc.
+    //TODO: Make class improvements
 }

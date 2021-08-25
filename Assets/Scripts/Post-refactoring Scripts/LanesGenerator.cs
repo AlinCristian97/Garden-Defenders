@@ -1,132 +1,75 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class BuildableGridGenerator : MonoBehaviour
+public class LanesGenerator : MonoBehaviour
 {
+    [Header("Buildable Grid Tiles")]
     [SerializeField] private GameObject _tilePrefab;
     [SerializeField] private Transform _tileParent;
+    [SerializeField] private Vector2 _gridOriginPosition;
     
-    //TODO: Make field const after finishing the level
-    [SerializeField] [Range(80f, 180f)] private float _marginsSideInPixels = 100f;
-
+    [Header("Enemy Spawn Points")]
+    [SerializeField] private GameObject _enemySpawnPointPrefab;
+    [SerializeField] private Transform _enemySpawnPointParent;
+    
+    [Header("Lawn Mower Spawn Points")]
+    [SerializeField] private GameObject _lawnMowerSpawnPointPrefab;
+    [SerializeField] private Transform _lawnMowerSpawnPointParent;
+    
     private const byte BUILDABLE_AREA_GRID_ROW_COUNT = 5;
     private const byte BUILDABLE_AREA_GRID_COLUMN_COUNT = 9;
-    private const float GRID_ASPECT_RATIO = 0.5813953f;
-    
-    private float _marginsTopBottomInPixels;
-
-    private Camera _cam;
-
-    private void Awake()
-    {
-        _cam = Camera.main;
-
-        _marginsTopBottomInPixels = (GRID_ASPECT_RATIO) * _marginsSideInPixels;
-    }
 
     private void Start()
     {
-        GenerateGrid();
-        CenterGridByMovingParent();
+        GenerateLanes();
     }
 
-    /// <summary>
-    /// Cheaty way to center the Grid after generating it, by adjusting the parent's Y position
-    /// </summary>
-    private void CenterGridByMovingParent()
+    //TODO: Make method cleaner and more readable
+    private void GenerateLanes()
     {
-        _tileParent.transform.position = new Vector3(
-            0f, 
-            Mathf.Abs(_tileParent.GetChild(_tileParent.childCount - 1).transform.position.y + _tileParent.GetChild(0).transform.position.y) / 2f, 
-            0f);
-    }
-
-    private void GenerateGrid()
-    {
-        SetTileSize(_tilePrefab);
+        float offsetY = _gridOriginPosition.y;
         
-        Vector3 tileScale = _tilePrefab.transform.localScale;
-        
-        Vector2 offsetY = Vector2.zero;
-
         for (int row = 0; row < BUILDABLE_AREA_GRID_ROW_COUNT; row++)
         {
-            Vector2 offsetX = Vector2.zero;
+            
+            float offsetX = _gridOriginPosition.x;
 
             for (int column = 0; column < BUILDABLE_AREA_GRID_COLUMN_COUNT; column++)
             {
-            
-                Instantiate(_tilePrefab, CalculateNewTilePosition(offsetX, offsetY), 
-                    quaternion.identity, _tileParent);
-                
-                offsetX = new Vector2(offsetX.x + tileScale.x, 0f);
+                Instantiate(_tilePrefab, new Vector3(offsetX, offsetY, 0f), 
+                    Quaternion.identity, _tileParent);
+
+                offsetX += _tilePrefab.transform.localScale.x;
             }
+
+            //TODO: Find a cleaner way to get the wave's Y center point
+            GenerateEnemySpawnPoint(_tileParent.transform.GetChild(_tileParent.transform.childCount - 1).transform
+                .position.y);
             
-            offsetY = new Vector2(0f, offsetY.y + tileScale.y);
+            //TODO: Find a cleaner way to get the wave's Y center point
+            GenerateLawnMowerSpawnPoint(_tileParent.transform.GetChild(_tileParent.transform.childCount - 1).transform
+                .position.y);
+
+            offsetY += _tilePrefab.transform.localScale.y;
         }
     }
-
-    private Vector3 CalculateNewTilePosition(Vector3 offsetX, Vector3 offsetY)
+    
+    private void GenerateEnemySpawnPoint(float currentRowYCenterPosition)
     {
-        Vector3 newPosition = _cam.ScreenToWorldPoint(
-            new Vector3(
-                GetScreenPointFromCanvasPoint(new Vector2(_marginsSideInPixels, 0f)).x,
-                GetScreenPointFromCanvasPoint(new Vector2(0f, _marginsTopBottomInPixels)).y,
-                -_cam.transform.position.z))
-                              + new Vector3(GetTileSideHalved().x, GetTileSideHalved().y, 0f)
-                              + offsetX
-                              + offsetY;
-
-        return newPosition;
-    }
-
-    private Vector2 GetTileSideHalved()
-    {
-        Vector3 tileScale = _tilePrefab.transform.localScale;
+        const float offsetX = 7f;
         
-        return new Vector2(tileScale.x / 2f, tileScale.y / 2f);
-    }
-
-    private float GetTileSideSizeInPixelsBySideMargins()
-    {
-        float result = Mathf.Abs(_cam.pixelWidth - (_marginsSideInPixels * 2)) / 9f;
-
-        return result;
+        Instantiate(_enemySpawnPointPrefab, new Vector3(offsetX, currentRowYCenterPosition, 0f), 
+            Quaternion.identity, _enemySpawnPointParent);
     }
     
-    private Vector2 GetScreenPointFromCanvasPoint(Vector2 canvasPoint)
+    private void GenerateLawnMowerSpawnPoint(float currentRowYCenterPosition)
     {
-        float widthRatio = GetRatio(Mathf.Abs(canvasPoint.x), _cam.pixelWidth);
-        float heightRatio = GetRatio(Mathf.Abs(canvasPoint.y), _cam.pixelHeight);
+        const float offsetX = -5f;
         
-        var result = new Vector2(Screen.width * widthRatio, Screen.height * heightRatio);
-        
-        return result;
+        Instantiate(_lawnMowerSpawnPointPrefab, new Vector3(offsetX, currentRowYCenterPosition, 0f), 
+            Quaternion.identity, _lawnMowerSpawnPointParent);
     }
-
-    private float GetRatio(float value, float fromValue) => value / fromValue;
-
-    private void SetTileSize(GameObject tile)
-    {
-        float tileSideSize = GetTileSideSizeInWorldPoints(GetTileSideSizeInPixelsBySideMargins());
-        
-        tile.transform.localScale = new Vector3(tileSideSize, tileSideSize, tile.transform.localScale.z);
-    }
-
-    private float GetTileSideSizeInWorldPoints(float sideSizeInPixels)
-    {
-        float sideSizeInWorldPoints =
-            _cam.ScreenToWorldPoint(GetScreenPointFromCanvasPoint(new Vector2(sideSizeInPixels, 0f))).x
-            - _cam.ScreenToWorldPoint(Vector3.zero).x;
-
-        return sideSizeInWorldPoints;
-    }
-    
-    
-    //TODO: Find mechanism to select specific rows by getting the center-position of a Tile in a Row etc.
-    //TODO: Make class improvements
 }

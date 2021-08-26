@@ -9,11 +9,16 @@ public class LanesGenerator : MonoBehaviour
     [Header("Buildable Grid Tiles")]
     [SerializeField] private GameObject _tilePrefab;
     [SerializeField] private Transform _tileParent;
+    
+    //TODO: Turn to const after adjustments
     [SerializeField] private Vector2 _gridOriginPosition;
     
     [Header("Enemy Spawn Points")]
     [SerializeField] private GameObject _enemySpawnPointPrefab;
     [SerializeField] private Transform _enemySpawnPointParent;
+    
+    //TODO: Turn to const after adjustments
+    [SerializeField] private float _enemySpawnPointXPosition;
     
     [Header("Lawn Mower Spawn Points")]
     [SerializeField] private GameObject _lawnMowerSpawnPointPrefab;
@@ -59,17 +64,25 @@ public class LanesGenerator : MonoBehaviour
     
     private void GenerateEnemySpawnPoint(float currentRowYCenterPosition)
     {
-        const float offsetX = 7f;
-        
-        Instantiate(_enemySpawnPointPrefab, new Vector3(offsetX, currentRowYCenterPosition, 0f), 
+        Instantiate(_enemySpawnPointPrefab, new Vector3(_enemySpawnPointXPosition, currentRowYCenterPosition, 0f), 
             Quaternion.identity, _enemySpawnPointParent);
     }
     
     private void GenerateLawnMowerSpawnPoint(float currentRowYCenterPosition)
     {
-        const float offsetX = -5f;
+        float offsetX = GetLeftmostTileXPosition() - _tilePrefab.transform.localScale.x;
         
         Instantiate(_lawnMowerSpawnPointPrefab, new Vector3(offsetX, currentRowYCenterPosition, 0f), 
             Quaternion.identity, _lawnMowerSpawnPointParent);
+    }
+
+    private float GetLeftmostTileXPosition()
+    {
+        return _tileParent.transform.GetChild(0).transform.position.x;
+    }
+
+    private float GetRightmostTileXPosition()
+    {
+        return _tileParent.transform.GetChild(BUILDABLE_AREA_GRID_COLUMN_COUNT - 1).transform.position.x;
     }
 }

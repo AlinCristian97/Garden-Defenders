@@ -36,7 +36,7 @@ public class DefenderSlot : MonoBehaviour
         if (_buildManager.DefenderToBuild == Defender)
         {
             Debug.Log($"Deselected {Defender.name}");
-            _buildManager.DefenderToBuild = null;
+            _buildManager.DeselectDefenderToBuild();
         }
         else
         {

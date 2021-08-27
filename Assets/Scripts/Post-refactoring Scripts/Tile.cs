@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Tile : MonoBehaviour
 {
     private bool _isAvailable = true;
-
+    private Defender _currentDefender;
+    
     private BuildManager _buildManager;
 
     private void Awake()
@@ -17,22 +19,42 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        BuildDefender(_buildManager.DefenderToBuild);
+        HandleBuildDefender();
+        HandleSellDefender();
         
         GetComponent<SpriteRenderer>().color = Color.cyan;
+        Debug.Log("clicked on tile");
     }
 
-    private void BuildDefender(Defender defenderToBuild)
+    private void HandleBuildDefender()
     {
-        if (defenderToBuild == null) return;
-        
-        Instantiate(defenderToBuild, transform.position, Quaternion.identity);
-        _isAvailable = false;
-        _buildManager.DefenderToBuild = null;
+        if (_buildManager.DefenderToBuild == null) return;
+
+        if (_isAvailable)
+        {
+            _currentDefender = _buildManager.DefenderToBuild;
+
+            _buildManager.BuildDefender(transform.position, transform);
+
+            _isAvailable = false;
+        }
     }
 
-    public void SellDefender()
+    private void HandleSellDefender()
     {
+        //TODO: Add conditional
         
+        // if sell button clicked
+            SellTileDefender();
+        //
+    }
+
+    public void SellTileDefender()
+    {
+        Destroy(_currentDefender.gameObject);
+        _currentDefender = null;
+    
+        //refund
+        _isAvailable = true;
     }
 }

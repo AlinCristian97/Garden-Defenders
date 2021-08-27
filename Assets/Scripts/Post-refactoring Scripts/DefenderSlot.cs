@@ -10,10 +10,13 @@ public class DefenderSlot : MonoBehaviour
     [SerializeField] private Image _defenderAvatarImage;
     [SerializeField] private Text _defenderCostText;
 
+    [SerializeField] private RectTransform _rectTransform;
     private BuildManager _buildManager;
 
     private void Awake()
     {
+        // _rectTransform = GetComponent<RectTransform>();
+
         //TODO: Think of a cleaner way to select the defender
         _buildManager = FindObjectOfType<BuildManager>();
     }
@@ -38,4 +41,7 @@ public class DefenderSlot : MonoBehaviour
             Debug.Log($"Selected: {_defender.name}");
         }
     }
+
+    public float GetHeight() => _rectTransform.rect.height;
+    public float GetHalfHeight() => _rectTransform.rect.height / 2f;
 }

@@ -6,6 +6,8 @@ using UnityEngine.Serialization;
 
 public class LanesGenerator : MonoBehaviour
 {
+    //TODO: Restrict multiple instances via Singleton
+    
     [Header("Buildable Grid Tiles")]
     [SerializeField] private GameObject _tilePrefab;
     [SerializeField] private Transform _tileParent;

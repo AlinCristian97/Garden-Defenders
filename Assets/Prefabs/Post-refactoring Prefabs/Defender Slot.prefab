@@ -125,7 +125,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 946367463156781862}
         m_TargetAssemblyTypeName: DefenderSlot, Assembly-CSharp
-        m_MethodName: Test
+        m_MethodName: SelectDefenderToBuild
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3573848, g: 0.17933428, b: 0.5849056, a: 1}
+  m_Color: {r: 0.15472588, g: 0.5754717, b: 0.23115462, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -7,18 +7,21 @@ public class DefenderSlotsPanel : MonoBehaviour
 {
     [SerializeField] private DefenderSlot _defenderSlot;
 
-    private RectTransform _rectTransform;
+    //TODO: Temporary - this variable will be moved
+    [SerializeField] private List<Defender> _defendersList;
 
     private void Awake()
     {
-        _rectTransform = GetComponent<RectTransform>();
+        
     }
 
     private void Start()
     {
-        for (int i = 0; i < 5; i++)
+        foreach (Defender defender in _defendersList)
         {
-            Instantiate(_defenderSlot, transform);
+            DefenderSlot defenderSlot = Instantiate(_defenderSlot, transform);
+
+            defenderSlot.Defender = defender;
         }
     }
 }

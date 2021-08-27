@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d4389a242a9c041aedee91f4aa108d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defender: {fileID: 7335197713600292125, guid: f0fc3d3320551ee40bac434059558f13, type: 3}
+  _defender: {fileID: 0}
   _defenderAvatarImage: {fileID: 2127850370818643359}
   _defenderCostText: {fileID: 2127850369701692430}
   _rectTransform: {fileID: 2127850369194037230}

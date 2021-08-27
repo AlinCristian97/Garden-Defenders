@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class DefenderSlot : MonoBehaviour
 {
-    [SerializeField] private Defender _defender;
+    public Defender Defender { get; set; }
+    
     [SerializeField] private Image _defenderAvatarImage;
     [SerializeField] private Text _defenderCostText;
 
     [SerializeField] private RectTransform _rectTransform;
     private BuildManager _buildManager;
+
 
     private void Awake()
     {
@@ -23,22 +25,23 @@ public class DefenderSlot : MonoBehaviour
 
     private void Start()
     {
-        _defenderAvatarImage.sprite = _defender.Avatar;
-        _defenderCostText.text = _defender.Cost.ToString();
+        _defenderAvatarImage.sprite = Defender.Avatar;
+        _defenderCostText.text = Defender.Cost.ToString();
     }
 
     public void SelectDefenderToBuild()
     {
         //TODO: Cancel if selects again same defender
 
-        if (_buildManager.DefenderToBuild == _defender)
+        if (_buildManager.DefenderToBuild == Defender)
         {
+            Debug.Log($"Deselected {Defender.name}");
             _buildManager.DefenderToBuild = null;
         }
         else
         {
-            _buildManager.SetDefenderToBuild(_defender);
-            Debug.Log($"Selected: {_defender.name}");
+            _buildManager.SetDefenderToBuild(Defender);
+            Debug.Log($"Selected: {Defender.name}");
         }
     }
 

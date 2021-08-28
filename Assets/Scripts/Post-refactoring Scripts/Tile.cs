@@ -9,19 +9,26 @@ public class Tile : MonoBehaviour
 {
     private BuildManager _buildManager;
 
-    private bool IsAvailable => CurrentDefender == null;
+    private bool IsEmpty => CurrentDefender == null;
     public Defender CurrentDefender => GetComponentInChildren<Defender>();
-
+    
     private void Awake()
     {
         _buildManager = FindObjectOfType<BuildManager>();
     }
-
+    
     private void OnMouseDown()
     {
-        if (CurrentDefender != null)
+        if (!IsEmpty)
         {
-            _buildManager.SelectDefenderToSell(CurrentDefender);
+            if (CurrentDefender == _buildManager.DefenderToSell)
+            {
+                _buildManager.DeselectDefenderToSell();
+            }
+            else
+            {
+                _buildManager.SelectDefenderToSell(CurrentDefender);
+            }
         }
         else
         {
@@ -38,7 +45,7 @@ public class Tile : MonoBehaviour
     {
         if (_buildManager.DefenderToBuild == null) return;
 
-        if (IsAvailable)
+        if (IsEmpty)
         {
             _buildManager.BuildDefender(transform.position, transform);
         }

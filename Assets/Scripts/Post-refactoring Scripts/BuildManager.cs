@@ -7,7 +7,7 @@ public class BuildManager : MonoBehaviour
 {
     //TODO: Restrict multiple instances via Singleton
 
-    [field:SerializeField] public Button SellButton { get; private set; }
+    [field:SerializeField] private Button SellButton { get; set; }
     
     public Defender DefenderToBuild { get; private set; }
     public Defender DefenderToSell { get; private set; }
@@ -17,29 +17,50 @@ public class BuildManager : MonoBehaviour
         DefenderToBuild = null;
     }
 
-    public void SetDefenderToBuild(Defender defender)
+    public void DeselectDefenderToSell()
     {
-        SetDefenderToSell(null);
+        DefenderToSell = null;
         SellButton.gameObject.SetActive(false);
+    }
+    
+    public void SelectDefenderToBuild(Defender defender)
+    {
+        if (DefenderToSell != null)
+        {
+            DeselectDefenderToSell();
+        }
+        
         DefenderToBuild = defender;
     }
     
-    public void SetDefenderToSell(Defender defender)
+    public void SelectDefenderToSell(Defender defender)
     {
+        if (DefenderToBuild != null)
+        {
+            DeselectDefenderToBuild();
+        }
+        
         DefenderToSell = defender;
+        SellButton.gameObject.SetActive(true);
     }
 
-    public void BuildDefender(Vector3 buildPosition, Transform defenderTile)
+    public void BuildDefender(Vector3 buildPosition, Transform parent)
     {
         if (DefenderToBuild == null) return;
+
+        Instantiate(
+            DefenderToBuild,
+            buildPosition,
+            Quaternion.identity,
+            parent);
         
-        Instantiate(DefenderToBuild, buildPosition, Quaternion.identity, defenderTile);
-        DefenderToBuild = null;
+        DeselectDefenderToBuild();
     }
 
     public void SellDefender()
     {
-        DefenderToSell.GetComponentInParent<Tile>().SellDefender(DefenderToSell);
-        DefenderToSell = null;
+        Destroy(DefenderToSell.Tile.CurrentDefender.gameObject);
+        
+        DeselectDefenderToSell();
     }
 }

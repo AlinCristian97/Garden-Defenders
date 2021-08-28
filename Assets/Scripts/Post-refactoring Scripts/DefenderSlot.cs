@@ -40,7 +40,7 @@ public class DefenderSlot : MonoBehaviour
         }
         else
         {
-            _buildManager.SetDefenderToBuild(Defender);
+            _buildManager.SelectDefenderToBuild(Defender);
             Debug.Log($"Selected: {Defender.name}");
         }
     }

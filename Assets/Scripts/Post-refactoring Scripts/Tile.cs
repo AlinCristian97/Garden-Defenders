@@ -7,11 +7,10 @@ using UnityEngine.UIElements;
 
 public class Tile : MonoBehaviour
 {
-    private Defender _currentDefender;
-    
     private BuildManager _buildManager;
 
-    private bool IsAvailable => _currentDefender == null;
+    private bool IsAvailable => CurrentDefender == null;
+    public Defender CurrentDefender => GetComponentInChildren<Defender>();
 
     private void Awake()
     {
@@ -20,15 +19,16 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (_currentDefender != null)
+        if (CurrentDefender != null)
         {
-            _buildManager.SetDefenderToSell(GetComponentInChildren<Defender>());
-            _buildManager.SellButton.gameObject.SetActive(true);
+            _buildManager.SelectDefenderToSell(CurrentDefender);
         }
         else
         {
-            _buildManager.SetDefenderToSell(null);
-            _buildManager.SellButton.gameObject.SetActive(false);
+            if (_buildManager.DefenderToSell != null)
+            {
+                _buildManager.DeselectDefenderToSell();
+            }
             
             HandleBuildDefender();
         }
@@ -40,15 +40,7 @@ public class Tile : MonoBehaviour
 
         if (IsAvailable)
         {
-            _currentDefender = _buildManager.DefenderToBuild;
-
             _buildManager.BuildDefender(transform.position, transform);
         }
-    }
-
-    public void SellDefender(Defender defender)
-    {
-        Destroy(defender.gameObject);
-        _currentDefender = null;
     }
 }

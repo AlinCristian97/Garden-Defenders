@@ -7,10 +7,11 @@ using UnityEngine.UIElements;
 
 public class Tile : MonoBehaviour
 {
-    private bool _isAvailable = true;
     private Defender _currentDefender;
     
     private BuildManager _buildManager;
+
+    private bool IsAvailable => _currentDefender == null;
 
     private void Awake()
     {
@@ -19,42 +20,35 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        HandleBuildDefender();
-        HandleSellDefender();
-        
-        GetComponent<SpriteRenderer>().color = Color.cyan;
-        Debug.Log("clicked on tile");
+        if (_currentDefender != null)
+        {
+            _buildManager.SetDefenderToSell(GetComponentInChildren<Defender>());
+            _buildManager.SellButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            _buildManager.SetDefenderToSell(null);
+            _buildManager.SellButton.gameObject.SetActive(false);
+            
+            HandleBuildDefender();
+        }
     }
 
     private void HandleBuildDefender()
     {
         if (_buildManager.DefenderToBuild == null) return;
 
-        if (_isAvailable)
+        if (IsAvailable)
         {
             _currentDefender = _buildManager.DefenderToBuild;
 
             _buildManager.BuildDefender(transform.position, transform);
-
-            _isAvailable = false;
         }
     }
 
-    private void HandleSellDefender()
+    public void SellDefender(Defender defender)
     {
-        //TODO: Add conditional
-        
-        // if sell button clicked
-            SellTileDefender();
-        //
-    }
-
-    public void SellTileDefender()
-    {
-        Destroy(_currentDefender.gameObject);
+        Destroy(defender.gameObject);
         _currentDefender = null;
-    
-        //refund
-        _isAvailable = true;
     }
 }

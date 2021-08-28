@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Tile : MonoBehaviour
 {
@@ -36,18 +31,10 @@ public class Tile : MonoBehaviour
             {
                 _buildManager.DeselectDefenderToSell();
             }
-            
-            HandleBuildDefender();
-        }
-    }
-
-    private void HandleBuildDefender()
-    {
-        if (_buildManager.DefenderToBuild == null) return;
-
-        if (IsEmpty)
-        {
-            _buildManager.BuildDefender(transform.position, transform);
+            else if (IsEmpty && _buildManager.DefenderToBuild != null)
+            {
+                _buildManager.BuildDefender(transform.position, transform);
+            }
         }
     }
 }

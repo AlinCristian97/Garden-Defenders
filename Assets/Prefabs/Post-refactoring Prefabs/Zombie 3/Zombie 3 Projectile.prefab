@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3811358962341996366}
   - component: {fileID: 6523109013085720428}
   m_Layer: 0
-  m_Name: Zombie 1 Projectile
+  m_Name: Zombie 3 Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5bfc4997f6d25584babbc993933bad3c, type: 3}
-  m_Color: {r: 1, g: 0.07212778, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.8873018, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

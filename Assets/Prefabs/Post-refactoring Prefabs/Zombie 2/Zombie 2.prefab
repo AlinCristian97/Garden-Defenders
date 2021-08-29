@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825335120617188201}
   - component: {fileID: 3433824323865484209}
-  - component: {fileID: 199597979854475042}
+  - component: {fileID: 5473705697596466056}
   m_Layer: 2
   m_Name: Visuals
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1e297ae68ee805b4985cf781f01d184c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dcda81cc5733c8e4389a620e5ab4ef04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &199597979854475042
+--- !u!95 &5473705697596466056
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 7500095433766022962}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 33f715c07b6a14d45be476d4633cd241, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3d76999be46a05343817dc33087333b2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 4513961205764543652}
   - component: {fileID: 7335197713600292125}
   m_Layer: 2
-  m_Name: Zombie 1
+  m_Name: Zombie 2
   m_TagString: Defender
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edfac1f43406d5e4199cf128a490e85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Avatar>k__BackingField: {fileID: 21300000, guid: 270bd45be4b53fb41a4aa755317d3030, type: 3}
-  <Cost>k__BackingField: 30
-  _projectile: {fileID: 6523109013085720428, guid: 0124ec5bfb03f55429dc3caeac6c07f4, type: 3}
+  <Avatar>k__BackingField: {fileID: 21300000, guid: e7a3b66b044604d4b8da2a516b4f3eda, type: 3}
+  <Cost>k__BackingField: 45
+  _projectile: {fileID: 6523109013085720428, guid: 743bc70b8d2a2b248bd963d1ed0e20d2, type: 3}
   _timeBetweenShots: 1
   _enemyInLane: 0

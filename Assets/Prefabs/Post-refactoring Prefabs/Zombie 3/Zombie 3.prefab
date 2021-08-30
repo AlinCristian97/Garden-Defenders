@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Avatar>k__BackingField: {fileID: 21300000, guid: 848a57937ee7a0e40a264ed238b79b5e, type: 3}
-  <Cost>k__BackingField: 120
+  <Cost>k__BackingField: 70
   _projectile: {fileID: 6523109013085720428, guid: c2e6a14fd49187a48a26e52bcc2625fb, type: 3}
   _timeBetweenShots: 1
   _enemyInLane: 0

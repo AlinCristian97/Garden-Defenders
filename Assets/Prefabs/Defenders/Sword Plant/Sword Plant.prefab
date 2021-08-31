@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 4513961205764543652}
   - component: {fileID: 7335197713600292125}
   m_Layer: 2
-  m_Name: Plant 1
+  m_Name: Sword Plant
   m_TagString: Defender
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

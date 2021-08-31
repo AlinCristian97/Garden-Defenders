@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3433824323865484209}
   - component: {fileID: 199597979854475042}
   - component: {fileID: 4092656509617376806}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 928031189
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -3655621501393774895, guid: 3af15dd03d4c4bd6a689f52227db8663, type: 3}
+  m_Sprite: {fileID: 6219982300490148061, guid: 6d138f2012778ce409e8906815fb92bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 8281373511138843780}
   - component: {fileID: 4513961205764543652}
   - component: {fileID: 7335197713600292125}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Sword Plant
   m_TagString: Defender
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edfac1f43406d5e4199cf128a490e85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Avatar>k__BackingField: {fileID: 21300000, guid: 270bd45be4b53fb41a4aa755317d3030, type: 3}
+  <Avatar>k__BackingField: {fileID: 21300000, guid: 517739ec22959dd4898c62969f404e5f, type: 3}
   <Cost>k__BackingField: 30
   _projectile: {fileID: 6523109013085720428, guid: 0124ec5bfb03f55429dc3caeac6c07f4, type: 3}
   _timeBetweenShots: 1

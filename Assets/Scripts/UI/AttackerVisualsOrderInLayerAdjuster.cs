@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefenderVisualsOrderInLayerAdjuster : MonoBehaviour
+public class AttackerVisualsOrderInLayerAdjuster : MonoBehaviour
 {
-    private Defender _parent;
+    private Attacker _parent;
     private SpriteRenderer _spriteRenderer;
 
     private void Awake()
@@ -13,7 +13,7 @@ public class DefenderVisualsOrderInLayerAdjuster : MonoBehaviour
         //TODO: Verify if this check is redundant
         if (transform.parent != null)
         {
-            _parent = GetComponentInParent<Defender>();
+            _parent = GetComponentInParent<Attacker>();
         }
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -21,6 +21,7 @@ public class DefenderVisualsOrderInLayerAdjuster : MonoBehaviour
 
     private void Start()
     {
-        _spriteRenderer.sortingOrder = Mathf.RoundToInt(_parent.Tile.transform.position.y) * -1;
+        //TODO: Check if it's right
+        _spriteRenderer.sortingOrder = Mathf.RoundToInt(_parent.transform.position.y) * -1;
     }
 }

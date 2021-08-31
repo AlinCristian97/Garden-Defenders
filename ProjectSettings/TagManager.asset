@@ -5,15 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Defender
+  - Attacker
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Input
   - Water
   - UI
-  - 
-  - 
+  - Defender
+  - Attacker
   - 
   - 
   - 
@@ -41,6 +42,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Attackers
+    uniqueID: 3179254095
     locked: 0
   - name: Defenders
     uniqueID: 928031189

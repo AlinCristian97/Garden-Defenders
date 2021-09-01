@@ -8,26 +8,20 @@ public class AttackerWalkState : AttackerState
     
     public override void Enter()
     {
-        base.Enter();
-        
         Attacker.Animator.SetBool("IsWalking", true);
 
-        Debug.Log("Enter: Walk");
+        // Debug.Log("Enter: Walk");
     }
 
     public override void Exit()
     {
-        base.Exit();
-        
         Attacker.Animator.SetBool("IsWalking", false);
 
-        Debug.Log("Exit: Walk");
+        // Debug.Log("Exit: Walk");
     }
 
     public override void Execute()
     {
-        base.Execute();
-
         if (Attacker.IsNearDefender())
         {
             Attacker.StateMachine.ChangeState(Attacker.States.AttackState);
@@ -37,6 +31,6 @@ public class AttackerWalkState : AttackerState
             Attacker.transform.Translate(Vector3.left * Time.deltaTime * Attacker.MovementSpeed);
         }
         
-        Debug.Log("Execute: Walk");
+        // Debug.Log("Execute: Walk");
     }
 }

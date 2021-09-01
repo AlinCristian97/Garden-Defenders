@@ -77,7 +77,7 @@ public class Attacker : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("just attacked!");
+        Debug.Log("Zombie - just attacked!");
     }
 
     private void SetIdleState()

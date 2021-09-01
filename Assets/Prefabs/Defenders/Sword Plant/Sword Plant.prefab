@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1825335120617188201}
   - component: {fileID: 3433824323865484209}
-  - component: {fileID: 199597979854475042}
   - component: {fileID: 4092656509617376806}
   m_Layer: 6
   m_Name: Visuals
@@ -84,25 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &199597979854475042
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7500095433766022962}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 33f715c07b6a14d45be476d4633cd241, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &4092656509617376806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8281373511138843780}
+  - component: {fileID: 7072606966912741146}
   - component: {fileID: 4513961205764543652}
   - component: {fileID: 7335197713600292125}
   m_Layer: 6
@@ -148,6 +129,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &7072606966912741146
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281373511138843782}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 33f715c07b6a14d45be476d4633cd241, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!70 &4513961205764543652
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -180,4 +180,7 @@ MonoBehaviour:
   <Cost>k__BackingField: 30
   _projectile: {fileID: 6523109013085720428, guid: 0124ec5bfb03f55429dc3caeac6c07f4, type: 3}
   _timeBetweenShots: 1
+  _detectAttackerLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
   _enemyInLane: 0

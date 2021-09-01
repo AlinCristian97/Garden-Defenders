@@ -2,6 +2,7 @@
 {
     public abstract class State
     {
+        //TODO: Check if required
         protected StateMachine StateMachine;
 
         public abstract void Enter();

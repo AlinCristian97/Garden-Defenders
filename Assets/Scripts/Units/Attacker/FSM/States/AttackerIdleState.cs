@@ -22,12 +22,12 @@ public class AttackerIdleState : AttackerState
 
     public override void Execute()
     {
-        if (Attacker.IsNearDefender() && Attacker.AttackCooldownPassed())
+        if (Attacker.HasTargetInAttackRange() && Attacker.AttackCooldownPassed())
         {
             Attacker.StateMachine.ChangeState(Attacker.States.AttackState);
         }
 
-        if (!Attacker.IsNearDefender())
+        if (!Attacker.HasTargetInAttackRange())
         {
             Attacker.StateMachine.ChangeState(Attacker.States.WalkState);
         }

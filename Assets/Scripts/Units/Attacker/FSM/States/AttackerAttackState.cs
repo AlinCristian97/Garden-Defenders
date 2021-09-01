@@ -24,7 +24,7 @@ public class AttackerAttackState : AttackerState
             Attacker.TriggerAttackAnimation();
         }
 
-        if (!Attacker.IsNearDefender())
+        if (!Attacker.HasTargetInAttackRange())
         {
             Attacker.StateMachine.ChangeState(Attacker.States.WalkState);
         }

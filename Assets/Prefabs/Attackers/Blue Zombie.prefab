@@ -81,11 +81,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d3d2508bfb6fc49b3c8582dd52df8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 0.75
-  _timeBetweenAttacks: 1
-  _detectDefenderLayerMask:
+  _isFacingRight: 0
+  AttackRange: 0.2
+  TimeBetweenAttacks: 1
+  _detectTargetLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  _movementSpeed: 0.75
 --- !u!1 &8579232297382163979
 GameObject:
   m_ObjectHideFlags: 0

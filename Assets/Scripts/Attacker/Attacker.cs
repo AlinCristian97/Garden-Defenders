@@ -15,7 +15,7 @@ public class Attacker : MonoBehaviour
     
     [Header("Defender Detection")]
     [SerializeField] private LayerMask _detectDefenderLayerMask;
-    private const float ATTACK_RANGE = 0.5f;
+    private const float ATTACK_RANGE = 0.2f;
 
     private Collider2D _collider;
     private Animator _animator;

@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using General.FSM;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class Attacker : MonoBehaviour
 {
+    private StateMachine _stateMachine;
+    
     [Header("Stats")]
     [SerializeField] [Range(0.25f, 2f)] private float _movementSpeed = 1f;
 
@@ -27,6 +30,14 @@ public class Attacker : MonoBehaviour
     {
         _collider = GetComponent<Collider2D>();
         _animator = GetComponentInChildren<Animator>();
+
+        _stateMachine = new StateMachine();
+    }
+
+    private void Start()
+    {
+        // Add state
+        // _stateMachine.Initialize();
     }
 
     private void Update()

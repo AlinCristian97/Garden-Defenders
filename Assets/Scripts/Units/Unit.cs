@@ -7,8 +7,10 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected bool _isFacingRight;
     protected Vector2 FacingDirection;
     
-    [Header("Attacking")]
-    [SerializeField] [Range(0.2f, 11.5f)] protected float AttackRange;
+    // [Header("Attacking")]
+    // [SerializeField] [Range(0.2f, 11.5f)] protected float attackRange;
+    protected abstract float AttackRange { get; }
+    
     [SerializeField] [Range(0.5f, 3f)] protected float TimeBetweenAttacks = 1f;
     protected float NextAttack;
     

@@ -21,10 +21,10 @@ public class DefenderAttackState : DefenderState
         if (Defender.AttackCooldownPassed())
         {
             Defender.UpdateNextAttack();
-            Defender.TriggerAttackAnimation();
+            Defender.Attack();
         }
 
-        if (!Defender.IsNearDefender())
+        if (!Defender.HasTargetInAttackRange())
         {
             Defender.StateMachine.ChangeState(Defender.States.IdleState);
         }

@@ -22,7 +22,7 @@ public class DefenderIdleState : DefenderState
 
     public override void Execute()
     {
-        if (Defender.IsNearDefender() && Defender.AttackCooldownPassed())
+        if (Defender.HasTargetInAttackRange() && Defender.AttackCooldownPassed())
         {
             Defender.StateMachine.ChangeState(Defender.States.AttackState);
         }

@@ -11,7 +11,9 @@ public class Attacker : Unit
     [Header("Stats")]
     [field:SerializeField] [Range(0.25f, 2f)] private float _movementSpeed = 1f;
     public float MovementSpeed => _movementSpeed;
-    
+
+    protected override float AttackRange => 0.2f;
+
     public AttackerStates States { get; private set; }
 
     #region Debug
@@ -23,7 +25,7 @@ public class Attacker : Unit
     
     
     #region Unity Callbacks
-
+    
     protected override void Awake()
     {
         base.Awake();

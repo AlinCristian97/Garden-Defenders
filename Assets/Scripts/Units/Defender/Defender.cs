@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using General.FSM;
 using UnityEngine;
 
-public class Defender : Unit
+public abstract class Defender : Unit
 {
     //TODO: Does this variable make sense here?
     [field:SerializeField] public Sprite Avatar { get; private set; }
@@ -13,19 +13,12 @@ public class Defender : Unit
     public Tile Tile => GetComponentInParent<Tile>();
     
     [Header("Attacking")]
-    [SerializeField] private Projectile _projectile;
-    
-    [Header("Defender Detection")]
-    [SerializeField] private LayerMask _detectAttackerLayerMask;
-    private const float ATTACK_RANGE = 0.5f;
+    [SerializeField] protected Projectile Projectile;
 
     #region FSM
     public DefenderStates States { get; private set; }
 
     #endregion
-
-    //TODO: Unserialize after testing
-    [SerializeField] private bool _enemyInLane;
 
     #region Debug
 
@@ -58,6 +51,11 @@ public class Defender : Unit
 
     #endregion
     
+    // protected abstract void Attack()
+    // Logic in subclasses
+
+    public abstract void Attack();
+
     #region Animation Event Methods
 
     private void Hit()
@@ -72,20 +70,6 @@ public class Defender : Unit
 
     #endregion
 
-    public bool IsNearDefender()
-    {        
-        Vector2 startPoint = GetColliderSideBoundCenterPoint();
-        
-        float distance = ATTACK_RANGE;
-        Vector2 direction = Vector2.right;
-        Vector2 endPoint = startPoint + distance * direction;
-
-        
-        RaycastHit2D hit = Physics2D.Linecast(startPoint, endPoint, _detectAttackerLayerMask);
-
-        return hit.collider != null;
-    }
-
     #region Debug Methods
 
     private void OnDrawGizmos()
@@ -94,7 +78,7 @@ public class Defender : Unit
         
         Vector2 startPoint = GetColliderSideBoundCenterPoint();
         
-        float distance = ATTACK_RANGE;
+        float distance = AttackRange;
         Vector2 direction = Vector2.right;
         Vector2 endPoint = startPoint + distance * direction;
         
@@ -103,7 +87,7 @@ public class Defender : Unit
 
     private void HandleDebug()
     {
-        if (!IsNearDefender())
+        if (!HasTargetInAttackRange())
         {
             _debugColor = Color.red;
         }

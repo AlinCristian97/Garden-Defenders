@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6377811812961711496}
   - component: {fileID: 7090187956372436191}
-  - component: {fileID: 5677583903771167518}
   - component: {fileID: 2367193425376551935}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 928031189
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: dd60f04b967d2cc4e87ffe6fc295a8fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -84,25 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5677583903771167518
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 787416094147926451}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8b39f6ca1c88e104b9205c461e8e7660, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2367193425376551935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,9 +104,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8281373511138843780}
+  - component: {fileID: 9117382000025905586}
   - component: {fileID: 4513961205764543652}
-  - component: {fileID: 7335197713600292125}
-  m_Layer: 2
+  - component: {fileID: 2150171738464221323}
+  m_Layer: 6
   m_Name: Zombie 3
   m_TagString: Defender
   m_Icon: {fileID: 0}
@@ -148,6 +129,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &9117382000025905586
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281373511138843782}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b39f6ca1c88e104b9205c461e8e7660, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!70 &4513961205764543652
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.03600266, y: 0}
   m_Size: {x: 0.41537833, y: 0.97574645}
   m_Direction: 0
---- !u!114 &7335197713600292125
+--- !u!114 &2150171738464221323
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,11 +173,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8281373511138843782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edfac1f43406d5e4199cf128a490e85e, type: 3}
+  m_Script: {fileID: 11500000, guid: b900e1035c5f46a7ac29d1ecbc797146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isFacingRight: 1
+  AttackRange: 11.5
+  TimeBetweenAttacks: 1
+  _detectTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
   <Avatar>k__BackingField: {fileID: 21300000, guid: 848a57937ee7a0e40a264ed238b79b5e, type: 3}
-  <Cost>k__BackingField: 70
-  _projectile: {fileID: 6523109013085720428, guid: c2e6a14fd49187a48a26e52bcc2625fb, type: 3}
-  _timeBetweenShots: 1
-  _enemyInLane: 0
+  <Cost>k__BackingField: 90
+  Projectile: {fileID: 6523109013085720428, guid: c2e6a14fd49187a48a26e52bcc2625fb, type: 3}

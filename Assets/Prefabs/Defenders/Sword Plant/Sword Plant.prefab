@@ -173,19 +173,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8281373511138843782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edfac1f43406d5e4199cf128a490e85e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b3faef5bbde4143bb000f6f606ea5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isFacingRight: 1
-  AttackRange: 0
+  AttackRange: 0.5
   TimeBetweenAttacks: 1
   _detectTargetLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  <Avatar>k__BackingField: {fileID: 21300000, guid: 517739ec22959dd4898c62969f404e5f, type: 3}
-  <Cost>k__BackingField: 30
-  _projectile: {fileID: 6523109013085720428, guid: 0124ec5bfb03f55429dc3caeac6c07f4, type: 3}
-  _detectAttackerLayerMask:
-    serializedVersion: 2
     m_Bits: 128
+  <Avatar>k__BackingField: {fileID: 21300000, guid: 517739ec22959dd4898c62969f404e5f, type: 3}
+  <Cost>k__BackingField: 60
+  _projectile: {fileID: 0}
   _enemyInLane: 0

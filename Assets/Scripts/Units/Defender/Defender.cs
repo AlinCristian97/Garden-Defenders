@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using General.FSM;
 using UnityEngine;
 
-public class Defender : MonoBehaviour
+public class Defender : Unit
 {
     //TODO: Does this variable make sense here?
     [field:SerializeField] public Sprite Avatar { get; private set; }
@@ -14,23 +14,12 @@ public class Defender : MonoBehaviour
     
     [Header("Attacking")]
     [SerializeField] private Projectile _projectile;
-    [SerializeField] [Range(0.5f, 3f)] private float _timeBetweenAttacks = 1f;
-    private float _nextAttack;
     
     [Header("Defender Detection")]
     [SerializeField] private LayerMask _detectAttackerLayerMask;
     private const float ATTACK_RANGE = 0.5f;
-    
-    #region Components
 
-    public Collider2D Collider { get; private set; }
-    public Animator Animator { get; private set; }
-
-    #endregion
-    
     #region FSM
-
-    public StateMachine StateMachine { get; private set; }
     public DefenderStates States { get; private set; }
 
     #endregion
@@ -48,33 +37,30 @@ public class Defender : MonoBehaviour
 
     #region Unity Callbacks
 
-    private void Awake()
+    protected override void Awake()
     {
-        Collider = GetComponent<Collider2D>();
-        Animator = GetComponentInChildren<Animator>();
-
-        StateMachine = new StateMachine();
+        base.Awake();
+        
         States = new DefenderStates(this);
     }
-
     private void Start()
     {
         StateMachine.Initialize(States.IdleState);
     }
 
-    private void Update()
+    protected override void Update()
     {
-        StateMachine.CurrentState.Execute();
-
+        base.Update();
+        
+        //TODO: Delete after debugging
         HandleDebug();
-        // HandleShooting();
     }
 
     #endregion
     
     #region Animation Event Methods
 
-    private void Attack()
+    private void Hit()
     {
         Debug.Log("Defender - just attacked!");
     }
@@ -85,19 +71,10 @@ public class Defender : MonoBehaviour
     }
 
     #endregion
-    
-    private void HandleShooting()
-    {
-        if (AttackCooldownPassed() && _enemyInLane)
-        {
-            _nextAttack = Time.time + _timeBetweenAttacks;
-            Instantiate(_projectile, transform.position, Quaternion.identity);
-        }
-    }
-    
+
     public bool IsNearDefender()
     {        
-        Vector2 startPoint = GetColliderRightBoundCenterPoint();
+        Vector2 startPoint = GetColliderSideBoundCenterPoint();
         
         float distance = ATTACK_RANGE;
         Vector2 direction = Vector2.right;
@@ -109,25 +86,13 @@ public class Defender : MonoBehaviour
         return hit.collider != null;
     }
 
-    public bool AttackCooldownPassed() => Time.time > _nextAttack;
-    
-    public void UpdateNextAttack()
-    {
-        _nextAttack = Time.time + _timeBetweenAttacks;
-    }
-    
-    public void TriggerAttackAnimation()
-    {
-        Animator.SetTrigger("Attack");
-    }
-    
     #region Debug Methods
 
     private void OnDrawGizmos()
     {
         Collider = GetComponent<Collider2D>();
         
-        Vector2 startPoint = GetColliderRightBoundCenterPoint();
+        Vector2 startPoint = GetColliderSideBoundCenterPoint();
         
         float distance = ATTACK_RANGE;
         Vector2 direction = Vector2.right;
@@ -148,18 +113,5 @@ public class Defender : MonoBehaviour
         }
     }
 
-    #endregion
-    
-    #region Helper Methods
-
-    private Vector2 GetColliderRightBoundCenterPoint()
-    {
-        Bounds bounds = Collider.bounds;
-        
-        var result = new Vector2(bounds.center.x + bounds.extents.x, bounds.center.y);
-
-        return result;
-    }
-    
     #endregion
 }

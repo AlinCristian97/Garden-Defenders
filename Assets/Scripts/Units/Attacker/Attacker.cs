@@ -12,6 +12,8 @@ public class Attacker : Unit
     [field:SerializeField] [Range(0.25f, 2f)] private float _movementSpeed = 1f;
     public float MovementSpeed => _movementSpeed;
     
+    public AttackerStates States { get; private set; }
+
     #region Debug
 
     private Color _debugColor = Color.gray;
@@ -28,6 +30,11 @@ public class Attacker : Unit
         
         States = new AttackerStates(this);
     }
+    
+    private void Start()
+    {
+        StateMachine.Initialize(States.WalkState);
+    }
 
     protected override void Update()
     {
@@ -39,6 +46,19 @@ public class Attacker : Unit
 
     #endregion
 
+    #region Animation Event Methods
+
+    private void Hit()
+    {
+        Debug.Log(name + "just attacked!");
+    }
+
+    private void SetIdleState()
+    {
+        StateMachine.ChangeState(States.IdleState);
+    }
+
+    #endregion
 
 
     #region Debug Methods

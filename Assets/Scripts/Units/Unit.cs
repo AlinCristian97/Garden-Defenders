@@ -26,7 +26,6 @@ public abstract class Unit : MonoBehaviour
     #region FSM
 
     public StateMachine StateMachine { get; private set; }
-    public AttackerStates States { get; protected set; }
 
     #endregion
     
@@ -42,11 +41,6 @@ public abstract class Unit : MonoBehaviour
         StateMachine = new StateMachine();
 
         FacingDirection = _isFacingRight ? Vector2.right : Vector2.left;
-    }
-    
-    private void Start()
-    {
-        StateMachine.Initialize(States.WalkState);
     }
 
     protected virtual void Update()
@@ -85,21 +79,7 @@ public abstract class Unit : MonoBehaviour
     public bool AttackCooldownPassed() => Time.time > NextAttack;
 
     #endregion
-
     
-    #region Animation Event Methods
-
-    private void Attack()
-    {
-        Debug.Log(name + "just attacked!");
-    }
-
-    private void SetIdleState()
-    {
-        StateMachine.ChangeState(States.IdleState);
-    }
-
-    #endregion
     
     #region Helper Methods
 

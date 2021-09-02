@@ -1,43 +1,28 @@
 fileFormatVersion: 2
-guid: 7f919f93aadfa36439df85b1b96f9889
+guid: da3b7c735ea080749ae686da5de2ddbd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -316154249907275476
-    second: character_sword_attack_0
+      213: 1526924179840769393
+    second: character_bow_attack_0
   - first:
-      213: 6119794957653669606
-    second: character_sword_attack_1
+      213: 3792697280491146517
+    second: character_bow_attack_1
   - first:
-      213: -7273921840852676102
-    second: character_sword_attack_2
+      213: -2259658537141774648
+    second: character_bow_attack_2
   - first:
-      213: 8332973673471498197
-    second: character_sword_attack_3
+      213: 7768451850873917268
+    second: character_bow_attack_3
   - first:
-      213: -6433569940206860094
-    second: character_sword_attack_4
+      213: 6959981077374963457
+    second: character_bow_attack_4
   - first:
-      213: -6872306428339696645
-    second: character_sword_attack_5
+      213: -890126186325863148
+    second: character_bow_attack_5
   - first:
-      213: -6547372086390794522
-    second: character_sword_attack_6
-  - first:
-      213: 6474647161035841611
-    second: character_sword_attack_7
-  - first:
-      213: -3616996698500912605
-    second: character_sword_attack_8
-  - first:
-      213: -5828586406530422816
-    second: character_sword_attack_9
-  - first:
-      213: -8317166223364393267
-    second: character_sword_attack_10
-  - first:
-      213: 7082730799036944734
-    second: character_sword_attack_11
+      213: -6745767681264960424
+    second: character_bow_attack_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,238 +124,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character_sword_attack_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 300
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c29fb00826bcc9bf0800000000000000
-      internalID: -316154249907275476
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_sword_attack_1
-      rect:
-        serializedVersion: 2
-        x: 360
-        y: 300
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e67c250711ede450800000000000000
-      internalID: 6119794957653669606
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_sword_attack_2
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 300
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af15508ef96dd0b90800000000000000
-      internalID: -7273921840852676102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_sword_attack_3
-      rect:
-        serializedVersion: 2
-        x: 1080
-        y: 300
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d753f1f76ba4a370800000000000000
-      internalID: 8332973673471498197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_sword_attack_4
-      rect:
-        serializedVersion: 2
-        x: 1440
-        y: 300
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c8c654d93e57b6a0800000000000000
-      internalID: -6433569940206860094
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_sword_attack_5
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 300
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfbcd27e6b9a0a0a0800000000000000
-      internalID: -6872306428339696645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_sword_attack_6
-      rect:
-        serializedVersion: 2
-        x: 2160
-        y: 300
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e65e52e6cf0325a0800000000000000
-      internalID: -6547372086390794522
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_sword_attack_7
-      rect:
-        serializedVersion: 2
-        x: 2520
-        y: 300
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b40688fe9419ad950800000000000000
-      internalID: 6474647161035841611
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_sword_attack_8
-      rect:
-        serializedVersion: 2
-        x: 2880
-        y: 300
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32aa7189aa8ddcdc0800000000000000
-      internalID: -3616996698500912605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_sword_attack_9
-      rect:
-        serializedVersion: 2
-        x: 3240
-        y: 300
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e765106b83bc1fa0800000000000000
-      internalID: -5828586406530422816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_sword_attack_10
-      rect:
-        serializedVersion: 2
-        x: 3600
-        y: 300
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc6fc76d26d739c80800000000000000
-      internalID: -8317166223364393267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_sword_attack_11
+      name: character_bow_attack_0
       rect:
         serializedVersion: 2
         x: 0
@@ -384,8 +138,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e51d054c22aea4260800000000000000
-      internalID: 7082730799036944734
+      spriteID: 17d1d5a9379b03510800000000000000
+      internalID: 1526924179840769393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character_bow_attack_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51dc340051e52a430800000000000000
+      internalID: 3792697280491146517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character_bow_attack_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c65cfb588414a0e0800000000000000
+      internalID: -2259658537141774648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character_bow_attack_3
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fc012acc51fcb60800000000000000
+      internalID: 7768451850873917268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character_bow_attack_4
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f00601ae1d69060800000000000000
+      internalID: 6959981077374963457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character_bow_attack_5
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41516ca13f2a5a3f0800000000000000
+      internalID: -890126186325863148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character_bow_attack_6
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c34e4d8083262a0800000000000000
+      internalID: -6745767681264960424
       vertices: []
       indices: 
       edges: []

@@ -72,12 +72,12 @@ SpriteRenderer:
   m_SortingLayerID: 928031189
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 6219982300490148061, guid: 6d138f2012778ce409e8906815fb92bc, type: 3}
+  m_Sprite: {fileID: 3989149012830817786, guid: 6d9448f5054e08546b0cd42b7440b61f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.22, y: 3.72}
+  m_Size: {x: 2.7692308, y: 2.3076923}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -106,9 +106,9 @@ GameObject:
   - component: {fileID: 8281373511138843780}
   - component: {fileID: 7072606966912741146}
   - component: {fileID: 4513961205764543652}
-  - component: {fileID: 7335197713600292125}
+  - component: {fileID: 3191443210509570279}
   m_Layer: 6
-  m_Name: Sword Plant
+  m_Name: Bow Plant
   m_TagString: Defender
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,6 +126,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1825335120617188201}
+  - {fileID: 5771154730522299203}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -139,7 +140,7 @@ Animator:
   m_GameObject: {fileID: 8281373511138843782}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 33f715c07b6a14d45be476d4633cd241, type: 2}
+  m_Controller: {fileID: 22100000, guid: 9dd92e3340c04524eb65e8bd60f7a6e7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -164,7 +165,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.03600266, y: 0}
   m_Size: {x: 0.41537833, y: 0.97574645}
   m_Direction: 0
---- !u!114 &7335197713600292125
+--- !u!114 &3191443210509570279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,16 +174,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 8281373511138843782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b3faef5bbde4143bb000f6f606ea5ed, type: 3}
+  m_Script: {fileID: 11500000, guid: b900e1035c5f46a7ac29d1ecbc797146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isFacingRight: 1
-  AttackRange: 0.5
   TimeBetweenAttacks: 1
   _detectTargetLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  <Avatar>k__BackingField: {fileID: 21300000, guid: 517739ec22959dd4898c62969f404e5f, type: 3}
-  <Cost>k__BackingField: 60
-  _projectile: {fileID: 0}
-  _enemyInLane: 0
+  <Avatar>k__BackingField: {fileID: 21300000, guid: 2c755f543d127984bae1b580b95a4ca6, type: 3}
+  <Cost>k__BackingField: 80
+  _projectile: {fileID: 6523109013085720428, guid: 28a4c9d0e0a69b7418da968494ab30e0, type: 3}
+  _projectileSpawnPoint: {fileID: 5771154730522299203}
+--- !u!1 &8473598312834386295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5771154730522299203}
+  m_Layer: 6
+  m_Name: ProjectileSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5771154730522299203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8473598312834386295}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2, y: 0.056, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8281373511138843780}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

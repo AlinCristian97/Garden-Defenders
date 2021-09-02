@@ -21,7 +21,7 @@ public class DefenderAttackState : DefenderState
         if (Defender.AttackCooldownPassed())
         {
             Defender.UpdateNextAttack();
-            Defender.Attack();
+            Defender.TriggerAttackAnimation();
         }
 
         if (!Defender.HasTargetInAttackRange())

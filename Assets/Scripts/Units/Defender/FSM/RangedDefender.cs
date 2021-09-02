@@ -1,7 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class RangedDefender : Defender
 {
+    [Header("Attacking")]
+    [SerializeField] private Projectile _projectile;
+    [SerializeField] private Transform _projectileSpawnPoint;
+    
     protected override float AttackRange
     {
         get
@@ -16,10 +21,9 @@ public class RangedDefender : Defender
         }
     }
 
-
-    public override void Attack()
+    protected override void Attack()
     {
-        Instantiate(Projectile, GetColliderSideBoundCenterPoint(), Quaternion.identity);
+        Instantiate(_projectile, _projectileSpawnPoint.position, Quaternion.identity);
         
         Debug.Log("ranged attack");
     }

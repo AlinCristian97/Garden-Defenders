@@ -11,9 +11,6 @@ public abstract class Defender : Unit
     
     [field:SerializeField] public int Cost { get; private set; }
     public Tile Tile => GetComponentInParent<Tile>();
-    
-    [Header("Attacking")]
-    [SerializeField] protected Projectile Projectile;
 
     #region FSM
     public DefenderStates States { get; private set; }
@@ -54,14 +51,9 @@ public abstract class Defender : Unit
     // protected abstract void Attack()
     // Logic in subclasses
 
-    public abstract void Attack();
-
     #region Animation Event Methods
 
-    private void Hit()
-    {
-        Debug.Log("Defender - just attacked!");
-    }
+    protected abstract void Attack();
 
     private void SetIdleState()
     {

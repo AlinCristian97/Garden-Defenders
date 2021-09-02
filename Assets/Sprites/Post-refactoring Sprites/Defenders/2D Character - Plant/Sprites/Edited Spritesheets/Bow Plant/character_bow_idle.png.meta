@@ -1,70 +1,70 @@
 fileFormatVersion: 2
-guid: 6d138f2012778ce409e8906815fb92bc
+guid: 6d9448f5054e08546b0cd42b7440b61f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6219982300490148061
-    second: character_sword_idle_0
+      213: 3989149012830817786
+    second: character_bow_idle_0
   - first:
-      213: -4852129246606489514
-    second: character_sword_idle_1
+      213: -5001059558976065029
+    second: character_bow_idle_1
   - first:
-      213: 6752709225093646182
-    second: character_sword_idle_2
+      213: -7918364619635958641
+    second: character_bow_idle_2
   - first:
-      213: 8297561394665235707
-    second: character_sword_idle_3
+      213: 2720361701428048937
+    second: character_bow_idle_3
   - first:
-      213: -1794594691777933849
-    second: character_sword_idle_4
+      213: 6747982181493027093
+    second: character_bow_idle_4
   - first:
-      213: -1303716035529400386
-    second: character_sword_idle_5
+      213: -3370648334205462403
+    second: character_bow_idle_5
   - first:
-      213: 3317856952338673769
-    second: character_sword_idle_6
+      213: -3743165968107913498
+    second: character_bow_idle_6
   - first:
-      213: 8932538536798347212
-    second: character_sword_idle_7
+      213: -2485671868326650696
+    second: character_bow_idle_7
   - first:
-      213: -5699866407165204566
-    second: character_sword_idle_8
+      213: 9040241134775317796
+    second: character_bow_idle_8
   - first:
-      213: 1704059453593822866
-    second: character_sword_idle_9
+      213: -994477041550659002
+    second: character_bow_idle_9
   - first:
-      213: -7177971235278602537
-    second: character_sword_idle_10
+      213: 4329850991890862215
+    second: character_bow_idle_10
   - first:
-      213: -5556920830253434505
-    second: character_sword_idle_11
+      213: -6251053181919796873
+    second: character_bow_idle_11
   - first:
-      213: -8568077819647679210
-    second: character_sword_idle_12
+      213: 5996380370692234693
+    second: character_bow_idle_12
   - first:
-      213: 5988639143038164112
-    second: character_sword_idle_13
+      213: 5588311854287431671
+    second: character_bow_idle_13
   - first:
-      213: 2494724959853684325
-    second: character_sword_idle_14
+      213: 1865525929563093348
+    second: character_bow_idle_14
   - first:
-      213: -5486149279636215758
-    second: character_sword_idle_15
+      213: 8848611471976136982
+    second: character_bow_idle_15
   - first:
-      213: 5953136224039940937
-    second: character_sword_idle_16
+      213: -6228451080587952317
+    second: character_bow_idle_16
   - first:
-      213: 4805768461764341318
-    second: character_sword_idle_17
+      213: 7751321565166716715
+    second: character_bow_idle_17
   - first:
-      213: 4034504815003150281
-    second: character_sword_idle_18
+      213: 3637775307771473755
+    second: character_bow_idle_18
   - first:
-      213: 5153296660821641122
-    second: character_sword_idle_19
+      213: -5651326173461057962
+    second: character_bow_idle_19
   - first:
-      213: -1430764338331048286
-    second: character_sword_idle_20
+      213: -462201336124560222
+    second: character_bow_idle_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -166,7 +166,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character_sword_idle_0
+      name: character_bow_idle_0
       rect:
         serializedVersion: 2
         x: 3600
@@ -180,14 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd8aee982f0d15650800000000000000
-      internalID: 6219982300490148061
+      spriteID: afd81e944ed4c5730800000000000000
+      internalID: 3989149012830817786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_1
+      name: character_bow_idle_1
       rect:
         serializedVersion: 2
         x: 0
@@ -201,14 +201,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6588cbb6826c9acb0800000000000000
-      internalID: -4852129246606489514
+      spriteID: bf1f8aee3daa89ab0800000000000000
+      internalID: -5001059558976065029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_2
+      name: character_bow_idle_2
       rect:
         serializedVersion: 2
         x: 360
@@ -222,14 +222,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 667c539434176bd50800000000000000
-      internalID: 6752709225093646182
+      spriteID: f8cd39ce4515c1290800000000000000
+      internalID: -7918364619635958641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_3
+      name: character_bow_idle_3
       rect:
         serializedVersion: 2
         x: 720
@@ -243,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf42407402cd62370800000000000000
-      internalID: 8297561394665235707
+      spriteID: 924323aed8aa0c520800000000000000
+      internalID: 2720361701428048937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_4
+      name: character_bow_idle_4
       rect:
         serializedVersion: 2
         x: 1080
@@ -264,14 +264,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ed46c0d2a15817e0800000000000000
-      internalID: -1794594691777933849
+      spriteID: 511be8eaa06a5ad50800000000000000
+      internalID: 6747982181493027093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_5
+      name: character_bow_idle_5
       rect:
         serializedVersion: 2
         x: 1440
@@ -285,14 +285,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebf1a4e4c2548ede0800000000000000
-      internalID: -1303716035529400386
+      spriteID: d78dbe0d23d0931d0800000000000000
+      internalID: -3370648334205462403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_6
+      name: character_bow_idle_6
       rect:
         serializedVersion: 2
         x: 1800
@@ -306,14 +306,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 960f4b3c1556b0e20800000000000000
-      internalID: 3317856952338673769
+      spriteID: 6eeb897526a9d0cc0800000000000000
+      internalID: -3743165968107913498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_7
+      name: character_bow_idle_7
       rect:
         serializedVersion: 2
         x: 2160
@@ -327,14 +327,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccf5a5cf870c6fb70800000000000000
-      internalID: 8932538536798347212
+      spriteID: 8bc553cfa9e118dd0800000000000000
+      internalID: -2485671868326650696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_8
+      name: character_bow_idle_8
       rect:
         serializedVersion: 2
         x: 2520
@@ -348,14 +348,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa76cbda3b106e0b0800000000000000
-      internalID: -5699866407165204566
+      spriteID: 42538223a63657d70800000000000000
+      internalID: 9040241134775317796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_9
+      name: character_bow_idle_9
       rect:
         serializedVersion: 2
         x: 2880
@@ -369,14 +369,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2962b976b0906a710800000000000000
-      internalID: 1704059453593822866
+      spriteID: 64277115668e232f0800000000000000
+      internalID: -994477041550659002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_10
+      name: character_bow_idle_10
       rect:
         serializedVersion: 2
         x: 3240
@@ -390,14 +390,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7de3f392139b26c90800000000000000
-      internalID: -7177971235278602537
+      spriteID: 780170e5988b61c30800000000000000
+      internalID: 4329850991890862215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_11
+      name: character_bow_idle_11
       rect:
         serializedVersion: 2
         x: 3600
@@ -411,14 +411,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77976cb52f9d1e2b0800000000000000
-      internalID: -5556920830253434505
+      spriteID: 7716893204ccf39a0800000000000000
+      internalID: -6251053181919796873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_12
+      name: character_bow_idle_12
       rect:
         serializedVersion: 2
         x: 0
@@ -432,14 +432,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6152fff5e92181980800000000000000
-      internalID: -8568077819647679210
+      spriteID: 5cd5c3d4d2c673350800000000000000
+      internalID: 5996380370692234693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_13
+      name: character_bow_idle_13
       rect:
         serializedVersion: 2
         x: 360
@@ -453,14 +453,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09c1ac8429beb1350800000000000000
-      internalID: 5988639143038164112
+      spriteID: 7f728e8f50cad8d40800000000000000
+      internalID: 5588311854287431671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_14
+      name: character_bow_idle_14
       rect:
         serializedVersion: 2
         x: 720
@@ -474,14 +474,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5662164222b0f9220800000000000000
-      internalID: 2494724959853684325
+      spriteID: 46973eee2fda3e910800000000000000
+      internalID: 1865525929563093348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_15
+      name: character_bow_idle_15
       rect:
         serializedVersion: 2
         x: 1080
@@ -495,14 +495,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 238a48a0c484dd3b0800000000000000
-      internalID: -5486149279636215758
+      spriteID: 611859670459cca70800000000000000
+      internalID: 8848611471976136982
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_16
+      name: character_bow_idle_16
       rect:
         serializedVersion: 2
         x: 1440
@@ -516,14 +516,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 943396dcad9cd9250800000000000000
-      internalID: 5953136224039940937
+      spriteID: 34f38a0fdb81099a0800000000000000
+      internalID: -6228451080587952317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_17
+      name: character_bow_idle_17
       rect:
         serializedVersion: 2
         x: 1800
@@ -537,14 +537,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64e2d3434f481b240800000000000000
-      internalID: 4805768461764341318
+      spriteID: b27469f25e9329b60800000000000000
+      internalID: 7751321565166716715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_18
+      name: character_bow_idle_18
       rect:
         serializedVersion: 2
         x: 2160
@@ -558,14 +558,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c7add6e0c07df730800000000000000
-      internalID: 4034504815003150281
+      spriteID: b5fe7606e59fb7230800000000000000
+      internalID: 3637775307771473755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_19
+      name: character_bow_idle_19
       rect:
         serializedVersion: 2
         x: 2520
@@ -579,14 +579,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a70b7a7200348740800000000000000
-      internalID: 5153296660821641122
+      spriteID: 65e6cf889c47291b0800000000000000
+      internalID: -5651326173461057962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_sword_idle_20
+      name: character_bow_idle_20
       rect:
         serializedVersion: 2
         x: 2880
@@ -600,8 +600,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a62b703a67e42ce0800000000000000
-      internalID: -1430764338331048286
+      spriteID: 2aca599655ee599f0800000000000000
+      internalID: -462201336124560222
       vertices: []
       indices: 
       edges: []

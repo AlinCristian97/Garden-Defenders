@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DefenderSlot : MonoBehaviour
 {
-    public CombatDefender Defender { get; set; }
+    public Defender Defender { get; set; }
     
     [SerializeField] private Image _defenderAvatarImage;
     [SerializeField] private Text _defenderCostText;

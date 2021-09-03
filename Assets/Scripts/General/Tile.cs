@@ -6,7 +6,7 @@ public class Tile : MonoBehaviour
     private BuildManager _buildManager;
 
     private bool IsEmpty => CurrentDefender == null;
-    public CombatDefender CurrentDefender => GetComponentInChildren<CombatDefender>();
+    public Defender CurrentDefender => GetComponentInChildren<Defender>();
     
     private void Awake()
     {

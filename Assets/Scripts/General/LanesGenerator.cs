@@ -46,7 +46,7 @@ public class LanesGenerator : MonoBehaviour
 
             for (int column = 0; column < BUILDABLE_AREA_GRID_COLUMN_COUNT; column++)
             {
-                Instantiate(_tilePrefab, new Vector3(offsetX, offsetY, 0f), 
+                Instantiate(_tilePrefab, new Vector3(offsetX, offsetY, CameraInputLayer.PRIORITY_TILE), 
                     Quaternion.identity, _tileParent);
 
                 offsetX += _tilePrefab.transform.localScale.x;

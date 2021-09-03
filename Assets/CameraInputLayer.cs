@@ -7,6 +7,9 @@ public class CameraInputLayer : MonoBehaviour
 {
     [SerializeField] private LayerMask _inputLayerMask;
 
+    public const float PRIORITY_TILE = 0f;
+    public const float PRIORITY_ENERGY_RESOURCE = -1f;
+    
     private Camera _camera; 
     
     private void Awake()

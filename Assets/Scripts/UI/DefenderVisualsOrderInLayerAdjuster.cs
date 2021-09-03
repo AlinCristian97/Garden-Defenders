@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DefenderVisualsOrderInLayerAdjuster : MonoBehaviour
 {
-    private CombatDefender _parent;
+    private Defender _parent;
     private SpriteRenderer _spriteRenderer;
 
     private void Awake()
@@ -13,7 +13,7 @@ public class DefenderVisualsOrderInLayerAdjuster : MonoBehaviour
         //TODO: Verify if this check is redundant
         if (transform.parent != null)
         {
-            _parent = GetComponentInParent<CombatDefender>();
+            _parent = GetComponentInParent<Defender>();
         }
 
         _spriteRenderer = GetComponent<SpriteRenderer>();

@@ -49,3 +49,6 @@ TagManager:
   - name: Defenders
     uniqueID: 928031189
     locked: 0
+  - name: Energy Resource
+    uniqueID: 779775739
+    locked: 0

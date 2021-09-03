@@ -9,15 +9,11 @@ public class AttackerWalkState : AttackerState
     public override void Enter()
     {
         Attacker.Animator.SetBool("IsWalking", true);
-
-        Debug.Log("Z Enter: Walk");
     }
 
     public override void Exit()
     {
         Attacker.Animator.SetBool("IsWalking", false);
-
-        Debug.Log("Z Exit: Walk");
     }
 
     public override void Execute()
@@ -30,7 +26,5 @@ public class AttackerWalkState : AttackerState
         {
             Attacker.transform.Translate(Vector3.left * Time.deltaTime * Attacker.MovementSpeed);
         }
-        
-        Debug.Log("Z Execute: Walk");
     }
 }

@@ -2,19 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using General.FSM;
-using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
-public class Attacker : Unit
+public abstract class CombatDefender : Defender
 {
     [Header("Stats")]
     [SerializeField] private bool _isFacingRight;
     private Vector2 _facingDirection;
-    [field:SerializeField] [Range(0.25f, 2f)] private float _movementSpeed = 1f;
-    public float MovementSpeed => _movementSpeed;
-    private static float _attackRange => 0.2f;
-    
+    protected abstract float AttackRange { get; }
+
     [Header("Attacking")]
     [SerializeField] private LayerMask _detectTargetLayerMask;
     [SerializeField] [Range(0.5f, 3f)] private float _timeBetweenAttacks = 1f;
@@ -22,18 +18,18 @@ public class Attacker : Unit
 
     #region FSM
 
-    public AttackerStates States { get; private set; }
+    public CombatDefenderStates States { get; private set; }
 
     #endregion
-    
+
     #region Debug
 
     private Color _debugColor = Color.gray;
 
     #endregion
-
     
-
+    
+    
     #region Unity Callbacks
 
     protected override void Awake()
@@ -41,14 +37,14 @@ public class Attacker : Unit
         base.Awake();
         
         _facingDirection = _isFacingRight ? Vector2.right : Vector2.left;
-        States = new AttackerStates(this);
+        States = new CombatDefenderStates(this);
     }
     
     private void Start()
     {
-        StateMachine.Initialize(States.WalkState);
+        StateMachine.Initialize(States.IdleState);
     }
-
+    
     //TODO: Delete after testing
     protected override void Update()
     {
@@ -58,14 +54,16 @@ public class Attacker : Unit
     }
 
     #endregion
-    
+
+    protected abstract void Attack();
+
     public void UpdateNextAttack()
     {
         _nextAttack = Time.time + _timeBetweenAttacks;
     }
     
     public bool AttackCooldownPassed() => Time.time > _nextAttack;
-
+    
     public void TriggerAttackAnimation()
     {
         Animator.SetTrigger("Attack");
@@ -75,7 +73,7 @@ public class Attacker : Unit
     {        
         Vector2 startPoint = GetColliderSideBoundCenterPoint();
         
-        float distance = _attackRange;
+        float distance = AttackRange;
         Vector2 direction = _facingDirection;
         Vector2 endPoint = startPoint + distance * direction;
         
@@ -85,19 +83,13 @@ public class Attacker : Unit
         return hit.collider != null;
     }
     
-
     #region Animation Event Methods
-
-    private void Attack()
-    {
-        Debug.Log(name + "just attacked!");
-    }
 
     private void SetIdleState()
     {
         StateMachine.ChangeState(States.IdleState);
     }
-
+    
     #endregion
 
     #region Helper Methods
@@ -113,7 +105,7 @@ public class Attacker : Unit
 
     #endregion
     
-    #region Debug Methods
+    #region Debug
 
     private void OnDrawGizmos()
     {
@@ -121,13 +113,13 @@ public class Attacker : Unit
         
         Vector2 startPoint = GetColliderSideBoundCenterPoint();
         
-        float distance = _attackRange;
+        float distance = AttackRange;
         Vector2 direction = _facingDirection;
         Vector2 endPoint = startPoint + distance * direction;
         
         Debug.DrawLine(startPoint, endPoint, _debugColor);
     }
-
+    
     private void HandleDebug()
     {
         if (!HasTargetInAttackRange())

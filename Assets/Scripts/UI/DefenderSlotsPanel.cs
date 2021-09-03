@@ -8,7 +8,7 @@ public class DefenderSlotsPanel : MonoBehaviour
     [SerializeField] private DefenderSlot _defenderSlot;
 
     //TODO: Temporary - this variable will be moved
-    [SerializeField] private List<Defender> _defendersList;
+    [SerializeField] private List<CombatDefender> _defendersList;
 
     private void Awake()
     {
@@ -17,7 +17,7 @@ public class DefenderSlotsPanel : MonoBehaviour
 
     private void Start()
     {
-        foreach (Defender defender in _defendersList)
+        foreach (CombatDefender defender in _defendersList)
         {
             DefenderSlot defenderSlot = Instantiate(_defenderSlot, transform);
 

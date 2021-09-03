@@ -9,8 +9,8 @@ public class BuildManager : MonoBehaviour
 
     [field:SerializeField] private Button SellButton { get; set; }
     
-    public Defender DefenderToBuild { get; private set; }
-    public Defender DefenderToSell { get; private set; }
+    public CombatDefender DefenderToBuild { get; private set; }
+    public CombatDefender DefenderToSell { get; private set; }
 
     public void DeselectDefenderToBuild()
     {
@@ -23,7 +23,7 @@ public class BuildManager : MonoBehaviour
         SellButton.gameObject.SetActive(false);
     }
     
-    public void SelectDefenderToBuild(Defender defender)
+    public void SelectDefenderToBuild(CombatDefender defender)
     {
         if (DefenderToSell != null)
         {
@@ -33,7 +33,7 @@ public class BuildManager : MonoBehaviour
         DefenderToBuild = defender;
     }
     
-    public void SelectDefenderToSell(Defender defender)
+    public void SelectDefenderToSell(CombatDefender defender)
     {
         if (DefenderToBuild != null)
         {

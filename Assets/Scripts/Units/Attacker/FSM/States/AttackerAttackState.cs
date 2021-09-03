@@ -8,12 +8,10 @@ public class AttackerAttackState : AttackerState
     
     public override void Enter()
     {
-        // Debug.Log("Enter: Attack");
     }
 
     public override void Exit()
     {
-        // Debug.Log("Exit: Attack");
     }
 
     public override void Execute()
@@ -28,7 +26,5 @@ public class AttackerAttackState : AttackerState
         {
             Attacker.StateMachine.ChangeState(Attacker.States.WalkState);
         }
-
-        // Debug.Log("Execute: Attack");
     }
 }

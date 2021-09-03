@@ -9,15 +9,11 @@ public class AttackerIdleState : AttackerState
     public override void Enter()
     {
         Attacker.Animator.SetBool("IsIdling", true);
-        
-        // Debug.Log("Enter: Idle");
     }
 
     public override void Exit()
     {
         Attacker.Animator.SetBool("IsIdling", false);
-
-        // Debug.Log("Exit: Idle");
     }
 
     public override void Execute()
@@ -31,7 +27,5 @@ public class AttackerIdleState : AttackerState
         {
             Attacker.StateMachine.ChangeState(Attacker.States.WalkState);
         }
-        
-        // Debug.Log("Execute: Idle");
     }
 }

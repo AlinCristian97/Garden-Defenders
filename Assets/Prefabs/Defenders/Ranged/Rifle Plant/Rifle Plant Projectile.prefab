@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3811358962341996366}
   - component: {fileID: 6523109013085720428}
   m_Layer: 0
-  m_Name: Gun Plant Projectile
+  m_Name: Rifle Plant Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8848993070067138329, guid: 65d6754bd71145f599df0438b9d64757, type: 3}
+  m_Sprite: {fileID: 1115682805434658061, guid: 65d6754bd71145f599df0438b9d64757, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_Offset: {x: 0.05887695, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.535}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.0769231, y: 0.66923076}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5

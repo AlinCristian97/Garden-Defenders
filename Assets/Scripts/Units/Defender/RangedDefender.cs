@@ -11,12 +11,11 @@ public class RangedDefender : CombatDefender
     {
         get
         {
-            if (Camera.main != null)
+            if (Camera.main != null && Tile != null) // remove Tile null check before prod
             {
                 return Camera.main.orthographicSize * 2 - Tile.transform.position.x - Tile.transform.localScale.x;
             }
 
-            Debug.LogWarning("There is no camera tagged as 'main'");
             return 0f;
         }
     }

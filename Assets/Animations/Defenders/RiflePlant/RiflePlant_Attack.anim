@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GunPlant_Attack
+  m_Name: RiflePlant_Attack
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 3222898180544202046, guid: c78d896f202eeec4e9b0f480a1b50efe, type: 3}
+      value: {fileID: 1550807790070489163, guid: d4a7791648217764ba36db2eeca314a9, type: 3}
     - time: 0.05
-      value: {fileID: 2661467712373619464, guid: c78d896f202eeec4e9b0f480a1b50efe, type: 3}
+      value: {fileID: -1503654089790174267, guid: d4a7791648217764ba36db2eeca314a9, type: 3}
     - time: 0.1
-      value: {fileID: 1327060398737551447, guid: c78d896f202eeec4e9b0f480a1b50efe, type: 3}
+      value: {fileID: -7747562034383920259, guid: d4a7791648217764ba36db2eeca314a9, type: 3}
     attribute: m_Sprite
     path: Visuals
     classID: 212
@@ -44,9 +44,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 3222898180544202046, guid: c78d896f202eeec4e9b0f480a1b50efe, type: 3}
-    - {fileID: 2661467712373619464, guid: c78d896f202eeec4e9b0f480a1b50efe, type: 3}
-    - {fileID: 1327060398737551447, guid: c78d896f202eeec4e9b0f480a1b50efe, type: 3}
+    - {fileID: 1550807790070489163, guid: d4a7791648217764ba36db2eeca314a9, type: 3}
+    - {fileID: -1503654089790174267, guid: d4a7791648217764ba36db2eeca314a9, type: 3}
+    - {fileID: -7747562034383920259, guid: d4a7791648217764ba36db2eeca314a9, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

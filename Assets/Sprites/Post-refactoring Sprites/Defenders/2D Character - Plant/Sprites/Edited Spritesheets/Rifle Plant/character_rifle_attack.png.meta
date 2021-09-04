@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 65d6754bd71145f599df0438b9d64757
+guid: d4a7791648217764ba36db2eeca314a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8848993070067138329
-    second: bullets_0
+      213: 1550807790070489163
+    second: character_rifle_attack_0
   - first:
-      213: 1115682805434658061
-    second: bullets_1
+      213: -1503654089790174267
+    second: character_rifle_attack_1
   - first:
-      213: 5056628667063805970
-    second: bullets_2
-  - first:
-      213: -7243563388056777162
-    second: bullets_3
+      213: -7747562034383920259
+    second: character_rifle_attack_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -81,7 +78,7 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 80
+    compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -93,31 +90,19 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 80
+    compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
+    buildTarget: WebGL
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 80
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 4096
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 80
+    compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -127,85 +112,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bullets_0
+      name: character_rifle_attack_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 89
-        width: 140
-        height: 87
+        y: 0
+        width: 480
+        height: 300
       alignment: 9
-      pivot: {x: 0.5, y: 0.535}
+      pivot: {x: 0.625, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91fbe313050fdca70800000000000000
-      internalID: 8848993070067138329
+      spriteID: b406f02f773958510800000000000000
+      internalID: 1550807790070489163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullets_1
+      name: character_rifle_attack_1
       rect:
         serializedVersion: 2
-        x: 140
-        y: 89
-        width: 140
-        height: 87
+        x: 480
+        y: 0
+        width: 480
+        height: 300
       alignment: 9
-      pivot: {x: 0.5, y: 0.55}
+      pivot: {x: 0.625, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0da1f3b993bb7f00800000000000000
-      internalID: 1115682805434658061
+      spriteID: 5cb4ef07292f12be0800000000000000
+      internalID: -1503654089790174267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullets_2
+      name: character_rifle_attack_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2
-        width: 140
-        height: 87
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 960
+        y: 0
+        width: 480
+        height: 300
+      alignment: 9
+      pivot: {x: 0.625, y: 0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21825654bf0cc2640800000000000000
-      internalID: 5056628667063805970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bullets_3
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 2
-        width: 140
-        height: 87
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63ec9d20a71b97b90800000000000000
-      internalID: -7243563388056777162
+      spriteID: d736e39c0612b7490800000000000000
+      internalID: -7747562034383920259
       vertices: []
       indices: 
       edges: []

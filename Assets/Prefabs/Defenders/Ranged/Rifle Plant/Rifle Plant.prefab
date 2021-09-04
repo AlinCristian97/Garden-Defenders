@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 928031189
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7905421873102548798, guid: b90b223208f6ecd4398c709d5532c39b, type: 3}
+  m_Sprite: {fileID: 4360122765351191449, guid: 0e662564e796c9c4b946bb13e2bf93d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 4513961205764543652}
   - component: {fileID: 3191443210509570279}
   m_Layer: 6
-  m_Name: Gun Plant
+  m_Name: Rifle Plant
   m_TagString: Defender
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ Animator:
   m_GameObject: {fileID: 8281373511138843782}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 8dc92c7f1a41e5f46805638a4c0359c6, type: 2}
+  m_Controller: {fileID: 22100000, guid: 4e5c4a5175622ee45a3bef635e773a21, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -177,14 +177,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b900e1035c5f46a7ac29d1ecbc797146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Avatar>k__BackingField: {fileID: 21300000, guid: 92d554b5bc8feb9488698f021bd8992f, type: 3}
-  <Cost>k__BackingField: 120
+  <Avatar>k__BackingField: {fileID: 21300000, guid: 861933e51ab96be4b9985f3d5940f48b, type: 3}
+  <Cost>k__BackingField: 200
   _isFacingRight: 1
   _detectTargetLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  _timeBetweenAttacks: 1
-  _projectile: {fileID: 6523109013085720428, guid: 323522aad4ef43747bc7e2d24b327e11, type: 3}
+  _timeBetweenAttacks: 0.5
+  _projectile: {fileID: 6523109013085720428, guid: 029b32bc777f8924587da40d3dc40965, type: 3}
   _projectileSpawnPoint: {fileID: 5771154730522299203}
 --- !u!1 &8473598312834386295
 GameObject:
@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8473598312834386295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.558, y: 0.076, z: 0}
+  m_LocalPosition: {x: 0.86, y: 0.098, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8281373511138843780}

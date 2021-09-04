@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GunPlant
+  m_Controller: {fileID: 9100000, guid: 33f715c07b6a14d45be476d4633cd241, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: fad81ada4d3225c45a7b253762d7e551, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 24ff069258d086644858c03eae546c84, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2b59486ccc1b05d488e38053cc458f8c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 55cb0d69dd9131647aeefd0a77c19026, type: 2}

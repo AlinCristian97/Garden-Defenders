@@ -13,7 +13,7 @@ public abstract class CombatDefender : Defender
 
     [Header("Attacking")]
     [SerializeField] private LayerMask _detectTargetLayerMask;
-    [SerializeField] [Range(0.5f, 3f)] private float _timeBetweenAttacks = 1f;
+    [SerializeField] [Range(0.2f, 3f)] private float _timeBetweenAttacks = 1f;
     private float _nextAttack;
 
     #region FSM

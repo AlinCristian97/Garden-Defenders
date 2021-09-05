@@ -52,3 +52,6 @@ TagManager:
   - name: Energy Resource
     uniqueID: 779775739
     locked: 0
+  - name: Environment_Foreground
+    uniqueID: 3048898267
+    locked: 0

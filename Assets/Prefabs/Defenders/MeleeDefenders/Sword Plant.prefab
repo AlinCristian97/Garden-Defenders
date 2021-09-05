@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7500095433766022962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.36, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
+  m_LocalScale: {x: 0.55, y: 0.55, z: 1}
   m_Children: []
   m_Father: {fileID: 8281373511138843780}
   m_RootOrder: 0
@@ -182,4 +182,4 @@ MonoBehaviour:
   _detectTargetLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  _timeBetweenAttacks: 1
+  _timeBetweenAttacks: 0.8

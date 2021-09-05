@@ -82,12 +82,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFacingRight: 0
-  AttackRange: 0.2
-  TimeBetweenAttacks: 1
+  _movementSpeed: 0.75
   _detectTargetLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  _movementSpeed: 0.75
+  _timeBetweenAttacks: 1
 --- !u!1 &8579232297382163979
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +159,7 @@ SpriteRenderer:
   m_SortingLayerID: -1115713201
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: dcda81cc5733c8e4389a620e5ab4ef04, type: 3}
+  m_Sprite: {fileID: 6020194403208556713, guid: 772b3e8b5b84cfb48a3a3a5d47605250, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0

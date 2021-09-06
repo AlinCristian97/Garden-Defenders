@@ -15,4 +15,5 @@ MonoBehaviour:
   LevelWaves:
   - _attackers: []
   - _attackers: []
-  - _attackers: []
+  - _attackers:
+    - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}

@@ -1824,6 +1824,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7
       objectReference: {fileID: 0}
@@ -3875,6 +3883,14 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7
       objectReference: {fileID: 0}
@@ -4149,6 +4165,14 @@ PrefabInstance:
     - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4972,7 +4996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 915343302}
   m_Layer: 0
-  m_Name: Enemy Spawn Points Container
+  m_Name: Enemy Spawners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8780,6 +8804,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7
       objectReference: {fileID: 0}
@@ -10346,13 +10378,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7011da0cc9725cd46ae12ca76e407169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackerSpawnPoints:
+  _attackerSpawners:
   - {fileID: 342460100}
   - {fileID: 1969356237}
   - {fileID: 1429834597}
   - {fileID: 638367602}
   - {fileID: 690805979}
-  _timeBetweenWaves: 10
+  _playerPreparationTime: 5
 --- !u!1 &1750126595
 GameObject:
   m_ObjectHideFlags: 0
@@ -11672,6 +11704,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7210762989626317253, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}

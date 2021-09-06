@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelWaves:
   - _attackers:
-    - {fileID: 8106823622406518089, guid: c9a7df2474298a94995d3b837343eda9, type: 3}
-    - {fileID: 8106823622406518089, guid: c9a7df2474298a94995d3b837343eda9, type: 3}
+    - {fileID: 8106823622406518089, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
+    - {fileID: 8106823622406518089, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
   - _attackers:
     - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
-    - {fileID: 8106823622406518089, guid: b7b771d453fc4364e9bcc6e1016e8ad5, type: 3}
-  - _attackers: []
+    - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
+  - _attackers:
+    - {fileID: 8106823622406518089, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
+    - {fileID: 8106823622406518089, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}

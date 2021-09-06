@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a356e60583cc19247a8be09bdf0f5adf, type: 3}
   m_Name: Level1_LowerLane
   m_EditorClassIdentifier: 
-  <LevelWaves>k__BackingField: []
-  <LevelWaves>k__BackingField: []
+  LevelWaves:
+  - _attackers: []
+  - _attackers:
+    - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
+  - _attackers: []

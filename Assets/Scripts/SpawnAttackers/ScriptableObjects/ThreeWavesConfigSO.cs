@@ -11,6 +11,8 @@ namespace SpawnAttackers.ScriptableObjects
 
         private void OnValidate()
         {
+            if (LevelWaves == null) return;
+            
             if (LevelWaves.Length != WAVES_COUNT)
             {
                 Debug.LogWarning("Don't change the 'LevelWaves' field's array size!");

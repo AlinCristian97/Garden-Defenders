@@ -14,14 +14,7 @@ public class LanesGenerator : MonoBehaviour
     
     //TODO: Turn to const after adjustments
     [SerializeField] private Vector2 _gridOriginPosition;
-    
-    [Header("Enemy Spawn Points")]
-    [SerializeField] private GameObject _enemySpawnPointPrefab;
-    [SerializeField] private Transform _enemySpawnPointParent;
-    
-    //TODO: Turn to const after adjustments
-    [SerializeField] private float _enemySpawnPointXPosition;
-    
+
     [Header("Lawn Mower Spawn Points")]
     [SerializeField] private GameObject _lawnMowerSpawnPointPrefab;
     [SerializeField] private Transform _lawnMowerSpawnPointParent;
@@ -51,10 +44,6 @@ public class LanesGenerator : MonoBehaviour
 
                 offsetX += _tilePrefab.transform.localScale.x;
             }
-
-            //TODO: Find a cleaner way to get the wave's Y center point
-            GenerateEnemySpawnPoint(_tileParent.transform.GetChild(_tileParent.transform.childCount - 1).transform
-                .position.y);
             
             //TODO: Find a cleaner way to get the wave's Y center point
             GenerateLawnMowerSpawnPoint(_tileParent.transform.GetChild(_tileParent.transform.childCount - 1).transform
@@ -63,13 +52,7 @@ public class LanesGenerator : MonoBehaviour
             offsetY += _tilePrefab.transform.localScale.y;
         }
     }
-    
-    private void GenerateEnemySpawnPoint(float currentRowYCenterPosition)
-    {
-        Instantiate(_enemySpawnPointPrefab, new Vector3(_enemySpawnPointXPosition, currentRowYCenterPosition, 0f), 
-            Quaternion.identity, _enemySpawnPointParent);
-    }
-    
+
     private void GenerateLawnMowerSpawnPoint(float currentRowYCenterPosition)
     {
         float offsetX = GetLeftmostTileXPosition() - _tilePrefab.transform.localScale.x;

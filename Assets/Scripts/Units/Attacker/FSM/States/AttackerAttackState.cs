@@ -22,7 +22,7 @@ public class AttackerAttackState : AttackerState
             Attacker.TriggerAttackAnimation();
         }
 
-        if (!Attacker.HasTargetInAttackRange())
+        if (!Attacker.SetTargetInAttackRange())
         {
             Attacker.StateMachine.ChangeState(Attacker.States.WalkState);
         }

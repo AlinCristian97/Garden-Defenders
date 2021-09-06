@@ -10,11 +10,13 @@ public abstract class CombatDefender : Defender
     [SerializeField] private bool _isFacingRight;
     private Vector2 _facingDirection;
     protected abstract float AttackRange { get; }
+    [field:SerializeField] protected int Damage { get; private set; }
 
     [Header("Attacking")]
     [SerializeField] private LayerMask _detectTargetLayerMask;
     [SerializeField] [Range(0.2f, 3f)] private float _timeBetweenAttacks = 1f;
     private float _nextAttack;
+    protected Attacker Target;
 
     #region FSM
 
@@ -69,7 +71,7 @@ public abstract class CombatDefender : Defender
         Animator.SetTrigger("Attack");
     }
     
-    public bool HasTargetInAttackRange()
+    protected Collider2D GetTargetInAttackRange()
     {        
         Vector2 startPoint = GetColliderSideBoundCenterPoint();
         
@@ -77,11 +79,12 @@ public abstract class CombatDefender : Defender
         Vector2 direction = _facingDirection;
         Vector2 endPoint = startPoint + distance * direction;
         
-        
         RaycastHit2D hit = Physics2D.Linecast(startPoint, endPoint, _detectTargetLayerMask);
-        
-        return hit.collider != null;
+
+        return hit.collider == null ? null : hit.collider;
     }
+
+    public bool HasTargetInAttackRange() => GetTargetInAttackRange() != null;
     
     #region Animation Event Methods
 

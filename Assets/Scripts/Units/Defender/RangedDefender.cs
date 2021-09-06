@@ -11,7 +11,7 @@ public class RangedDefender : CombatDefender
     {
         get
         {
-            if (Camera.main != null && Tile != null) // remove Tile null check before prod
+            if (Camera.main != null)
             {
                 return Camera.main.orthographicSize * 2 - Tile.transform.position.x - Tile.transform.localScale.x;
             }
@@ -22,9 +22,7 @@ public class RangedDefender : CombatDefender
 
     protected override void Attack()
     {
-        //TODO: Make Projectile damage Attacker
-        Instantiate(_projectile, _projectileSpawnPoint.position, Quaternion.identity);
-        
-        Debug.Log("ranged attack");
+        Projectile projectile = Instantiate(_projectile, _projectileSpawnPoint.position, Quaternion.identity);
+        projectile.SetDamage(Damage);
     }
 }

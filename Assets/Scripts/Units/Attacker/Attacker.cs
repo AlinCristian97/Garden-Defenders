@@ -12,6 +12,8 @@ public class Attacker : Unit
     [SerializeField] private bool _isFacingRight;
     private Vector2 _facingDirection;
     [field:SerializeField] [Range(0.25f, 2f)] private float _movementSpeed = 1f;
+    [SerializeField] private int _damage;
+    
     public float MovementSpeed => _movementSpeed;
     private static float _attackRange => 0.2f;
     
@@ -19,6 +21,7 @@ public class Attacker : Unit
     [SerializeField] private LayerMask _detectTargetLayerMask;
     [SerializeField] [Range(0.5f, 3f)] private float _timeBetweenAttacks = 1f;
     private float _nextAttack;
+    private Defender _target;
 
     #region FSM
 
@@ -71,26 +74,29 @@ public class Attacker : Unit
         Animator.SetTrigger("Attack");
     }
     
-    public bool HasTargetInAttackRange()
+    public bool SetTargetInAttackRange()
     {        
         Vector2 startPoint = GetColliderSideBoundCenterPoint();
         
         float distance = _attackRange;
         Vector2 direction = _facingDirection;
         Vector2 endPoint = startPoint + distance * direction;
-        
-        
         RaycastHit2D hit = Physics2D.Linecast(startPoint, endPoint, _detectTargetLayerMask);
-        
-        return hit.collider != null;
+
+        if (hit.collider != null)
+        {
+            _target = hit.collider.GetComponent<Defender>();
+            return true;
+        }
+
+        return false;
     }
-    
 
     #region Animation Event Methods
 
     private void Attack()
     {
-        Debug.Log(name + "just attacked!");
+        _target.TakeDamage(_damage);
     }
 
     private void SetIdleState()
@@ -130,7 +136,7 @@ public class Attacker : Unit
 
     private void HandleDebug()
     {
-        if (!HasTargetInAttackRange())
+        if (!SetTargetInAttackRange())
         {
             _debugColor = Color.red;
         }

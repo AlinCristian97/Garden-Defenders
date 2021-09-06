@@ -18,12 +18,12 @@ public class AttackerIdleState : AttackerState
 
     public override void Execute()
     {
-        if (Attacker.HasTargetInAttackRange() && Attacker.AttackCooldownPassed())
+        if (Attacker.SetTargetInAttackRange() && Attacker.AttackCooldownPassed())
         {
             Attacker.StateMachine.ChangeState(Attacker.States.AttackState);
         }
 
-        if (!Attacker.HasTargetInAttackRange())
+        if (!Attacker.SetTargetInAttackRange())
         {
             Attacker.StateMachine.ChangeState(Attacker.States.WalkState);
         }

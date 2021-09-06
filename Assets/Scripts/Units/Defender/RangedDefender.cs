@@ -13,7 +13,8 @@ public class RangedDefender : CombatDefender
         {
             if (Camera.main != null)
             {
-                return Camera.main.orthographicSize * 2 - Tile.transform.position.x - Tile.transform.localScale.x;
+                float offset = 0.125f;
+                return Camera.main.orthographicSize * 2 - Tile.transform.position.x - Tile.transform.localScale.x - offset;
             }
 
             return 0f;

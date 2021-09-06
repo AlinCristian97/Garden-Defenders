@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using General.FSM;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Collider2D))]
 public class Attacker : Unit
@@ -15,9 +16,13 @@ public class Attacker : Unit
     [SerializeField] private int _damage;
     
     public float MovementSpeed => _movementSpeed;
-    private static float _attackRange => 0.2f;
-    
+
+
     [Header("Attacking")]
+    private float _attackRange;
+    private const float MIN_ATTACK_RANGE = 0.025f;
+    private const float MAX_ATTACK_RANGE = 0.4f;
+    private const float RANGE_START_OFFSET = 0.3f;
     [SerializeField] private LayerMask _detectTargetLayerMask;
     [SerializeField] [Range(0.5f, 3f)] private float _timeBetweenAttacks = 1f;
     private float _nextAttack;
@@ -34,9 +39,7 @@ public class Attacker : Unit
     private Color _debugColor = Color.gray;
 
     #endregion
-
     
-
     #region Unity Callbacks
 
     protected override void Awake()
@@ -50,6 +53,13 @@ public class Attacker : Unit
     private void Start()
     {
         StateMachine.Initialize(States.WalkState);
+        
+        SetRandomAttackRange();
+    }
+
+    private void SetRandomAttackRange()
+    {
+        _attackRange = Random.Range(MIN_ATTACK_RANGE, MAX_ATTACK_RANGE);
     }
 
     //TODO: Delete after testing
@@ -76,7 +86,7 @@ public class Attacker : Unit
     
     public bool SetTargetInAttackRange()
     {        
-        Vector2 startPoint = GetColliderSideBoundCenterPoint();
+        Vector2 startPoint = OffsetRayStartingPoint();
         
         float distance = _attackRange;
         Vector2 direction = _facingDirection;
@@ -90,6 +100,11 @@ public class Attacker : Unit
         }
 
         return false;
+    }
+
+    private Vector2 OffsetRayStartingPoint()
+    {
+        return transform.position + new Vector3(RANGE_START_OFFSET * _facingDirection.x, 0f, 0f);
     }
 
     #region Animation Event Methods
@@ -108,15 +123,6 @@ public class Attacker : Unit
 
     #region Helper Methods
 
-    private Vector2 GetColliderSideBoundCenterPoint()
-    {
-        Bounds bounds = Collider.bounds;
-        
-        var result = new Vector2(bounds.center.x + (bounds.extents.x * _facingDirection.x), bounds.center.y);
-    
-        return result;
-    }
-
     #endregion
     
     #region Debug Methods
@@ -125,7 +131,7 @@ public class Attacker : Unit
     {
         Collider = GetComponent<Collider2D>();
         
-        Vector2 startPoint = GetColliderSideBoundCenterPoint();
+        Vector2 startPoint = OffsetRayStartingPoint();
         
         float distance = _attackRange;
         Vector2 direction = _facingDirection;

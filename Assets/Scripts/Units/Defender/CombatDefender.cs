@@ -13,6 +13,7 @@ public abstract class CombatDefender : Defender
     [field:SerializeField] protected int Damage { get; private set; }
 
     [Header("Attacking")]
+    private const float RANGE_START_OFFSET = 0.3f;
     [SerializeField] private LayerMask _detectTargetLayerMask;
     [SerializeField] [Range(0.2f, 3f)] private float _timeBetweenAttacks = 1f;
     private float _nextAttack;
@@ -73,7 +74,7 @@ public abstract class CombatDefender : Defender
     
     protected Collider2D GetTargetInAttackRange()
     {        
-        Vector2 startPoint = GetColliderSideBoundCenterPoint();
+        Vector2 startPoint = OffsetRayStartingPoint();
         
         float distance = AttackRange;
         Vector2 direction = _facingDirection;
@@ -82,6 +83,11 @@ public abstract class CombatDefender : Defender
         RaycastHit2D hit = Physics2D.Linecast(startPoint, endPoint, _detectTargetLayerMask);
 
         return hit.collider == null ? null : hit.collider;
+    }
+    
+    private Vector2 OffsetRayStartingPoint()
+    {
+        return transform.position + new Vector3(RANGE_START_OFFSET * _facingDirection.x, 0f, 0f);
     }
 
     public bool HasTargetInAttackRange() => GetTargetInAttackRange() != null;
@@ -97,15 +103,6 @@ public abstract class CombatDefender : Defender
 
     #region Helper Methods
 
-    private Vector2 GetColliderSideBoundCenterPoint()
-    {
-        Bounds bounds = Collider.bounds;
-        
-        var result = new Vector2(bounds.center.x + (bounds.extents.x * _facingDirection.x), bounds.center.y);
-    
-        return result;
-    }
-
     #endregion
     
     #region Debug
@@ -114,7 +111,7 @@ public abstract class CombatDefender : Defender
     {
         Collider = GetComponent<Collider2D>();
         
-        Vector2 startPoint = GetColliderSideBoundCenterPoint();
+        Vector2 startPoint = OffsetRayStartingPoint();
         
         float distance = AttackRange;
         Vector2 direction = _facingDirection;

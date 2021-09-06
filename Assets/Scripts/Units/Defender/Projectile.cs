@@ -6,21 +6,38 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float _speed = 1f;
-    [SerializeField] private float _damage = 50f;
-
-
+    private int _damage = 50;
+    
+    private Attacker _target;
+    
     private void Update()
     {
-        transform.Translate(Vector2.right * (_speed * Time.deltaTime));
+        transform.Translate(Vector3.right * _speed * Time.deltaTime);
+
+        if (_target != null)
+        {
+            if (transform.position.x >= _target.transform.position.x)
+            {
+                _target.TakeDamage(_damage);
+                Destroy(gameObject);
+            }
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void SetDamage(int damageValue)
     {
-        
+        if (damageValue <= 0)
+        {
+            _damage = 0;
+        }
+        else
+        {
+            _damage = damageValue;
+        }
     }
 
-    private void DealDamage(float damage)
+    public void SetTarget(Attacker target)
     {
-        
+        _target = target;
     }
 }

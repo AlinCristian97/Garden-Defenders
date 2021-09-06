@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using General.FSM;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Collider2D))]
 public class Attacker : Unit
@@ -12,13 +13,20 @@ public class Attacker : Unit
     [SerializeField] private bool _isFacingRight;
     private Vector2 _facingDirection;
     [field:SerializeField] [Range(0.25f, 2f)] private float _movementSpeed = 1f;
-    public float MovementSpeed => _movementSpeed;
-    private static float _attackRange => 0.2f;
+    [SerializeField] private int _damage;
     
+    public float MovementSpeed => _movementSpeed;
+
+
     [Header("Attacking")]
+    private float _attackRange;
+    private const float MIN_ATTACK_RANGE = 0.025f;
+    private const float MAX_ATTACK_RANGE = 0.4f;
+    private const float RANGE_START_OFFSET = 0.3f;
     [SerializeField] private LayerMask _detectTargetLayerMask;
     [SerializeField] [Range(0.5f, 3f)] private float _timeBetweenAttacks = 1f;
     private float _nextAttack;
+    private Defender _target;
 
     #region FSM
 
@@ -31,9 +39,7 @@ public class Attacker : Unit
     private Color _debugColor = Color.gray;
 
     #endregion
-
     
-
     #region Unity Callbacks
 
     protected override void Awake()
@@ -47,6 +53,13 @@ public class Attacker : Unit
     private void Start()
     {
         StateMachine.Initialize(States.WalkState);
+        
+        SetRandomAttackRange();
+    }
+
+    private void SetRandomAttackRange()
+    {
+        _attackRange = Random.Range(MIN_ATTACK_RANGE, MAX_ATTACK_RANGE);
     }
 
     //TODO: Delete after testing
@@ -58,7 +71,7 @@ public class Attacker : Unit
     }
 
     #endregion
-    
+
     public void UpdateNextAttack()
     {
         _nextAttack = Time.time + _timeBetweenAttacks;
@@ -71,26 +84,34 @@ public class Attacker : Unit
         Animator.SetTrigger("Attack");
     }
     
-    public bool HasTargetInAttackRange()
+    public bool SetTargetInAttackRange()
     {        
-        Vector2 startPoint = GetColliderSideBoundCenterPoint();
+        Vector2 startPoint = OffsetRayStartingPoint();
         
         float distance = _attackRange;
         Vector2 direction = _facingDirection;
         Vector2 endPoint = startPoint + distance * direction;
-        
-        
         RaycastHit2D hit = Physics2D.Linecast(startPoint, endPoint, _detectTargetLayerMask);
-        
-        return hit.collider != null;
+
+        if (hit.collider != null)
+        {
+            _target = hit.collider.GetComponent<Defender>();
+            return true;
+        }
+
+        return false;
     }
-    
+
+    private Vector2 OffsetRayStartingPoint()
+    {
+        return transform.position + new Vector3(RANGE_START_OFFSET * _facingDirection.x, 0f, 0f);
+    }
 
     #region Animation Event Methods
 
     private void Attack()
     {
-        Debug.Log(name + "just attacked!");
+        _target.TakeDamage(_damage);
     }
 
     private void SetIdleState()
@@ -102,15 +123,6 @@ public class Attacker : Unit
 
     #region Helper Methods
 
-    private Vector2 GetColliderSideBoundCenterPoint()
-    {
-        Bounds bounds = Collider.bounds;
-        
-        var result = new Vector2(bounds.center.x + (bounds.extents.x * _facingDirection.x), bounds.center.y);
-    
-        return result;
-    }
-
     #endregion
     
     #region Debug Methods
@@ -119,7 +131,7 @@ public class Attacker : Unit
     {
         Collider = GetComponent<Collider2D>();
         
-        Vector2 startPoint = GetColliderSideBoundCenterPoint();
+        Vector2 startPoint = OffsetRayStartingPoint();
         
         float distance = _attackRange;
         Vector2 direction = _facingDirection;
@@ -130,7 +142,7 @@ public class Attacker : Unit
 
     private void HandleDebug()
     {
-        if (!HasTargetInAttackRange())
+        if (!SetTargetInAttackRange())
         {
             _debugColor = Color.red;
         }

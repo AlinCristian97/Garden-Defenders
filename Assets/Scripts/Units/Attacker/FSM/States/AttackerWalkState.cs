@@ -18,7 +18,7 @@ public class AttackerWalkState : AttackerState
 
     public override void Execute()
     {
-        if (Attacker.HasTargetInAttackRange())
+        if (Attacker.SetTargetInAttackRange())
         {
             Attacker.StateMachine.ChangeState(Attacker.States.AttackState);
         }

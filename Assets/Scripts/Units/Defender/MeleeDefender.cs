@@ -2,11 +2,11 @@
 
 public class MeleeDefender : CombatDefender
 {
-    protected override float AttackRange => 0.75f;
+    protected override float AttackRange => 0.65f;
 
     protected override void Attack()
     {
-        //TODO: Implement Attack logic
-        Debug.Log("melee attack");
+        Target = GetTargetInAttackRange().GetComponent<Attacker>();
+        Target.TakeDamage(Damage);
     }
 }

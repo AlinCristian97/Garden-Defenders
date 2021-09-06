@@ -1,8 +1,9 @@
 ﻿using System;
 using General.FSM;
+using HealthSystem.Interfaces;
 using UnityEngine;
 
-public abstract class Unit : MonoBehaviour
+public abstract class Unit : MonoBehaviour, IDamageable
 {
     #region Components
 
@@ -16,9 +17,9 @@ public abstract class Unit : MonoBehaviour
     public StateMachine StateMachine { get; private set; }
 
     #endregion
-    
-    
-    
+
+    [field: SerializeField] public int Health { get; private set; }
+
     #region Unity Callbacks
 
     protected virtual void Awake()
@@ -35,4 +36,20 @@ public abstract class Unit : MonoBehaviour
     }
 
     #endregion
+
+    public void TakeDamage(int amount)
+    {
+        Health -= amount;
+
+        if (Health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log(name + " has died.");
+        Destroy(gameObject);
+    }
 }

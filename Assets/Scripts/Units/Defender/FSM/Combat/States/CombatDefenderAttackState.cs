@@ -8,12 +8,10 @@ public class CombatDefenderAttackState : CombatDefenderState
 
     public override void Enter()
     {
-        Debug.Log("Enter: Attack");
     }
 
     public override void Exit()
     {
-        Debug.Log("Exit: Attack");
     }
 
     public override void Execute()
@@ -28,7 +26,5 @@ public class CombatDefenderAttackState : CombatDefenderState
         {
             CombatDefender.StateMachine.ChangeState(CombatDefender.States.IdleState);
         }
-
-        Debug.Log("Execute: Attack");
     }
 }

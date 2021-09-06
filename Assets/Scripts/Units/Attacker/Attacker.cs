@@ -61,7 +61,7 @@ public class Attacker : Unit
     }
 
     #endregion
-    
+
     public void UpdateNextAttack()
     {
         _nextAttack = Time.time + _timeBetweenAttacks;

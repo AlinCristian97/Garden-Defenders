@@ -7,29 +7,21 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float _speed = 1f;
     private int _damage = 50;
-
-
+    
+    private Attacker _target;
+    
     private void Update()
     {
-        transform.Translate(Vector2.right * (_speed * Time.deltaTime));
-    }
+        transform.Translate(Vector3.right * _speed * Time.deltaTime);
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Attacker"))
+        if (_target != null)
         {
-            if (other.GetComponent<Attacker>() != null)
+            if (transform.position.x >= _target.transform.position.x)
             {
-                other.GetComponent<Attacker>().TakeDamage(_damage);
-                
+                _target.TakeDamage(_damage);
                 Destroy(gameObject);
             }
         }
-    }
-
-    private void DealDamage(int damage)
-    {
-        
     }
 
     public void SetDamage(int damageValue)
@@ -42,5 +34,10 @@ public class Projectile : MonoBehaviour
         {
             _damage = damageValue;
         }
+    }
+
+    public void SetTarget(Attacker target)
+    {
+        _target = target;
     }
 }

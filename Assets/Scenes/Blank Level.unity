@@ -1223,11 +1223,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7923914264595662269, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.39
+      value: 6.07
       objectReference: {fileID: 0}
     - target: {fileID: 7923914264595662269, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7923914264595662269, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1264,6 +1264,10 @@ PrefabInstance:
     - target: {fileID: 7923914264595662271, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_Name
       value: Blue Zombie (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7923914264595662271, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8106823622406518089, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: _movementSpeed
@@ -1683,11 +1687,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7923914264595662269, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.39
+      value: 6.22
       objectReference: {fileID: 0}
     - target: {fileID: 7923914264595662269, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7923914264595662269, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1724,6 +1728,10 @@ PrefabInstance:
     - target: {fileID: 7923914264595662271, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_Name
       value: Blue Zombie (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7923914264595662271, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8106823622406518089, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: _movementSpeed
@@ -5192,11 +5200,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7923914264595662269, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.39
+      value: 6.35
       objectReference: {fileID: 0}
     - target: {fileID: 7923914264595662269, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7923914264595662269, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5233,6 +5241,10 @@ PrefabInstance:
     - target: {fileID: 7923914264595662271, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_Name
       value: Blue Zombie (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7923914264595662271, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8106823622406518089, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: _movementSpeed
@@ -12430,7 +12442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7923914264595662269, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.39
+      value: 6.45
       objectReference: {fileID: 0}
     - target: {fileID: 7923914264595662269, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12471,6 +12483,10 @@ PrefabInstance:
     - target: {fileID: 7923914264595662271, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: m_Name
       value: Blue Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 7923914264595662271, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8106823622406518089, guid: 494c9de2ce8cfea4ab62ca3c4fd6b0ec, type: 3}
       propertyPath: _movementSpeed

@@ -7,6 +7,8 @@ public class RangedDefender : CombatDefender
     [SerializeField] private Projectile _projectile;
     [SerializeField] private Transform _projectileSpawnPoint;
 
+    private Attacker _target;
+
     protected override float AttackRange
     {
         get
@@ -22,7 +24,10 @@ public class RangedDefender : CombatDefender
 
     protected override void Attack()
     {
+        _target = GetTargetInAttackRange().GetComponent<Attacker>();
+        
         Projectile projectile = Instantiate(_projectile, _projectileSpawnPoint.position, Quaternion.identity);
         projectile.SetDamage(Damage);
+        projectile.SetTarget(_target);
     }
 }

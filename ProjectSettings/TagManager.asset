@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Defender
   - Attacker
+  - Projectile
   layers:
   - Default
   - TransparentFX

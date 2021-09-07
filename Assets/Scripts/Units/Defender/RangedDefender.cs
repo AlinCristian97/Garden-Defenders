@@ -24,9 +24,17 @@ public class RangedDefender : CombatDefender
     protected override void Attack()
     {
         Target = GetTargetInAttackRange().GetComponent<Attacker>();
-        
+
         Projectile projectile = Instantiate(_projectile, _projectileSpawnPoint.position, Quaternion.identity);
         projectile.SetDamage(Damage);
         projectile.SetTarget(Target);
+    }
+
+    protected override void SetDeadState()
+    {
+        if (StateMachine.CurrentState != States.DeadState)
+        {
+            StateMachine.ChangeState(States.DeadState);
+        }
     }
 }

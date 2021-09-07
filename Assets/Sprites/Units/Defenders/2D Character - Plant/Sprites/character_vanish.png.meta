@@ -194,6 +194,9 @@ TextureImporter:
   - first:
       213: 3946212249003284976
     second: vanish_31
+  - first:
+      213: 7096511058813216098
+    second: vanish_32
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -974,6 +977,27 @@ TextureImporter:
       bones: []
       spriteID: 0f9d22ee123c3c630800000000000000
       internalID: 3946212249003284976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vanish_32
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2656135853fdb7260800000000000000
+      internalID: 7096511058813216098
       vertices: []
       indices: 
       edges: []

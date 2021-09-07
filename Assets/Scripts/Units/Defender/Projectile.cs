@@ -16,13 +16,15 @@ public class Projectile : MonoBehaviour
 
         if (_target != null)
         {
-            if (transform.position.x >= _target.transform.position.x)
+            if (!_target.IsDead && TargetReached())
             {
                 _target.TakeDamage(_damage);
                 Destroy(gameObject);
             }
         }
     }
+
+    private bool TargetReached() => transform.position.x >= _target.transform.position.x;
 
     public void SetDamage(int damageValue)
     {

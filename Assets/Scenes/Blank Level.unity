@@ -10384,7 +10384,7 @@ MonoBehaviour:
   - {fileID: 1429834597}
   - {fileID: 638367602}
   - {fileID: 690805979}
-  _playerPreparationTime: 5
+  _playerPreparationTime: 2
 --- !u!1 &1750126595
 GameObject:
   m_ObjectHideFlags: 0

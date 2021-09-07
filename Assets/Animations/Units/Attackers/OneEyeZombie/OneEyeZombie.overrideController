@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: OneEyeZombie
+  m_Controller: {fileID: 9100000, guid: 3d76999be46a05343817dc33087333b2, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2c1c3dff0bbb51f4e8bf341e5c7f3fde, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 55a88f64a64078a489e62a2cad3bfaa3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fb0fbb38e195aae47a1a6fe3ee89e02c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1708bfb106710794b8d44cc928808a67, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6ca2d8a9b92025c45a323b49d6f45bed, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fa72984c875c4fb49856a18ba443a4a7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3eb2b44ddc72ee0459e6dbc980a587a8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b3d79f899af7bec419e9a9528455732f, type: 2}

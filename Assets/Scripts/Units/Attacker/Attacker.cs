@@ -21,8 +21,8 @@ public class Attacker : Unit
     [Header("Attacking")]
     private float _attackRange;
     private const float MIN_ATTACK_RANGE = 0.025f;
-    private const float MAX_ATTACK_RANGE = 0.4f;
-    private const float RANGE_START_OFFSET = 0.3f;
+    private const float MAX_ATTACK_RANGE = 0.3f;
+    private const float RANGE_START_OFFSET = 0.2f;
     [SerializeField] private LayerMask _detectTargetLayerMask;
     [SerializeField] [Range(0.5f, 3f)] private float _timeBetweenAttacks = 1f;
     private float _nextAttack;

@@ -21,7 +21,15 @@ public class EnergyProducerDefender : Defender
         
         States = new EnergyProducerDefenderStates(this);
     }
-    
+
+    protected override void SetDeadState()
+    {
+        if (StateMachine.CurrentState != States.DeadState)
+        {
+            StateMachine.ChangeState(States.DeadState);
+        }
+    }
+
     private void Start()
     {
         StateMachine.Initialize(States.IdleState);

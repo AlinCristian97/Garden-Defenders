@@ -4,6 +4,7 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     private BuildManager _buildManager;
+    public BuildManager BuildManager => _buildManager;
 
     private bool IsEmpty => CurrentDefender == null;
     public Defender CurrentDefender => GetComponentInChildren<Defender>();

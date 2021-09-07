@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Level1_LowerLane
   m_EditorClassIdentifier: 
   LevelWaves:
-  - _attackers: []
+  - _attackers:
+    - {fileID: 8106823622406518089, guid: b7b771d453fc4364e9bcc6e1016e8ad5, type: 3}
+    - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
   - _attackers:
     - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
   - _attackers: []

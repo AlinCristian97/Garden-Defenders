@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using General.FSM;
 using HealthSystem.Interfaces;
 using UnityEngine;
@@ -19,6 +20,8 @@ public abstract class Unit : MonoBehaviour, IDamageable
     #endregion
 
     [field: SerializeField] public int Health { get; private set; }
+    public bool IsDead => Health <= 0;
+    private bool _isDying;
 
     #region Unity Callbacks
 
@@ -34,7 +37,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
     {
         StateMachine.CurrentState.Execute();
     }
-
+    
     #endregion
 
     public void TakeDamage(int amount)
@@ -43,13 +46,22 @@ public abstract class Unit : MonoBehaviour, IDamageable
 
         if (Health <= 0)
         {
-            Die();
+            Health = 0;
+
+            if (!_isDying)
+            {
+                StartDying();
+                _isDying = true;
+            }
         }
     }
 
-    private void Die()
+    private void StartDying()
     {
-        Debug.Log(name + " has died.");
-        Destroy(gameObject);
+        StartCoroutine(ProcessDeath());
     }
+
+    protected abstract IEnumerator ProcessDeath();
+
+    protected abstract void SetDeadState();
 }

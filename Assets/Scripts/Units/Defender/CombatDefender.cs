@@ -13,7 +13,7 @@ public abstract class CombatDefender : Defender
     [field:SerializeField] protected int Damage { get; private set; }
 
     [Header("Attacking")]
-    private const float RANGE_START_OFFSET = 0.3f;
+    private const float RANGE_START_OFFSET = 0.2f;
     [SerializeField] private LayerMask _detectTargetLayerMask;
     [SerializeField] [Range(0.2f, 3f)] private float _timeBetweenAttacks = 1f;
     private float _nextAttack;

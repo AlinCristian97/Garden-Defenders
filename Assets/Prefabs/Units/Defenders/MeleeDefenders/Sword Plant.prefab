@@ -244,8 +244,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03600266, y: 0}
-  m_Size: {x: 0.41537833, y: 0.97574645}
+  m_Offset: {x: 0.00036478043, y: 0}
+  m_Size: {x: 0.37901086, y: 0.97574645}
   m_Direction: 0
 --- !u!114 &7335197713600292125
 MonoBehaviour:
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3faef5bbde4143bb000f6f606ea5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Health>k__BackingField: 150
+  <Health>k__BackingField: 20
   <Avatar>k__BackingField: {fileID: 21300000, guid: 517739ec22959dd4898c62969f404e5f, type: 3}
   <Cost>k__BackingField: 60
   _isFacingRight: 1

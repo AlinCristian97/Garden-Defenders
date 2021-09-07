@@ -7,6 +7,18 @@ public class MeleeDefender : CombatDefender
     protected override void Attack()
     {
         Target = GetTargetInAttackRange().GetComponent<Attacker>();
-        Target.TakeDamage(Damage);
+
+        if (!Target.IsDead)
+        {
+            Target.TakeDamage(Damage);
+        }
+    }
+
+    protected override void SetDeadState()
+    {
+        if (StateMachine.CurrentState != States.DeadState)
+        {
+            StateMachine.ChangeState(States.DeadState);
+        }
     }
 }

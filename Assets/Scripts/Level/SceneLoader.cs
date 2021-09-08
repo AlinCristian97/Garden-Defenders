@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
-public class LevelLoader : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] private float _timeToWaitInSeconds;
+    [SerializeField] private float _waitingTime;
     private int _currentSceneIndex;
 
     private void Start()
@@ -20,7 +21,7 @@ public class LevelLoader : MonoBehaviour
 
     private IEnumerator WaitForTime()
     {
-        yield return new WaitForSeconds(_timeToWaitInSeconds);
+        yield return new WaitForSeconds(_waitingTime);
         LoadNextScene();
     }
     

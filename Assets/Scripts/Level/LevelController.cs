@@ -34,7 +34,7 @@ public class LevelController : MonoBehaviour
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(_waitToLoad);
         
-        FindObjectOfType<LevelLoader>().LoadNextScene();
+        FindObjectOfType<SceneLoader>().LoadNextScene();
     }
 
     public void LevelTimerFinished()

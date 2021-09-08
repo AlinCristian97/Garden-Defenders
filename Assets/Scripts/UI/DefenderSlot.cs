@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using General;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DefenderSlot : MonoBehaviour
 {
     public Defender Defender { get; set; }
+    private Button _button;
     
     [SerializeField] private Image _defenderAvatarImage;
     [SerializeField] private Text _defenderCostText;
@@ -21,6 +23,8 @@ public class DefenderSlot : MonoBehaviour
 
         //TODO: Think of a cleaner way to select the defender
         _buildManager = FindObjectOfType<BuildManager>();
+
+        _button = GetComponent<Button>();
     }
 
     private void Start()
@@ -29,10 +33,24 @@ public class DefenderSlot : MonoBehaviour
         _defenderCostText.text = Defender.Cost.ToString();
     }
 
+    //TODO: Don't use Update for this. Refactor!
+    private void Update()
+    {
+        if (PauseControl.GameIsPaused)
+        {
+            _button.interactable = false;
+        }
+        else
+        {
+            _button.interactable = true;
+        }
+    }
+
     public void SelectDefenderToBuild()
     {
         //TODO: Cancel if selects again same defender
-
+        if (PauseControl.GameIsPaused) return;
+        
         if (_buildManager.DefenderToBuild == Defender)
         {
             Debug.Log($"Deselected {Defender.name}");
@@ -44,7 +62,4 @@ public class DefenderSlot : MonoBehaviour
             Debug.Log($"Selected: {Defender.name}");
         }
     }
-
-    public float GetHeight() => _rectTransform.rect.height;
-    public float GetHalfHeight() => _rectTransform.rect.height / 2f;
 }

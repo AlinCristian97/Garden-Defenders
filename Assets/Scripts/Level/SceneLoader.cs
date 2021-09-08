@@ -22,13 +22,13 @@ public class SceneLoader : MonoBehaviour
     private IEnumerator WaitForTime()
     {
         yield return new WaitForSeconds(_waitingTime);
-        LoadNextScene();
+        LoadMainMenu();
     }
     
     public void LoadMainMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("StartScreen");
+        SceneManager.LoadScene("MainMenuScreen");
     }
     
     public void LoadOptionsMenu()
@@ -45,6 +45,16 @@ public class SceneLoader : MonoBehaviour
     public void LoadNextScene()
     {
         SceneManager.LoadScene(_currentSceneIndex + 1);
+    }
+
+    public void LoadSpecificLevel(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void LoadSelectLevelScene()
+    {
+        SceneManager.LoadScene("SelectLevelScreen");
     }
 
     public void LoadLoseScreen()

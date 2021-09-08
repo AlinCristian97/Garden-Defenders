@@ -4,27 +4,37 @@ namespace General
 {
     public class PauseControl : MonoBehaviour
     {
+        [SerializeField] private GameObject _panelCanvas;
+        
         public static bool GameIsPaused;
 
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.P))
             {
-                GameIsPaused = !GameIsPaused;
-                PauseGame();
+                if (GameIsPaused)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
             }
         }
 
         public void PauseGame ()
         {
-            if(GameIsPaused)
-            {
-                Time.timeScale = 0f;
-            }
-            else 
-            {
-                Time.timeScale = 1;
-            }
+            _panelCanvas.SetActive(true);
+            GameIsPaused = true;
+            Time.timeScale = 0f;
+        }
+
+        public void ResumeGame()
+        {
+            _panelCanvas.SetActive(false);
+            GameIsPaused = false;
+            Time.timeScale = 1;
         }
     }
 }

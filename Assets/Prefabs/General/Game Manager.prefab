@@ -75,7 +75,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6488745881742434705
 Transform:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 6488745883130792191}
   - component: {fileID: 6488745883130792189}
   - component: {fileID: 2098382306560891047}
-  - component: {fileID: 1749245393}
+  - component: {fileID: 939343633518856838}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bebf46acef3c9754097d21d451237bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sellPenaltyPercent: 0.3
   <SellButton>k__BackingField: {fileID: 0}
 --- !u!114 &6488745883130792189
 MonoBehaviour:
@@ -194,7 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60d2a8acde6a3644b3dfed2f25d28c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1749245393
+  _panelCanvas: {fileID: 0}
+--- !u!114 &939343633518856838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,9 +205,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6488745883130792177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5cb04b35319cd46911286c148b39f3, type: 3}
+  m_Script: {fileID: 11500000, guid: c0924affaf93be64db3d7ac001bad17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _balance: 500
 --- !u!1001 &6488745881187115157
 PrefabInstance:
   m_ObjectHideFlags: 0

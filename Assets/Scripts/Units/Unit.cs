@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using General.FSM;
+using General.Patterns.FSM;
 using HealthSystem.Interfaces;
 using UnityEngine;
 

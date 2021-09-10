@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using General;
+using Shop;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,18 +49,15 @@ public class DefenderSlot : MonoBehaviour
 
     public void SelectDefenderToBuild()
     {
-        //TODO: Cancel if selects again same defender
         if (PauseControl.GameIsPaused) return;
-        
+
         if (_buildManager.DefenderToBuild == Defender)
         {
-            Debug.Log($"Deselected {Defender.name}");
             _buildManager.DeselectDefenderToBuild();
         }
         else
         {
             _buildManager.SelectDefenderToBuild(Defender);
-            Debug.Log($"Selected: {Defender.name}");
         }
     }
 }

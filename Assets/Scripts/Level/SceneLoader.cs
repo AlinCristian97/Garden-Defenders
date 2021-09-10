@@ -28,14 +28,9 @@ public class SceneLoader : MonoBehaviour
     public void LoadMainMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenuScreen");
+        SceneManager.LoadScene("MainMenuScene");
     }
-    
-    public void LoadOptionsMenu()
-    {
-        SceneManager.LoadScene("OptionsScreen");
-    }
-    
+
     public void RestartScene()
     {
         Time.timeScale = 1;
@@ -52,14 +47,9 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void LoadSelectLevelScene()
+    public void LoadLoseScene()
     {
-        SceneManager.LoadScene("SelectLevelScreen");
-    }
-
-    public void LoadLoseScreen()
-    {
-        SceneManager.LoadScene("LoseScreen");
+        SceneManager.LoadScene("LoseScene");
     }
 
     public void QuitGame()

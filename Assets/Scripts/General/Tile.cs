@@ -1,4 +1,5 @@
 using System;
+using General;
 using UnityEngine;
 
 public class Tile : MonoBehaviour
@@ -16,6 +17,8 @@ public class Tile : MonoBehaviour
     
     private void OnMouseDown()
     {
+        if (PauseControl.GameIsPaused) return;
+       
         if (!IsEmpty)
         {
             if (CurrentDefender == _buildManager.DefenderToSell)

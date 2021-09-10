@@ -16,7 +16,5 @@ MonoBehaviour:
   - _attackers:
     - {fileID: 8106823622406518089, guid: 67ed15760cd7d6546b73533c65cd1fc1, type: 3}
     - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
-  - _attackers:
-    - {fileID: 0}
-    - {fileID: 0}
+  - _attackers: []
   - _attackers: []

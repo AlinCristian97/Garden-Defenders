@@ -42,8 +42,10 @@ public abstract class CombatDefender : Defender
         States = new CombatDefenderStates(this);
     }
     
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+        
         StateMachine.Initialize(States.IdleState);
     }
     

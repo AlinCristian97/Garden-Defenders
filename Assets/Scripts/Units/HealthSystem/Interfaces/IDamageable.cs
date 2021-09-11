@@ -2,7 +2,7 @@
 {
     public interface IDamageable
     {
-        int Health { get; }
+        int CurrentHealth { get; }
         void TakeDamage(int amount);
     }
 }

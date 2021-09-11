@@ -18,10 +18,12 @@ namespace UI
         
         private ISelectionManager _selectionManager;
         private IPauseManager _pauseManager;
+        private IShopManager _shopManager;
 
         private void OnEnable()
         {
             _pauseManager.AttachObserver(this);
+            _shopManager.AttachObserver(this);
         }
 
         private void Awake()
@@ -29,6 +31,7 @@ namespace UI
             _button = GetComponent<Button>();
             _selectionManager = SelectionManager.Instance;
             _pauseManager = PauseManager.Instance;
+            _shopManager = ShopManager.Instance;
         }
 
         private void Start()
@@ -40,9 +43,46 @@ namespace UI
         private void OnDisable()
         {
             _pauseManager.DetachObserver(this);
+            _shopManager.DetachObserver(this);
         }
         
         public void GetNotified()
+        {
+            HandleGamePausedChange();
+            HandleBalanceChange();
+        }
+
+        private void HandleBalanceChange()
+        {
+            if (Defender.Cost > _shopManager.Balance)
+            {
+                DeactivateButton();
+                GrayOut();
+            }
+            else
+            {
+                ActivateButton();
+                ColorIn();
+            }
+        }
+
+        private void GrayOut()
+        {
+            _defenderCostText.color = Color.gray;
+            _defenderAvatarImage.color = Color.gray;
+            
+            //TODO: Review / Add more gray-out logic and commit after
+        }
+
+        private void ColorIn()
+        {
+            _defenderCostText.color = Color.white;
+            _defenderAvatarImage.color = Color.white;
+            
+            //TODO: Review / Add more color-in logic and commit after
+        }
+
+        private void HandleGamePausedChange()
         {
             if (_pauseManager.GameIsPaused)
             {

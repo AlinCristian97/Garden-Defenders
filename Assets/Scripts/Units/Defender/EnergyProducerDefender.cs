@@ -30,8 +30,10 @@ public class EnergyProducerDefender : Defender
         }
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         StateMachine.Initialize(States.IdleState);
     }
 

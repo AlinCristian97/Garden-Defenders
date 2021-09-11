@@ -21,7 +21,7 @@ namespace General
 
         private void OnMouseDown()
         {
-            if (PauseControl.GameIsPaused) return;
+            if (PauseManager.Instance.GameIsPaused) return;
        
             if (!IsEmpty)
             {

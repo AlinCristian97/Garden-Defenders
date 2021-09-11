@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace General.Patterns.Singleton
 {
-    public class SelectionManager : MonoBehaviour, ISelectionManager, IObservable
+    public class SelectionManager : MonoBehaviour, ISelectionManager
     {
         #region Singleton
 

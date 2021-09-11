@@ -13,17 +13,15 @@ namespace UI
     
         [SerializeField] private Image _defenderAvatarImage;
         [SerializeField] private Text _defenderCostText;
-
-        [SerializeField] private RectTransform _rectTransform;
-
+        
         private ISelectionManager _selectionManager;
+        private IPauseManager _pauseManager;
 
         private void Awake()
         {
-            // _rectTransform = GetComponent<RectTransform>();
-
             _button = GetComponent<Button>();
             _selectionManager = SelectionManager.Instance;
+            _pauseManager = PauseManager.Instance;
         }
 
         private void Start()
@@ -35,7 +33,7 @@ namespace UI
         //TODO: Don't use Update for this. Refactor! (Observer)
         private void Update()
         {
-            if (PauseControl.GameIsPaused)
+            if (_pauseManager.GameIsPaused)
             {
                 _button.interactable = false;
             }
@@ -47,7 +45,7 @@ namespace UI
 
         public void SelectDefenderToBuild()
         {
-            if (PauseControl.GameIsPaused) return;
+            if (_pauseManager.GameIsPaused) return;
 
             if (_selectionManager.DefenderToBuild == Defender)
             {

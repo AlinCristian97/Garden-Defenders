@@ -1,4 +1,4 @@
-﻿using General.FSM;
+﻿using General.Patterns.FSM;
 
 public abstract class CombatDefenderState : State
 {

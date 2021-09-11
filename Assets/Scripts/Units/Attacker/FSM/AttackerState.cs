@@ -1,4 +1,5 @@
-﻿using General.FSM;
+﻿using General.Patterns.FSM;
+
 public abstract class AttackerState : State
 {
     protected readonly Attacker Attacker;

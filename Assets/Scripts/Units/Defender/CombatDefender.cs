@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using General.FSM;
 using UnityEngine;
 
 public abstract class CombatDefender : Defender
@@ -43,8 +42,10 @@ public abstract class CombatDefender : Defender
         States = new CombatDefenderStates(this);
     }
     
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+        
         StateMachine.Initialize(States.IdleState);
     }
     

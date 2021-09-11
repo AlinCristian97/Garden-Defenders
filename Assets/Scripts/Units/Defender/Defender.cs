@@ -1,4 +1,7 @@
 ﻿using System.Collections;
+using General;
+using General.Patterns.Singleton;
+using General.Patterns.Singleton.Interfaces;
 using UnityEngine;
 
 public abstract class Defender : Unit
@@ -7,11 +10,20 @@ public abstract class Defender : Unit
     [field:SerializeField] public int Cost { get; private set; }
     public Tile Tile => GetComponentInParent<Tile>();
 
+    private ISelectionManager _selectionManager;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        
+        _selectionManager = SelectionManager.Instance;
+    }
+
     protected override IEnumerator ProcessDeath()
     {
-        if (Tile.BuildManager.DefenderToSell == this)
+        if (_selectionManager.DefenderToSell == this)
         {
-            Tile.BuildManager.DeselectDefenderToSell();
+            _selectionManager.DeselectDefenderToSell();
         }
         
         Tile.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");

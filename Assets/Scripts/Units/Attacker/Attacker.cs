@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using General.FSM;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -57,9 +56,11 @@ public class Attacker : Unit
         //TODO: Find better way to get the Shadow
         _shadow = _visualsRenderer.gameObject.GetComponentsInChildren<SpriteRenderer>()[1];
     }
-    
-    private void Start()
+
+    protected override void Start()
     {
+        base.Start();
+        
         StateMachine.Initialize(States.WalkState);
         
         SetRandomAttackRange();

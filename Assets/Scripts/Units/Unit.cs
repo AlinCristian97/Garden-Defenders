@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using General.FSM;
+using General.Patterns.FSM;
 using HealthSystem.Interfaces;
 using UnityEngine;
 
@@ -19,8 +19,10 @@ public abstract class Unit : MonoBehaviour, IDamageable
 
     #endregion
 
-    [field: SerializeField] public int Health { get; private set; }
-    public bool IsDead => Health <= 0;
+    public int CurrentHealth { get; private set; }
+    [field: SerializeField] public int MaxHealth { get; private set; }
+    
+    public bool IsDead => CurrentHealth <= 0;
     private bool _isDying;
 
     #region Unity Callbacks
@@ -33,6 +35,11 @@ public abstract class Unit : MonoBehaviour, IDamageable
         StateMachine = new StateMachine();
     }
 
+    protected virtual void Start()
+    {
+        CurrentHealth = MaxHealth;
+    }
+
     protected virtual void Update()
     {
         StateMachine.CurrentState.Execute();
@@ -42,11 +49,11 @@ public abstract class Unit : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
-        Health -= amount;
+        CurrentHealth -= amount;
 
-        if (Health <= 0)
+        if (CurrentHealth <= 0)
         {
-            Health = 0;
+            CurrentHealth = 0;
 
             if (!_isDying)
             {

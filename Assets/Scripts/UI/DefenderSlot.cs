@@ -1,65 +1,121 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using General;
+using General.Patterns.Observer;
+using General.Patterns.Singleton;
+using General.Patterns.Singleton.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DefenderSlot : MonoBehaviour
+namespace UI
 {
-    public Defender Defender { get; set; }
-    private Button _button;
+    public class DefenderSlot : MonoBehaviour, IObserver
+    {
+        public Defender Defender { get; set; }
+        private Button _button;
     
-    [SerializeField] private Image _defenderAvatarImage;
-    [SerializeField] private Text _defenderCostText;
+        [SerializeField] private Image _defenderAvatarImage;
+        [SerializeField] private Text _defenderCostText;
+        
+        private ISelectionManager _selectionManager;
+        private IPauseManager _pauseManager;
+        private IShopManager _shopManager;
 
-    [SerializeField] private RectTransform _rectTransform;
-    private BuildManager _buildManager;
-
-
-    private void Awake()
-    {
-        // _rectTransform = GetComponent<RectTransform>();
-
-        //TODO: Think of a cleaner way to select the defender
-        _buildManager = FindObjectOfType<BuildManager>();
-
-        _button = GetComponent<Button>();
-    }
-
-    private void Start()
-    {
-        _defenderAvatarImage.sprite = Defender.Avatar;
-        _defenderCostText.text = Defender.Cost.ToString();
-    }
-
-    //TODO: Don't use Update for this. Refactor!
-    private void Update()
-    {
-        if (PauseControl.GameIsPaused)
+        private void OnEnable()
         {
-            _button.interactable = false;
+            _pauseManager.AttachObserver(this);
+            _shopManager.AttachObserver(this);
         }
-        else
+
+        private void Awake()
+        {
+            _button = GetComponent<Button>();
+            _selectionManager = SelectionManager.Instance;
+            _pauseManager = PauseManager.Instance;
+            _shopManager = ShopManager.Instance;
+        }
+
+        private void Start()
+        {
+            _defenderAvatarImage.sprite = Defender.Avatar;
+            _defenderCostText.text = Defender.Cost.ToString();
+        }
+
+        private void OnDisable()
+        {
+            _pauseManager.DetachObserver(this);
+            _shopManager.DetachObserver(this);
+        }
+        
+        public void GetNotified()
+        {
+            HandleGamePausedChange();
+            HandleBalanceChange();
+        }
+
+        private void HandleBalanceChange()
+        {
+            if (Defender.Cost > _shopManager.Balance)
+            {
+                DeactivateButton();
+                GrayOut();
+            }
+            else
+            {
+                ActivateButton();
+                ColorIn();
+            }
+        }
+
+        private void GrayOut()
+        {
+            _defenderCostText.color = Color.gray;
+            _defenderAvatarImage.color = Color.gray;
+            
+            //TODO: Review / Add more gray-out logic and commit after
+        }
+
+        private void ColorIn()
+        {
+            _defenderCostText.color = Color.white;
+            _defenderAvatarImage.color = Color.white;
+            
+            //TODO: Review / Add more color-in logic and commit after
+        }
+
+        private void HandleGamePausedChange()
+        {
+            if (_pauseManager.GameIsPaused)
+            {
+                DeactivateButton();
+            }
+            else
+            {
+                ActivateButton();
+            }
+        }
+
+        private void ActivateButton()
         {
             _button.interactable = true;
         }
-    }
 
-    public void SelectDefenderToBuild()
-    {
-        //TODO: Cancel if selects again same defender
-        if (PauseControl.GameIsPaused) return;
-        
-        if (_buildManager.DefenderToBuild == Defender)
+        private void DeactivateButton()
         {
-            Debug.Log($"Deselected {Defender.name}");
-            _buildManager.DeselectDefenderToBuild();
+            _button.interactable = false;
         }
-        else
+
+        public void SelectDefenderToBuild()
         {
-            _buildManager.SelectDefenderToBuild(Defender);
-            Debug.Log($"Selected: {Defender.name}");
+            if (_pauseManager.GameIsPaused) return;
+
+            if (_selectionManager.DefenderToBuild == Defender)
+            {
+                _selectionManager.DeselectDefenderToBuild();
+            }
+            else
+            {
+                _selectionManager.SelectDefenderToBuild(Defender);
+            }
         }
     }
 }

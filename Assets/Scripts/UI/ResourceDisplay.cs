@@ -1,6 +1,7 @@
 using System;
 using General.Patterns.Observer;
-using Shop;
+using General.Patterns.Singleton;
+using General.Patterns.Singleton.Interfaces;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,13 +12,16 @@ namespace UI
     {
         [SerializeField] private TextMeshProUGUI _amountText;
 
+        private IShopManager _shopManager;
+        
         private void OnEnable()
         {
-            ShopManager.Instance.AttachObserver(this);
+            _shopManager.AttachObserver(this);
         }
 
         private void Awake()
         {
+            _shopManager = ShopManager.Instance;
             UpdateBalanceText();
         }
 
@@ -28,12 +32,12 @@ namespace UI
 
         private void OnDisable()
         {
-            ShopManager.Instance.DetachObserver(this);
+            _shopManager.DetachObserver(this);
         }
 
         private void UpdateBalanceText()
         {
-            _amountText.text = ShopManager.Instance.Balance.ToString();
+            _amountText.text = _shopManager.Balance.ToString();
         }
     }
 }

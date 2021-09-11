@@ -1,44 +1,49 @@
 using System;
-using General;
+using General.Patterns.Singleton;
+using General.Patterns.Singleton.Interfaces;
 using UnityEngine;
 
-public class Tile : MonoBehaviour
+namespace General
 {
-    private BuildManager _buildManager;
-    public BuildManager BuildManager => _buildManager;
+    public class Tile : MonoBehaviour
+    {
+        private bool IsEmpty => CurrentDefender == null;
+        public Defender CurrentDefender => GetComponentInChildren<Defender>();
 
-    private bool IsEmpty => CurrentDefender == null;
-    public Defender CurrentDefender => GetComponentInChildren<Defender>();
-    
-    private void Awake()
-    {
-        _buildManager = FindObjectOfType<BuildManager>();
-    }
-    
-    private void OnMouseDown()
-    {
-        if (PauseControl.GameIsPaused) return;
-       
-        if (!IsEmpty)
+        private ISelectionManager _selectionManager;
+        private IBuildManager _buildManager;
+
+        private void Awake()
         {
-            if (CurrentDefender == _buildManager.DefenderToSell)
+            _selectionManager = SelectionManager.Instance;
+            _buildManager = BuildManager.Instance;
+        }
+
+        private void OnMouseDown()
+        {
+            if (PauseControl.GameIsPaused) return;
+       
+            if (!IsEmpty)
             {
-                _buildManager.DeselectDefenderToSell();
+                if (CurrentDefender == _selectionManager.DefenderToSell)
+                {
+                    _selectionManager.DeselectDefenderToSell();
+                }
+                else
+                {
+                    _selectionManager.SelectDefenderToSell(CurrentDefender);
+                }
             }
             else
             {
-                _buildManager.SelectDefenderToSell(CurrentDefender);
-            }
-        }
-        else
-        {
-            if (_buildManager.DefenderToSell != null)
-            {
-                _buildManager.DeselectDefenderToSell();
-            }
-            else if (IsEmpty && _buildManager.DefenderToBuild != null)
-            {
-                _buildManager.BuildDefender(transform.position, transform);
+                if (_selectionManager.DefenderToSell != null)
+                {
+                    _selectionManager.DeselectDefenderToSell();
+                }
+                else if (_selectionManager.DefenderToBuild != null)
+                {
+                    _buildManager.BuildDefender(transform.position, transform);
+                }
             }
         }
     }

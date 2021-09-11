@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using General.Patterns.Observer;
+using General.Patterns.Singleton.Interfaces;
 using UnityEngine;
 
-namespace Shop
+namespace General.Patterns.Singleton
 {
-    public class ShopManager : MonoBehaviour, IObservable
+    public class ShopManager : MonoBehaviour, IShopManager
     {
         #region Singleton
 

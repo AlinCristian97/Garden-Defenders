@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace General
@@ -23,7 +24,12 @@ namespace General
             }
         }
 
-        public void PauseGame ()
+        private void Start()
+        {
+            ResumeGame();
+        }
+
+        public void PauseGame()
         {
             _panelCanvas.SetActive(true);
             GameIsPaused = true;

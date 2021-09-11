@@ -32,7 +32,7 @@ namespace UI
             _defenderCostText.text = Defender.Cost.ToString();
         }
 
-        //TODO: Don't use Update for this. Refactor!
+        //TODO: Don't use Update for this. Refactor! (Observer)
         private void Update()
         {
             if (PauseControl.GameIsPaused)

@@ -31,9 +31,6 @@ namespace General.Patterns.Singleton
         
         [SerializeField] private float _sellPenaltyPercent = 0.3f;
 
-        //TODO: Move this out of here
-        [field:SerializeField] public Button SellButton { get; private set; }
-
         private ISelectionManager _selectionManager;
         private IShopManager _shopManager;
 

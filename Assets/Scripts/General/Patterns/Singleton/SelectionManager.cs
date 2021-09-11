@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using General.Patterns.Observer;
 using General.Patterns.Singleton.Interfaces;
 using UnityEngine;
 
 namespace General.Patterns.Singleton
 {
-    public class SelectionManager : MonoBehaviour, ISelectionManager
+    public class SelectionManager : MonoBehaviour, ISelectionManager, IObservable
     {
         #region Singleton
 
@@ -28,9 +30,49 @@ namespace General.Patterns.Singleton
         }
 
         #endregion
+
+        #region Observer
+
+        public List<IObserver> Observers { get; private set; } = new List<IObserver>();
+
+        public void AttachObserver(IObserver observer)
+        {
+            Observers.Add(observer);
+        }
+
+        public void DetachObserver(IObserver observer)
+        {
+            Observers.Remove(observer);
+        }
+
+        public void NotifyObservers()
+        {
+            if (Observers.Count > 0)
+            {
+                foreach (IObserver observer in Observers)
+                {
+                    observer.GetNotified();
+                }
+            }
+        }
+
+        #endregion
         
         public Defender DefenderToBuild { get; private set; }
-        public Defender DefenderToSell { get; private set; }
+        private Defender _defenderToSell;
+        
+        public Defender DefenderToSell
+        {
+            get
+            {
+                return _defenderToSell;
+            }
+            private set
+            {
+                _defenderToSell = value;
+                NotifyObservers();
+            }
+        }
 
         private IShopManager _shopManager;
         
@@ -50,7 +92,6 @@ namespace General.Patterns.Singleton
             }
         
             DefenderToBuild = defender;
-            Debug.Log($"Selected: {DefenderToBuild.name}");
         }
 
         public void SelectDefenderToSell(Defender defender)
@@ -61,22 +102,16 @@ namespace General.Patterns.Singleton
             }
 
             DefenderToSell = defender;
-            
-            //TODO: Move this out of here
-            BuildManager.Instance.SellButton.gameObject.SetActive(true);
         }
         
         public void DeselectDefenderToBuild()
         {
-            Debug.Log($"Deselected {DefenderToBuild}");
             DefenderToBuild = null;
         }
 
         public void DeselectDefenderToSell()
         {
             DefenderToSell = null;
-            
-            //TODO: Move this out of here
-            BuildManager.Instance.SellButton.gameObject.SetActive(false);        }
+        }
     }
 }

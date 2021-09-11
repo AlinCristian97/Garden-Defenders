@@ -22,6 +22,10 @@ namespace UI
         private void Awake()
         {
             _shopManager = ShopManager.Instance;
+        }
+
+        private void Start()
+        {
             UpdateBalanceText();
         }
 

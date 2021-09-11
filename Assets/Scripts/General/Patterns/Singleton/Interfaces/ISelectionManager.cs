@@ -1,6 +1,8 @@
-﻿namespace General.Patterns.Singleton.Interfaces
+﻿using General.Patterns.Observer;
+
+namespace General.Patterns.Singleton.Interfaces
 {
-    public interface ISelectionManager
+    public interface ISelectionManager : IObservable
     {
         Defender DefenderToBuild { get; }
         Defender DefenderToSell { get; }

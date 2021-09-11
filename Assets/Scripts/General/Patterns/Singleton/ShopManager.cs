@@ -32,23 +32,23 @@ namespace General.Patterns.Singleton
 
         #region Observer
 
-        private readonly List<IObserver> _observers = new List<IObserver>();
+        public List<IObserver> Observers { get; private set; } = new List<IObserver>();
 
         public void AttachObserver(IObserver observer)
         {
-            _observers.Add(observer);
+            Observers.Add(observer);
         }
 
         public void DetachObserver(IObserver observer)
         {
-            _observers.Remove(observer);
+            Observers.Remove(observer);
         }
 
         public void NotifyObservers()
         {
-            if (_observers.Count > 0)
+            if (Observers.Count > 0)
             {
-                foreach (IObserver observer in _observers)
+                foreach (IObserver observer in Observers)
                 {
                     observer.GetNotified();
                 }

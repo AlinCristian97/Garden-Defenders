@@ -1,4 +1,6 @@
+using System;
 using General;
+using General.Patterns.Observer;
 using General.Patterns.Singleton;
 using General.Patterns.Singleton.Interfaces;
 using UnityEngine;
@@ -6,7 +8,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class DefenderSlot : MonoBehaviour
+    public class DefenderSlot : MonoBehaviour, IObserver
     {
         public Defender Defender { get; set; }
         private Button _button;
@@ -16,6 +18,11 @@ namespace UI
         
         private ISelectionManager _selectionManager;
         private IPauseManager _pauseManager;
+
+        private void OnEnable()
+        {
+            _pauseManager.AttachObserver(this);
+        }
 
         private void Awake()
         {
@@ -30,17 +37,31 @@ namespace UI
             _defenderCostText.text = Defender.Cost.ToString();
         }
 
-        //TODO: Don't use Update for this. Refactor! (Observer)
-        private void Update()
+        private void OnDisable()
+        {
+            _pauseManager.DetachObserver(this);
+        }
+        
+        public void GetNotified()
         {
             if (_pauseManager.GameIsPaused)
             {
-                _button.interactable = false;
+                DeactivateButton();
             }
             else
             {
-                _button.interactable = true;
+                ActivateButton();
             }
+        }
+
+        private void ActivateButton()
+        {
+            _button.interactable = true;
+        }
+
+        private void DeactivateButton()
+        {
+            _button.interactable = false;
         }
 
         public void SelectDefenderToBuild()

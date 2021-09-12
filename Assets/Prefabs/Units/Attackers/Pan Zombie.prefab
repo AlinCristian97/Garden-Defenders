@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d3d2508bfb6fc49b3c8582dd52df8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Health>k__BackingField: 110
+  <MaxHealth>k__BackingField: 80
   _isFacingRight: 0
   _movementSpeed: 0.75
   _damage: 10

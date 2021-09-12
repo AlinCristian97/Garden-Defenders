@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 300
   <Avatar>k__BackingField: {fileID: 21300000, guid: 03bc0c4f0aecda941b00f678d1f1a4ec, type: 3}
-  <Cost>k__BackingField: 80
+  <Cost>k__BackingField: 380
   _isFacingRight: 1
   <Damage>k__BackingField: 40
   _detectTargetLayerMask:

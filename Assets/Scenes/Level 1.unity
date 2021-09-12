@@ -13471,6 +13471,10 @@ PrefabInstance:
       propertyPath: _panelCanvas
       value: 
       objectReference: {fileID: 439909800}
+    - target: {fileID: 6488745881742434706, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6488745883130792176, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -13519,9 +13523,65 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6488745883130792189, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: _numberOfWaves
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6488745883130792189, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: _timeBetweenWaves
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6488745883130792191, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: <SellButton>k__BackingField
       value: 
       objectReference: {fileID: 37324444}
+    - target: {fileID: 7015179876820185771, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: _maxTimeBetweenSpawns
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015179876820185771, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: <SpawnConfig>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: ea7dae7adf438b74a8bef46b60219f70, type: 2}
+    - target: {fileID: 7015179877040363778, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: _maxTimeBetweenSpawns
+      value: 2.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015179877040363778, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: _minTimeBetweenSpawns
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015179877040363778, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: <SpawnConfig>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: b6adb1cbbf185ce42b931b0de64b99eb, type: 2}
+    - target: {fileID: 7015179877119738649, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: _maxTimeBetweenSpawns
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015179877119738649, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: _minTimeBetweenSpawns
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015179877119738649, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: <SpawnConfig>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 7654177acb950364d8d06099d63b2873, type: 2}
+    - target: {fileID: 7015179877640353808, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: <SpawnConfig>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ca445f8e589810459aa906764f4c06a, type: 2}
+    - target: {fileID: 7015179878179851960, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: _maxTimeBetweenSpawns
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015179878179851960, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: _minTimeBetweenSpawns
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015179878179851960, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: <SpawnConfig>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: b6e3110dfec42bd4eaabeaa1bd7d3198, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}

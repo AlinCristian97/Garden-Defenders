@@ -9,16 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a356e60583cc19247a8be09bdf0f5adf, type: 3}
+  m_Script: {fileID: 11500000, guid: 08bad9446a48a9f49a67769d9cdc1234, type: 3}
   m_Name: Level1_HigherLane
   m_EditorClassIdentifier: 
-  LevelWaves:
-  - _attackers:
+  Waves:
+  - <AttackersToSpawn>k__BackingField:
     - {fileID: 8106823622406518089, guid: c9a7df2474298a94995d3b837343eda9, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 8106823622406518089, guid: c9a7df2474298a94995d3b837343eda9, type: 3}
+    - {fileID: 0}
+  - <AttackersToSpawn>k__BackingField:
+    - {fileID: 8106823622406518089, guid: b7b771d453fc4364e9bcc6e1016e8ad5, type: 3}
+    - {fileID: 8106823622406518089, guid: b7b771d453fc4364e9bcc6e1016e8ad5, type: 3}
+    - {fileID: 8106823622406518089, guid: b7b771d453fc4364e9bcc6e1016e8ad5, type: 3}
+  - <AttackersToSpawn>k__BackingField:
     - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
-  - _attackers:
-    - {fileID: 8106823622406518089, guid: 67ed15760cd7d6546b73533c65cd1fc1, type: 3}
     - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
-  - _attackers:
-    - {fileID: 8106823622406518089, guid: 67ed15760cd7d6546b73533c65cd1fc1, type: 3}
+    - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
     - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}

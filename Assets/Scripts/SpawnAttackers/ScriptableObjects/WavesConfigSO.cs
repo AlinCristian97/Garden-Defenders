@@ -3,10 +3,9 @@ using UnityEngine;
 
 namespace SpawnAttackers.ScriptableObjects
 {
-    public abstract class WavesConfigSO : ScriptableObject
+    [CreateAssetMenu(fileName = "Waves Config", menuName = "Waves Config", order = 0)]
+    public class WavesConfigSO : ScriptableObject
     {
-        public AttackersArray[] LevelWaves;
-        
-        
+        public Wave[] Waves;
     }
 }

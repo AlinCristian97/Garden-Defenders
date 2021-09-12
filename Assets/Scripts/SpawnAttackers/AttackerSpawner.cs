@@ -9,28 +9,55 @@ namespace SpawnAttackers
 {
     public class AttackerSpawner : MonoBehaviour
     {
-        [SerializeField] private WavesConfigSO _spawnConfig;
+        [field:SerializeField] public WavesConfigSO SpawnConfig { get; private set; }
+        
+        [SerializeField] private float _minTimeBetweenSpawns = 1f;
+        [SerializeField] private float _maxTimeBetweenSpawns = 3f;
 
-        private float _timeBetweenWaves = 20f;
-        private float _minTimeBetweenSpawns = 2f;
-        private float _maxTimeBetweenSpawns = 4f;
-
-        public IEnumerator StartSpawningWaves()
+        public IEnumerator SpawnWave(int waveNumber)
         {
-            foreach (AttackersArray spawnConfigLevelWave in _spawnConfig.LevelWaves)
+            if (SpawnConfig != null)
             {
-                foreach (Attacker attacker in _spawnConfig.LevelWaves[Array.IndexOf(_spawnConfig.LevelWaves, spawnConfigLevelWave)])
+                if (SpawnConfig.Waves.Length == 0)
                 {
-                    float timeBetweenSpawns = Random.Range(_minTimeBetweenSpawns, _maxTimeBetweenSpawns);
-                    
-                    Instantiate(attacker, transform.position, Quaternion.identity, transform);
-                    yield return new WaitForSeconds(timeBetweenSpawns);
-
+                    Debug.Log($"{name}'s SpawnConfig's number of Waves is set to 0. Wave spawning stopped.");
+                    yield break;
                 }
                 
-                yield return new WaitForSeconds(_timeBetweenWaves);
-            }
+                if (waveNumber >= SpawnConfig.Waves.Length)
+                {
+                    Debug.Log($"{name}'s SpawnConfig's number of Waves is less than mentioned in the SpawnManager. Wave spawning stopped.");
+                    yield break;
+                }
+                
+                if (SpawnConfig.Waves[waveNumber].Length == 0)
+                {
+                    Debug.Log($"{name}'s SpawnConfig's wave number {waveNumber + 1} has no attackers configured. Wave spawning stopped.");
+                    yield break;
+                }
+                
+                int attackerSlotCount = 0;
+                foreach (Attacker attacker in SpawnConfig.Waves[waveNumber])
+                {
+                    attackerSlotCount++;
 
+                    if (attacker == null)
+                    {
+                        Debug.LogWarning($"{name}'s SpawnConfig's wave {waveNumber + 1}, attacker slot {attackerSlotCount} " + 
+                                         " is Empty. Skipping iteration.");
+                        continue;
+                    }
+                    
+                    float timeBetweenSpawns = Random.Range(_minTimeBetweenSpawns, _maxTimeBetweenSpawns);
+            
+                    Instantiate(attacker, transform.position, Quaternion.identity, transform);
+                    yield return new WaitForSeconds(timeBetweenSpawns);
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"{name} is missing a Spawn Config!");
+            }
         }
     }
 }

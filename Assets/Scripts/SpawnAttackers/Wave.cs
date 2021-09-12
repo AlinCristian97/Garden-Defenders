@@ -1,26 +1,29 @@
-using System;
+﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SpawnAttackers
 {
     [Serializable]
-    public class AttackersArray : IEnumerable
+    public class Wave
     {
-        [SerializeField] private Attacker[] _attackers;
-
+        [field:SerializeField] public Attacker[] AttackersToSpawn { get; set; }
+        
         public IEnumerator GetEnumerator()
         {
-            return new AttackersEnumerator(_attackers);
+            return new WavesEnumerator(AttackersToSpawn);
         }
+
+        public int Length => AttackersToSpawn.Length;
     }
     
-    public class AttackersEnumerator : IEnumerator
+    public class WavesEnumerator : IEnumerator
     {
         private readonly Attacker[] _attackers;
         private int _position = -1;
 
-        public AttackersEnumerator(Attacker[] list)
+        public WavesEnumerator(Attacker[] list)
         {
             _attackers = list;
         }

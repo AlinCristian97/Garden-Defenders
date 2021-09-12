@@ -44,4 +44,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnConfig: {fileID: 0}
-  _timeBetweenSpawns: 10
+  _listOfInts: 
+  _wave:
+  - <_attackersToSpawn>k__BackingField:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - <_attackersToSpawn>k__BackingField: []
+  - <_attackersToSpawn>k__BackingField: []
+  - <_attackersToSpawn>k__BackingField: []
+  - <_attackersToSpawn>k__BackingField: []
+  - <_attackersToSpawn>k__BackingField: []
+  - <_attackersToSpawn>k__BackingField: []
+  - <_attackersToSpawn>k__BackingField: []
+  - <_attackersToSpawn>k__BackingField: []
+  - <_attackersToSpawn>k__BackingField: []

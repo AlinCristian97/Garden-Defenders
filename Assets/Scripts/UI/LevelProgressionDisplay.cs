@@ -11,7 +11,7 @@ namespace UI
     public class LevelProgressionDisplay : MonoBehaviour
     {
         [SerializeField] private Slider _slider;
-        [SerializeField] private float _refreshRate = 0.1f;
+        [SerializeField] private float _refreshRate = 0.5f;
 
         private float _durationInSeconds;
         private ISpawnManager _spawnManager;
@@ -35,7 +35,7 @@ namespace UI
         {
             while (true)
             {
-                _slider.value = _durationInSeconds - Time.time + _spawnManager.StartDelay;
+                _slider.value = Time.time - _spawnManager.StartDelay;
                 yield return new WaitForSeconds(_refreshRate);
             }
         }
@@ -43,7 +43,7 @@ namespace UI
         private void InitializeSlider()
         {
             _slider.maxValue = _durationInSeconds;
-            _slider.value = _slider.maxValue;
+            _slider.value = _slider.minValue;
         }
     }
 }

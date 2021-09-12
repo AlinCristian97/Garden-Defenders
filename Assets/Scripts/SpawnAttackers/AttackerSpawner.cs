@@ -9,35 +9,35 @@ namespace SpawnAttackers
 {
     public class AttackerSpawner : MonoBehaviour
     {
-        [field:SerializeField] public WavesConfigSO SpawnConfig { get; private set; }
-        
+        [SerializeField] private WavesConfigSO _spawnConfig;
+
         [SerializeField] private float _minTimeBetweenSpawns = 1f;
         [SerializeField] private float _maxTimeBetweenSpawns = 3f;
 
         public IEnumerator SpawnWave(int waveNumber)
         {
-            if (SpawnConfig != null)
+            if (_spawnConfig != null)
             {
-                if (SpawnConfig.Waves.Length == 0)
+                if (_spawnConfig.Waves.Length == 0)
                 {
                     Debug.Log($"{name}'s SpawnConfig's number of Waves is set to 0. Wave spawning stopped.");
                     yield break;
                 }
                 
-                if (waveNumber >= SpawnConfig.Waves.Length)
+                if (waveNumber >= _spawnConfig.Waves.Length)
                 {
                     Debug.Log($"{name}'s SpawnConfig's number of Waves is less than mentioned in the SpawnManager. Wave spawning stopped.");
                     yield break;
                 }
                 
-                if (SpawnConfig.Waves[waveNumber].Length == 0)
+                if (_spawnConfig.Waves[waveNumber].Length == 0)
                 {
                     Debug.Log($"{name}'s SpawnConfig's wave number {waveNumber + 1} has no attackers configured. Wave spawning stopped.");
                     yield break;
                 }
                 
                 int attackerSlotCount = 0;
-                foreach (Attacker attacker in SpawnConfig.Waves[waveNumber])
+                foreach (Attacker attacker in _spawnConfig.Waves[waveNumber])
                 {
                     attackerSlotCount++;
 

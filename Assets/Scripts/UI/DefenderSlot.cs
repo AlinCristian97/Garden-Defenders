@@ -3,6 +3,7 @@ using General;
 using General.Patterns.Observer;
 using General.Patterns.Singleton;
 using General.Patterns.Singleton.Interfaces;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,7 @@ namespace UI
         private Button _button;
     
         [SerializeField] private Image _defenderAvatarImage;
-        [SerializeField] private Text _defenderCostText;
+        [SerializeField] private TextMeshProUGUI _defenderCostText;
         
         private ISelectionManager _selectionManager;
         private IPauseManager _pauseManager;
@@ -70,7 +71,7 @@ namespace UI
         {
             _defenderCostText.color = Color.gray;
             _defenderAvatarImage.color = Color.gray;
-            
+
             //TODO: Review / Add more gray-out logic and commit after
         }
 
@@ -78,7 +79,7 @@ namespace UI
         {
             _defenderCostText.color = Color.white;
             _defenderAvatarImage.color = Color.white;
-            
+
             //TODO: Review / Add more color-in logic and commit after
         }
 

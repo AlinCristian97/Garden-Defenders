@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6488745881459754478}
   m_Layer: 0
-  m_Name: Lawn Mower Spawn Points Container
+  m_Name: Lawn Mowers Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6488745881742434705
 Transform:
   m_ObjectHideFlags: 0
@@ -149,8 +149,9 @@ MonoBehaviour:
   _tilePrefab: {fileID: 7155743954439366230, guid: 69b68ef39a863294ebbd943e77f2531f, type: 3}
   _tileParent: {fileID: 6488745881499545375}
   _gridOriginPosition: {x: -3, y: -2}
-  _lawnMowerSpawnPointPrefab: {fileID: 6226846410801341675, guid: 22eadd0e17597e54eb92be44b2c4e9d5, type: 3}
-  _lawnMowerSpawnPointParent: {fileID: 6488745881459754478}
+  _levelHasLawnMowers: 1
+  _lawnMowerPrefab: {fileID: 967997224509880142, guid: 356e7d4cf040dfe46b35d8ae74542878, type: 3}
+  _lawnMowersContainer: {fileID: 6488745881459754478}
 --- !u!114 &6488745883130792191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sellPenaltyPercent: 0.3
-  <SellButton>k__BackingField: {fileID: 0}
 --- !u!114 &6488745883130792189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,13 +177,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7011da0cc9725cd46ae12ca76e407169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <NumberOfWaves>k__BackingField: 3
+  <StartDelay>k__BackingField: 5
+  <TimeBetweenWaves>k__BackingField: 30
   _attackerSpawners:
   - {fileID: 7015179877119738649}
   - {fileID: 7015179877640353808}
   - {fileID: 7015179878179851960}
   - {fileID: 7015179876820185771}
   - {fileID: 7015179877040363778}
-  _playerPreparationTime: 2
 --- !u!114 &2098382306560891047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +234,15 @@ PrefabInstance:
     - target: {fileID: -4947691350974848116, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: _spawnConfig
       value: 
-      objectReference: {fileID: 11400000, guid: 3c7c59890880bd0408e944e477d8fdfb, type: 2}
+      objectReference: {fileID: 11400000, guid: 7654177acb950364d8d06099d63b2873, type: 2}
+    - target: {fileID: -4947691350974848116, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: _maxTimeBetweenSpawns
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4947691350974848116, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: _minTimeBetweenSpawns
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 6226846410801341675, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: m_Name
       value: Highest Attacker Spawer
@@ -317,7 +327,7 @@ PrefabInstance:
     - target: {fileID: -4947691350974848116, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: _spawnConfig
       value: 
-      objectReference: {fileID: 11400000, guid: b98277c5264b55d49a95b8ddfb74c8c5, type: 2}
+      objectReference: {fileID: 11400000, guid: ea7dae7adf438b74a8bef46b60219f70, type: 2}
     - target: {fileID: 6226846410801341675, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: m_Name
       value: Lower Attacker Spawer
@@ -402,7 +412,11 @@ PrefabInstance:
     - target: {fileID: -4947691350974848116, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: _spawnConfig
       value: 
-      objectReference: {fileID: 11400000, guid: 85990f0442f23874b96558d32f1a8079, type: 2}
+      objectReference: {fileID: 11400000, guid: b6adb1cbbf185ce42b931b0de64b99eb, type: 2}
+    - target: {fileID: -4947691350974848116, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: _minTimeBetweenSpawns
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 6226846410801341675, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: m_Name
       value: Lowest Attacker Spawer
@@ -487,7 +501,11 @@ PrefabInstance:
     - target: {fileID: -4947691350974848116, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: _spawnConfig
       value: 
-      objectReference: {fileID: 11400000, guid: 5092b50c9adb5484892ca736f397493c, type: 2}
+      objectReference: {fileID: 11400000, guid: b6e3110dfec42bd4eaabeaa1bd7d3198, type: 2}
+    - target: {fileID: -4947691350974848116, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
+      propertyPath: _minTimeBetweenSpawns
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6226846410801341675, guid: d7dcf033b9c99784cb7ffa2862530ecd, type: 3}
       propertyPath: m_Name
       value: Middle Attacker Spawer

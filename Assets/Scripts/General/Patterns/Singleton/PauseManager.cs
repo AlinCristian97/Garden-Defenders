@@ -1,10 +1,9 @@
-using System;
 using System.Collections.Generic;
 using General.Patterns.Observer;
 using General.Patterns.Singleton.Interfaces;
 using UnityEngine;
 
-namespace General
+namespace General.Patterns.Singleton
 {
     public class PauseManager : MonoBehaviour, IPauseManager
     {

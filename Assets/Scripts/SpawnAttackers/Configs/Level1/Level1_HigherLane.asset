@@ -14,15 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Waves:
   - <AttackersToSpawn>k__BackingField:
-    - {fileID: 8106823622406518089, guid: c9a7df2474298a94995d3b837343eda9, type: 3}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 8106823622406518089, guid: c9a7df2474298a94995d3b837343eda9, type: 3}
-    - {fileID: 0}
+    - {fileID: 3356491366628900466, guid: a416f7c08a03e5742b2d03e16e0722e8, type: 3}
+    - {fileID: 4816439257078695183, guid: 588623daa64f0464589d2fa502a6acf5, type: 3}
+    - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
+    - {fileID: 8169357663515039197, guid: 4f33c28dafb363b4ab99db7b64a9f9e1, type: 3}
+    - {fileID: 3228309810938331838, guid: 02df7d710b757e944a69234c133db34c, type: 3}
   - <AttackersToSpawn>k__BackingField:
-    - {fileID: 8106823622406518089, guid: b7b771d453fc4364e9bcc6e1016e8ad5, type: 3}
-    - {fileID: 8106823622406518089, guid: b7b771d453fc4364e9bcc6e1016e8ad5, type: 3}
-    - {fileID: 8106823622406518089, guid: b7b771d453fc4364e9bcc6e1016e8ad5, type: 3}
+    - {fileID: 3356491366628900466, guid: a416f7c08a03e5742b2d03e16e0722e8, type: 3}
   - <AttackersToSpawn>k__BackingField:
     - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
     - {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}

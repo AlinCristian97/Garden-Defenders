@@ -6,12 +6,14 @@ using UnityEngine;
 
 public abstract class Defender : Unit
 {
-    [field:SerializeField] public Sprite Avatar { get; private set; }
     [field:SerializeField] public int Cost { get; private set; }
-    public Tile Tile => GetComponentInParent<Tile>();
 
+    [field:SerializeField] public Sprite Avatar { get; private set; }
+    [field:SerializeField] public GameObject TilePreview { get; private set; }
+    
     private ISelectionManager _selectionManager;
-
+    public Tile Tile => GetComponentInParent<Tile>();
+    
     protected override void Awake()
     {
         base.Awake();
@@ -25,9 +27,14 @@ public abstract class Defender : Unit
         {
             _selectionManager.DeselectDefenderToSell();
         }
-        
+
         Tile.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 
+        if (HealthHUD != null)
+        {
+            HealthHUD.gameObject.SetActive(false);
+        }
+        
         SetDeadState();
         
         float deathAnimationDuration = Animator.GetCurrentAnimatorClipInfo(0).Length;;

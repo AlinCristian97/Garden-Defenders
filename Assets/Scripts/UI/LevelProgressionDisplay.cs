@@ -35,7 +35,7 @@ namespace UI
         {
             while (true)
             {
-                _slider.value = Time.time - _spawnManager.StartDelay;
+                _slider.value = Time.timeSinceLevelLoad - _spawnManager.StartDelay;
                 yield return new WaitForSeconds(_refreshRate);
             }
         }

@@ -15,10 +15,6 @@ MonoBehaviour:
   Waves:
   - <AttackersToSpawn>k__BackingField:
     - {fileID: 8106823622406518089, guid: c9a7df2474298a94995d3b837343eda9, type: 3}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 8106823622406518089, guid: c9a7df2474298a94995d3b837343eda9, type: 3}
-    - {fileID: 0}
   - <AttackersToSpawn>k__BackingField:
     - {fileID: 8106823622406518089, guid: b7b771d453fc4364e9bcc6e1016e8ad5, type: 3}
     - {fileID: 8106823622406518089, guid: b7b771d453fc4364e9bcc6e1016e8ad5, type: 3}

@@ -43,7 +43,6 @@ namespace General
             if (_defenderPreview != null) return;
             if (!IsEmpty) return;
                 
-            Debug.Log("instantiating GameObjPreview");
             _defenderPreview = Instantiate(
                 _selectionManager.DefenderToBuild.TilePreview,
                 transform.position - new Vector3(0f, 0.2f, 0f),
@@ -52,9 +51,13 @@ namespace General
             _defenderPreview.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 0.5f);
         }
 
+        //TODO: Use object pooling to avoid creation/destruction many objects
         private void OnMouseExit()
         {
-            Destroy(_defenderPreview.gameObject);
+            if (_defenderPreview != null)
+            {
+                Destroy(_defenderPreview.gameObject);
+            }
         }
 
         private void OnMouseDown()
@@ -81,6 +84,7 @@ namespace General
                 else if (_selectionManager.DefenderToBuild != null)
                 {
                     _buildManager.BuildDefender(transform.position, transform);
+                    OnMouseExit();
                 }
             }
         }

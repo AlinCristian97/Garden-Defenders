@@ -51,7 +51,7 @@ namespace General.Patterns.Singleton
                 buildPosition,
                 Quaternion.identity,
                 parent);
-
+            
             _selectionManager.DeselectDefenderToBuild();
         }
 

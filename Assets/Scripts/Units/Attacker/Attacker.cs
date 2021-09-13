@@ -51,7 +51,7 @@ public class Attacker : Unit
         
         _facingDirection = _isFacingRight ? Vector2.right : Vector2.left;
         States = new AttackerStates(this);
-        
+
         _visualsRenderer = GetComponentInChildren<SpriteRenderer>();
         //TODO: Find better way to get the Shadow
         _shadow = _visualsRenderer.gameObject.GetComponentsInChildren<SpriteRenderer>()[1];
@@ -82,6 +82,11 @@ public class Attacker : Unit
     protected override IEnumerator ProcessDeath()
     {
         Collider.enabled = false;
+
+        if (HealthHUD != null)
+        {
+            HealthHUD.gameObject.SetActive(false);
+        }
         
         SetDeadState();
         

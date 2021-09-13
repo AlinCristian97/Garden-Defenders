@@ -65,6 +65,8 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
     
     public bool IsDead => CurrentHealth <= 0;
     private bool _isDying;
+    
+    protected HealthHUD HealthHUD;
 
     #region Unity Callbacks
 
@@ -74,6 +76,8 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
         Animator = GetComponent<Animator>();
         
         StateMachine = new StateMachine();
+        
+        HealthHUD = GetComponentInChildren<HealthHUD>();
     }
 
     protected virtual void Start()

@@ -13,7 +13,7 @@ public abstract class Defender : Unit
     
     private ISelectionManager _selectionManager;
     public Tile Tile => GetComponentInParent<Tile>();
-
+    
     protected override void Awake()
     {
         base.Awake();
@@ -27,9 +27,14 @@ public abstract class Defender : Unit
         {
             _selectionManager.DeselectDefenderToSell();
         }
-        
+
         Tile.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 
+        if (HealthHUD != null)
+        {
+            HealthHUD.gameObject.SetActive(false);
+        }
+        
         SetDeadState();
         
         float deathAnimationDuration = Animator.GetCurrentAnimatorClipInfo(0).Length;;

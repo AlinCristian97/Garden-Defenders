@@ -58,7 +58,20 @@ namespace General.Patterns.Singleton
 
         #endregion
         
-        public Defender DefenderToBuild { get; private set; }
+        private Defender _defenderToBuild;
+
+        public Defender DefenderToBuild
+        {
+            get
+            {
+                return _defenderToBuild;
+            }
+            private set
+            {
+                _defenderToBuild = value;
+                NotifyObservers();
+            }
+        }
         private Defender _defenderToSell;
         
         public Defender DefenderToSell

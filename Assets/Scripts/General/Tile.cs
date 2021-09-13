@@ -1,22 +1,60 @@
 using System;
+using System.Collections;
+using General.Patterns.Observer;
 using General.Patterns.Singleton;
 using General.Patterns.Singleton.Interfaces;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace General
 {
-    public class Tile : MonoBehaviour
+    public class Tile : MonoBehaviour, IObserver
     {
         private bool IsEmpty => CurrentDefender == null;
         public Defender CurrentDefender => GetComponentInChildren<Defender>();
+        private GameObject _defenderPreview;
 
+        private Animator _animator;
+        
         private ISelectionManager _selectionManager;
         private IBuildManager _buildManager;
 
+        private void OnEnable()
+        {
+            _selectionManager.AttachObserver(this);
+        }
+        
         private void Awake()
         {
             _selectionManager = SelectionManager.Instance;
             _buildManager = BuildManager.Instance;
+
+            _animator = GetComponent<Animator>();
+        }
+
+        private void OnDisable()
+        {
+            _selectionManager.DetachObserver(this);
+        }
+
+        private void OnMouseEnter()
+        {
+            if (_selectionManager.DefenderToBuild == null) return;
+            if (_defenderPreview != null) return;
+            if (!IsEmpty) return;
+                
+            Debug.Log("instantiating GameObjPreview");
+            _defenderPreview = Instantiate(
+                _selectionManager.DefenderToBuild.TilePreview,
+                transform.position - new Vector3(0f, 0.2f, 0f),
+                Quaternion.identity);
+            _defenderPreview.SetActive(true);
+            _defenderPreview.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 0.5f);
+        }
+
+        private void OnMouseExit()
+        {
+            Destroy(_defenderPreview.gameObject);
         }
 
         private void OnMouseDown()
@@ -44,6 +82,20 @@ namespace General
                 {
                     _buildManager.BuildDefender(transform.position, transform);
                 }
+            }
+        }
+
+        public void GetNotified()
+        {
+            if (IsEmpty)
+            {
+                _animator.SetBool(
+                    "IsBuildDefenderSelected",
+                    _selectionManager.DefenderToBuild != null);
+            }
+            else
+            {
+                _animator.SetBool("IsBuildDefenderSelected", false);
             }
         }
     }

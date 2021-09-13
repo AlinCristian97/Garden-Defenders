@@ -14014,6 +14014,14 @@ PrefabInstance:
       propertyPath: _timeBetweenWaves
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6488745883130792190, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: _lawnMowerPrefab
+      value: 
+      objectReference: {fileID: 967997224509880142, guid: 356e7d4cf040dfe46b35d8ae74542878, type: 3}
+    - target: {fileID: 6488745883130792190, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: _levelHasLawnMowers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6488745883130792191, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: <SellButton>k__BackingField
       value: 

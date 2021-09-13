@@ -13,9 +13,10 @@ namespace General
         //TODO: Turn to const after adjustments
         [SerializeField] private Vector2 _gridOriginPosition;
 
-        [Header("Lawn Mower Spawn Points")]
-        [SerializeField] private GameObject _lawnMowerSpawnPointPrefab;
-        [SerializeField] private Transform _lawnMowerSpawnPointParent;
+        [Header("Lawn Mowers")] 
+        [SerializeField] private bool _levelHasLawnMowers;
+        [SerializeField] private LawnMower _lawnMowerPrefab;
+        [SerializeField] private Transform _lawnMowersContainer;
     
         private const byte BUILDABLE_AREA_GRID_ROW_COUNT = 5;
         private const byte BUILDABLE_AREA_GRID_COLUMN_COUNT = 9;
@@ -44,19 +45,20 @@ namespace General
                 }
             
                 //TODO: Find a cleaner way to get the wave's Y center point
-                GenerateLawnMowerSpawnPoint(_tileParent.transform.GetChild(_tileParent.transform.childCount - 1).transform
+                GenerateLawnMowers(_tileParent.transform.GetChild(_tileParent.transform.childCount - 1).transform
                     .position.y);
 
                 offsetY += _tilePrefab.transform.localScale.y;
             }
         }
 
-        private void GenerateLawnMowerSpawnPoint(float currentRowYCenterPosition)
+        private void GenerateLawnMowers(float currentRowYCenterPosition)
         {
             float offsetX = GetLeftmostTileXPosition() - _tilePrefab.transform.localScale.x;
-        
-            Instantiate(_lawnMowerSpawnPointPrefab, new Vector3(offsetX, currentRowYCenterPosition, 0f), 
-                Quaternion.identity, _lawnMowerSpawnPointParent);
+
+            var lawnMowerSpawnPosition = new Vector3(offsetX, currentRowYCenterPosition, 0f);
+
+            Instantiate(_lawnMowerPrefab, lawnMowerSpawnPosition, Quaternion.identity, _lawnMowersContainer);
         }
 
         private float GetLeftmostTileXPosition()

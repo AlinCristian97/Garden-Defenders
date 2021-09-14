@@ -8,6 +8,7 @@ namespace FSM
         public AttackerWalkState WalkState { get; }
         public AttackerAttackState AttackState { get; }
         public AttackerDeadState DeadState { get; }
+        public AttackerRiseState RiseState { get; }
 
     
         public AttackerStates(Attacker attacker)
@@ -16,6 +17,7 @@ namespace FSM
             WalkState = new AttackerWalkState(attacker);
             AttackState = new AttackerAttackState(attacker);
             DeadState = new AttackerDeadState(attacker);
+            RiseState = new AttackerRiseState(attacker);
         }
     }
 }

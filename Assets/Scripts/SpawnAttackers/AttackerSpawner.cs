@@ -49,8 +49,9 @@ namespace SpawnAttackers
                     }
                     
                     float timeBetweenSpawns = Random.Range(_minTimeBetweenSpawns, _maxTimeBetweenSpawns);
-            
-                    Instantiate(attacker, transform.position, Quaternion.identity, transform);
+
+                    var smallRandomSpawnPositionOffset = new Vector3(Random.Range(-0.15f, 0.3f), 0f, 0f);
+                    Instantiate(attacker, transform.position + smallRandomSpawnPositionOffset, Quaternion.identity, transform);
                     yield return new WaitForSeconds(timeBetweenSpawns);
                 }
             }

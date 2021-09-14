@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using FSM;
 using TMPro;
+using UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -62,7 +63,7 @@ public class Attacker : Unit
     {
         base.Start();
         
-        StateMachine.Initialize(States.WalkState);
+        StateMachine.Initialize(States.RiseState);
         
         SetRandomAttackRange();
     }
@@ -190,6 +191,14 @@ public class Attacker : Unit
     private void SetIdleState()
     {
         StateMachine.ChangeState(States.IdleState);
+    }
+
+    private void SetHealthHUDActive()
+    {
+        if (GetComponentInChildren<HealthHUD>() != null)
+        {
+            GetComponentInChildren<HealthHUD>().GetComponent<CanvasGroup>().alpha = 1f;
+        }
     }
 
     #endregion

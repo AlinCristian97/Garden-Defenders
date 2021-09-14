@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3569692753975129261}
   - component: {fileID: 176590490590011484}
   - component: {fileID: 8645236742097601293}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Cover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4097899089365512191}
   - component: {fileID: 8508880405948229227}
   - component: {fileID: 9010677329455147971}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 2903277664410323753}
   - component: {fileID: 4816757103070723183}
   - component: {fileID: 6734363894181336396}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Highlights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 5134760909135538437}
   - component: {fileID: 3460620473088008126}
   - component: {fileID: 7305921200913041655}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Health HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}

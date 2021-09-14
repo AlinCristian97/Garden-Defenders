@@ -1,6 +1,7 @@
 using System;
 using General.Patterns.Observer;
 using General.Patterns.Singleton;
+using General.Patterns.Singleton.Implementations;
 using General.Patterns.Singleton.Interfaces;
 using TMPro;
 using UnityEngine;
@@ -32,12 +33,13 @@ namespace UI
 
         private void Awake()
         {
-            _selectionManager = SelectionManager.Instance;
             _canvasGroup = GetComponent<CanvasGroup>();
+            _selectionManager = SelectionManager.Instance;
         }
 
         private void Start()
         {
+
             HideFrame();
         }
 

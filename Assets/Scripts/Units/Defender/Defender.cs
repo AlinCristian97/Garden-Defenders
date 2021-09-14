@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using General;
 using General.Patterns.Singleton;
+using General.Patterns.Singleton.Implementations;
 using General.Patterns.Singleton.Interfaces;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public abstract class Defender : Unit
     
     private ISelectionManager _selectionManager;
     public Tile Tile => GetComponentInParent<Tile>();
-    
+
     protected override void Awake()
     {
         base.Awake();

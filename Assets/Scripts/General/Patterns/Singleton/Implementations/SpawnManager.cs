@@ -2,35 +2,12 @@ using System.Collections;
 using General.Patterns.Singleton.Interfaces;
 using SpawnAttackers;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace General.Patterns.Singleton
+namespace General.Patterns.Singleton.Implementations
 {
-    public class SpawnManager : MonoBehaviour, ISpawnManager
+    public class SpawnManager : SingletonBase<SpawnManager>, ISpawnManager
     {
-        #region Singleton
-
-        private static SpawnManager _instance;
-
-        private SpawnManager()
-        {
-        }
-
-        public static SpawnManager Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = FindObjectOfType<SpawnManager>();
-                }
-                
-                return _instance;
-            }
-        }
-
-        #endregion
-        
+       
         [field: SerializeField] public int NumberOfWaves { get; private set; } = 3;
         [field:SerializeField] public float StartDelay { get; private set; }= 5f;
         [field: SerializeField] public float TimeBetweenWaves { get; private set; } = 30f;

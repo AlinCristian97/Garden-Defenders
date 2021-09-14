@@ -1,3 +1,6 @@
+using System;
+using General.Patterns.Singleton;
+using General.Patterns.Singleton.Implementations;
 using UnityEngine;
 
 namespace General
@@ -9,9 +12,8 @@ namespace General
         [Header("Buildable Grid Tiles")]
         [SerializeField] private GameObject _tilePrefab;
         [SerializeField] private Transform _tileParent;
-    
-        //TODO: Turn to const after adjustments
-        [SerializeField] private Vector2 _gridOriginPosition;
+        
+        private readonly Vector2 _gridOriginPosition = new Vector2(-3f, -2f);
 
         [Header("Lawn Mowers")] 
         [SerializeField] private bool _levelHasLawnMowers;

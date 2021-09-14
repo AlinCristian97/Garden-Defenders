@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using General.Patterns.Observer;
 using General.Patterns.Singleton;
+using General.Patterns.Singleton.Implementations;
 using General.Patterns.Singleton.Interfaces;
 using Unity.Mathematics;
 using UnityEngine;
@@ -26,10 +27,10 @@ namespace General
         
         private void Awake()
         {
+            _animator = GetComponent<Animator>();
+            
             _selectionManager = SelectionManager.Instance;
             _buildManager = BuildManager.Instance;
-
-            _animator = GetComponent<Animator>();
         }
 
         private void OnDisable()

@@ -3,33 +3,10 @@ using General.Patterns.Observer;
 using General.Patterns.Singleton.Interfaces;
 using UnityEngine;
 
-namespace General.Patterns.Singleton
+namespace General.Patterns.Singleton.Implementations
 {
-    public class ShopManager : MonoBehaviour, IShopManager
+    public class ShopManager : SingletonBase<ShopManager>, IShopManager
     {
-        #region Singleton
-
-        private static ShopManager _instance;
-
-        private ShopManager()
-        {
-        }
-
-        public static ShopManager Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = FindObjectOfType<ShopManager>();
-                }
-                
-                return _instance;
-            }
-        }
-
-        #endregion
-
         #region Observer
 
         public List<IObserver> Observers { get; private set; } = new List<IObserver>();

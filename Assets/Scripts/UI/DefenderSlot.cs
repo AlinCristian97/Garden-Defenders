@@ -2,9 +2,11 @@ using System;
 using General;
 using General.Patterns.Observer;
 using General.Patterns.Singleton;
+using General.Patterns.Singleton.Implementations;
 using General.Patterns.Singleton.Interfaces;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace UI
@@ -13,7 +15,7 @@ namespace UI
     {
         public Defender Defender { get; set; }
         private Button _button;
-    
+        
         [SerializeField] private Image _defenderAvatarImage;
         [SerializeField] private TextMeshProUGUI _defenderCostText;
         
@@ -30,6 +32,7 @@ namespace UI
         private void Awake()
         {
             _button = GetComponent<Button>();
+            
             _selectionManager = SelectionManager.Instance;
             _pauseManager = PauseManager.Instance;
             _shopManager = ShopManager.Instance;
@@ -46,7 +49,7 @@ namespace UI
             _pauseManager.DetachObserver(this);
             _shopManager.DetachObserver(this);
         }
-        
+
         public void GetNotified()
         {
             HandleGamePausedChange();
@@ -71,16 +74,12 @@ namespace UI
         {
             _defenderCostText.color = Color.gray;
             _defenderAvatarImage.color = Color.gray;
-
-            //TODO: Review / Add more gray-out logic and commit after
         }
 
         private void ColorIn()
         {
             _defenderCostText.color = Color.white;
             _defenderAvatarImage.color = Color.white;
-
-            //TODO: Review / Add more color-in logic and commit after
         }
 
         private void HandleGamePausedChange()

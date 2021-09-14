@@ -1,36 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using General.Patterns.Observer;
 using General.Patterns.Singleton.Interfaces;
-using UnityEngine;
 
-namespace General.Patterns.Singleton
+namespace General.Patterns.Singleton.Implementations
 {
-    public class SelectionManager : MonoBehaviour, ISelectionManager
+    public class SelectionManager : SingletonBase<SelectionManager>, ISelectionManager
     {
-        #region Singleton
-
-        private static SelectionManager _instance;
-
-        private SelectionManager()
-        {
-        }
-
-        public static SelectionManager Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = FindObjectOfType<SelectionManager>();
-                }
-                
-                return _instance;
-            }
-        }
-
-        #endregion
-
         #region Observer
 
         public List<IObserver> Observers { get; private set; } = new List<IObserver>();
@@ -88,7 +63,7 @@ namespace General.Patterns.Singleton
         }
 
         private IShopManager _shopManager;
-        
+
         private void Awake()
         {
             _shopManager = ShopManager.Instance;

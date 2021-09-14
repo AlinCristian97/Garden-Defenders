@@ -39,7 +39,6 @@ namespace UI
 
         private void Start()
         {
-
             HideFrame();
         }
 

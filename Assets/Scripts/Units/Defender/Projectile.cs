@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -8,8 +5,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float _speed = 1f;
     private int _damage = 50;
     
-    private Attacker _target;
-    
+    private Unit _target;
+
     private void Update()
     {
         transform.Translate(Vector3.right * _speed * Time.deltaTime);
@@ -19,6 +16,10 @@ public class Projectile : MonoBehaviour
             if (!_target.IsDead && TargetReached())
             {
                 _target.TakeDamage(_damage);
+                Destroy(gameObject);
+            }
+            else if (_target.IsDead)
+            {
                 Destroy(gameObject);
             }
         }

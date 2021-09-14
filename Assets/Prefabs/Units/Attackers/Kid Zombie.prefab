@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6678878569276775036}
   - component: {fileID: 6556727259572938724}
   - component: {fileID: 5098063174746337827}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Health HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 1272782107521483988}
   - component: {fileID: 3826914621889936076}
   - component: {fileID: 4624379651585099839}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Cover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 7047392305535247936}
   - component: {fileID: 2576665254201677975}
   - component: {fileID: 1648744306015960399}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3887499121439999916}
   - component: {fileID: 7219104624886744070}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,9 +443,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _timeBetweenAttacks: 1
-  LayerMask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!1 &8534724485333106590
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +454,7 @@ GameObject:
   - component: {fileID: 7869692947106657253}
   - component: {fileID: 5100756310138758878}
   - component: {fileID: 1471196811983965063}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Highlights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +529,7 @@ GameObject:
   - component: {fileID: 454542236807082576}
   - component: {fileID: 3512062623006556808}
   - component: {fileID: 9025470340607730014}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}

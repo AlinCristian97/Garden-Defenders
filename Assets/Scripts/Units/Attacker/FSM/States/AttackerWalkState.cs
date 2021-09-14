@@ -1,30 +1,33 @@
 ﻿using UnityEngine;
 
-public class AttackerWalkState : AttackerState
+namespace FSM.States
 {
-    public AttackerWalkState(Attacker attacker) : base(attacker)
+    public class AttackerWalkState : AttackerState
     {
-    }
-    
-    public override void Enter()
-    {
-        Attacker.Animator.SetBool("IsWalking", true);
-    }
-
-    public override void Exit()
-    {
-        Attacker.Animator.SetBool("IsWalking", false);
-    }
-
-    public override void Execute()
-    {
-        if (Attacker.SetTargetInAttackRange())
+        public AttackerWalkState(Attacker attacker) : base(attacker)
         {
-            Attacker.StateMachine.ChangeState(Attacker.States.AttackState);
         }
-        else
+    
+        public override void Enter()
         {
-            Attacker.transform.Translate(Vector3.left * Time.deltaTime * Attacker.MovementSpeed);
+            Attacker.Animator.SetBool("IsWalking", true);
+        }
+
+        public override void Exit()
+        {
+            Attacker.Animator.SetBool("IsWalking", false);
+        }
+
+        public override void Execute()
+        {
+            if (Attacker.SetTargetInAttackRange())
+            {
+                Attacker.StateMachine.ChangeState(Attacker.States.AttackState);
+            }
+            else
+            {
+                Attacker.transform.Translate(Vector3.left * Time.deltaTime * Attacker.MovementSpeed);
+            }
         }
     }
 }

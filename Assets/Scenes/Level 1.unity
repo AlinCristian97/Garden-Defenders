@@ -5127,6 +5127,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &783523288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 783523288, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+  m_PrefabInstance: {fileID: 6488745881381529175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &783523291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783523288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a772aa596bd2a642996fbaa8cc04f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &883498055
 GameObject:
   m_ObjectHideFlags: 0
@@ -6530,7 +6547,7 @@ Transform:
   - {fileID: 1721480020}
   - {fileID: 648031758}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1071339164
 GameObject:
@@ -11234,7 +11251,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1711733129
 MonoBehaviour:
@@ -13859,7 +13876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4393746888206405210, guid: af7640418e1e46142ad45cb9e69ef299, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4393746888206405210, guid: af7640418e1e46142ad45cb9e69ef299, type: 3}
       propertyPath: m_AnchorMax.x
@@ -13954,13 +13971,9 @@ PrefabInstance:
       propertyPath: _panelCanvas
       value: 
       objectReference: {fileID: 439909800}
-    - target: {fileID: 6488745881742434706, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6488745883130792176, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6488745883130792176, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14006,89 +14019,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 6488745883130792189, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _numberOfWaves
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6488745883130792189, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _timeBetweenWaves
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6488745883130792190, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _lawnMowerPrefab
-      value: 
-      objectReference: {fileID: 967997224509880142, guid: 356e7d4cf040dfe46b35d8ae74542878, type: 3}
-    - target: {fileID: 6488745883130792190, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _levelHasLawnMowers
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6488745883130792191, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: <SellButton>k__BackingField
-      value: 
-      objectReference: {fileID: 37324444}
-    - target: {fileID: 7015179876820185771, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _spawnConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: ea7dae7adf438b74a8bef46b60219f70, type: 2}
-    - target: {fileID: 7015179876820185771, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _maxTimeBetweenSpawns
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015179876820185771, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: <SpawnConfig>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: ea7dae7adf438b74a8bef46b60219f70, type: 2}
-    - target: {fileID: 7015179877040363778, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _spawnConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: b6adb1cbbf185ce42b931b0de64b99eb, type: 2}
-    - target: {fileID: 7015179877040363778, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _maxTimeBetweenSpawns
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015179877040363778, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _minTimeBetweenSpawns
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015179877040363778, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: <SpawnConfig>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: b6adb1cbbf185ce42b931b0de64b99eb, type: 2}
-    - target: {fileID: 7015179877119738649, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _spawnConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: 7654177acb950364d8d06099d63b2873, type: 2}
-    - target: {fileID: 7015179877119738649, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _maxTimeBetweenSpawns
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015179877119738649, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _minTimeBetweenSpawns
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015179877119738649, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: <SpawnConfig>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 7654177acb950364d8d06099d63b2873, type: 2}
-    - target: {fileID: 7015179877640353808, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: <SpawnConfig>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 7ca445f8e589810459aa906764f4c06a, type: 2}
-    - target: {fileID: 7015179878179851960, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _spawnConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: b6e3110dfec42bd4eaabeaa1bd7d3198, type: 2}
-    - target: {fileID: 7015179878179851960, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _maxTimeBetweenSpawns
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015179878179851960, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _minTimeBetweenSpawns
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015179878179851960, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: <SpawnConfig>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: b6e3110dfec42bd4eaabeaa1bd7d3198, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}

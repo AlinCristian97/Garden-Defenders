@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FSM;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,9 +12,9 @@ public class Attacker : Unit
     [Header("Stats")]
     [SerializeField] private bool _isFacingRight;
     private Vector2 _facingDirection;
-    [field:SerializeField] [Range(0.25f, 2f)] private float _movementSpeed = 1f;
+    [field:SerializeField] [Range(0f, 2f)] private float _movementSpeed = 1f;
     [SerializeField] private int _damage;
-    
+
     public float MovementSpeed => _movementSpeed;
 
 
@@ -87,7 +88,7 @@ public class Attacker : Unit
         {
             HealthHUD.gameObject.SetActive(false);
         }
-        
+
         SetDeadState();
         
         float deathAnimationDuration = Animator.GetCurrentAnimatorStateInfo(0).length;

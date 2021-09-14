@@ -1,31 +1,32 @@
-﻿using UnityEngine;
-
-public class AttackerIdleState : AttackerState
+﻿namespace FSM.States
 {
-    public AttackerIdleState(Attacker attacker) : base(attacker)
+    public class AttackerIdleState : AttackerState
     {
-    }
-    
-    public override void Enter()
-    {
-        Attacker.Animator.SetBool("IsIdling", true);
-    }
-
-    public override void Exit()
-    {
-        Attacker.Animator.SetBool("IsIdling", false);
-    }
-
-    public override void Execute()
-    {
-        if (Attacker.SetTargetInAttackRange() && Attacker.AttackCooldownPassed())
+        public AttackerIdleState(Attacker attacker) : base(attacker)
         {
-            Attacker.StateMachine.ChangeState(Attacker.States.AttackState);
+        }
+    
+        public override void Enter()
+        {
+            Attacker.Animator.SetBool("IsIdling", true);
         }
 
-        if (!Attacker.SetTargetInAttackRange())
+        public override void Exit()
         {
-            Attacker.StateMachine.ChangeState(Attacker.States.WalkState);
+            Attacker.Animator.SetBool("IsIdling", false);
+        }
+
+        public override void Execute()
+        {
+            if (Attacker.SetTargetInAttackRange() && Attacker.AttackCooldownPassed())
+            {
+                Attacker.StateMachine.ChangeState(Attacker.States.AttackState);
+            }
+
+            if (!Attacker.SetTargetInAttackRange())
+            {
+                Attacker.StateMachine.ChangeState(Attacker.States.WalkState);
+            }
         }
     }
 }

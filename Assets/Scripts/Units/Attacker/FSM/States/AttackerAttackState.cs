@@ -1,30 +1,31 @@
-﻿using UnityEngine;
-
-public class AttackerAttackState : AttackerState
+﻿namespace FSM.States
 {
-    public AttackerAttackState(Attacker attacker) : base(attacker)
+    public class AttackerAttackState : AttackerState
     {
-    }
-    
-    public override void Enter()
-    {
-    }
-
-    public override void Exit()
-    {
-    }
-
-    public override void Execute()
-    {
-        if (Attacker.AttackCooldownPassed())
+        public AttackerAttackState(Attacker attacker) : base(attacker)
         {
-            Attacker.UpdateNextAttack();
-            Attacker.TriggerAttackAnimation();
+        }
+    
+        public override void Enter()
+        {
         }
 
-        if (!Attacker.SetTargetInAttackRange())
+        public override void Exit()
         {
-            Attacker.StateMachine.ChangeState(Attacker.States.WalkState);
+        }
+
+        public override void Execute()
+        {
+            if (Attacker.AttackCooldownPassed())
+            {
+                Attacker.UpdateNextAttack();
+                Attacker.TriggerAttackAnimation();
+            }
+
+            if (!Attacker.SetTargetInAttackRange())
+            {
+                Attacker.StateMachine.ChangeState(Attacker.States.WalkState);
+            }
         }
     }
 }

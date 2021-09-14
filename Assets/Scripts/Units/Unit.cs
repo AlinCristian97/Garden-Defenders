@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using General.Patterns.FSM;
 using General.Patterns.Observer;
 using HealthSystem.Interfaces;
+using UI;
 using UnityEngine;
 
 public abstract class Unit : MonoBehaviour, IDamageable, IObservable
@@ -108,7 +109,7 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
         }
     }
 
-    private void StartDying()
+    public void StartDying()
     {
         StartCoroutine(ProcessDeath());
     }

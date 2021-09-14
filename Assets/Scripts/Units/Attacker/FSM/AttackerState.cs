@@ -1,11 +1,14 @@
 ﻿using General.Patterns.FSM;
 
-public abstract class AttackerState : State
+namespace FSM
 {
-    protected readonly Attacker Attacker;
-
-    protected AttackerState(Attacker attacker)
+    public abstract class AttackerState : State
     {
-        Attacker = attacker;
+        protected readonly Attacker Attacker;
+
+        protected AttackerState(Attacker attacker)
+        {
+            Attacker = attacker;
+        }
     }
 }

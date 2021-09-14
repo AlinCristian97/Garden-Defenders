@@ -20,6 +20,8 @@ public class EnergyProducerDefender : Defender
         base.Awake();
         
         States = new EnergyProducerDefenderStates(this);
+        
+        UpdateNextDeliver();
     }
 
     protected override void SetDeadState()
@@ -39,8 +41,7 @@ public class EnergyProducerDefender : Defender
 
     #endregion
     
-    //todo: wait before attack
-    
+   
     public void UpdateNextDeliver()
     {
         _nextDeliver = Time.time + _timeBetweenDelivers;

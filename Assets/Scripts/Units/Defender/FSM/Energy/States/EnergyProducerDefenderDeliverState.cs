@@ -9,12 +9,10 @@ public class EnergyProducerDefenderDeliverState : EnergyProducerDefenderState
 
     public override void Enter()
     {
-        Debug.Log("Energy Enter: Attack");
     }
 
     public override void Exit()
     {
-        Debug.Log("Energy Exit: Attack");
     }
 
     public override void Execute()
@@ -24,7 +22,5 @@ public class EnergyProducerDefenderDeliverState : EnergyProducerDefenderState
             EnergyProducerDefender.UpdateNextDeliver();
             EnergyProducerDefender.TriggerDeliverAnimation();
         }
-
-        Debug.Log("Energy Execute: Attack");
     }
 }

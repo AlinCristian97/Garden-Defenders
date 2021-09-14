@@ -1,4 +1,5 @@
 ﻿using System;
+using General.Patterns.Singleton;
 using UnityEngine;
 
 public class EnergyResource : MonoBehaviour
@@ -14,8 +15,9 @@ public class EnergyResource : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log($"collected: {_energyAmount} Resource");
+        ShopManager.Instance.AddToBalance(_energyAmount);
+        
+        //TODO: Optionally add a "poof" effect or some animations
         Destroy(gameObject);
     }
-
 }

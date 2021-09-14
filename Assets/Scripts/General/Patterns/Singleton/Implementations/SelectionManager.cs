@@ -78,7 +78,7 @@ namespace General.Patterns.Singleton.Implementations
             {
                 DeselectDefenderToSell();
             }
-        
+            
             DefenderToBuild = defender;
         }
 

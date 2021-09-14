@@ -1,11 +1,31 @@
 ﻿using System.Collections.Generic;
 using General.Patterns.Observer;
 using General.Patterns.Singleton.Interfaces;
+using UnityEngine;
 
 namespace General.Patterns.Singleton.Implementations
 {
-    public class SelectionManager : SingletonBase<SelectionManager>, ISelectionManager
+    public class SelectionManager : MonoBehaviour, ISelectionManager
     {
+        #region Singleton
+
+        private static SelectionManager _instance;
+        
+        public static SelectionManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = FindObjectOfType<SelectionManager>();
+                }
+                
+                return _instance;
+            }
+        }
+
+        #endregion
+        
         #region Observer
 
         public List<IObserver> Observers { get; private set; } = new List<IObserver>();

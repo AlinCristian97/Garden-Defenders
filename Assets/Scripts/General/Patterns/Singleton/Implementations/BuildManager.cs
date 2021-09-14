@@ -3,8 +3,27 @@ using UnityEngine;
 
 namespace General.Patterns.Singleton.Implementations
 {
-    public class BuildManager : SingletonBase<BuildManager>, IBuildManager
+    public class BuildManager : MonoBehaviour, IBuildManager
     {
+        #region Singleton
+
+        private static BuildManager _instance;
+        
+        public static BuildManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = FindObjectOfType<BuildManager>();
+                }
+                
+                return _instance;
+            }
+        }
+
+        #endregion
+        
         [SerializeField] private float _sellPenaltyPercent = 0.3f;
 
         private ISelectionManager _selectionManager;

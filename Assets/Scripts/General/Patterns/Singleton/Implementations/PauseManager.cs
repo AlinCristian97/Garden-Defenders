@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using General.Patterns.Observer;
 using General.Patterns.Singleton.Interfaces;
@@ -5,8 +6,27 @@ using UnityEngine;
 
 namespace General.Patterns.Singleton.Implementations
 {
-    public class PauseManager : SingletonBase<PauseManager>, IPauseManager
+    public class PauseManager : MonoBehaviour, IPauseManager
     {
+        #region Singleton
+
+        private static PauseManager _instance;
+        
+        public static PauseManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = FindObjectOfType<PauseManager>();
+                }
+                
+                return _instance;
+            }
+        }
+
+        #endregion
+        
         #region Observer
 
         public List<IObserver> Observers { get; private set; } = new List<IObserver>();
@@ -37,7 +57,7 @@ namespace General.Patterns.Singleton.Implementations
         [SerializeField] private GameObject _panelCanvas;
         
         public bool GameIsPaused { get; private set; }
-        
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.P))

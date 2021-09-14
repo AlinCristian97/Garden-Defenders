@@ -250,8 +250,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
+      - m_Target: {fileID: 858268470}
+        m_TargetAssemblyTypeName: General.Patterns.Singleton.Implementations.BuildManager,
+          Assembly-CSharp
         m_MethodName: SellDefender
         m_Mode: 1
         m_Arguments:
@@ -502,8 +503,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: General.PauseControl, Assembly-CSharp
+      - m_Target: {fileID: 1373547715}
+        m_TargetAssemblyTypeName: General.Patterns.Singleton.Implementations.PauseManager,
+          Assembly-CSharp
         m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
@@ -2334,6 +2336,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2607128601107808422, guid: 377d98d3b21e3eb4aa6a8972f145af20, type: 3}
   m_PrefabInstance: {fileID: 2607128601752736322}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &858268470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 139671655930807726, guid: 8d9dca63fb068824abdecd7df890f377, type: 3}
+  m_PrefabInstance: {fileID: 3842687979531696208}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bebf46acef3c9754097d21d451237bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &883498055
 GameObject:
   m_ObjectHideFlags: 0
@@ -3596,6 +3609,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334381721}
   m_CullTransparentMesh: 1
+--- !u!114 &1373547715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3780077842205771936, guid: aaee81d219d468647aaffacf24cbf130, type: 3}
+  m_PrefabInstance: {fileID: 3780077843457893324}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60d2a8acde6a3644b3dfed2f25d28c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1389575821
 GameObject:
   m_ObjectHideFlags: 0
@@ -6836,6 +6860,14 @@ PrefabInstance:
     - target: {fileID: 1202686151, guid: af7640418e1e46142ad45cb9e69ef299, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1373547715}
+    - target: {fileID: 1202686151, guid: af7640418e1e46142ad45cb9e69ef299, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202686151, guid: af7640418e1e46142ad45cb9e69ef299, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: General.Patterns.Singleton.Implementations.PauseManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1784108018, guid: af7640418e1e46142ad45cb9e69ef299, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6911,15 +6943,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4393746888206405210, guid: af7640418e1e46142ad45cb9e69ef299, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393746888206405210, guid: af7640418e1e46142ad45cb9e69ef299, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393746888206405210, guid: af7640418e1e46142ad45cb9e69ef299, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393746888206405210, guid: af7640418e1e46142ad45cb9e69ef299, type: 3}
       propertyPath: m_AnchoredPosition.x

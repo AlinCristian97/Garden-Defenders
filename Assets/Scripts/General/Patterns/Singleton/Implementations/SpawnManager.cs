@@ -5,8 +5,26 @@ using UnityEngine;
 
 namespace General.Patterns.Singleton.Implementations
 {
-    public class SpawnManager : SingletonBase<SpawnManager>, ISpawnManager
+    public class SpawnManager : MonoBehaviour, ISpawnManager
     {
+        #region Singleton
+
+        private static SpawnManager _instance;
+        
+        public static SpawnManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = FindObjectOfType<SpawnManager>();
+                }
+                
+                return _instance;
+            }
+        }
+
+        #endregion
        
         [field: SerializeField] public int NumberOfWaves { get; private set; } = 3;
         [field:SerializeField] public float StartDelay { get; private set; }= 5f;

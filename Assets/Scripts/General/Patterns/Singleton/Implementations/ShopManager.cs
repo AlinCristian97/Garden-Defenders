@@ -5,8 +5,27 @@ using UnityEngine;
 
 namespace General.Patterns.Singleton.Implementations
 {
-    public class ShopManager : SingletonBase<ShopManager>, IShopManager
+    public class ShopManager : MonoBehaviour, IShopManager
     {
+        #region Singleton
+
+        private static ShopManager _instance;
+        
+        public static ShopManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = FindObjectOfType<ShopManager>();
+                }
+                
+                return _instance;
+            }
+        }
+
+        #endregion
+        
         #region Observer
 
         public List<IObserver> Observers { get; private set; } = new List<IObserver>();

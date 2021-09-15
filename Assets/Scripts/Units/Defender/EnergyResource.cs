@@ -1,6 +1,5 @@
 ﻿using System;
 using General.Patterns.Singleton;
-using General.Patterns.Singleton.Implementations;
 using UnityEngine;
 
 public class EnergyResource : MonoBehaviour

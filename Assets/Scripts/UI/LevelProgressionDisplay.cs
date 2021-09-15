@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using General;
 using General.Patterns.Singleton;
-using General.Patterns.Singleton.Implementations;
 using General.Patterns.Singleton.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;

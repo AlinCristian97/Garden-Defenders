@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using General.Patterns.FSM;
 using General.Patterns.Observer;
+using General.Patterns.State.FSM;
 using HealthSystem.Interfaces;
 using UI;
 using UnityEngine;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using General.Patterns.State.DefenderFSM;
 using UnityEngine;
 
 public abstract class CombatDefender : Defender

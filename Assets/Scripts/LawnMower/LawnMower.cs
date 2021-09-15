@@ -1,6 +1,6 @@
 using System;
-using FSM;
-using General.Patterns.FSM;
+using General.Patterns.State.FSM;
+using General.Patterns.State.LawnMowerFSM;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]

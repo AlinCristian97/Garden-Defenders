@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using General.Patterns.Singleton;
+using UnityEngine;
 
 namespace General.Patterns.State.GameManagerFSM.States
 {
@@ -7,6 +8,9 @@ namespace General.Patterns.State.GameManagerFSM.States
         public override void Enter()
         {
             Debug.Log("Game: Enter Start");
+
+            SpawnManager.Instance.StartSpawningAttackers();
+            GameManager.StateMachine.ChangeState(GameManager.States.OnGoingState);
         }
 
         public override void Exit()

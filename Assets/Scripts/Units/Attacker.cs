@@ -97,7 +97,8 @@ public class Attacker : Unit
         
         yield return StartCoroutine(FadeTo(0f, FADE_OUT_DURATION));
         
-        Destroy(gameObject);
+        //here either destroy or deactivate GO
+        gameObject.SetActive(false);
     }
     
     private IEnumerator FadeTo(float aValue, float aTime)

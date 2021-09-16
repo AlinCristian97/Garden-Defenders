@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using General.Patterns.Singleton;
 using SpawnAttackers.ScriptableObjects;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -51,7 +52,13 @@ namespace SpawnAttackers
                     float timeBetweenSpawns = Random.Range(_minTimeBetweenSpawns, _maxTimeBetweenSpawns);
 
                     var smallRandomSpawnPositionOffset = new Vector3(Random.Range(-0.15f, 0.3f), 0f, 0f);
-                    Instantiate(attacker, transform.position + smallRandomSpawnPositionOffset, Quaternion.identity, transform);
+                    Attacker instantiatedAttacker = Instantiate(attacker, transform.position + smallRandomSpawnPositionOffset, Quaternion.identity, transform);
+                    
+                    if (waveNumber + 1 == SpawnManager.Instance.NumberOfWaves)
+                    {
+                        SpawnManager.Instance.LastWaveAttackersList.Add(instantiatedAttacker);
+                    }
+                    
                     yield return new WaitForSeconds(timeBetweenSpawns);
                 }
             }

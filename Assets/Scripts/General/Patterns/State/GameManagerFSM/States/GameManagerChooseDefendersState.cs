@@ -9,7 +9,7 @@ namespace General.Patterns.State.GameManagerFSM.States
         {
             Debug.Log("Game: Enter ChooseDefenders");
 
-            Time.timeScale = 0f;
+            // Time.timeScale = 0f;
             UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.SelectLevelDefendersCanvas, true);
         }
 
@@ -17,7 +17,7 @@ namespace General.Patterns.State.GameManagerFSM.States
         {
             Debug.Log("Game: Exit ChooseDefenders");
             
-            Time.timeScale = 1f;
+            // Time.timeScale = 1f;
             UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.SelectLevelDefendersCanvas, false);
         }
 

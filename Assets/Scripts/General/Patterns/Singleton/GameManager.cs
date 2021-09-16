@@ -63,11 +63,16 @@ namespace General.Patterns.Singleton
         
         #endregion
 
-
-        public bool LevelDefendersConfirmed { get; private set; }
-        
+        [field:Header("Choose Defenders State")]
         [field:SerializeField] public List<Defender> AvailableDefendersList { get; private set; }
         public List<Defender> ChosenDefendersList { get; private set; } = new List<Defender>();
+        public bool LevelDefendersConfirmed { get; private set; }
+        
+        [field:Header("Get Ready State")]
+        [field:SerializeField] public float GetReadyTimeInSeconds { get; private set; }= 5f;
+
+        [field: Header("Lose State")] 
+        [field:SerializeField] public Collider2D LoseCollider { get; private set; }
 
 
         // private IPauseManager _pauseManager;

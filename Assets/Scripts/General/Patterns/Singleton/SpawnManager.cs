@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using General.Patterns.Singleton.Interfaces;
 using SpawnAttackers;
 using UnityEngine;
@@ -27,20 +28,21 @@ namespace General.Patterns.Singleton
         #endregion
        
         [field: SerializeField] public int NumberOfWaves { get; private set; } = 3;
-        [field:SerializeField] public float StartDelay { get; private set; }= 5f;
         [field: SerializeField] public float TimeBetweenWaves { get; private set; } = 30f;
-        
+
+
         [Space]
         
         [SerializeField] private AttackerSpawner[] _attackerSpawners;
 
-        private IEnumerator Start()
+        public bool HasFinishedSpawningWaves { get; private set; }
+        public List<Attacker> LastWaveAttackersList { get; private set; } = new List<Attacker>();
+
+        public void StartSpawningAttackers()
         {
-            yield return new WaitForSeconds(StartDelay);
-        
             StartCoroutine(LaunchSpawners());
         }
-
+        
         private IEnumerator LaunchSpawners()
         {
             if (_attackerSpawners.Length == 0)
@@ -61,9 +63,18 @@ namespace General.Patterns.Singleton
                 {
                     StartCoroutine(attackerSpawnPoint.SpawnWave(waveNumber));
                 }
-                
-                yield return new WaitForSeconds(TimeBetweenWaves);
+
+                if (waveNumber == NumberOfWaves - 1)
+                {
+                    yield return null;
+                }
+                else
+                {
+                    yield return new WaitForSeconds(TimeBetweenWaves);
+                }
             }
+            
+            HasFinishedSpawningWaves = true;
         }
     }
 }

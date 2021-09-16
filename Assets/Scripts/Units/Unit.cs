@@ -103,15 +103,10 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
 
             if (!_isDying)
             {
-                StartDying();
+                StartCoroutine(ProcessDeath());
                 _isDying = true;
             }
         }
-    }
-
-    public void StartDying()
-    {
-        StartCoroutine(ProcessDeath());
     }
 
     protected abstract IEnumerator ProcessDeath();

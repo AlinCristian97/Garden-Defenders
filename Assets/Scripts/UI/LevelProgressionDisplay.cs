@@ -15,18 +15,20 @@ namespace UI
 
         private float _durationInSeconds;
         private ISpawnManager _spawnManager;
+        private GameManager _gameManager;
 
         private void Awake()
         {
             _spawnManager = SpawnManager.Instance;
+            _gameManager = GameManager.Instance;
         }
 
         private IEnumerator Start()
         {
-            _durationInSeconds = _spawnManager.TimeBetweenWaves * _spawnManager.NumberOfWaves;
+            _durationInSeconds = _spawnManager.TimeBetweenWaves * _spawnManager.NumberOfWaves - 1;
             InitializeSlider();
             
-            yield return new WaitForSeconds(_spawnManager.StartDelay);
+            yield return new WaitForSeconds(_gameManager.GetReadyTimeInSeconds);
 
             StartCoroutine(UpdateProgress());
         }
@@ -35,7 +37,7 @@ namespace UI
         {
             while (true)
             {
-                _slider.value = Time.timeSinceLevelLoad - _spawnManager.StartDelay;
+                _slider.value = Time.timeSinceLevelLoad - _gameManager.GetReadyTimeInSeconds;
                 yield return new WaitForSeconds(_refreshRate);
             }
         }

@@ -52,7 +52,7 @@ public class LawnMower : MonoBehaviour
             if (other.GetComponent<Attacker>() != null)
             {
                 var attacker = other.GetComponent<Attacker>();
-                attacker.StartDying();
+                attacker.TakeDamage(attacker.MaxHealth);
                 
                 Animator.SetTrigger("HitAttacker");
             }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using General.Patterns.Singleton;
+using UnityEngine;
 
 namespace General.Patterns.State.GameManagerFSM.States
 {
@@ -7,6 +8,8 @@ namespace General.Patterns.State.GameManagerFSM.States
         public override void Enter()
         {
             Debug.Log("Game: Enter GetReady");
+            
+            UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.MainCanvas, true);
         }
 
         public override void Exit()

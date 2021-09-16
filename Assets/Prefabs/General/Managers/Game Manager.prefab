@@ -215,7 +215,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tilePrefab: {fileID: 7155743954439366230, guid: 69b68ef39a863294ebbd943e77f2531f, type: 3}
   _tileParent: {fileID: 6488745881499545375}
-  _gridOriginPosition: {x: -3, y: -2}
   _levelHasLawnMowers: 1
   _lawnMowerPrefab: {fileID: 967997224509880142, guid: 356e7d4cf040dfe46b35d8ae74542878, type: 3}
   _lawnMowersContainer: {fileID: 6488745881459754478}
@@ -231,6 +230,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb7105503584ef418a0c3aafc9b0627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <AvailableDefendersList>k__BackingField:
+  - {fileID: 6846316640245581862, guid: f712f9f036dfe0343b916300046ed394, type: 3}
+  - {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
+  - {fileID: 6466747580765947885, guid: 47c790bf23fbb7e48a568211452cea12, type: 3}
+  - {fileID: 5840748311732509498, guid: 3549606cc2963034190fb07aa5f1e77e, type: 3}
+  - {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+  - {fileID: 2441379869885635785, guid: 73641bb637ba0b9418cb99355cfc3b0a, type: 3}
+  - {fileID: 3099182781402619135, guid: d20c23474cab40d4795e4d938a63f8dc, type: 3}
 --- !u!1001 &6488745881187115157
 PrefabInstance:
   m_ObjectHideFlags: 0

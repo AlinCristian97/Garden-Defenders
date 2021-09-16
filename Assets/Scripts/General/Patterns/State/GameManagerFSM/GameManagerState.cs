@@ -1,15 +1,14 @@
 ﻿using General.Patterns.Singleton;
-using General.Patterns.Singleton.Interfaces;
 
 namespace General.Patterns.State.GameManagerFSM
 {
     public abstract class GameManagerState : State
     {
-        protected readonly IGameManager GameManager;
+        protected readonly GameManager GameManager;
 
         protected GameManagerState()
         {
-            GameManager = Singleton.GameManager.Instance;
+            GameManager = GameManager.Instance;
         }
     }
 }

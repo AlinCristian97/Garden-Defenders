@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace General.Patterns.Singleton
 {
-    public class GameManager : MonoBehaviour, IGameManager
+    public class GameManager : MonoBehaviour
     {
         #region Singleton
 
@@ -55,14 +55,20 @@ namespace General.Patterns.Singleton
         }
 
         #endregion
-
+        
         #region FSM
 
         public StateMachine StateMachine { get; private set; }
         public GameManagerStates States { get; private set; }
-
-
+        
         #endregion
+
+
+        public bool LevelDefendersConfirmed { get; private set; }
+        
+        [field:SerializeField] public List<Defender> AvailableDefendersList { get; private set; }
+        public List<Defender> ChosenDefendersList { get; private set; } = new List<Defender>();
+
 
         // private IPauseManager _pauseManager;
 
@@ -70,16 +76,27 @@ namespace General.Patterns.Singleton
         {
             StateMachine = new StateMachine();
             States = new GameManagerStates();
+            
+            UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.MainCanvas, false);
         }
 
         private void Start()
         {
-            StateMachine.Initialize(States.ChooseDefendersState);
-        }
+            StateMachine.Initialize(States.ChooseDefendersState); }
 
         private void Update()
         {
             StateMachine.CurrentState.Execute();
+        }
+
+        public void ConfirmDefendersLevel()
+        {
+            LevelDefendersConfirmed = true;
+        }
+
+        public void UpdateChosenDefendersList(List<Defender> chosenDefendersList)
+        {
+            ChosenDefendersList = chosenDefendersList;
         }
     }
 }

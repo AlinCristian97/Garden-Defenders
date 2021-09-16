@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8281373511138843782, guid: 25c49556963c00246bab81a61684f358, type: 3}
       propertyPath: m_Name
-      value: Hammer Plant 1
+      value: Hammer Plant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25c49556963c00246bab81a61684f358, type: 3}

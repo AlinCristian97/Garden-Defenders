@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8281373511138843782, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: m_Name
-      value: Gun Plant new
+      value: Gun Plant
       objectReference: {fileID: 0}
     - target: {fileID: 9032357490022949159, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: m_Sprite

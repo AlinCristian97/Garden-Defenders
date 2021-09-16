@@ -1,23 +1,16 @@
 using System.Collections.Generic;
+using General.Patterns.Singleton;
 using UnityEngine;
 
 namespace UI
 {
-    public class DefenderSlotsPanel : MonoBehaviour
+    public class DefenderSlotsDisplay : MonoBehaviour
     {
         [SerializeField] private DefenderSlot _defenderSlot;
 
-        //TODO: Temporary - this variable will be moved
-        [SerializeField] private List<Defender> _defendersList;
-
-        private void Awake()
-        {
-            
-        }
-
         private void Start()
         {
-            foreach (Defender defender in _defendersList)
+            foreach (Defender defender in GameManager.Instance.ChosenDefendersList)
             {
                 DefenderSlot defenderSlot = Instantiate(_defenderSlot, transform);
 

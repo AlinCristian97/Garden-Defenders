@@ -1,9 +1,11 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using General.Patterns.Observer;
 using General.Patterns.Singleton.Interfaces;
 using General.Patterns.State.FSM;
 using General.Patterns.State.GameManagerFSM;
+using UI;
 using UnityEngine;
 
 namespace General.Patterns.Singleton
@@ -102,6 +104,38 @@ namespace General.Patterns.Singleton
         public void UpdateChosenDefendersList(List<Defender> chosenDefendersList)
         {
             ChosenDefendersList = chosenDefendersList;
+        }
+        
+        public IEnumerator DeactivateAllActiveDefenders()
+        {
+            Defender[] activeDefenders = Instance.GetComponentsInChildren<Defender>();
+            float delayInSeconds = 5f;
+
+            if (activeDefenders.Length > 0)
+            {
+                yield return new WaitForSeconds(delayInSeconds);
+
+                foreach (Defender activeDefender in activeDefenders)
+                {
+                    activeDefender.gameObject.SetActive(false);
+                }
+            }
+        }
+
+        public IEnumerator DeactivateAllLawnMowers()
+        {
+            LawnMower[] activeLawnMowers = Instance.GetComponentsInChildren<LawnMower>();
+            float delayInSeconds = 5f;
+
+            if (activeLawnMowers.Length > 0)
+            {
+                yield return new WaitForSeconds(delayInSeconds);
+
+                foreach (LawnMower activeLawnMower in activeLawnMowers)
+                {
+                    activeLawnMower.gameObject.SetActive(false);
+                }
+            }
         }
     }
 }

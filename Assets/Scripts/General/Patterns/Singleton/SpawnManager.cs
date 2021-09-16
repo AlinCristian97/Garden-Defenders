@@ -38,12 +38,25 @@ namespace General.Patterns.Singleton
         public bool HasFinishedSpawningWaves { get; private set; }
         public List<Attacker> LastWaveAttackersList { get; private set; } = new List<Attacker>();
 
+        private IEnumerator _launchSpawnersCoroutine;
+        
         public void StartSpawningAttackers()
         {
-            StartCoroutine(LaunchSpawners());
+            _launchSpawnersCoroutine = LaunchSpawnersCoroutine();
+            StartCoroutine(_launchSpawnersCoroutine);
+        }
+
+        public void StopSpawningAttackers()
+        {
+            StopCoroutine(_launchSpawnersCoroutine);
+
+            foreach (AttackerSpawner attackerSpawner in _attackerSpawners)
+            {
+                attackerSpawner.StopSpawningWave();
+            }
         }
         
-        private IEnumerator LaunchSpawners()
+        private IEnumerator LaunchSpawnersCoroutine()
         {
             if (_attackerSpawners.Length == 0)
             {
@@ -61,7 +74,7 @@ namespace General.Patterns.Singleton
                 Debug.Log($"WAVE {waveNumber + 1} SPAWNED!");
                 foreach (AttackerSpawner attackerSpawnPoint in _attackerSpawners)
                 {
-                    StartCoroutine(attackerSpawnPoint.SpawnWave(waveNumber));
+                    attackerSpawnPoint.StartSpawningWave(waveNumber);
                 }
 
                 if (waveNumber == NumberOfWaves - 1)

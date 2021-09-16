@@ -28,6 +28,8 @@ namespace General.Patterns.Singleton
         [field:SerializeField] public GameObject MainCanvas { get; private set; }
         [field:SerializeField] public GameObject SelectLevelDefendersCanvas { get; private set; }
         [field:SerializeField] public GameObject PauseCanvas { get; private set; }
+        [field:SerializeField] public GameObject LoseCanvas { get; private set; }
+        [field:SerializeField] public GameObject WinCanvas { get; private set; }
 
         [field:SerializeField] public Transform AvailableCardsContainer { get; private set; }
         [field:SerializeField] public Transform ChosenCardsContainer { get; private set; }

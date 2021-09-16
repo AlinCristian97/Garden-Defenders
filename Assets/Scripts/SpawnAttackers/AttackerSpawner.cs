@@ -15,7 +15,20 @@ namespace SpawnAttackers
         [SerializeField] private float _minTimeBetweenSpawns = 1f;
         [SerializeField] private float _maxTimeBetweenSpawns = 3f;
 
-        public IEnumerator SpawnWave(int waveNumber)
+        private IEnumerator _spawnWaveCoroutine;
+        
+        public void StartSpawningWave(int waveNumber)
+        {
+            _spawnWaveCoroutine = SpawnWaveCoroutine(waveNumber);
+            StartCoroutine(_spawnWaveCoroutine);
+        }
+
+        public void StopSpawningWave()
+        {
+            StopCoroutine(_spawnWaveCoroutine);
+        }
+
+        private IEnumerator SpawnWaveCoroutine(int waveNumber)
         {
             if (_spawnConfig != null)
             {

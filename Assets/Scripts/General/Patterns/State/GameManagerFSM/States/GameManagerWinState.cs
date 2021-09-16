@@ -9,7 +9,8 @@ namespace General.Patterns.State.GameManagerFSM.States
         {
             Debug.Log("Game: Enter Win");
             
-            //mark level as complete + unlock next level logic
+            // increase _lastLevelReached
+            // Save
             
             UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.MainCanvas, false);
             UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.WinCanvas, true);

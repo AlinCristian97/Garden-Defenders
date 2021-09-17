@@ -9,6 +9,8 @@ namespace General.Patterns.State.GameManagerFSM.States
         {
             Debug.Log("Game: Enter Start");
 
+            UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.LevelProgressionSlider, true);
+
             if (SpawnManager.Instance.gameObject.activeSelf)
             {
                 SpawnManager.Instance.StartSpawningAttackers();

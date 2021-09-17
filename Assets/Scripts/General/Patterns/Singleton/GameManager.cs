@@ -85,7 +85,7 @@ namespace General.Patterns.Singleton
             StateMachine = new StateMachine();
             States = new GameManagerStates();
 
-            UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.MainCanvas, false);
+            UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, false);
         }
 
         private void Start()

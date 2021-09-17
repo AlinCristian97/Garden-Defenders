@@ -30,13 +30,22 @@ namespace General.Patterns.Singleton
         [field:SerializeField] public GameObject PauseCanvas { get; private set; }
         [field:SerializeField] public GameObject LoseCanvas { get; private set; }
         [field:SerializeField] public GameObject WinCanvas { get; private set; }
-
+        [field: Space]
+        [field: SerializeField] public CanvasGroup LevelProgressionSlider { get; private set; }
+        [field: Space]
         [field:SerializeField] public Transform AvailableCardsContainer { get; private set; }
         [field:SerializeField] public Transform ChosenCardsContainer { get; private set; }
         
-        public void HideShowCanvasGroup(GameObject canvas, bool active)
+        public void ActivateDeactivateCanvas(GameObject canvas, bool active)
         {
             canvas.SetActive(active);
+        }
+
+        public void HideShowCanvasGroup(CanvasGroup canvasGroup, bool show)
+        {
+            canvasGroup.alpha = Convert.ToInt32(show);
+            canvasGroup.interactable = show;
+            canvasGroup.blocksRaycasts = show;
         }
     }
 }

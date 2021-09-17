@@ -88,6 +88,7 @@ namespace General.Patterns.Singleton
             }
             
             HasFinishedSpawningWaves = true;
+            Debug.Log("Stopped Spawning!");
         }
     }
 }

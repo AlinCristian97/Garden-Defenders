@@ -73,6 +73,7 @@ namespace SpawnAttackers
                     if (waveNumber + 1 == SpawnManager.Instance.NumberOfWaves)
                     {
                         SpawnManager.Instance.LastWaveAttackersList.Add(instantiatedAttacker);
+                        Debug.Log("Spawning last wave!");
                     }
                     
                     yield return new WaitForSeconds(timeBetweenSpawns);

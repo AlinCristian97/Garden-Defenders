@@ -13,6 +13,8 @@ namespace UI
         [SerializeField] private Slider _slider;
         [SerializeField] private float _refreshRate = 0.5f;
 
+        private CanvasGroup _canvasGroup;
+        
         private float _durationInSeconds;
         private ISpawnManager _spawnManager;
         private GameManager _gameManager;
@@ -21,11 +23,14 @@ namespace UI
         {
             _spawnManager = SpawnManager.Instance;
             _gameManager = GameManager.Instance;
+
+            _canvasGroup = GetComponent<CanvasGroup>();
         }
 
         private IEnumerator Start()
         {
-            _durationInSeconds = _spawnManager.TimeBetweenWaves * _spawnManager.NumberOfWaves - 1;
+            _durationInSeconds = _spawnManager.TimeBetweenWaves * (_spawnManager.NumberOfWaves - 1);
+            Debug.Log("Duration In Seconds: " + _durationInSeconds);
             InitializeSlider();
             
             yield return new WaitForSeconds(_gameManager.GetReadyTimeInSeconds);
@@ -37,8 +42,8 @@ namespace UI
         {
             while (true)
             {
-                _slider.value = Time.timeSinceLevelLoad - _gameManager.GetReadyTimeInSeconds;
-                yield return new WaitForSeconds(_refreshRate);
+                _slider.value += Time.deltaTime;
+                yield return null;
             }
         }
 

@@ -22,7 +22,10 @@ namespace UI
         
         private void OnDisable()
         {
-            GameManager.Instance.DetachObserver(this);
+            if (GameManager.Instance!= null)
+            {
+                GameManager.Instance.DetachObserver(this);
+            }
         }
 
         private void Awake()

@@ -13,7 +13,7 @@ namespace General.Patterns.State.GameManagerFSM.States
 
             _gameStartTime = Time.time + GameManager.Instance.GetReadyTimeInSeconds;
             
-            UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.MainCanvas, true);
+            UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, true);
         }
         
         public override void Exit()

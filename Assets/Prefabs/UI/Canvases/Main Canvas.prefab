@@ -103,7 +103,6 @@ GameObject:
   - component: {fileID: 1254995394753532582}
   - component: {fileID: 1254995394753532581}
   - component: {fileID: 1254995394753532580}
-  - component: {fileID: 1254995394753532600}
   m_Layer: 5
   m_Name: Main Canvas
   m_TagString: Untagged
@@ -195,18 +194,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!225 &1254995394753532600
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254995394753532579}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1254995394827687678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,14 +1016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defenderSlot: {fileID: 946367463156781862, guid: 1ac65213fa3f6ae4d8f4127c85a06473, type: 3}
-  _defendersList:
-  - {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
-  - {fileID: 5840748311732509498, guid: 3549606cc2963034190fb07aa5f1e77e, type: 3}
-  - {fileID: 6466747580765947885, guid: 47c790bf23fbb7e48a568211452cea12, type: 3}
-  - {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
-  - {fileID: 2441379869885635785, guid: 73641bb637ba0b9418cb99355cfc3b0a, type: 3}
-  - {fileID: 3099182781402619135, guid: d20c23474cab40d4795e4d938a63f8dc, type: 3}
-  - {fileID: 6846316640245581862, guid: f712f9f036dfe0343b916300046ed394, type: 3}
 --- !u!1 &1254995395574242801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,6 +1485,7 @@ GameObject:
   - component: {fileID: 1254995396011036950}
   - component: {fileID: 1254995396011036949}
   - component: {fileID: 1254995396011036951}
+  - component: {fileID: 1548844714}
   m_Layer: 5
   m_Name: Level Progression
   m_TagString: Untagged
@@ -1585,6 +1565,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 1254995396028646711}
   _refreshRate: 0.1
+--- !u!225 &1548844714
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254995396011036947}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1254995396028646709
 GameObject:
   m_ObjectHideFlags: 0

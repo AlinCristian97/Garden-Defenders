@@ -9,8 +9,8 @@ namespace General.Patterns.State.GameManagerFSM.States
         {
             Debug.Log("Game: Enter Lose");
             
-            UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.MainCanvas, false);
-            UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.LoseCanvas, true);
+            UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, false);
+            UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.LoseCanvas, true);
             
             SpawnManager.Instance.StopSpawningAttackers();
             GameManager.Instance.StartCoroutine(GameManager.Instance.DeactivateAllActiveDefenders());

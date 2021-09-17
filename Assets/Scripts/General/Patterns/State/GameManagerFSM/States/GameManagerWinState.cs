@@ -15,8 +15,8 @@ namespace General.Patterns.State.GameManagerFSM.States
             SaveProgress();
             Debug.Log("After save: " + GameProgressTrackerContainer.Instance.GameProgressTracker.HighestLevelUnlocked);
             
-            UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.MainCanvas, false);
-            UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.WinCanvas, true);
+            UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, false);
+            UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.WinCanvas, true);
         }
 
         public override void Exit()

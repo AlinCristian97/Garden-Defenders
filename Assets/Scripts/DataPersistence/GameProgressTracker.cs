@@ -6,7 +6,7 @@ namespace General
     [Serializable]
     public class GameProgressTracker
     {
-        public int HighestLevelUnlocked = 1;
+        public int HighestLevelUnlocked;
 
         public GameProgressTracker()
         {

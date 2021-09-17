@@ -59,7 +59,9 @@ namespace General
 
             var lawnMowerSpawnPosition = new Vector3(offsetX, currentRowYCenterPosition, 0f);
 
-            Instantiate(_lawnMowerPrefab, lawnMowerSpawnPosition, Quaternion.identity, _lawnMowersContainer);
+            LawnMower lawnMower = Instantiate(_lawnMowerPrefab, lawnMowerSpawnPosition, Quaternion.identity, _lawnMowersContainer);
+            int spriteSortingOrderLogicOffset = 10;
+            lawnMower.SpriteRenderer.sortingOrder = spriteSortingOrderLogicOffset;
         }
 
         private float GetLeftmostTileXPosition()

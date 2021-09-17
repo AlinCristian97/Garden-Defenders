@@ -12,6 +12,7 @@ public class LawnMower : MonoBehaviour
 
     public Animator Animator { get; private set; }
     public Collider2D Collider { get; private set; }
+    public SpriteRenderer SpriteRenderer { get; private set; }
 
     #endregion
     
@@ -28,6 +29,11 @@ public class LawnMower : MonoBehaviour
     {
         Collider = GetComponent<Collider2D>();
         Animator = GetComponent<Animator>();
+        
+        if (GetComponentInChildren<SpriteRenderer>() != null)
+        {
+            SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
 
         StateMachine = new StateMachine();
         States = new LawnMowerStates(this);

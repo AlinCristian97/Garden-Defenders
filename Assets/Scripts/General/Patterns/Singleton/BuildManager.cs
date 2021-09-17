@@ -41,12 +41,14 @@ namespace General.Patterns.Singleton
 
             _shopManager.RemoveFromBalance(_selectionManager.DefenderToBuild.Cost);
 
-            Instantiate(
+            Defender defender = Instantiate(
                 _selectionManager.DefenderToBuild,
                 buildPosition,
                 Quaternion.identity,
                 parent);
-            
+            int spriteSortingOrderLogicOffset = 5;
+            defender.SpriteRenderer.sortingOrder = Mathf.RoundToInt(-defender.transform.position.x + spriteSortingOrderLogicOffset);
+
             _selectionManager.DeselectDefenderToBuild();
         }
 

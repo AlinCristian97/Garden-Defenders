@@ -16,7 +16,7 @@ namespace SpawnAttackers
         [SerializeField] private float _maxTimeBetweenSpawns = 3f;
 
         private IEnumerator _spawnWaveCoroutine;
-        
+
         public void StartSpawningWave(int waveNumber)
         {
             _spawnWaveCoroutine = SpawnWaveCoroutine(waveNumber);
@@ -51,6 +51,7 @@ namespace SpawnAttackers
                 }
                 
                 int attackerSlotCount = 0;
+                int instantiatedAttackersCount = 0;
                 foreach (Attacker attacker in _spawnConfig.Waves[waveNumber])
                 {
                     attackerSlotCount++;
@@ -66,7 +67,9 @@ namespace SpawnAttackers
 
                     var smallRandomSpawnPositionOffset = new Vector3(Random.Range(-0.15f, 0.3f), 0f, 0f);
                     Attacker instantiatedAttacker = Instantiate(attacker, transform.position + smallRandomSpawnPositionOffset, Quaternion.identity, transform);
-                    
+                    instantiatedAttackersCount++;
+                    instantiatedAttacker.SpriteRenderer.sortingOrder = -instantiatedAttackersCount;
+
                     if (waveNumber + 1 == SpawnManager.Instance.NumberOfWaves)
                     {
                         SpawnManager.Instance.LastWaveAttackersList.Add(instantiatedAttacker);

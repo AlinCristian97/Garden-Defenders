@@ -40,6 +40,7 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
 
     public Collider2D Collider { get; protected set; }
     public Animator Animator { get; private set; }
+    public SpriteRenderer SpriteRenderer { get; private set; }
 
     #endregion
 
@@ -75,6 +76,11 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
     {
         Collider = GetComponent<Collider2D>();
         Animator = GetComponent<Animator>();
+
+        if (GetComponentInChildren<SpriteRenderer>() != null)
+        {
+            SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
         
         StateMachine = new StateMachine();
         

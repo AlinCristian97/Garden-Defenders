@@ -1,4 +1,5 @@
-﻿using General.Patterns.Singleton;
+﻿using DataPersistence;
+using General.Patterns.Singleton;
 using UnityEngine;
 
 namespace General.Patterns.State.GameManagerFSM.States
@@ -9,8 +10,10 @@ namespace General.Patterns.State.GameManagerFSM.States
         {
             Debug.Log("Game: Enter Win");
             
-            // increase _lastLevelReached
-            // Save
+            Debug.Log("Before save: " + GameProgressTrackerContainer.Instance.GameProgressTracker.HighestLevelUnlocked);
+            UpdateProgress();
+            SaveProgress();
+            Debug.Log("After save: " + GameProgressTrackerContainer.Instance.GameProgressTracker.HighestLevelUnlocked);
             
             UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.MainCanvas, false);
             UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.WinCanvas, true);
@@ -24,6 +27,16 @@ namespace General.Patterns.State.GameManagerFSM.States
         public override void Execute()
         {
             Debug.Log("Game: Execute Win");
+        }
+
+        private void UpdateProgress()
+        {
+            GameProgressTrackerContainer.Instance.GameProgressTracker.UpdateHighestLevelUnlocked();
+        }
+
+        private void SaveProgress()
+        {
+            GameDataAccess.Save(GameProgressTrackerContainer.Instance.GameProgressTracker);
         }
     }
 }

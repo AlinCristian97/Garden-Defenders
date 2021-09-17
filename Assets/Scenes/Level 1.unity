@@ -5259,6 +5259,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -9.72
       objectReference: {fileID: 0}
+    - target: {fileID: 3356491320595978650, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: _currentLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356491320595978650, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: <CurrentLevel>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6488745883130792176, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: m_RootOrder
       value: 0

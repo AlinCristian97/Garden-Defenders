@@ -6,6 +6,8 @@ namespace Level
 {
     public class SceneLoader : MonoBehaviour
     {
+        
+        
         [SerializeField] private float _waitingTime;
         private int _currentSceneIndex;
 

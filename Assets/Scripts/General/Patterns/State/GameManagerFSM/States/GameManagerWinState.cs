@@ -9,8 +9,10 @@ namespace General.Patterns.State.GameManagerFSM.States
         {
             Debug.Log("Game: Enter Win");
             
-            // increase _lastLevelReached
-            // Save
+            Debug.Log("Before save: " + LevelManager.Instance.GameProgressTracker.HighestLevelUnlocked);
+            LevelManager.Instance.GameProgressTracker.UpdateHighestLevelUnlocked();
+            GameDataAccess.Save(LevelManager.Instance.GameProgressTracker);
+            Debug.Log("After save: " + LevelManager.Instance.GameProgressTracker.HighestLevelUnlocked);
             
             UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.MainCanvas, false);
             UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.WinCanvas, true);

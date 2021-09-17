@@ -65,6 +65,8 @@ namespace General.Patterns.Singleton
         
         #endregion
 
+        [field:SerializeField] public int CurrentLevel { get; private set; }
+
         [field:Header("Choose Defenders State")]
         [field:SerializeField] public List<Defender> AvailableDefendersList { get; private set; }
         public List<Defender> ChosenDefendersList { get; private set; } = new List<Defender>();
@@ -76,6 +78,7 @@ namespace General.Patterns.Singleton
         [field: Header("Lose State")] 
         [field:SerializeField] public Collider2D LoseCollider { get; private set; }
 
+        // public GameProgressTracker GameProgressTracker { get; private set; }
 
         // private IPauseManager _pauseManager;
 
@@ -89,11 +92,29 @@ namespace General.Patterns.Singleton
 
         private void Start()
         {
-            StateMachine.Initialize(States.ChooseDefendersState); }
+            StateMachine.Initialize(States.ChooseDefendersState);
+            
+            // GameProgressTrackerContainer.LoadedProgress = GameDataAccess.Load();
+            // Debug.Log("Loaded progress: " + GameProgressTrackerContainer.LoadedProgress);
+            //
+            // if (GameProgressTrackerContainer.LoadedProgress != null)
+            // {
+            //     GameProgressTracker = GameProgressTrackerContainer.LoadedProgress;
+            // }
+            // else
+            // {
+            //     GameProgressTracker = new GameProgressTracker();
+            // }
+        }
 
         private void Update()
         {
             StateMachine.CurrentState.Execute();
+
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                StateMachine.ChangeState(States.WinState);
+            }
         }
 
         public void ConfirmDefendersLevel()

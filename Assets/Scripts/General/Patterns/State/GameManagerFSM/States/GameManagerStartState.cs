@@ -9,7 +9,10 @@ namespace General.Patterns.State.GameManagerFSM.States
         {
             Debug.Log("Game: Enter Start");
 
-            SpawnManager.Instance.StartSpawningAttackers();
+            if (SpawnManager.Instance.gameObject.activeSelf)
+            {
+                SpawnManager.Instance.StartSpawningAttackers();
+            }
             GameManager.StateMachine.ChangeState(GameManager.States.OnGoingState);
         }
 

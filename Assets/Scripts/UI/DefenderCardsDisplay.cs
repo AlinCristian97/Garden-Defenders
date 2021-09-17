@@ -1,13 +1,35 @@
+using System;
 using System.Collections.Generic;
+using General.Patterns.Observer;
 using General.Patterns.Singleton;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
-    public class DefenderCardsDisplay : MonoBehaviour
+    public class DefenderCardsDisplay : MonoBehaviour, IObserver
     {
         [SerializeField] private DefenderCard _defenderCard;
-        private readonly List<DefenderCard> _instantiatedDefenderCardsList = new List<DefenderCard>();
+        [SerializeField] private Button _confirmChosenDefendersButton;
+        [SerializeField] private TextMeshProUGUI _chooseMinimumText;
+        
+
+        private void OnEnable()
+        {
+            GameManager.Instance.AttachObserver(this);
+        }
+        
+        private void OnDisable()
+        {
+            GameManager.Instance.DetachObserver(this);
+        }
+
+        private void Awake()
+        {
+            _confirmChosenDefendersButton.interactable = false;
+            _chooseMinimumText.enabled = true;
+        }
 
         private void Start()
         {
@@ -19,30 +41,14 @@ namespace UI
             foreach (Defender defender in GameManager.Instance.AvailableDefendersList)
             {
                 DefenderCard defenderCard = Instantiate(_defenderCard, UIManager.Instance.AvailableCardsContainer);
-                _instantiatedDefenderCardsList.Add(defenderCard);
-
                 defenderCard.Defender = defender;
             }
         }
 
-        public void UpdateChosenDefendersList()
+        public void GetNotified()
         {
-            GameManager.Instance.UpdateChosenDefendersList(GetChosenDefenders());
-        }
-
-        private List<Defender> GetChosenDefenders()
-        {
-            List<Defender> chosenDefenders = new List<Defender>();
-
-            foreach (DefenderCard defenderCard in _instantiatedDefenderCardsList)
-            {
-                if (defenderCard.IsChosen)
-                {
-                    chosenDefenders.Add(defenderCard.Defender);
-                }
-            }
-
-            return chosenDefenders;
+            _confirmChosenDefendersButton.interactable = GameManager.Instance.ChosenDefendersList.Count >= 2;
+            _chooseMinimumText.enabled = GameManager.Instance.ChosenDefendersList.Count < 2;
         }
     }
 }

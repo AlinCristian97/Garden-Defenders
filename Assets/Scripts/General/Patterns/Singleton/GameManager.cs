@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace General.Patterns.Singleton
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour, IObservable
     {
         #region Singleton
 
@@ -69,42 +69,28 @@ namespace General.Patterns.Singleton
 
         [field:Header("Choose Defenders State")]
         [field:SerializeField] public List<Defender> AvailableDefendersList { get; private set; }
-        public List<Defender> ChosenDefendersList { get; private set; } = new List<Defender>();
+
+        public List<Defender> ChosenDefendersList { get; } = new List<Defender>();
+
         public bool LevelDefendersConfirmed { get; private set; }
         
         [field:Header("Get Ready State")]
-        [field:SerializeField] public float GetReadyTimeInSeconds { get; private set; }= 5f;
+        [field:SerializeField] public float GetReadyTimeInSeconds { get; private set; } = 5f;
 
         [field: Header("Lose State")] 
         [field:SerializeField] public Collider2D LoseCollider { get; private set; }
-
-        // public GameProgressTracker GameProgressTracker { get; private set; }
-
-        // private IPauseManager _pauseManager;
 
         private void Awake()
         {
             StateMachine = new StateMachine();
             States = new GameManagerStates();
-            
+
             UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.MainCanvas, false);
         }
 
         private void Start()
         {
             StateMachine.Initialize(States.ChooseDefendersState);
-            
-            // GameProgressTrackerContainer.LoadedProgress = GameDataAccess.Load();
-            // Debug.Log("Loaded progress: " + GameProgressTrackerContainer.LoadedProgress);
-            //
-            // if (GameProgressTrackerContainer.LoadedProgress != null)
-            // {
-            //     GameProgressTracker = GameProgressTrackerContainer.LoadedProgress;
-            // }
-            // else
-            // {
-            //     GameProgressTracker = new GameProgressTracker();
-            // }
         }
 
         private void Update()
@@ -122,14 +108,23 @@ namespace General.Patterns.Singleton
             LevelDefendersConfirmed = true;
         }
 
-        public void UpdateChosenDefendersList(List<Defender> chosenDefendersList)
+        public void AddChosenDefender(Defender defender)
         {
-            ChosenDefendersList = chosenDefendersList;
+            ChosenDefendersList.Add(defender);
+            NotifyObservers();
+            Debug.Log("Notified Add. Length: " + ChosenDefendersList.Count);
         }
-        
+
+        public void RemoveChosenDefender(Defender defender)
+        {
+            ChosenDefendersList.Remove(defender);
+            NotifyObservers();
+            Debug.Log("Notified Remove. Length: " + ChosenDefendersList.Count);
+        }
+
         public IEnumerator DeactivateAllActiveDefenders()
         {
-            Defender[] activeDefenders = Instance.GetComponentsInChildren<Defender>();
+            Defender[] activeDefenders = GetComponentsInChildren<Defender>();
             float delayInSeconds = 5f;
 
             if (activeDefenders.Length > 0)

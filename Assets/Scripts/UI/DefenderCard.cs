@@ -36,6 +36,15 @@ namespace UI
         {
             IsChosen = IsChosen == false;
             SetAppropriateParent();
+
+            if (IsChosen)
+            {
+                GameManager.Instance.AddChosenDefender(Defender);
+            }
+            else
+            {
+                GameManager.Instance.RemoveChosenDefender(Defender);
+            }
         }
 
         private void SetAppropriateParent()

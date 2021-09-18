@@ -66,6 +66,12 @@ namespace General.Patterns.Singleton
         #endregion
 
         [field:SerializeField] public int CurrentLevel { get; private set; }
+        
+        [field:Header("Passive Energy Resource")]
+        [SerializeField] private EnergyResource _passiveEnergyResourcePrefab;
+        [SerializeField] private Transform _passiveEnergyResourceContainer;
+        [SerializeField] private float _passiveEnergyResourceCooldownInSeconds;
+        private IEnumerator _spawningPassiveEnergyResource;
 
         [field:Header("Choose Defenders State")]
         [field:SerializeField] public List<Defender> AvailableDefendersList { get; private set; }
@@ -80,10 +86,15 @@ namespace General.Patterns.Singleton
         [field: Header("Lose State")] 
         [field:SerializeField] public Collider2D LoseCollider { get; private set; }
 
+
+        #region Unity Callbacks
+
         private void Awake()
         {
             StateMachine = new StateMachine();
             States = new GameManagerStates();
+            
+            _spawningPassiveEnergyResource = PassiveEnergyResourceCoroutine();
 
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, false);
         }
@@ -103,6 +114,27 @@ namespace General.Patterns.Singleton
             }
         }
 
+        #endregion
+
+        public void StartSpawningPassiveEnergyResource()
+        {
+            StartCoroutine(_spawningPassiveEnergyResource);
+        }
+
+        public void StopSpawningPassiveEnergyResource()
+        {
+            StopCoroutine(_spawningPassiveEnergyResource);
+        }
+
+        private IEnumerator PassiveEnergyResourceCoroutine()
+        {
+            while (true)
+            {
+                Instantiate(_passiveEnergyResourcePrefab, _passiveEnergyResourceContainer);
+                yield return new WaitForSeconds(_passiveEnergyResourceCooldownInSeconds);
+            }
+        }
+        
         public void ConfirmDefendersLevel()
         {
             LevelDefendersConfirmed = true;

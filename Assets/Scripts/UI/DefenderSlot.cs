@@ -57,7 +57,6 @@ namespace UI
 
         public void GetNotified()
         {
-            HandleGamePausedChange();
             HandleBalanceChange();
             HandleDefenderToBuildHighlight();
         }
@@ -110,18 +109,6 @@ namespace UI
                 cb.normalColor = _button.colors.normalColor;
                 
                 _currentlySelectedDefenderSlot._button.colors = cb;
-            }
-        }
-
-        private void HandleGamePausedChange()
-        {
-            if (_pauseManager.GameIsPaused)
-            {
-                DeactivateButton();
-            }
-            else
-            {
-                ActivateButton();
             }
         }
 

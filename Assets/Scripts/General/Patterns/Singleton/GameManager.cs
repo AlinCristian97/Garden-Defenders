@@ -7,6 +7,7 @@ using General.Patterns.State.FSM;
 using General.Patterns.State.GameManagerFSM;
 using UI;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace General.Patterns.Singleton
 {
@@ -108,10 +109,10 @@ namespace General.Patterns.Singleton
         {
             StateMachine.CurrentState.Execute();
 
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                StateMachine.ChangeState(States.WinState);
-            }
+            // if (Input.GetKeyDown(KeyCode.W))
+            // {
+            //     StateMachine.ChangeState(States.WinState);
+            // }
         }
 
         #endregion
@@ -130,6 +131,26 @@ namespace General.Patterns.Singleton
         {
             while (true)
             {
+                int randomDecider = Random.Range(1, 3);
+                Transform passiveEnergyContainerTransform = _passiveEnergyResourceContainer.transform;
+
+                if (randomDecider == 1)
+                {
+                    passiveEnergyContainerTransform.position = 
+                        new Vector3(
+                            -0.2f,
+                            passiveEnergyContainerTransform.position.y,
+                            0f);
+                }
+                else
+                {
+                    passiveEnergyContainerTransform.transform.position =
+                        new Vector3(
+                            -3.8f, 
+                            _passiveEnergyResourceContainer.transform.position.y,
+                            0f);
+                }
+                
                 Instantiate(_passiveEnergyResourcePrefab, _passiveEnergyResourceContainer);
                 yield return new WaitForSeconds(_passiveEnergyResourceCooldownInSeconds);
             }

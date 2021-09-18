@@ -4449,14 +4449,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1254995396028646711, guid: b9078fa41c204e4418c1bed63a669bf5, type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1254995396028646711, guid: b9078fa41c204e4418c1bed63a669bf5, type: 3}
-      propertyPath: m_MaxValue
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1254995396467466506, guid: b9078fa41c204e4418c1bed63a669bf5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4524,7 +4516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2607128601107808423, guid: 377d98d3b21e3eb4aa6a8972f145af20, type: 3}
       propertyPath: <NumberOfWaves>k__BackingField
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2607128601107808423, guid: 377d98d3b21e3eb4aa6a8972f145af20, type: 3}
       propertyPath: _attackerSpawners.Array.data[0]
@@ -4548,7 +4540,7 @@ PrefabInstance:
       objectReference: {fileID: 1680557680}
     - target: {fileID: 2607128601107808423, guid: 377d98d3b21e3eb4aa6a8972f145af20, type: 3}
       propertyPath: <TimeBetweenWaves>k__BackingField
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 377d98d3b21e3eb4aa6a8972f145af20, type: 3}

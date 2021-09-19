@@ -20,6 +20,10 @@ PrefabInstance:
       value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <Name>k__BackingField
+      value: Gun Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: <Avatar>k__BackingField
       value: 
       objectReference: {fileID: 21300000, guid: 92d554b5bc8feb9488698f021bd8992f, type: 3}

@@ -166,14 +166,12 @@ namespace General.Patterns.Singleton
         {
             ChosenDefendersList.Add(defender);
             NotifyObservers();
-            Debug.Log("Notified Add. Length: " + ChosenDefendersList.Count);
         }
 
         public void RemoveChosenDefender(Defender defender)
         {
             ChosenDefendersList.Remove(defender);
             NotifyObservers();
-            Debug.Log("Notified Remove. Length: " + ChosenDefendersList.Count);
         }
 
         public IEnumerator DeactivateAllActiveDefenders()

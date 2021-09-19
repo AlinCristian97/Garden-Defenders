@@ -642,10 +642,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defenderCardPrefab: {fileID: 2626265998162330518, guid: c225df4724db4b545aef6a96b3901754, type: 3}
   _confirmChosenDefendersButton: {fileID: 3235535879121724990}
-  _chosenDefendersContainer: {fileID: 7863056157067332721}
-  _availableDefendersContainer: {fileID: 6941609499720984543}
+  _chosenDefendersContainer: {fileID: 6778600028610382670}
+  _availableDefendersContainer: {fileID: 2937115053754407950}
   _titleText: {fileID: 7485722569674621410}
   _chooseMinimumText: {fileID: 3352177777465239682}
+  _placeholderPrefab: {fileID: 1758148644406451742, guid: 244ca4d4c5a4dda4ba1985846d86eed1, type: 3}
 --- !u!1 &6941609499720984543
 GameObject:
   m_ObjectHideFlags: 0

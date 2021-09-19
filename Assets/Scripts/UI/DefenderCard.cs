@@ -20,6 +20,10 @@ namespace UI
         [SerializeField] private GameObject _minimumRequirementWindow;
         [SerializeField] private TextMeshProUGUI _minimumRequirementText;
 
+        [Space]
+        [SerializeField] private Color32 _unchooseDefenderCardColor;
+        [SerializeField] private Color32 _chooseDefenderCardColor;
+        
         private UIManager _uiManager;
         private Transform _availableCardsContainer;
         private Transform _chosenCardsContainer;
@@ -43,6 +47,7 @@ namespace UI
         private void Start()
         {
             _defenderAvatarImage.sprite = Defender.Avatar;
+            _defenderNameText.text = Defender.Name;
             _defenderCostText.text = Defender.Cost.ToString();
             _minimumRequirementText.text = $"Available for\nlevels {Defender.MinimumLevelAvailability}+";
 
@@ -81,6 +86,7 @@ namespace UI
         {
             IsChosen = IsChosen == false;
             SetAppropriateParent();
+            SetAppropriateHoverColor();
 
             if (IsChosen)
             {
@@ -92,7 +98,17 @@ namespace UI
             }
         }
 
-        private void SetAppropriateParent()
+        private void SetAppropriateHoverColor()
+        {
+            ColorBlock cb = _button.colors;
+
+            cb.highlightedColor = IsChosen ? _unchooseDefenderCardColor : _chooseDefenderCardColor;
+            cb.pressedColor = IsChosen ? _unchooseDefenderCardColor : _chooseDefenderCardColor;
+            
+            _button.colors = cb;
+        }
+
+        private void SetAppropriateParent() 
         {
             transform.SetParent(IsChosen ? _chosenCardsContainer : _availableCardsContainer);
         }

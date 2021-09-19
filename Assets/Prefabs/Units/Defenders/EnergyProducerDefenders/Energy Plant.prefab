@@ -718,6 +718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 50
   <Cost>k__BackingField: 50
+  <Name>k__BackingField: Energy Plant
   <Avatar>k__BackingField: {fileID: 21300000, guid: da83ce55c055f73469fd62395e52177b, type: 3}
   <TilePreview>k__BackingField: {fileID: 8095360363091599877}
   <MinimumLevelAvailability>k__BackingField: 1

@@ -769,6 +769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 300
   <Cost>k__BackingField: 60
+  <Name>k__BackingField: Sword Plant
   <Avatar>k__BackingField: {fileID: 21300000, guid: 517739ec22959dd4898c62969f404e5f, type: 3}
   <TilePreview>k__BackingField: {fileID: 7581766824206098840}
   <MinimumLevelAvailability>k__BackingField: 1

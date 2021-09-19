@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: <MaxHealth>k__BackingField
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <MinimumLevelAvailability>k__BackingField
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3433824323865484209, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -12,7 +12,8 @@ public abstract class Defender : Unit, IObserver
 
     [field:SerializeField] public Sprite Avatar { get; private set; }
     [field:SerializeField] public GameObject TilePreview { get; private set; }
-
+    [field:SerializeField] public int MinimumLevelAvailability { get; private set; }
+    
     private readonly Color _selectedColor = Color.cyan;
     private readonly Color _normalColor = Color.white;
     

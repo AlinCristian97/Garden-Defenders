@@ -13,10 +13,17 @@ namespace UI
 
         [SerializeField] private Image _defenderAvatarImage;
         [SerializeField] private TextMeshProUGUI _defenderCostText;
+        [SerializeField] private Image _defenderCostSymbol;
+        [SerializeField] private TextMeshProUGUI _defenderNameText;
+        
+        [Header("Minimum Requirement")]
+        [SerializeField] private GameObject _minimumRequirementWindow;
+        [SerializeField] private TextMeshProUGUI _minimumRequirementText;
 
         private UIManager _uiManager;
         private Transform _availableCardsContainer;
         private Transform _chosenCardsContainer;
+        private Button _button;
 
         private void Awake()
         {
@@ -24,12 +31,48 @@ namespace UI
 
             _availableCardsContainer = _uiManager.AvailableCardsContainer;
             _chosenCardsContainer = _uiManager.ChosenCardsContainer;
+
+            _button = GetComponent<Button>();
+
+            DisableCard();
         }
 
         private void Start()
         {
             _defenderAvatarImage.sprite = Defender.Avatar;
             _defenderCostText.text = Defender.Cost.ToString();
+            _minimumRequirementText.text = $"Available for\nlevels {Defender.MinimumLevelAvailability}+";
+
+            EnableIfEligible();
+        }
+
+        private void DisableCard()
+        {
+            Color disabledColor = Color.gray;
+            
+            _defenderAvatarImage.color = disabledColor;
+            _defenderCostSymbol.color = disabledColor;
+            _defenderCostText.color = disabledColor;
+            _defenderNameText.color = disabledColor;
+            
+            _button.interactable = false;
+            _minimumRequirementWindow.SetActive(true);
+        }
+
+        private void EnableIfEligible()
+        {
+            Color enabledColor = Color.white;
+
+            if (Defender.MinimumLevelAvailability <= GameManager.Instance.CurrentLevel)
+            {
+                _defenderAvatarImage.color = enabledColor;
+                _defenderCostSymbol.color = enabledColor;
+                _defenderCostText.color = enabledColor;
+                _defenderNameText.color = enabledColor;
+                
+                _button.interactable = true;
+                _minimumRequirementWindow.SetActive(false);
+            }
         }
 
         public void ToggleChooseCard()

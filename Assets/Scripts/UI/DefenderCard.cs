@@ -25,6 +25,8 @@ namespace UI
         private Transform _chosenCardsContainer;
         private Button _button;
 
+        public bool IsEnabled => _button.interactable;
+
         private void Awake()
         {
             _uiManager = UIManager.Instance;
@@ -35,6 +37,7 @@ namespace UI
             _button = GetComponent<Button>();
 
             DisableCard();
+            _minimumRequirementWindow.SetActive(true);
         }
 
         private void Start()
@@ -46,7 +49,7 @@ namespace UI
             EnableIfEligible();
         }
 
-        private void DisableCard()
+        public void DisableCard()
         {
             Color disabledColor = Color.gray;
             
@@ -56,10 +59,9 @@ namespace UI
             _defenderNameText.color = disabledColor;
             
             _button.interactable = false;
-            _minimumRequirementWindow.SetActive(true);
         }
 
-        private void EnableIfEligible()
+        public void EnableIfEligible()
         {
             Color enabledColor = Color.white;
 

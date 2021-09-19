@@ -67,7 +67,8 @@ namespace General.Patterns.Singleton
         #endregion
 
         [field:SerializeField] public int CurrentLevel { get; private set; }
-        
+        [field:SerializeField] public int NumberOfDefenderCardsAllowed { get; private set; }
+
         [field:Header("Passive Energy Resource")]
         [SerializeField] private EnergyResource _passiveEnergyResourcePrefab;
         [SerializeField] private Transform _passiveEnergyResourceContainer;
@@ -76,7 +77,7 @@ namespace General.Patterns.Singleton
 
         [field:Header("Choose Defenders State")]
         [field:SerializeField] public List<Defender> AvailableDefendersList { get; private set; }
-
+        
         public List<Defender> ChosenDefendersList { get; } = new List<Defender>();
 
         public bool LevelDefendersConfirmed { get; private set; }

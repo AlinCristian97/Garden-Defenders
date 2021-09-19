@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Choose your plants
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c327682ca2999c748826df8b9d16e1b8, type: 2}
-  m_sharedMaterial: {fileID: 9124816742668064699, guid: c327682ca2999c748826df8b9d16e1b8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae087845c6f130a40ab00ffd353fae7b, type: 2}
+  m_sharedMaterial: {fileID: 2779070209658274085, guid: ae087845c6f130a40ab00ffd353fae7b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -640,8 +640,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54e39b162bcd9e41bf627ed478a0cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defenderCard: {fileID: 2626265998162330518, guid: c225df4724db4b545aef6a96b3901754, type: 3}
+  _defenderCardPrefab: {fileID: 2626265998162330518, guid: c225df4724db4b545aef6a96b3901754, type: 3}
   _confirmChosenDefendersButton: {fileID: 3235535879121724990}
+  _chosenDefendersContainer: {fileID: 7863056157067332721}
+  _availableDefendersContainer: {fileID: 6941609499720984543}
+  _titleText: {fileID: 7485722569674621410}
   _chooseMinimumText: {fileID: 3352177777465239682}
 --- !u!1 &6941609499720984543
 GameObject:
@@ -982,7 +985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 140}
+  m_AnchoredPosition: {x: 0, y: 151}
   m_SizeDelta: {x: 400, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1883563932091126213

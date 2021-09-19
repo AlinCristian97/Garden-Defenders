@@ -341,6 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <CurrentLevel>k__BackingField: 1
+  <NumberOfDefenderCardsAllowed>k__BackingField: 2
   _passiveEnergyResourcePrefab: {fileID: 1620610993157542476, guid: 53fe74f7499e47c4490bf55d24745912, type: 3}
   _passiveEnergyResourceContainer: {fileID: 1123016501}
   _passiveEnergyResourceCooldownInSeconds: 30

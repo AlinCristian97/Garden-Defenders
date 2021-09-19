@@ -5538,9 +5538,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Select Level Defenders Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7150944967304566534, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}

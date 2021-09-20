@@ -12,14 +12,17 @@ namespace UI
     {
         [SerializeField] private DefenderCard _defenderCardPrefab;
         [SerializeField] private Button _confirmChosenDefendersButton;
+        [Space]
+        [SerializeField] private GameObject _chosenDefendersContainer;
         private DefenderCard[] GetAllChosenDefenderCards =>
-            UIManager.Instance.GetComponentsInChildren<DefenderCard>();
+            _chosenDefendersContainer.GetComponentsInChildren<DefenderCard>();
+        [SerializeField] private GameObject _availableDefendersContainer;
         private DefenderCard[] GetAllAvailableDefenderCards =>
-            UIManager.Instance.GetComponentsInChildren<DefenderCard>();
+            _availableDefendersContainer.GetComponentsInChildren<DefenderCard>();
         [Space]
         [SerializeField] private TextMeshProUGUI _titleText;
         [SerializeField] private TextMeshProUGUI _chooseMinimumText;
-        
+
 
         private void OnEnable()
         {
@@ -63,6 +66,7 @@ namespace UI
 
             SetAppropriateTitleText();
             LockRemainingAvailableCardsIfMaxNumberOfChosenCardsReached();
+
         }
 
         private void LockRemainingAvailableCardsIfMaxNumberOfChosenCardsReached()

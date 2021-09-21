@@ -1,3 +1,4 @@
+using System;
 using General.Patterns.Singleton;
 using TMPro;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace General.Options
         
         [Header("UI Settings")] 
         [SerializeField] private Toggle _showHealthBarsToggle;
-        
+
         private void Start()
         {
             _musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", AudioManager.Instance.DefaultVolume);

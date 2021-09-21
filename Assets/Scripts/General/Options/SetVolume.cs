@@ -1,29 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class SetVolume : MonoBehaviour
+namespace General.Options
 {
-    [SerializeField] private AudioMixer _mixer;
+    public class SetVolume : MonoBehaviour
+    {
+        [SerializeField] private AudioMixer _mixer;
 
-    public void SetMusicLevel(float sliderValue)
-    {
-        _mixer.SetFloat("MusicVolume", GetLogarithmicValue(sliderValue));
-        PlayerPrefs.SetFloat("MusicVolume", sliderValue);
-    }
+        public void SetMusicLevel(float sliderValue)
+        {
+            _mixer.SetFloat("MusicVolume", GetLogarithmicValue(sliderValue));
+            PlayerPrefs.SetFloat("MusicVolume", sliderValue);
+        }
     
-    public void SetSoundEffectsLevel(float sliderValue)
-    {
-        _mixer.SetFloat("SoundEffectsVolume", GetLogarithmicValue(sliderValue));
-        PlayerPrefs.SetFloat("SoundEffectsVolume", sliderValue);
-    }
+        public void SetSoundEffectsLevel(float sliderValue)
+        {
+            _mixer.SetFloat("SoundEffectsVolume", GetLogarithmicValue(sliderValue));
+            PlayerPrefs.SetFloat("SoundEffectsVolume", sliderValue);
+        }
     
-    public void SetUIEffectsLevel(float sliderValue)
-    {
-        _mixer.SetFloat("UIEffectsVolume", GetLogarithmicValue(sliderValue));
-        PlayerPrefs.SetFloat("UIEffectsVolume", sliderValue);
-    }
+        public void SetUIEffectsLevel(float sliderValue)
+        {
+            _mixer.SetFloat("UIEffectsVolume", GetLogarithmicValue(sliderValue));
+            PlayerPrefs.SetFloat("UIEffectsVolume", sliderValue);
+        }
 
-    private float GetLogarithmicValue(float sliderValue) => Mathf.Log10(sliderValue) * 20;
+        private float GetLogarithmicValue(float sliderValue) => Mathf.Log10(sliderValue) * 20;
+    }
 }

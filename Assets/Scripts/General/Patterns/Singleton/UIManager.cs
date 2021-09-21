@@ -27,6 +27,7 @@ namespace General.Patterns.Singleton
 
         public static bool ShowHealthHUD = true;
         public static bool DefaultShowHealthBarsToggleValue = true;
+        public static int DefaultVideoQualityDropdownValue = 2;
 
         [field:SerializeField] public GameObject MainCanvas { get; private set; }
         [field:SerializeField] public GameObject SelectLevelDefendersCanvas { get; private set; }
@@ -39,7 +40,16 @@ namespace General.Patterns.Singleton
         [field:SerializeField] public Transform AvailableCardsContainer { get; private set; }
         [field:SerializeField] public Transform ChosenCardsContainer { get; private set; }
 
-        
+        private void Start()
+        {
+            InitializeVideoQuality();
+        }
+
+        private void InitializeVideoQuality()
+        {
+            QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("VideoSettings", DefaultVideoQualityDropdownValue));
+        }
+
         public void ActivateDeactivateCanvas(GameObject canvas, bool active)
         {
             canvas.SetActive(active);

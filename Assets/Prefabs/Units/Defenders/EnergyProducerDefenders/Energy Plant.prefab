@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 7103647359225954880}
   - component: {fileID: 5134760909135538437}
   - component: {fileID: 7305921200913041655}
+  - component: {fileID: 9140236108726048402}
   m_Layer: 5
   m_Name: Health HUD
   m_TagString: Untagged
@@ -328,6 +329,18 @@ MonoBehaviour:
   _healthyColor: {r: 0.8980392, g: 0.81960785, b: 0.14901961, a: 0.5019608}
   _hurtColor: {r: 0.8980392, g: 0.45882353, b: 0.14901961, a: 0.5019608}
   _veryHurtColor: {r: 0.8980392, g: 0.14901961, b: 0.14901961, a: 0.5019608}
+--- !u!225 &9140236108726048402
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4905301168659304142}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5038257568766238930
 GameObject:
   m_ObjectHideFlags: 0

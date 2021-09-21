@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
 using Audio;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 namespace General.Patterns.Singleton
@@ -12,8 +15,18 @@ namespace General.Patterns.Singleton
         public static AudioManager Instance;
 
         #endregion
+        
+        [field:Header("Audio Mixer")]
+        [field:SerializeField] public AudioMixer Mixer { get; private set; }
+        [field:Space]
+        [field:SerializeField] public AudioMixerGroup MusicGroup { get; private set; }
+        [field:SerializeField] public AudioMixerGroup UIGroup { get; private set; }
+        [field:SerializeField] public AudioMixerGroup SoundEffectsGroup { get; private set; }
+        [field: SerializeField] public float DefaultVolume { get; private set; } = 0.2f;
 
-        [field:SerializeField] public Sound[] GeneralSounds { get; private set; }
+        [field:Header("General Sounds")]
+        [field:SerializeField] public Sound[] Music { get; private set; }
+        [field:SerializeField] public Sound[] UI { get; private set; }
 
         private void Awake()
         {
@@ -33,10 +46,11 @@ namespace General.Patterns.Singleton
 
         private void Start()
         {
-            Play(GeneralSounds, "BackgroundMusic");
+            InitializeAudioVolume();
+            Play(Music, "BackgroundMusic");
         }
 
-        public void InitializeAudioSourceComponentsForArray(Sound[] soundArray)
+        public void InitializeAudioSourceComponentsForArray(Sound[] soundArray, AudioMixerGroup audioMixerGroup)
         {
             foreach (Sound sound in soundArray)
             {
@@ -46,12 +60,21 @@ namespace General.Patterns.Singleton
                 sound.Source.volume = sound.Volume;
                 sound.Source.pitch = sound.Pitch;
                 sound.Source.loop = sound.Loop;
+                sound.Source.outputAudioMixerGroup = audioMixerGroup;
             }
+        }
+
+        private void InitializeAudioVolume()
+        {
+            Mixer.SetFloat("MusicVolume", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume", DefaultVolume)) * 20 );
+            Mixer.SetFloat("SoundEffectsVolume", Mathf.Log10(PlayerPrefs.GetFloat("SoundEffectsVolume", DefaultVolume)) * 20 );
+            Mixer.SetFloat("UIEffectsVolume", Mathf.Log10(PlayerPrefs.GetFloat("UIEffectsVolume", DefaultVolume)) * 20 );
         }
 
         private void InitializeSoundArrays()
         {
-            InitializeAudioSourceComponentsForArray(GeneralSounds);
+            InitializeAudioSourceComponentsForArray(Music, MusicGroup);
+            InitializeAudioSourceComponentsForArray(UI, UIGroup);
         }
 
         public void Play(Sound[] soundsArray, string soundName)
@@ -69,7 +92,7 @@ namespace General.Patterns.Singleton
 
         public void PlayButtonClickSFX()
         {
-            Play(GeneralSounds, "ButtonClickSFX");
+            Play(UI, "ButtonClick");
         }
         
         public void PlayOneShot(Sound[] soundsArray, string soundName)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,18 +7,32 @@ namespace Level
 {
     public class SceneLoader : MonoBehaviour
     {
-        
-        
         [SerializeField] private float _waitingTime;
         private int _currentSceneIndex;
 
-        private void Start()
+        [Header("Fade Transition")]
+        private Animator _transition;
+        [SerializeField] private float _timeAfterEnd;
+        [SerializeField] private float _timeBeforeStart;
+
+        private void Awake()
+        {
+            if (GetComponentInChildren<Animator>() != null)
+            {
+                _transition = GetComponentInChildren<Animator>();
+            }
+        }
+
+        private IEnumerator Start()
         {
             _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             if (_currentSceneIndex == 0)
             {
                 StartCoroutine(WaitForTime());
             }
+
+            yield return new WaitForSeconds(_timeBeforeStart);
+            _transition.SetTrigger("End");
         }
 
         private IEnumerator WaitForTime()
@@ -28,24 +43,49 @@ namespace Level
     
         public void LoadMainMenu()
         {
-            Time.timeScale = 1;
-            SceneManager.LoadScene("MainMenuScene");
+            StartCoroutine(LoadScene("MainMenuScene"));
         }
 
         public void RestartScene()
         {
-            Time.timeScale = 1;
-            SceneManager.LoadScene(_currentSceneIndex);
+            StartCoroutine(LoadScene(_currentSceneIndex));
         }
 
         public void LoadNextScene()
         {
-            SceneManager.LoadScene(_currentSceneIndex + 1);
+            StartCoroutine(LoadScene(_currentSceneIndex + 1));
+        }
+
+        private IEnumerator LoadScene(int sceneIndex)
+        {
+            _transition.SetTrigger("Start");
+
+            yield return new WaitForSeconds(_timeAfterEnd);
+
+            SceneManager.LoadScene(sceneIndex);
+        }
+        
+        private IEnumerator LoadScene(string sceneName)
+        {
+            _transition.SetTrigger("Start");
+
+            yield return new WaitForSeconds(_timeAfterEnd);
+
+            SceneManager.LoadScene(sceneName);
+        }
+
+        private IEnumerator QuitGameCoroutine()
+        {
+            _transition.SetTrigger("Start");
+
+            yield return new WaitForSeconds(_timeAfterEnd);
+
+            Application.Quit();
         }
 
         public void LoadSpecificLevel(string sceneName)
         {
-            SceneManager.LoadScene(sceneName);
+            StartCoroutine(LoadScene(sceneName));
         }
 
         public void LoadLoseScene()
@@ -56,7 +96,7 @@ namespace Level
         public void QuitGame()
         {
             Debug.Log("Quitting game...");
-            Application.Quit();
+            StartCoroutine(QuitGameCoroutine());
         }
     }
 }

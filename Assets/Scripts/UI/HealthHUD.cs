@@ -1,4 +1,5 @@
 using General.Patterns.Observer;
+using General.Patterns.Singleton;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +26,20 @@ namespace UI
         private void Awake()
         {
             _unit = GetComponentInParent<Unit>();
+
+            if (!UIManager.ShowHealthHUD)
+            {
+                HideCanvasGroup();
+            }
+        }
+
+        private void HideCanvasGroup()
+        {
+            var canvasGroup = GetComponent<CanvasGroup>();
+            
+            canvasGroup.alpha = 0;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
         }
 
         private void OnDisable()

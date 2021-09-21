@@ -43,14 +43,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9b9290eca61234fb3ae4cb3a9ba0e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <GeneralSounds>k__BackingField:
+  <Mixer>k__BackingField: {fileID: 24100000, guid: c0e9f6296b0f55741a4f549c9bb87165, type: 2}
+  <MusicGroup>k__BackingField: {fileID: -5634543476568615039, guid: c0e9f6296b0f55741a4f549c9bb87165, type: 2}
+  <UIGroup>k__BackingField: {fileID: 1460423775484881497, guid: c0e9f6296b0f55741a4f549c9bb87165, type: 2}
+  <SoundEffectsGroup>k__BackingField: {fileID: -7071618063722657564, guid: c0e9f6296b0f55741a4f549c9bb87165, type: 2}
+  <DefaultVolume>k__BackingField: 0.5
+  <Music>k__BackingField:
   - <Name>k__BackingField: BackgroundMusic
-    <Clip>k__BackingField: {fileID: 8300000, guid: 1fa6fb51ffc56574a95703c5adbf601b, type: 3}
-    <Volume>k__BackingField: 0.5
+    <Clip>k__BackingField: {fileID: 8300000, guid: a89870d62ad81d6459f0f3501356db42, type: 3}
+    <Volume>k__BackingField: 1
     <Pitch>k__BackingField: 1
     <Loop>k__BackingField: 1
-  - <Name>k__BackingField: ButtonClickSFX
+  <UI>k__BackingField:
+  - <Name>k__BackingField: ButtonClick
     <Clip>k__BackingField: {fileID: 8300000, guid: 79bdcf44c201e6741916927b968a9870, type: 3}
-    <Volume>k__BackingField: 0.5
+    <Volume>k__BackingField: 1
     <Pitch>k__BackingField: 1
     <Loop>k__BackingField: 0

@@ -79,9 +79,9 @@ public class Attacker : Unit
         
         SetRandomAttackRange();
         
-        AudioManager.Instance.InitializeAudioSourceComponentsForArray(AttackSounds);
-        AudioManager.Instance.InitializeAudioSourceComponentsForArray(WalkSounds);
-        AudioManager.Instance.InitializeAudioSourceComponentsForArray(DeathSounds);
+        AudioManager.Instance.InitializeAudioSourceComponentsForArray(AttackSounds, AudioManager.Instance.SoundEffectsGroup);
+        AudioManager.Instance.InitializeAudioSourceComponentsForArray(WalkSounds, AudioManager.Instance.SoundEffectsGroup);
+        AudioManager.Instance.InitializeAudioSourceComponentsForArray(DeathSounds, AudioManager.Instance.SoundEffectsGroup);
     }
 
     private void SetRandomAttackRange()
@@ -254,9 +254,12 @@ public class Attacker : Unit
 
     private void SetHealthHUDActive()
     {
-        if (GetComponentInChildren<HealthHUD>() != null)
+        if (UIManager.ShowHealthHUD)
         {
-            GetComponentInChildren<HealthHUD>().GetComponent<CanvasGroup>().alpha = 1f;
+            if (GetComponentInChildren<HealthHUD>() != null)
+            {
+                GetComponentInChildren<HealthHUD>().GetComponent<CanvasGroup>().alpha = 1f;
+            }
         }
     }
 

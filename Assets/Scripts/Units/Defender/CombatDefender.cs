@@ -56,7 +56,7 @@ public abstract class CombatDefender : Defender
         
         StateMachine.Initialize(States.IdleState);
         
-        AudioManager.Instance.InitializeAudioSourceComponentsForArray(AttackSounds);
+        AudioManager.Instance.InitializeAudioSourceComponentsForArray(AttackSounds, AudioManager.Instance.SoundEffectsGroup);
     }
     
     //TODO: Delete after testing

@@ -44,7 +44,7 @@ public class EnergyProducerDefender : Defender
 
         StateMachine.Initialize(States.IdleState);
         
-        AudioManager.Instance.InitializeAudioSourceComponentsForArray(_deliverSounds);
+        AudioManager.Instance.InitializeAudioSourceComponentsForArray(_deliverSounds, AudioManager.Instance.SoundEffectsGroup);
     }
 
     #endregion

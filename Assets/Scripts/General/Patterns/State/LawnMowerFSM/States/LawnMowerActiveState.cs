@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using General.Patterns.Singleton;
+using UnityEngine;
 
 namespace General.Patterns.State.LawnMowerFSM.States
 {
@@ -11,6 +12,8 @@ namespace General.Patterns.State.LawnMowerFSM.States
         public override void Enter()
         {
             LawnMower.Animator.SetBool("IsActive", true);
+            
+            AudioManager.Instance.PlayClipAtPoint(LawnMower.EngineSound, LawnMower.transform.position);
         }
 
         public override void Exit()

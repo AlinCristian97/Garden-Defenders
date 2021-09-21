@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: <Cost>k__BackingField
-      value: 220
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: <Name>k__BackingField
@@ -36,8 +36,52 @@ PrefabInstance:
       value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: <MinimumLevelAvailability>k__BackingField
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.data[0].<Clip>k__BackingField
+      value: 
+      objectReference: {fileID: 8300000, guid: b85a0603caaa42e4cafcef4d385cd3f9, type: 3}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.data[1].<Clip>k__BackingField
+      value: 
+      objectReference: {fileID: 8300000, guid: 2aaad8ce9b3991d4fa051966350530a3, type: 3}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.data[1].<Name>k__BackingField
+      value: Attack2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.data[2].<Clip>k__BackingField
+      value: 
+      objectReference: {fileID: 8300000, guid: 20de2c1c38e10724d94a2b1972cd9ae0, type: 3}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.data[2].<Name>k__BackingField
+      value: Attack3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.data[1].<Pitch>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.data[2].<Pitch>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.data[0].<Volume>k__BackingField
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.data[1].<Volume>k__BackingField
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.data[2].<Volume>k__BackingField
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3433824323865484209, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: m_Sprite

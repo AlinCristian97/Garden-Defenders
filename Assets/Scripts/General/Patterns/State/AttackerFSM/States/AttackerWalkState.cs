@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using General.Patterns.Singleton;
+using UnityEngine;
 
 namespace General.Patterns.State.AttackerFSM.States
 {
@@ -27,6 +28,22 @@ namespace General.Patterns.State.AttackerFSM.States
             else
             {
                 Attacker.transform.Translate(Vector3.left * Time.deltaTime * Attacker.MovementSpeed);
+            }
+            
+            if (Attacker.WalkSFXCooldownPassed())
+            {
+                Attacker.UpdateNextWalkSFX();
+                PlayRandomWalkSFX();
+            }
+        }
+        
+        private void PlayRandomWalkSFX()
+        {
+            if (Attacker.WalkSounds.Length > 0)
+            {
+                int randomIndex = Random.Range(0, Attacker.WalkSounds.Length);
+
+                AudioManager.Instance.PlayOneShot(Attacker.WalkSounds, Attacker.WalkSounds[randomIndex].Name);
             }
         }
     }

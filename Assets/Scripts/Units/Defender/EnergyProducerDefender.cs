@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
+using General.Patterns.Singleton;
 using General.Patterns.State.DefenderFSM;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnergyProducerDefender : Defender
 {
@@ -11,6 +14,8 @@ public class EnergyProducerDefender : Defender
     [SerializeField] private Transform _energyResourceSpawnPoint;
     [SerializeField] [Range(3f, 20f)] private float _timeBetweenDelivers = 1f;
     private float _nextDeliver;
+
+    [SerializeField] private Sound[] _deliverSounds;
     
     public EnergyProducerDefenderStates States { get; private set; }
 
@@ -38,6 +43,8 @@ public class EnergyProducerDefender : Defender
         base.Start();
 
         StateMachine.Initialize(States.IdleState);
+        
+        AudioManager.Instance.InitializeAudioSourceComponentsForArray(_deliverSounds);
     }
 
     #endregion
@@ -62,7 +69,6 @@ public class EnergyProducerDefender : Defender
         StateMachine.ChangeState(States.IdleState);
     }
 
-    //TODO: Make Energy Resource collectable + add to Balance
     private void Deliver()
     {
         var position = _energyResourceSpawnPoint.position;
@@ -73,6 +79,16 @@ public class EnergyProducerDefender : Defender
             Quaternion.identity);
         
         Debug.Log("delivered resource");
+    }
+    
+    private void PlayRandomDeliverSFX()
+    {
+        if (_deliverSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, _deliverSounds.Length);
+
+            AudioManager.Instance.PlayOneShot(_deliverSounds, _deliverSounds[randomIndex].Name); 
+        }
     }
 
     #endregion

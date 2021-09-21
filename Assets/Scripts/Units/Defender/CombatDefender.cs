@@ -1,8 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
+using General.Patterns.Singleton;
 using General.Patterns.State.DefenderFSM;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public abstract class CombatDefender : Defender
 {
@@ -18,6 +22,9 @@ public abstract class CombatDefender : Defender
     [SerializeField] [Range(0.2f, 3f)] private float _timeBetweenAttacks = 1f;
     private float _nextAttack;
     protected Attacker Target;
+
+    [field:Header("SFX")] 
+    [field:SerializeField] public Sound[] AttackSounds { get; private set; }
 
     #region FSM
 
@@ -48,6 +55,8 @@ public abstract class CombatDefender : Defender
         base.Start();
         
         StateMachine.Initialize(States.IdleState);
+        
+        AudioManager.Instance.InitializeAudioSourceComponentsForArray(AttackSounds);
     }
     
     //TODO: Delete after testing
@@ -99,6 +108,16 @@ public abstract class CombatDefender : Defender
     private void SetIdleState()
     {
         StateMachine.ChangeState(States.IdleState);
+    }
+    
+    private void PlayRandomAttackSFX()
+    {
+        if (AttackSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, AttackSounds.Length);
+
+            AudioManager.Instance.PlayOneShot(AttackSounds, AttackSounds[randomIndex].Name);
+        }
     }
     
     #endregion

@@ -1,4 +1,7 @@
-﻿namespace General.Patterns.State.DefenderFSM
+﻿using General.Patterns.Singleton;
+using UnityEngine;
+
+namespace General.Patterns.State.DefenderFSM
 {
     public class CombatDefenderAttackState : CombatDefenderState
     {
@@ -21,7 +24,7 @@
                 CombatDefender.UpdateNextAttack();
                 CombatDefender.TriggerAttackAnimation();
             }
-
+            
             if (!CombatDefender.HasTargetInAttackRange())
             {
                 CombatDefender.StateMachine.ChangeState(CombatDefender.States.IdleState);

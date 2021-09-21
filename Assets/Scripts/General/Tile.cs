@@ -74,6 +74,7 @@ namespace General
                 {
                     _selectionManager.SelectDefenderToSell(CurrentDefender);
                 }
+                AudioManager.Instance.PlayButtonClickSFX();
             }
             else
             {
@@ -84,6 +85,7 @@ namespace General
                 else if (_selectionManager.DefenderToBuild != null)
                 {
                     _buildManager.BuildDefender(transform.position, transform);
+                    AudioManager.Instance.PlayButtonClickSFX();
                     OnMouseExit();
                 }
             }

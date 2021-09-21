@@ -47,6 +47,14 @@ PrefabInstance:
       propertyPath: <MinimumLevelAvailability>k__BackingField
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.data[0].<Clip>k__BackingField
+      value: 
+      objectReference: {fileID: 8300000, guid: e654f406bbb360848936583c80592f77, type: 3}
+    - target: {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
+      propertyPath: <AttackSounds>k__BackingField.Array.data[1].<Clip>k__BackingField
+      value: 
+      objectReference: {fileID: 8300000, guid: 5198871521eaec449ac614512ca174aa, type: 3}
     - target: {fileID: 8281373511138843780, guid: 25c49556963c00246bab81a61684f358, type: 3}
       propertyPath: m_RootOrder
       value: 0

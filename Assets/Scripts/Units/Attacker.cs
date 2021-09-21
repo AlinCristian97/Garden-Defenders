@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
+using General.Patterns.Singleton;
 using General.Patterns.State.AttackerFSM;
 using TMPro;
 using UI;
@@ -28,6 +30,13 @@ public class Attacker : Unit
     [SerializeField] [Range(0.5f, 3f)] private float _timeBetweenAttacks = 1f;
     private float _nextAttack;
     private Defender _target;
+    
+    [field:Header("SFX")]
+    [field:SerializeField] public Sound[] AttackSounds { get; private set; }
+    [field:SerializeField] public Sound[] DeathSounds { get; private set; }
+    [field:SerializeField] public Sound[] WalkSounds { get; private set; }
+    private float _nextAttackSFX;
+    private float _nextWalkSFX;
 
     #region FSM
 
@@ -57,6 +66,9 @@ public class Attacker : Unit
         _visualsRenderer = GetComponentInChildren<SpriteRenderer>();
         //TODO: Find better way to get the Shadow
         _shadow = _visualsRenderer.gameObject.GetComponentsInChildren<SpriteRenderer>()[1];
+        
+        UpdateNextAttackSFX();
+        UpdateNextWalkSFX();
     }
 
     protected override void Start()
@@ -66,6 +78,10 @@ public class Attacker : Unit
         StateMachine.Initialize(States.RiseState);
         
         SetRandomAttackRange();
+        
+        AudioManager.Instance.InitializeAudioSourceComponentsForArray(AttackSounds);
+        AudioManager.Instance.InitializeAudioSourceComponentsForArray(WalkSounds);
+        AudioManager.Instance.InitializeAudioSourceComponentsForArray(DeathSounds);
     }
 
     private void SetRandomAttackRange()
@@ -152,6 +168,48 @@ public class Attacker : Unit
         _nextAttack = Time.time + _timeBetweenAttacks;
     }
     
+    public void UpdateNextAttackSFX()
+    {
+        const int chancePercent = 70;
+
+        float randomNumber = Random.Range(1, 101);
+        if (randomNumber < chancePercent)
+        {
+            const float randomTimeMin = 3f;
+            const float randomTimeMax = 8f;
+
+            float randomTimeInSeconds = Random.Range(randomTimeMin, randomTimeMax);
+            _nextAttackSFX = Time.time + randomTimeInSeconds;
+        }
+        else
+        {
+            _nextAttackSFX = Mathf.Infinity;
+        }
+    }
+    
+    public void UpdateNextWalkSFX()
+    {
+        const int chancePercent = 20;
+        
+        float randomNumber = Random.Range(1, 101);
+        if (randomNumber < chancePercent)
+        {
+            const float randomTimeMin = 4f;
+            const float randomTimeMax = 8f;
+        
+            float randomTimeInSeconds = Random.Range(randomTimeMin, randomTimeMax);
+            _nextWalkSFX = Time.time + randomTimeInSeconds;
+        }
+        else
+        {
+            _nextWalkSFX = Mathf.Infinity;
+        }
+    }
+
+    public bool AttackSFXCooldownPassed() => Time.time > _nextAttackSFX;
+    public bool WalkSFXCooldownPassed() => Time.time > _nextWalkSFX;
+    
+
     public bool AttackCooldownPassed() => Time.time > _nextAttack;
 
     public void TriggerAttackAnimation()

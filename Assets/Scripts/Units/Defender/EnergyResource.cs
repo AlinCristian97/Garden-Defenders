@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Audio;
 using General.Patterns.Singleton;
 using UnityEngine;
 
@@ -13,6 +14,9 @@ public class EnergyResource : MonoBehaviour
     [SerializeField] private float _aboutToDisappearFlashFrequencyInSeconds = 0.5f;
     [SerializeField] private Color _normalColor;
     [SerializeField] private Color _fadedColor;
+    
+    [Header("SFX")]
+    [SerializeField] private Sound _collectSound;
 
     private SpriteRenderer _spriteRenderer;
     
@@ -53,6 +57,8 @@ public class EnergyResource : MonoBehaviour
         ShopManager.Instance.AddToBalance(_energyAmount);
         
         //Optionally add a SFX / "poof" effect or some animations
+        AudioManager.Instance.PlayClipAtPoint(_collectSound, transform.position);
+        
         Destroy(gameObject);
     }
 }

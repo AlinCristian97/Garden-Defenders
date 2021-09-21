@@ -1,4 +1,6 @@
 using System;
+using Audio;
+using General.Patterns.Singleton;
 using General.Patterns.State.FSM;
 using General.Patterns.State.LawnMowerFSM;
 using UnityEngine;
@@ -7,6 +9,9 @@ using UnityEngine;
 public class LawnMower : MonoBehaviour
 {
     [field: SerializeField] public float MovementSpeed { get; private set; } = 1f;
+
+    [field:Header("SFX")] 
+    [field:SerializeField] public Sound EngineSound { get; private set; }
 
     #region Components
 

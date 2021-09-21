@@ -31,7 +31,7 @@ namespace DataPersistence
             Debug.Log(Application.persistentDataPath);
             
             _loadedProgress = GameDataAccess.Load();
-
+            
             GameProgressTracker = _loadedProgress ?? new GameProgressTracker();
         }
     }

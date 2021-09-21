@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Audio;
 using General;
 using General.Patterns.Observer;
 using General.Patterns.Singleton;
@@ -18,6 +19,9 @@ public abstract class Defender : Unit, IObserver
     private readonly Color _normalColor = Color.white;
     
     private ISelectionManager _selectionManager;
+
+    [field:SerializeField] public Sound DeathSound { get; private set; }
+    
     public Tile Tile => GetComponentInParent<Tile>();
 
     private void OnEnable()

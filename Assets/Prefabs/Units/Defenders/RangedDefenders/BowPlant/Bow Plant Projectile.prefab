@@ -96,3 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 25
+  _impactSounds:
+  - <Name>k__BackingField: Impact1
+    <Clip>k__BackingField: {fileID: 8300000, guid: b9c0ce312d175dd4c8b0b77626d7886f, type: 3}
+    <Volume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &862341359190138525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 862341359190138514}
+  - component: {fileID: 7242737133306641176}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &862341359190138514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862341359190138525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7242737133306641176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862341359190138525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9b9290eca61234fb3ae4cb3a9ba0e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <GeneralSounds>k__BackingField:
+  - <Name>k__BackingField: BackgroundMusic
+    <Clip>k__BackingField: {fileID: 8300000, guid: 1fa6fb51ffc56574a95703c5adbf601b, type: 3}
+    <Volume>k__BackingField: 0.5
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 1
+  - <Name>k__BackingField: ButtonClickSFX
+    <Clip>k__BackingField: {fileID: 8300000, guid: 79bdcf44c201e6741916927b968a9870, type: 3}
+    <Volume>k__BackingField: 0.5
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0

@@ -33,6 +33,11 @@ namespace UI
             _selectionManager.AttachObserver(this);
         }
 
+        public void PlayButtonClickSFX()
+        {
+            AudioManager.Instance.PlayButtonClickSFX();
+        }
+
         private void Awake()
         {
             _button = GetComponent<Button>();

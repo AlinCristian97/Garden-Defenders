@@ -53,6 +53,11 @@ namespace UI
 
             EnableIfEligible();
         }
+        
+        public void PlayButtonClickSFX()
+        {
+            AudioManager.Instance.PlayButtonClickSFX();
+        }
 
         public void DisableCard()
         {

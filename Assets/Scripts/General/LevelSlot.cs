@@ -1,4 +1,5 @@
 using System;
+using General.Patterns.Singleton;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,6 +34,11 @@ namespace General
         public void EnableButton()
         {
             Button.interactable = true;
+        }
+        
+        public void PlayButtonClickSFX()
+        {
+            AudioManager.Instance.PlayButtonClickSFX();
         }
 
         public void UnlockLevel()

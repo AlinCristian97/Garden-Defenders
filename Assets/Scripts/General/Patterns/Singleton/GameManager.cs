@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using General.Patterns.Observer;
 using General.Patterns.Singleton.Interfaces;
 using General.Patterns.State.FSM;
@@ -73,6 +74,7 @@ namespace General.Patterns.Singleton
         [SerializeField] private EnergyResource _passiveEnergyResourcePrefab;
         [SerializeField] private Transform _passiveEnergyResourceContainer;
         [SerializeField] private float _passiveEnergyResourceCooldownInSeconds;
+        [SerializeField] private Sound _passiveEnergyResourceSpawnSFX;
         private IEnumerator _spawningPassiveEnergyResource;
 
         [field:Header("Choose Defenders State")]
@@ -152,7 +154,9 @@ namespace General.Patterns.Singleton
                             0f);
                 }
                 
-                Instantiate(_passiveEnergyResourcePrefab, _passiveEnergyResourceContainer);
+                EnergyResource energy = Instantiate(_passiveEnergyResourcePrefab, _passiveEnergyResourceContainer);
+                AudioManager.Instance.PlayClipAtPoint(_passiveEnergyResourceSpawnSFX, energy.transform.position);
+                
                 yield return new WaitForSeconds(_passiveEnergyResourceCooldownInSeconds);
             }
         }

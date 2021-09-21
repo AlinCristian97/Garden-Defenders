@@ -104,6 +104,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MovementSpeed>k__BackingField: 2
+  <EngineSound>k__BackingField:
+    <Name>k__BackingField: EngineSFX
+    <Clip>k__BackingField: {fileID: 8300000, guid: 06c0feb617f118f40bd768f34b8025b0, type: 3}
+    <Volume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
 --- !u!1 &1082202018732440634
 GameObject:
   m_ObjectHideFlags: 0

@@ -451,6 +451,54 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _timeBetweenAttacks: 1
+  <AttackSounds>k__BackingField:
+  - <Name>k__BackingField: Attack1
+    <Clip>k__BackingField: {fileID: 8300000, guid: bc5557f91d09cac42a23607f604c693e, type: 3}
+    <Volume>k__BackingField: 0.4
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: Attack2
+    <Clip>k__BackingField: {fileID: 8300000, guid: a4841ba8038360141870b476933fb117, type: 3}
+    <Volume>k__BackingField: 0.4
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: Attack3
+    <Clip>k__BackingField: {fileID: 8300000, guid: 2b6d06dab747f1d40b5739d72fc65b32, type: 3}
+    <Volume>k__BackingField: 0.4
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: Attack4
+    <Clip>k__BackingField: {fileID: 8300000, guid: 562e2dad04cd83f49b59b2abdc328ed6, type: 3}
+    <Volume>k__BackingField: 0.4
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  <DeathSounds>k__BackingField:
+  - <Name>k__BackingField: Die1
+    <Clip>k__BackingField: {fileID: 8300000, guid: 9967ab175d819534493488696543700e, type: 3}
+    <Volume>k__BackingField: 0.7
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: Die2
+    <Clip>k__BackingField: {fileID: 8300000, guid: 76e4ca186f959ab4ab18e3656157c9f5, type: 3}
+    <Volume>k__BackingField: 0.7
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: Die3
+    <Clip>k__BackingField: {fileID: 8300000, guid: 367e87c2d09b85a449f20dc437cc4c86, type: 3}
+    <Volume>k__BackingField: 0.7
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  <WalkSounds>k__BackingField:
+  - <Name>k__BackingField: Walk1
+    <Clip>k__BackingField: {fileID: 8300000, guid: ce510a36a82cdf141b1df083b01d5726, type: 3}
+    <Volume>k__BackingField: 0.2
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: Walk2
+    <Clip>k__BackingField: {fileID: 8300000, guid: 54595c7bc24e5df4497cabb344ff51fa, type: 3}
+    <Volume>k__BackingField: 0.2
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
 --- !u!1 &8534724485333106590
 GameObject:
   m_ObjectHideFlags: 0

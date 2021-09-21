@@ -1,12 +1,17 @@
+using System;
+using Audio;
+using General.Patterns.Singleton;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float _speed = 1f;
     private int _damage = 50;
+    [SerializeField] private Sound[] _impactSounds;
     
     private Unit _target;
-
+    
     private void Update()
     {
         transform.Translate(Vector3.right * _speed * Time.deltaTime);
@@ -16,12 +21,23 @@ public class Projectile : MonoBehaviour
             if (!_target.IsDead && TargetReached())
             {
                 _target.TakeDamage(_damage);
+                PlayRandomImpactSFX();
+
                 Destroy(gameObject);
             }
             else if (_target.IsDead)
             {
                 Destroy(gameObject);
             }
+        }
+    }
+
+    private void PlayRandomImpactSFX()
+    {
+        if (_impactSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, _impactSounds.Length);
+            AudioManager.Instance.PlayClipAtPoint(_impactSounds, _impactSounds[randomIndex].Name, transform.position);
         }
     }
 

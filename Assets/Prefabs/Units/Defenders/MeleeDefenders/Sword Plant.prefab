@@ -773,9 +773,26 @@ MonoBehaviour:
   <Avatar>k__BackingField: {fileID: 21300000, guid: 517739ec22959dd4898c62969f404e5f, type: 3}
   <TilePreview>k__BackingField: {fileID: 7581766824206098840}
   <MinimumLevelAvailability>k__BackingField: 1
+  <DeathSound>k__BackingField:
+    <Name>k__BackingField: DeathSFX
+    <Clip>k__BackingField: {fileID: 8300000, guid: 27198c1920061ce4a89f46ca92290ef8, type: 3}
+    <Volume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
   _isFacingRight: 1
   <Damage>k__BackingField: 10
   _detectTargetLayerMask:
     serializedVersion: 2
     m_Bits: 128
   _timeBetweenAttacks: 0.8
+  <AttackSounds>k__BackingField:
+  - <Name>k__BackingField: Attack1
+    <Clip>k__BackingField: {fileID: 8300000, guid: 5140301263f860e4fabbe3797df15f7f, type: 3}
+    <Volume>k__BackingField: 0.3
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: Attack2
+    <Clip>k__BackingField: {fileID: 8300000, guid: f7b892116a9fe234abb15959565d54f6, type: 3}
+    <Volume>k__BackingField: 0.3
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0

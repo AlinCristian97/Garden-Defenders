@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using General.Patterns.Singleton;
+using UnityEngine;
 
 namespace General.Patterns.State.DefenderFSM
 {
@@ -14,6 +15,8 @@ namespace General.Patterns.State.DefenderFSM
 
             //TODO: problem. Entering dead state multiple times.
             Debug.Log("entered dead state");
+
+            PlayDeathSFX();
         }
 
         public override void Exit()
@@ -22,6 +25,13 @@ namespace General.Patterns.State.DefenderFSM
 
         public override void Execute()
         {
+        }
+
+        private void PlayDeathSFX()
+        {
+            AudioManager.Instance.PlayClipAtPoint(
+                CombatDefender.DeathSound,
+                CombatDefender.transform.position);
         }
     }
 }

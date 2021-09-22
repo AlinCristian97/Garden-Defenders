@@ -40,7 +40,18 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
 
     public Collider2D Collider { get; protected set; }
     public Animator Animator { get; private set; }
-    public SpriteRenderer SpriteRenderer { get; private set; }
+    private SpriteRenderer _spriteRenderer;
+    public SpriteRenderer SpriteRenderer {
+        get
+        {
+            return _spriteRenderer;
+        }
+        private set
+        {
+            _spriteRenderer = value;
+            NotifyObservers();
+        } 
+    }
 
     #endregion
 
@@ -50,6 +61,8 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
 
     #endregion
 
+    [field:SerializeField] public string Name { get; private set; }
+
     private int _currentHealth;
     public int CurrentHealth 
     {
@@ -57,7 +70,7 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
         {
             return _currentHealth;
         }
-        private set
+        protected set
         {
             _currentHealth = value;
             NotifyObservers();
@@ -66,7 +79,6 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
     [field: SerializeField] public int MaxHealth { get; private set; }
     
     public bool IsDead => CurrentHealth <= 0;
-    private bool _isDying;
     
     protected HealthHUD HealthHUD;
 
@@ -85,10 +97,7 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
         StateMachine = new StateMachine();
         
         HealthHUD = GetComponentInChildren<HealthHUD>();
-    }
-
-    protected virtual void Start()
-    {
+        
         CurrentHealth = MaxHealth;
     }
 
@@ -99,22 +108,13 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
     
     #endregion
 
-    public void TakeDamage(int amount)
+    public abstract void TakeDamage(int amount);
+
+    protected void SetFullHealth()
     {
-        CurrentHealth -= amount;
-
-        if (CurrentHealth <= 0)
-        {
-            CurrentHealth = 0;
-
-            if (!_isDying)
-            {
-                StartCoroutine(ProcessDeath());
-                _isDying = true;
-            }
-        }
+        CurrentHealth = MaxHealth;
     }
-
+    
     protected abstract IEnumerator ProcessDeath();
 
     protected abstract void SetDeadState();

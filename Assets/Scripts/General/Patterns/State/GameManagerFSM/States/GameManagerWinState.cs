@@ -1,4 +1,5 @@
-﻿using DataPersistence;
+﻿using General.DataPersistence;
+using General.ObjectPooling;
 using General.Patterns.Singleton;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ namespace General.Patterns.State.GameManagerFSM.States
             SpawnManager.Instance.gameObject.SetActive(false);
             LanesGenerator.Instance.gameObject.SetActive(false);
             WarnMessageManager.Instance.gameObject.SetActive(false);
+            ObjectPooler.Instance.gameObject.SetActive(false);
 
             StopBackgroundMusic();
             PlayWinMusic();

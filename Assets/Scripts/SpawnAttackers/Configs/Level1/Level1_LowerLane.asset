@@ -12,11 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bad9446a48a9f49a67769d9cdc1234, type: 3}
   m_Name: Level1_LowerLane
   m_EditorClassIdentifier: 
-  Waves:
-  - <AttackersToSpawn>k__BackingField:
-    - {fileID: 8169357663515039197, guid: 4f33c28dafb363b4ab99db7b64a9f9e1, type: 3}
-    - {fileID: 8169357663515039197, guid: 4f33c28dafb363b4ab99db7b64a9f9e1, type: 3}
-  - <AttackersToSpawn>k__BackingField:
-    - {fileID: 4816439257078695183, guid: 588623daa64f0464589d2fa502a6acf5, type: 3}
-    - {fileID: 4816439257078695183, guid: 588623daa64f0464589d2fa502a6acf5, type: 3}
-    - {fileID: 4816439257078695183, guid: 588623daa64f0464589d2fa502a6acf5, type: 3}
+  Waves: []

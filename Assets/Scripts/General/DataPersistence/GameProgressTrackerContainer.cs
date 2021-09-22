@@ -1,7 +1,6 @@
-using General;
 using UnityEngine;
 
-namespace DataPersistence
+namespace General.DataPersistence
 {
     public class GameProgressTrackerContainer : MonoBehaviour
     {

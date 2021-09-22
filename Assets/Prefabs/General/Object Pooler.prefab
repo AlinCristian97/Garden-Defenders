@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2672861707910757585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2672861707910757582}
+  - component: {fileID: 2672861707910757583}
+  m_Layer: 0
+  m_Name: Object Pooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2672861707910757582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672861707910757585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2672861707910757583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672861707910757585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7550a924d7f944538d1e9ec5b490ba48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pools:
+  - <Identifier>k__BackingField: PanZombie
+    <Prefab>k__BackingField: {fileID: 3738823554875887236, guid: a416f7c08a03e5742b2d03e16e0722e8, type: 3}
+    <Size>k__BackingField: 50
+  - <Identifier>k__BackingField: OneEyeZombie
+    <Prefab>k__BackingField: {fileID: 3583490367121158728, guid: 02df7d710b757e944a69234c133db34c, type: 3}
+    <Size>k__BackingField: 50
+  - <Identifier>k__BackingField: MummyZombie
+    <Prefab>k__BackingField: {fileID: 7793827324763628843, guid: 4f33c28dafb363b4ab99db7b64a9f9e1, type: 3}
+    <Size>k__BackingField: 50
+  - <Identifier>k__BackingField: KidZombie
+    <Prefab>k__BackingField: {fileID: 7923914264595662271, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
+    <Size>k__BackingField: 50
+  - <Identifier>k__BackingField: FrankensteinZombie
+    <Prefab>k__BackingField: {fileID: 6890844807573616121, guid: 588623daa64f0464589d2fa502a6acf5, type: 3}
+    <Size>k__BackingField: 50

@@ -109,8 +109,8 @@ namespace General.Patterns.Singleton
 
         private void Update()
         {
-            // StateMachine.CurrentState.Execute();
-            //
+            StateMachine.CurrentState.Execute();
+            
             // if (Input.GetKeyDown(KeyCode.W))
             // {
             //     StateMachine.ChangeState(States.WinState);

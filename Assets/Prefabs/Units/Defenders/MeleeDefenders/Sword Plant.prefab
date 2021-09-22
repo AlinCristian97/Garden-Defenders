@@ -85,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2920403862897279400}
   - component: {fileID: 8583589882820646933}
-  - component: {fileID: 776251793633257446}
+  - component: {fileID: 8409846057526066989}
   m_Layer: 7
   m_Name: Shadow
   m_TagString: Untagged
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &776251793633257446
+--- !u!114 &8409846057526066989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 818413883551058218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7cb289ab232aa41a135564882e0de2, type: 3}
+  m_Script: {fileID: 11500000, guid: a1775af90b1cddf4695c415ff63da144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3080597106119783272
@@ -330,7 +330,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1825335120617188201}
   - component: {fileID: 3433824323865484209}
-  - component: {fileID: 4092656509617376806}
   m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
@@ -404,18 +403,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4092656509617376806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7500095433766022962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40c7504e0568e02428dc6df284bf5179, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7581766824206098840
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,18 +767,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3faef5bbde4143bb000f6f606ea5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Name>k__BackingField: Sword Plant
   <MaxHealth>k__BackingField: 300
   <Cost>k__BackingField: 60
-  <Name>k__BackingField: Sword Plant
   <Avatar>k__BackingField: {fileID: 21300000, guid: 517739ec22959dd4898c62969f404e5f, type: 3}
   <TilePreview>k__BackingField: {fileID: 7581766824206098840}
   <MinimumLevelAvailability>k__BackingField: 1
-  <DeathSound>k__BackingField:
-    <Name>k__BackingField: DeathSFX
-    <Clip>k__BackingField: {fileID: 8300000, guid: 27198c1920061ce4a89f46ca92290ef8, type: 3}
-    <Volume>k__BackingField: 1
-    <Pitch>k__BackingField: 1
-    <Loop>k__BackingField: 0
   _isFacingRight: 1
   <Damage>k__BackingField: 10
   _detectTargetLayerMask:

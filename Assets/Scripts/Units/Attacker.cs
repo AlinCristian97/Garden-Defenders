@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Audio;
+using General;
 using General.Patterns.Singleton;
 using General.Patterns.State.AttackerFSM;
 using TMPro;
@@ -43,6 +44,8 @@ public class Attacker : Unit
     
     private SpriteRenderer _visualsRenderer;
     private SpriteRenderer _shadow;
+    private float _initialVisualsRendererAlpha;
+    private float _initialShadowAlpha;
     private const float FADE_OUT_DURATION = 2f;
 
     #endregion
@@ -68,12 +71,13 @@ public class Attacker : Unit
         
         UpdateNextAttackSFX();
         UpdateNextWalkSFX();
-    }
 
-    protected override void Start()
+        _initialVisualsRendererAlpha = _visualsRenderer.color.a;
+        _initialShadowAlpha = _shadow.color.a;
+    }
+    
+    protected void Start()
     {
-        base.Start();
-        
         StateMachine.Initialize(States.RiseState);
         
         SetRandomAttackRange();
@@ -95,6 +99,20 @@ public class Attacker : Unit
         HandleDebug();
     }
 
+    public override void TakeDamage(int amount)
+    {
+        CurrentHealth -= amount;
+
+        if (CurrentHealth <= 0)
+        {
+            CurrentHealth = 0;
+            
+            StartCoroutine(ProcessDeath());
+        }
+    }
+
+    #endregion
+
     protected override IEnumerator ProcessDeath()
     {
         Collider.enabled = false;
@@ -111,8 +129,34 @@ public class Attacker : Unit
         
         yield return StartCoroutine(FadeTo(0f, FADE_OUT_DURATION));
         
-        //here either destroy or deactivate GO
         gameObject.SetActive(false);
+    }
+
+    public void Revive()
+    {
+        SetFullHealth();
+        Collider.enabled = true;
+
+        if (HealthHUD != null && UIManager.ShowHealthHUD) //TODO: Check if required
+        {
+            HealthHUD.gameObject.SetActive(true);
+        }
+        
+        StateMachine.ChangeState(States.RiseState);
+
+        SetSpriteFullAlpha();
+    }
+
+    private void SetSpriteFullAlpha()
+    {
+        Color currentColor = _visualsRenderer.color;
+        Color currentShadowColor = _shadow.color;
+
+        var newColor = new Color(currentColor.r, currentColor.g, currentColor.b, _initialVisualsRendererAlpha);
+        var newShadowColor = new Color(currentShadowColor.r, currentShadowColor.g, currentShadowColor.b, _initialShadowAlpha);
+        
+        _visualsRenderer.color = newColor;
+        _shadow.color = newShadowColor;
     }
     
     private IEnumerator FadeTo(float aValue, float aTime)
@@ -158,8 +202,6 @@ public class Attacker : Unit
             StateMachine.ChangeState(States.DeadState);
         }
     }
-
-    #endregion
 
     public void UpdateNextAttack()
     {

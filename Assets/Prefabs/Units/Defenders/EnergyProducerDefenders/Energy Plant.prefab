@@ -351,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6157328793531243437}
   - component: {fileID: 3541849350246084977}
-  - component: {fileID: 2168279342636872137}
+  - component: {fileID: 7007932515547532777}
   m_Layer: 7
   m_Name: Shadow
   m_TagString: Untagged
@@ -424,7 +424,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2168279342636872137
+--- !u!114 &7007932515547532777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5038257568766238930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7cb289ab232aa41a135564882e0de2, type: 3}
+  m_Script: {fileID: 11500000, guid: a1775af90b1cddf4695c415ff63da144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5712149198573856486
@@ -476,7 +476,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1825335120617188201}
   - component: {fileID: 3433824323865484209}
-  - component: {fileID: 4092656509617376806}
   m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
@@ -550,18 +549,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4092656509617376806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7500095433766022962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40c7504e0568e02428dc6df284bf5179, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8095360363091599877
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,18 +716,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4a0e70fb791c544b9809a3f758e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Name>k__BackingField: Energy Plant
   <MaxHealth>k__BackingField: 50
   <Cost>k__BackingField: 50
-  <Name>k__BackingField: Energy Plant
   <Avatar>k__BackingField: {fileID: 21300000, guid: da83ce55c055f73469fd62395e52177b, type: 3}
   <TilePreview>k__BackingField: {fileID: 8095360363091599877}
   <MinimumLevelAvailability>k__BackingField: 1
-  <DeathSound>k__BackingField:
-    <Name>k__BackingField: DeathSFX
-    <Clip>k__BackingField: {fileID: 8300000, guid: 27198c1920061ce4a89f46ca92290ef8, type: 3}
-    <Volume>k__BackingField: 1
-    <Pitch>k__BackingField: 1
-    <Loop>k__BackingField: 0
   _energyResource: {fileID: 1620610993157542476, guid: 53fe74f7499e47c4490bf55d24745912, type: 3}
   _energyResourceSpawnPoint: {fileID: 4706156919252646664}
   _timeBetweenDelivers: 15

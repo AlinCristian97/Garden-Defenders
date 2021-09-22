@@ -50,10 +50,8 @@ public abstract class CombatDefender : Defender
         States = new CombatDefenderStates(this);
     }
     
-    protected override void Start()
+    protected void Start()
     {
-        base.Start();
-        
         StateMachine.Initialize(States.IdleState);
         
         AudioManager.Instance.InitializeAudioSourceComponentsForArray(AttackSounds, AudioManager.Instance.SoundEffectsGroup);

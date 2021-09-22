@@ -79,6 +79,9 @@ namespace General
             LawnMower lawnMower = Instantiate(_lawnMowerPrefab, lawnMowerSpawnPosition, Quaternion.identity, _lawnMowersContainer);
             int spriteSortingOrderLogicOffset = 10;
             lawnMower.SpriteRenderer.sortingOrder = spriteSortingOrderLogicOffset;
+            
+            VisualsOrderInLayerAdjuster.SetYSortingOrder(lawnMower.SpriteRenderer, lawnMower.transform.position.y);
+            ShadowOrderInLayerAdjuster.SetShadowSortingOrder(lawnMower.GetComponentInChildren<Shadow>().SpriteRenderer, lawnMower.SpriteRenderer);
         }
 
         private float GetLeftmostTileXPosition()

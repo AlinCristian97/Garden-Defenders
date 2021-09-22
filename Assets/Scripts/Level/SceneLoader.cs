@@ -33,11 +33,13 @@ namespace Level
             _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             if (_currentSceneIndex == 0)
             {
+                Cursor.visible = false;
                 _transition.SetTrigger("End");
                 StartCoroutine(WaitForTime());
             }
             else
             {
+                Cursor.visible = true;
                 yield return StartCoroutine(AudioManager.Instance.StartFade(0.0001f, 0.0001f));
             
                 StartCoroutine(AudioManager.Instance.StartFade(_fadeDuration, 1f));

@@ -1,10 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using General;
+using General.ObjectPooling;
 using General.Patterns.Singleton;
 using SpawnAttackers.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using Shadow = General.Shadow;
 
 namespace SpawnAttackers
 {
@@ -66,10 +70,18 @@ namespace SpawnAttackers
                     float timeBetweenSpawns = Random.Range(_minTimeBetweenSpawns, _maxTimeBetweenSpawns);
 
                     var smallRandomSpawnPositionOffset = new Vector3(Random.Range(-0.15f, 0.3f), 0f, 0f);
-                    Attacker instantiatedAttacker = Instantiate(attacker, transform.position + smallRandomSpawnPositionOffset, Quaternion.identity, transform);
+                    GameObject instantiatedGameObject = ObjectPooler.Instance.SpawnFromPool(attacker.Name, transform.position + smallRandomSpawnPositionOffset, Quaternion.identity);
                     instantiatedAttackersCount++;
-                    instantiatedAttacker.SpriteRenderer.sortingOrder = -instantiatedAttackersCount;
-
+                    var instantiatedAttacker = instantiatedGameObject.GetComponent<Attacker>();
+                    instantiatedAttacker.SpriteRenderer.sortingOrder = 0;
+                    VisualsOrderInLayerAdjuster.SetYSortingOrder(instantiatedAttacker.SpriteRenderer, instantiatedAttacker.transform.position.y);
+                    instantiatedAttacker.SpriteRenderer.sortingOrder -= instantiatedAttackersCount;
+                    ShadowOrderInLayerAdjuster.SetShadowSortingOrder(instantiatedAttacker.GetComponentInChildren<Shadow>().SpriteRenderer, instantiatedAttacker.SpriteRenderer);
+                    if (instantiatedAttacker.IsDead)
+                    {
+                        instantiatedAttacker.Revive();
+                    }
+                    
                     if (waveNumber + 1 == SpawnManager.Instance.NumberOfWaves)
                     {
                         SpawnManager.Instance.LastWaveAttackersList.Add(instantiatedAttacker);

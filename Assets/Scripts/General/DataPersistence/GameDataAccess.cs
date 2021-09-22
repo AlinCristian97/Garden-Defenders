@@ -2,10 +2,9 @@
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
-using General;
 using UnityEngine;
 
-namespace DataPersistence
+namespace General.DataPersistence
 {
     public class GameDataAccess
     {

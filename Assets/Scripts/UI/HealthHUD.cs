@@ -1,3 +1,4 @@
+using System;
 using General.Patterns.Observer;
 using General.Patterns.Singleton;
 using UnityEngine;
@@ -21,6 +22,8 @@ namespace UI
         private void OnEnable()
         {
             _unit.AttachObserver(this);
+            SetHealthColorByCurrentHealthValue(_unit);
+            _healthBar.fillAmount = 1;
         }
     
         private void Awake()

@@ -1,7 +1,7 @@
 ﻿using System;
 using General.Patterns.Singleton;
 
-namespace General
+namespace General.DataPersistence
 {
     [Serializable]
     public class GameProgressTracker

@@ -47,7 +47,9 @@ namespace General.Patterns.Singleton
                 Quaternion.identity,
                 parent);
             int spriteSortingOrderLogicOffset = 5;
-            defender.SpriteRenderer.sortingOrder = Mathf.RoundToInt(-defender.transform.position.x + spriteSortingOrderLogicOffset);
+            VisualsOrderInLayerAdjuster.SetYSortingOrder(defender.SpriteRenderer, defender.transform.position.y);
+            defender.SpriteRenderer.sortingOrder += Mathf.RoundToInt(-defender.transform.position.x + spriteSortingOrderLogicOffset);
+            ShadowOrderInLayerAdjuster.SetShadowSortingOrder(defender.GetComponentInChildren<Shadow>().SpriteRenderer, defender.SpriteRenderer);
 
             _selectionManager.DeselectDefenderToBuild();
         }

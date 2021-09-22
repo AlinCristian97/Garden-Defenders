@@ -38,10 +38,8 @@ public class EnergyProducerDefender : Defender
         }
     }
 
-    protected override void Start()
+    protected void Start()
     {
-        base.Start();
-
         StateMachine.Initialize(States.IdleState);
         
         AudioManager.Instance.InitializeAudioSourceComponentsForArray(_deliverSounds, AudioManager.Instance.SoundEffectsGroup);

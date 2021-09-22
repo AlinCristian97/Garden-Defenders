@@ -276,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3887499121439999916}
   - component: {fileID: 7219104624886744070}
-  - component: {fileID: 4146930579259255345}
+  - component: {fileID: 2097792084299037915}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -337,7 +337,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115713201
   m_SortingLayer: 1
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 2c334e98f629d7b419e768a05738a1f4, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.43137255}
   m_FlipX: 0
@@ -349,7 +349,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4146930579259255345
+--- !u!114 &2097792084299037915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3665389149582508538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7cb289ab232aa41a135564882e0de2, type: 3}
+  m_Script: {fileID: 11500000, guid: a1775af90b1cddf4695c415ff63da144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7923914264595662271
@@ -443,6 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d3d2508bfb6fc49b3c8582dd52df8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Name>k__BackingField: KidZombie
   <MaxHealth>k__BackingField: 200
   _isFacingRight: 0
   _movementSpeed: 0.75
@@ -470,22 +471,6 @@ MonoBehaviour:
   - <Name>k__BackingField: Attack4
     <Clip>k__BackingField: {fileID: 8300000, guid: 562e2dad04cd83f49b59b2abdc328ed6, type: 3}
     <Volume>k__BackingField: 0.4
-    <Pitch>k__BackingField: 1
-    <Loop>k__BackingField: 0
-  <DeathSounds>k__BackingField:
-  - <Name>k__BackingField: Die1
-    <Clip>k__BackingField: {fileID: 8300000, guid: 9967ab175d819534493488696543700e, type: 3}
-    <Volume>k__BackingField: 0.7
-    <Pitch>k__BackingField: 1
-    <Loop>k__BackingField: 0
-  - <Name>k__BackingField: Die2
-    <Clip>k__BackingField: {fileID: 8300000, guid: 76e4ca186f959ab4ab18e3656157c9f5, type: 3}
-    <Volume>k__BackingField: 0.7
-    <Pitch>k__BackingField: 1
-    <Loop>k__BackingField: 0
-  - <Name>k__BackingField: Die3
-    <Clip>k__BackingField: {fileID: 8300000, guid: 367e87c2d09b85a449f20dc437cc4c86, type: 3}
-    <Volume>k__BackingField: 0.7
     <Pitch>k__BackingField: 1
     <Loop>k__BackingField: 0
   <WalkSounds>k__BackingField:
@@ -584,7 +569,6 @@ GameObject:
   m_Component:
   - component: {fileID: 454542236807082576}
   - component: {fileID: 3512062623006556808}
-  - component: {fileID: 9025470340607730014}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -646,7 +630,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115713201
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5c3472451fcbb1445b6e9cea20e4eabb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -658,15 +642,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9025470340607730014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8579232297382163979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40c7504e0568e02428dc6df284bf5179, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

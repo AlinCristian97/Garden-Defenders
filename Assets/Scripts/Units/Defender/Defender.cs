@@ -10,14 +10,14 @@ using UnityEngine;
 public abstract class Defender : Unit, IObserver
 {
     [field:SerializeField] public int Cost { get; private set; }
-    [field:SerializeField] public string Name { get; private set; }
     [field:SerializeField] public Sprite Avatar { get; private set; }
     [field:SerializeField] public GameObject TilePreview { get; private set; }
     [field:SerializeField] public int MinimumLevelAvailability { get; private set; }
     
     private readonly Color _selectedColor = Color.cyan;
     private readonly Color _normalColor = Color.white;
-    
+    private bool _isDying;
+
     private ISelectionManager _selectionManager;
 
     public Tile Tile => GetComponentInParent<Tile>();
@@ -72,6 +72,22 @@ public abstract class Defender : Unit, IObserver
         else
         {
             SpriteRenderer.color = _normalColor;
+        }
+    }
+    
+    public override void TakeDamage(int amount)
+    {
+        CurrentHealth -= amount;
+
+        if (CurrentHealth <= 0)
+        {
+            CurrentHealth = 0;
+
+            if (!_isDying)
+            {
+                StartCoroutine(ProcessDeath());
+                _isDying = true;
+            }
         }
     }
 }

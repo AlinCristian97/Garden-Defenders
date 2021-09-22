@@ -104,12 +104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MovementSpeed>k__BackingField: 2
-  <EngineSound>k__BackingField:
-    <Name>k__BackingField: EngineSFX
-    <Clip>k__BackingField: {fileID: 8300000, guid: 06c0feb617f118f40bd768f34b8025b0, type: 3}
-    <Volume>k__BackingField: 1
-    <Pitch>k__BackingField: 1
-    <Loop>k__BackingField: 0
 --- !u!1 &1082202018732440634
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8827328035916049091}
   - component: {fileID: 8159022865753095712}
-  - component: {fileID: 8921500315814430384}
+  - component: {fileID: 6583035956612546810}
   m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
@@ -193,7 +187,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8921500315814430384
+--- !u!114 &6583035956612546810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,7 +196,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1082202018732440634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7cb289ab232aa41a135564882e0de2, type: 3}
+  m_Script: {fileID: 11500000, guid: a1775af90b1cddf4695c415ff63da144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6650311551523060112
@@ -215,7 +209,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8951206513076179345}
   - component: {fileID: 7091658354546883991}
-  - component: {fileID: 4108083551062243763}
   m_Layer: 8
   m_Name: Visuals
   m_TagString: Untagged
@@ -289,15 +282,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4108083551062243763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6650311551523060112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40c7504e0568e02428dc6df284bf5179, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

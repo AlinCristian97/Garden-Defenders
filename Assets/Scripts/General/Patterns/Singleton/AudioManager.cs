@@ -104,6 +104,19 @@ namespace General.Patterns.Singleton
             
             sound.Source.Play();
         }
+        
+        public void Stop(Sound[] soundsArray, string soundName)
+        {
+            Sound sound = Array.Find(soundsArray, sound => sound.Name == soundName);
+
+            if (sound == null)
+            {
+                Debug.Log("Sound \"" + soundName + "\" not found!");
+                return;
+            }
+            
+            sound.Source.Stop();
+        }
 
         public void PlayButtonClickSFX()
         {

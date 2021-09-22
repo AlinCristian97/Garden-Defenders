@@ -31,7 +31,6 @@ namespace UI
         private IEnumerator Start()
         {
             _durationInSeconds = _spawnManager.TimeBetweenWaves * (_spawnManager.NumberOfWaves - 1);
-            Debug.Log("Duration In Seconds: " + _durationInSeconds);
             InitializeSlider();
             
             yield return new WaitForSeconds(_gameManager.GetReadyTimeInSeconds);
@@ -50,7 +49,6 @@ namespace UI
 
         private void InitializeSlider()
         {
-            Debug.Log(GetLeftmostPointX());
             _slider.maxValue = _durationInSeconds;
             _slider.value = _slider.minValue;
             InstantiateCheckpoints();

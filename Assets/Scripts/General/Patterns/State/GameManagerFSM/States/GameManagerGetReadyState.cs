@@ -10,23 +10,22 @@ namespace General.Patterns.State.GameManagerFSM.States
 
         public override void Enter()
         {
-            Debug.Log("Game: Enter GetReady");
-
             _gameStartTime = Time.time + GameManager.Instance.GetReadyTimeInSeconds;
             
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, true);
-            WarnMessageManager.Instance.SpawnWarningMessage("Zombies are approaching", 3f);
+            
+            if (WarnMessageManager.Instance != null)
+            {
+                WarnMessageManager.Instance.SpawnWarningMessage("Zombies are approaching", 3f);
+            }
         }
         
         public override void Exit()
         {
-            Debug.Log("Game: Exit GetReady");
         }
 
         public override void Execute()
         {
-            Debug.Log("Game: Execute GetReady");
-
             if (Time.time >= _gameStartTime)
             {
                 GameManager.StateMachine.ChangeState(GameManager.States.StartState);

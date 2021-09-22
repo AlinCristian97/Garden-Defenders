@@ -7,8 +7,6 @@ namespace General.Patterns.State.GameManagerFSM.States
     {
         public override void Enter()
         {
-            Debug.Log("Game: Enter Start");
-
             UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.LevelProgressionSlider, true);
 
             if (SpawnManager.Instance.gameObject.activeSelf)
@@ -20,12 +18,10 @@ namespace General.Patterns.State.GameManagerFSM.States
 
         public override void Exit()
         {
-            Debug.Log("Game: Exit Start");
         }
 
         public override void Execute()
         {
-            Debug.Log("Game: Execute Start");
         }
     }
 }

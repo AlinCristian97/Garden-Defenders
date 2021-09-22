@@ -77,8 +77,6 @@ public class EnergyProducerDefender : Defender
             new Vector3(position.x, position.y,
                 CameraInputLayer.PRIORITY_ENERGY_RESOURCE),
             Quaternion.identity);
-        
-        Debug.Log("delivered resource");
     }
     
     private void PlayRandomDeliverSFX()

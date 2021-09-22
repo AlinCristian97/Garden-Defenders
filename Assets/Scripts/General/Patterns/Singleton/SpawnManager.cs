@@ -88,7 +88,10 @@ namespace General.Patterns.Singleton
             }
             
             HasFinishedSpawningWaves = true;
-            WarnMessageManager.Instance.SpawnWarningMessage("Last wave!", 0f);
+            if (WarnMessageManager.Instance != null)
+            {
+                WarnMessageManager.Instance.SpawnWarningMessage("Last wave!", 0f);
+            }
         }
     }
 }

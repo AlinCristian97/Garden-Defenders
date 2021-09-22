@@ -8,23 +8,37 @@ namespace General.Patterns.State.GameManagerFSM.States
     {
         public override void Enter()
         {
-            Debug.Log("Game: Enter Win");
-            
             UpdateProgress();
             SaveProgress();
             
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, false);
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.WinCanvas, true);
+            
+            GameManager.Instance.gameObject.SetActive(false);
+            SpawnManager.Instance.gameObject.SetActive(false);
+            LanesGenerator.Instance.gameObject.SetActive(false);
+            WarnMessageManager.Instance.gameObject.SetActive(false);
+
+            StopBackgroundMusic();
+            PlayWinMusic();
+        }
+
+        private void StopBackgroundMusic()
+        {
+            AudioManager.Instance.Stop(AudioManager.Instance.Music, "BackgroundMusic");
+        }
+
+        private void PlayWinMusic()
+        {
+            AudioManager.Instance.Play(AudioManager.Instance.Music, "WinMusic");
         }
 
         public override void Exit()
         {
-            Debug.Log("Game: Exit Win");
         }
 
         public override void Execute()
         {
-            Debug.Log("Game: Execute Win");
         }
 
         private void UpdateProgress()

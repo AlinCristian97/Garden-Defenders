@@ -8,21 +8,16 @@ namespace General.Patterns.State.GameManagerFSM.States
     {
         public override void Enter()
         {
-            Debug.Log("Game: Enter OnGoing");
-
             GameManager.StartSpawningPassiveEnergyResource();
         }
 
         public override void Exit()
         {
-            Debug.Log("Game: Exit OnGoing");
             GameManager.StopSpawningPassiveEnergyResource();
         }
 
         public override void Execute()
         {
-            Debug.Log("Game: Execute OnGoing");
-            
             CheckWin();
             CheckLose();
         }

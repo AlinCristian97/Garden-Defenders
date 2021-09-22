@@ -7,27 +7,18 @@ namespace General.Patterns.State.GameManagerFSM.States
     {
         public override void Enter()
         {
-            Debug.Log("Game: Enter ChooseDefenders");
-
-            // Time.timeScale = 0f;
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.SelectLevelDefendersCanvas, true);
         }
 
         public override void Exit()
         {
-            Debug.Log("Game: Exit ChooseDefenders");
-            
-            // Time.timeScale = 1f;
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.SelectLevelDefendersCanvas, false);
         }
 
         public override void Execute()
         {
-            Debug.Log("Game: Execute ChooseDefenders");
-
             if (GameManager.LevelDefendersConfirmed)
             {
-                Debug.Log("LevelDefenders have been confirmed");
                 GameManager.StateMachine.ChangeState(GameManager.States.GetReadyState);
             }
         }

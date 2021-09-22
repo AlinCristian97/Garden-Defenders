@@ -6,7 +6,24 @@ namespace General
 {
     public class LanesGenerator : MonoBehaviour
     {
-        //TODO: Restrict multiple instances via Singleton
+        #region Singleton
+
+        private static LanesGenerator _instance;
+        
+        public static LanesGenerator Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = FindObjectOfType<LanesGenerator>();
+                }
+                
+                return _instance;
+            }
+        }
+
+        #endregion
     
         [Header("Buildable Grid Tiles")]
         [SerializeField] private GameObject _tilePrefab;

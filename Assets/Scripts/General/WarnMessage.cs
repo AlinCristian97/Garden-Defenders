@@ -15,7 +15,10 @@ namespace General
 
         public void DeactivateWarningMessage()
         {
-            WarnMessageManager.Instance.DeactivateWarningMessageGameObject();
+            if (WarnMessageManager.Instance != null)
+            {
+                WarnMessageManager.Instance.DeactivateWarningMessageGameObject();
+            }
         }
     }
 }

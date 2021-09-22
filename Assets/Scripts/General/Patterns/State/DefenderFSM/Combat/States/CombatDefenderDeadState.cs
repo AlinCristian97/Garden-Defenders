@@ -13,9 +13,6 @@ namespace General.Patterns.State.DefenderFSM
         {
             CombatDefender.Animator.SetTrigger("Die");
 
-            //TODO: problem. Entering dead state multiple times.
-            Debug.Log("entered dead state");
-
             PlayDeathSFX();
         }
 

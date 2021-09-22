@@ -111,10 +111,15 @@ namespace General.Patterns.Singleton
         {
             StateMachine.CurrentState.Execute();
 
-            // if (Input.GetKeyDown(KeyCode.W))
-            // {
-            //     StateMachine.ChangeState(States.WinState);
-            // }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                StateMachine.ChangeState(States.WinState);
+            }
+            
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                StateMachine.ChangeState(States.LoseState);
+            }
         }
 
         #endregion
@@ -181,38 +186,6 @@ namespace General.Patterns.Singleton
         {
             ChosenDefendersList.Remove(defender);
             NotifyObservers();
-        }
-
-        public IEnumerator DeactivateAllActiveDefenders()
-        {
-            Defender[] activeDefenders = GetComponentsInChildren<Defender>();
-            float delayInSeconds = 5f;
-
-            if (activeDefenders.Length > 0)
-            {
-                yield return new WaitForSeconds(delayInSeconds);
-
-                foreach (Defender activeDefender in activeDefenders)
-                {
-                    activeDefender.gameObject.SetActive(false);
-                }
-            }
-        }
-
-        public IEnumerator DeactivateAllLawnMowers()
-        {
-            LawnMower[] activeLawnMowers = Instance.GetComponentsInChildren<LawnMower>();
-            float delayInSeconds = 5f;
-
-            if (activeLawnMowers.Length > 0)
-            {
-                yield return new WaitForSeconds(delayInSeconds);
-
-                foreach (LawnMower activeLawnMower in activeLawnMowers)
-                {
-                    activeLawnMower.gameObject.SetActive(false);
-                }
-            }
         }
     }
 }

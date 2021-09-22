@@ -255,3 +255,4 @@ MonoBehaviour:
   _waitingTime: 0
   _timeAfterEnd: 1
   _timeBeforeStart: 0.5
+  _fadeDuration: 0.5

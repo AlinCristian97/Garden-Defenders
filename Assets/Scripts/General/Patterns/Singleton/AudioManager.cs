@@ -29,7 +29,25 @@ namespace General.Patterns.Singleton
         [field:SerializeField] public Sound[] UI { get; private set; }
         [field:SerializeField] public Sound[] Miscellaneous { get; private set; }
         [field:SerializeField] public Sound[] DefenderDeathVariations { get; private set; }
+        
+        public IEnumerator StartFade(float duration, float targetVolume)
+        {
+            float currentTime = 0;
+            float currentVol;
+            Mixer.GetFloat("MasterVolume", out currentVol);
+            currentVol = Mathf.Pow(10, currentVol / 20);
+            float targetValue = Mathf.Clamp(targetVolume, 0.0001f, 1);
 
+            while (currentTime < duration)
+            {
+                currentTime += Time.deltaTime;
+                float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
+                Mixer.SetFloat("MasterVolume", Mathf.Log10(newVol) * 20);
+                yield return null;
+            }
+            yield break;
+        }
+        
         private void Awake()
         {
             #region Singleton
@@ -46,9 +64,15 @@ namespace General.Patterns.Singleton
             InitializeSoundArrays();
         }
 
-        private void Start()
+        private IEnumerator Start()
         {
             InitializeAudioVolume();
+
+            if (SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                yield return new WaitForSeconds(0.75f);
+            }
+            
             Play(Music, "BackgroundMusic");
         }
 

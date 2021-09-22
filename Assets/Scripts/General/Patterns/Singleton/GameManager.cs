@@ -109,17 +109,17 @@ namespace General.Patterns.Singleton
 
         private void Update()
         {
-            StateMachine.CurrentState.Execute();
-
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                StateMachine.ChangeState(States.WinState);
-            }
-            
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                StateMachine.ChangeState(States.LoseState);
-            }
+            // StateMachine.CurrentState.Execute();
+            //
+            // if (Input.GetKeyDown(KeyCode.W))
+            // {
+            //     StateMachine.ChangeState(States.WinState);
+            // }
+            //
+            // if (Input.GetKeyDown(KeyCode.L))
+            // {
+            //     StateMachine.ChangeState(States.LoseState);
+            // }
         }
 
         #endregion

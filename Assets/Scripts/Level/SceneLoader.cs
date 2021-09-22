@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using General.Patterns.Singleton;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 namespace Level
@@ -10,10 +12,13 @@ namespace Level
         [SerializeField] private float _waitingTime;
         private int _currentSceneIndex;
 
-        [Header("Fade Transition")]
+        [Header("Visual Fade Transition")]
         private Animator _transition;
         [SerializeField] private float _timeAfterEnd;
         [SerializeField] private float _timeBeforeStart;
+
+        [Header("Audio Fade Transition")]
+        [SerializeField] private float _fadeDuration;
 
         private void Awake()
         {
@@ -28,11 +33,18 @@ namespace Level
             _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             if (_currentSceneIndex == 0)
             {
+                _transition.SetTrigger("End");
                 StartCoroutine(WaitForTime());
             }
+            else
+            {
+                yield return StartCoroutine(AudioManager.Instance.StartFade(0.0001f, 0.0001f));
+            
+                StartCoroutine(AudioManager.Instance.StartFade(_fadeDuration, 1f));
 
-            yield return new WaitForSeconds(_timeBeforeStart);
-            _transition.SetTrigger("End");
+                yield return new WaitForSeconds(_timeBeforeStart);
+                _transition.SetTrigger("End"); 
+            }
         }
 
         private IEnumerator WaitForTime()
@@ -60,6 +72,7 @@ namespace Level
         {
             _transition.SetTrigger("Start");
 
+            StartCoroutine(AudioManager.Instance.StartFade(_fadeDuration, 0.0001f));
             yield return new WaitForSeconds(_timeAfterEnd);
 
             SceneManager.LoadScene(sceneIndex);
@@ -69,6 +82,7 @@ namespace Level
         {
             _transition.SetTrigger("Start");
 
+            StartCoroutine(AudioManager.Instance.StartFade(_fadeDuration, 0.0001f));
             yield return new WaitForSeconds(_timeAfterEnd);
 
             SceneManager.LoadScene(sceneName);
@@ -78,6 +92,7 @@ namespace Level
         {
             _transition.SetTrigger("Start");
 
+            StartCoroutine(AudioManager.Instance.StartFade(_fadeDuration, 0.0001f));
             yield return new WaitForSeconds(_timeAfterEnd);
 
             Application.Quit();
@@ -86,11 +101,6 @@ namespace Level
         public void LoadSpecificLevel(string sceneName)
         {
             StartCoroutine(LoadScene(sceneName));
-        }
-
-        public void LoadLoseScene()
-        {
-            SceneManager.LoadScene("LoseScene");
         }
 
         public void QuitGame()

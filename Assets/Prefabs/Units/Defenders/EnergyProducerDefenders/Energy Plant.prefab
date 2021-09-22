@@ -746,8 +746,8 @@ MonoBehaviour:
   _timeBetweenDelivers: 15
   _deliverSounds:
   - <Name>k__BackingField: Deliver1
-    <Clip>k__BackingField: {fileID: 8300000, guid: 0ead2664aede7354aa3839b3b2c8e831, type: 3}
-    <Volume>k__BackingField: 0.5
+    <Clip>k__BackingField: {fileID: 8300000, guid: e3e44f6420692d146a3a536e2dac62ad, type: 3}
+    <Volume>k__BackingField: 1
     <Pitch>k__BackingField: 1
     <Loop>k__BackingField: 0
 --- !u!1 &8987441226363168640

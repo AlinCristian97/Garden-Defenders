@@ -10,10 +10,8 @@ namespace General.Patterns.State.GameManagerFSM.States
         {
             Debug.Log("Game: Enter Win");
             
-            Debug.Log("Before save: " + GameProgressTrackerContainer.Instance.GameProgressTracker.HighestLevelUnlocked);
             UpdateProgress();
             SaveProgress();
-            Debug.Log("After save: " + GameProgressTrackerContainer.Instance.GameProgressTracker.HighestLevelUnlocked);
             
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, false);
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.WinCanvas, true);
@@ -31,12 +29,18 @@ namespace General.Patterns.State.GameManagerFSM.States
 
         private void UpdateProgress()
         {
-            GameProgressTrackerContainer.Instance.GameProgressTracker.UpdateHighestLevelUnlocked();
+            if (GameProgressTrackerContainer.Instance != null)
+            {
+                GameProgressTrackerContainer.Instance.GameProgressTracker.UpdateHighestLevelUnlocked();
+            }
         }
 
         private void SaveProgress()
         {
-            GameDataAccess.Save(GameProgressTrackerContainer.Instance.GameProgressTracker);
+            if (GameProgressTrackerContainer.Instance != null)
+            {
+                GameDataAccess.Save(GameProgressTrackerContainer.Instance.GameProgressTracker);
+            }
         }
     }
 }

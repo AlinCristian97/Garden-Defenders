@@ -88,7 +88,7 @@ namespace General.Patterns.Singleton
             }
             
             HasFinishedSpawningWaves = true;
-            Debug.Log("Stopped Spawning!");
+            WarnMessageManager.Instance.SpawnWarningMessage("Last wave!", 0f);
         }
     }
 }

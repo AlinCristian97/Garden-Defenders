@@ -345,6 +345,12 @@ MonoBehaviour:
   _passiveEnergyResourcePrefab: {fileID: 1620610993157542476, guid: 53fe74f7499e47c4490bf55d24745912, type: 3}
   _passiveEnergyResourceContainer: {fileID: 1123016501}
   _passiveEnergyResourceCooldownInSeconds: 30
+  _passiveEnergyResourceSpawnSFX:
+    <Name>k__BackingField: EnergySpawnSFX
+    <Clip>k__BackingField: {fileID: 8300000, guid: 0ead2664aede7354aa3839b3b2c8e831, type: 3}
+    <Volume>k__BackingField: 0.4
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
   <AvailableDefendersList>k__BackingField:
   - {fileID: 6846316640245581862, guid: f712f9f036dfe0343b916300046ed394, type: 3}
   - {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
@@ -353,5 +359,5 @@ MonoBehaviour:
   - {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
   - {fileID: 2441379869885635785, guid: 73641bb637ba0b9418cb99355cfc3b0a, type: 3}
   - {fileID: 3099182781402619135, guid: d20c23474cab40d4795e4d938a63f8dc, type: 3}
-  <GetReadyTimeInSeconds>k__BackingField: 5
+  <GetReadyTimeInSeconds>k__BackingField: 7
   <LoseCollider>k__BackingField: {fileID: 2018366827}

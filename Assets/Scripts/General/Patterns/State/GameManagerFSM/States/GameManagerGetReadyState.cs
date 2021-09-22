@@ -1,4 +1,5 @@
-﻿using General.Patterns.Singleton;
+﻿using System.Collections;
+using General.Patterns.Singleton;
 using UnityEngine;
 
 namespace General.Patterns.State.GameManagerFSM.States
@@ -14,6 +15,7 @@ namespace General.Patterns.State.GameManagerFSM.States
             _gameStartTime = Time.time + GameManager.Instance.GetReadyTimeInSeconds;
             
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, true);
+            WarnMessageManager.Instance.SpawnWarningMessage("Zombies are approaching", 3f);
         }
         
         public override void Exit()

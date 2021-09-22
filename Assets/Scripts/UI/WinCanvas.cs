@@ -21,10 +21,10 @@ namespace UI
 
             yield return new WaitForSeconds(FADE_TIME);
 
-            yield return StartCoroutine(FadeGravestonesIn());
+            yield return StartCoroutine(FadePanelIn());
         }
 
-        private IEnumerator FadeGravestonesIn()
+        private IEnumerator FadePanelIn()
         {
             while (_alphaValue <= 1)
             {

@@ -13,7 +13,7 @@ namespace General.Patterns.State.LawnMowerFSM.States
         {
             LawnMower.Animator.SetBool("IsActive", true);
             
-            AudioManager.Instance.PlayClipAtPoint(LawnMower.EngineSound, LawnMower.transform.position);
+            AudioManager.Instance.PlayOneShot(AudioManager.Instance.Miscellaneous, "MowerEngine");
         }
 
         public override void Exit()

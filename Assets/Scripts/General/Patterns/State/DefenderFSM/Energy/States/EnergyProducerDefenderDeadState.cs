@@ -26,9 +26,7 @@ namespace General.Patterns.State.DefenderFSM
         
         private void PlayDeathSFX()
         {
-            AudioManager.Instance.PlayClipAtPoint(
-                EnergyProducerDefender.DeathSound,
-                EnergyProducerDefender.transform.position);
+            AudioManager.Instance.PlayOneShot(AudioManager.Instance.Miscellaneous, "PlantDie");
         }
     }
 }

@@ -60,3 +60,50 @@ MonoBehaviour:
     <Volume>k__BackingField: 1
     <Pitch>k__BackingField: 1
     <Loop>k__BackingField: 0
+  <Miscellaneous>k__BackingField:
+  - <Name>k__BackingField: PassiveEnergySpawn
+    <Clip>k__BackingField: {fileID: 8300000, guid: e3e44f6420692d146a3a536e2dac62ad, type: 3}
+    <Volume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: EnergyCollect
+    <Clip>k__BackingField: {fileID: 8300000, guid: 37230523b902e8d4881e2c5a0cbe1611, type: 3}
+    <Volume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: PlantDie
+    <Clip>k__BackingField: {fileID: 8300000, guid: 27198c1920061ce4a89f46ca92290ef8, type: 3}
+    <Volume>k__BackingField: 0.8
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: BowImpact
+    <Clip>k__BackingField: {fileID: 8300000, guid: b9c0ce312d175dd4c8b0b77626d7886f, type: 3}
+    <Volume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: GunImpact
+    <Clip>k__BackingField: {fileID: 8300000, guid: a813a616f290e3e4aa9107636181243b, type: 3}
+    <Volume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: MowerEngine
+    <Clip>k__BackingField: {fileID: 8300000, guid: 06c0feb617f118f40bd768f34b8025b0, type: 3}
+    <Volume>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  <DefenderDeathVariations>k__BackingField:
+  - <Name>k__BackingField: DefenderDeath1
+    <Clip>k__BackingField: {fileID: 8300000, guid: 9967ab175d819534493488696543700e, type: 3}
+    <Volume>k__BackingField: 0.6
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: DefenderDeath2
+    <Clip>k__BackingField: {fileID: 8300000, guid: 76e4ca186f959ab4ab18e3656157c9f5, type: 3}
+    <Volume>k__BackingField: 0.6
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0
+  - <Name>k__BackingField: DefenderDeath3
+    <Clip>k__BackingField: {fileID: 8300000, guid: 367e87c2d09b85a449f20dc437cc4c86, type: 3}
+    <Volume>k__BackingField: 0.6
+    <Pitch>k__BackingField: 1
+    <Loop>k__BackingField: 0

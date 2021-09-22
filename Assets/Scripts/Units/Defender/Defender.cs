@@ -20,8 +20,6 @@ public abstract class Defender : Unit, IObserver
     
     private ISelectionManager _selectionManager;
 
-    [field:SerializeField] public Sound DeathSound { get; private set; }
-    
     public Tile Tile => GetComponentInParent<Tile>();
 
     private void OnEnable()

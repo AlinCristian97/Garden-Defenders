@@ -74,7 +74,6 @@ namespace General.Patterns.Singleton
         [SerializeField] private EnergyResource _passiveEnergyResourcePrefab;
         [SerializeField] private Transform _passiveEnergyResourceContainer;
         [SerializeField] private float _passiveEnergyResourceCooldownInSeconds;
-        [SerializeField] private Sound _passiveEnergyResourceSpawnSFX;
         private IEnumerator _spawningPassiveEnergyResource;
 
         [field:Header("Choose Defenders State")]
@@ -153,12 +152,18 @@ namespace General.Patterns.Singleton
                             _passiveEnergyResourceContainer.transform.position.y,
                             0f);
                 }
-                
-                EnergyResource energy = Instantiate(_passiveEnergyResourcePrefab, _passiveEnergyResourceContainer);
-                AudioManager.Instance.PlayClipAtPoint(_passiveEnergyResourceSpawnSFX, energy.transform.position);
+
+                SpawnPassiveEnergyResource();
                 
                 yield return new WaitForSeconds(_passiveEnergyResourceCooldownInSeconds);
             }
+        }
+
+        private void SpawnPassiveEnergyResource()
+        {
+            EnergyResource energy = Instantiate(_passiveEnergyResourcePrefab, _passiveEnergyResourceContainer);
+                
+            AudioManager.Instance.PlayOneShot(AudioManager.Instance.Miscellaneous, "PassiveEnergySpawn");
         }
         
         public void ConfirmDefendersLevel()

@@ -27,6 +27,8 @@ namespace General.Patterns.Singleton
         [field:Header("General Sounds")]
         [field:SerializeField] public Sound[] Music { get; private set; }
         [field:SerializeField] public Sound[] UI { get; private set; }
+        [field:SerializeField] public Sound[] Miscellaneous { get; private set; }
+        [field:SerializeField] public Sound[] DefenderDeathVariations { get; private set; }
 
         private void Awake()
         {
@@ -63,6 +65,17 @@ namespace General.Patterns.Singleton
                 sound.Source.outputAudioMixerGroup = audioMixerGroup;
             }
         }
+        
+        public void InitializeAudioSourceComponentForSound(Sound sound, AudioMixerGroup audioMixerGroup)
+        {
+            sound.Source = gameObject.AddComponent<AudioSource>();
+            sound.Source.clip = sound.Clip;
+
+            sound.Source.volume = sound.Volume;
+            sound.Source.pitch = sound.Pitch;
+            sound.Source.loop = sound.Loop;
+            sound.Source.outputAudioMixerGroup = audioMixerGroup;
+        }
 
         private void InitializeAudioVolume()
         {
@@ -75,6 +88,8 @@ namespace General.Patterns.Singleton
         {
             InitializeAudioSourceComponentsForArray(Music, MusicGroup);
             InitializeAudioSourceComponentsForArray(UI, UIGroup);
+            InitializeAudioSourceComponentsForArray(Miscellaneous, SoundEffectsGroup);
+            InitializeAudioSourceComponentsForArray(DefenderDeathVariations, SoundEffectsGroup);
         }
 
         public void Play(Sound[] soundsArray, string soundName)
@@ -94,7 +109,7 @@ namespace General.Patterns.Singleton
         {
             Play(UI, "ButtonClick");
         }
-        
+
         public void PlayOneShot(Sound[] soundsArray, string soundName)
         {
             Sound sound = Array.Find(soundsArray, sound => sound.Name == soundName);
@@ -104,29 +119,8 @@ namespace General.Patterns.Singleton
                 Debug.Log("Sound \"" + soundName + "\" not found!");
                 return;
             }
-            
+
             sound.Source.PlayOneShot(sound.Clip);
         }
-
-        public void PlayClipAtPoint(Sound[] soundsArray, string soundName, Vector3 soundPosition)
-        {
-            Sound sound = Array.Find(soundsArray, sound => sound.Name == soundName);
-
-            if (sound == null)
-            {
-                Debug.Log("Sound \"" + soundName + "\" not found!");
-                return;
-            }
-            
-            AudioSource.PlayClipAtPoint(sound.Clip, soundPosition);
-        }
-        
-        public void PlayClipAtPoint(Sound sound, Vector3 soundPosition)
-        {
-            if (sound != null)
-            {
-                AudioSource.PlayClipAtPoint(sound.Clip, soundPosition);
-            }
-        }    
     }
 }

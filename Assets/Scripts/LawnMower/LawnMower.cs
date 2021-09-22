@@ -10,9 +10,6 @@ public class LawnMower : MonoBehaviour
 {
     [field: SerializeField] public float MovementSpeed { get; private set; } = 1f;
 
-    [field:Header("SFX")] 
-    [field:SerializeField] public Sound EngineSound { get; private set; }
-
     #region Components
 
     public Animator Animator { get; private set; }

@@ -33,7 +33,6 @@ public class Attacker : Unit
     
     [field:Header("SFX")]
     [field:SerializeField] public Sound[] AttackSounds { get; private set; }
-    [field:SerializeField] public Sound[] DeathSounds { get; private set; }
     [field:SerializeField] public Sound[] WalkSounds { get; private set; }
     private float _nextAttackSFX;
     private float _nextWalkSFX;
@@ -81,7 +80,6 @@ public class Attacker : Unit
         
         AudioManager.Instance.InitializeAudioSourceComponentsForArray(AttackSounds, AudioManager.Instance.SoundEffectsGroup);
         AudioManager.Instance.InitializeAudioSourceComponentsForArray(WalkSounds, AudioManager.Instance.SoundEffectsGroup);
-        AudioManager.Instance.InitializeAudioSourceComponentsForArray(DeathSounds, AudioManager.Instance.SoundEffectsGroup);
     }
 
     private void SetRandomAttackRange()

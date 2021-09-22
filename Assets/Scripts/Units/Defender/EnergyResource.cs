@@ -15,9 +15,6 @@ public class EnergyResource : MonoBehaviour
     [SerializeField] private Color _normalColor;
     [SerializeField] private Color _fadedColor;
     
-    [Header("SFX")]
-    [SerializeField] private Sound _collectSound;
-
     private SpriteRenderer _spriteRenderer;
     
     private void Awake()
@@ -56,9 +53,8 @@ public class EnergyResource : MonoBehaviour
     {
         ShopManager.Instance.AddToBalance(_energyAmount);
         
-        //Optionally add a SFX / "poof" effect or some animations
-        AudioManager.Instance.PlayClipAtPoint(_collectSound, transform.position);
-        
+        AudioManager.Instance.PlayOneShot(AudioManager.Instance.Miscellaneous, "EnergyCollect");
+
         Destroy(gameObject);
     }
 }

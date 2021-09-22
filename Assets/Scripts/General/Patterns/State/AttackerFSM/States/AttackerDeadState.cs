@@ -32,14 +32,13 @@ namespace General.Patterns.State.AttackerFSM.States
         
         private void PlayRandomDeathSFX()
         {
-            if (Attacker.DeathSounds.Length > 0)
+            if (AudioManager.Instance.DefenderDeathVariations.Length > 0)
             {
-                int randomIndex = Random.Range(0, Attacker.DeathSounds.Length);
+                int randomIndex = Random.Range(0, AudioManager.Instance.DefenderDeathVariations.Length);
 
-                AudioManager.Instance.PlayClipAtPoint(
-                    Attacker.DeathSounds,
-                    Attacker.DeathSounds[randomIndex].Name,
-                    Attacker.transform.position);
+                AudioManager.Instance.PlayOneShot(
+                    AudioManager.Instance.DefenderDeathVariations,
+                    AudioManager.Instance.DefenderDeathVariations[randomIndex].Name);
             }
         }
     }

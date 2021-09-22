@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float _speed = 1f;
     private int _damage = 50;
-    [SerializeField] private Sound[] _impactSounds;
+    [SerializeField] private string _impactSoundName;
     
     private Unit _target;
     
@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
             if (!_target.IsDead && TargetReached())
             {
                 _target.TakeDamage(_damage);
-                PlayRandomImpactSFX();
+                PlayImpactSFX();
 
                 Destroy(gameObject);
             }
@@ -32,13 +32,9 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void PlayRandomImpactSFX()
+    private void PlayImpactSFX()
     {
-        if (_impactSounds.Length > 0)
-        {
-            int randomIndex = Random.Range(0, _impactSounds.Length);
-            AudioManager.Instance.PlayClipAtPoint(_impactSounds, _impactSounds[randomIndex].Name, transform.position);
-        }
+        AudioManager.Instance.PlayOneShot(AudioManager.Instance.Miscellaneous, _impactSoundName);
     }
 
     private bool TargetReached() => transform.position.x >= _target.transform.position.x;

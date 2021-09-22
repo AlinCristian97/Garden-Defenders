@@ -5472,18 +5472,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4555626}
     m_Modifications:
-    - target: {fileID: 3356491320595978650, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: <NumberOfDefenderCardsAllowed>k__BackingField
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3356491320595978650, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _passiveEnergyResourceSpawnSFX.<Clip>k__BackingField
-      value: 
-      objectReference: {fileID: 8300000, guid: e3e44f6420692d146a3a536e2dac62ad, type: 3}
-    - target: {fileID: 3356491320595978650, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
-      propertyPath: _passiveEnergyResourceSpawnSFX.<Volume>k__BackingField
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6488745883130792176, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: m_RootOrder
       value: 0

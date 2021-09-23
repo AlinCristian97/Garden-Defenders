@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Audio;
+using General.ObjectPooling;
 using General.Patterns.Singleton;
 using General.Patterns.State.DefenderFSM;
 using UnityEngine;
@@ -62,19 +63,25 @@ public class EnergyProducerDefender : Defender
 
     #region Animation Event Methods
 
-    private void SetIdleState()
+    protected override void SetIdleState()
     {
         StateMachine.ChangeState(States.IdleState);
     }
 
     private void Deliver()
     {
-        var position = _energyResourceSpawnPoint.position;
-        
-        Instantiate(_energyResource,
+        Vector3 position = _energyResourceSpawnPoint.position;
+
+        #region Object Pooling
+
+        ObjectPooler.Instance.SpawnFromPool(
+            _energyResource.AliasIdentifier, 
             new Vector3(position.x, position.y,
                 CameraInputLayer.PRIORITY_ENERGY_RESOURCE),
             Quaternion.identity);
+
+        #endregion
+
     }
     
     private void PlayRandomDeliverSFX()

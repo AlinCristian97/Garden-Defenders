@@ -39,6 +39,16 @@ public abstract class Defender : Unit, IObserver
         _selectionManager = SelectionManager.Instance;
     }
 
+    protected override void Update()
+    {
+        base.Update();
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            TakeDamage(50);
+        }
+    }
+
     protected override IEnumerator ProcessDeath()
     {
         if (_selectionManager.DefenderToSell == this)
@@ -60,8 +70,23 @@ public abstract class Defender : Unit, IObserver
         
         Tile.gameObject.layer = LayerMask.NameToLayer("Input");
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
+
+    public void Revive()
+    {
+        SetFullHealth();
+        _isDying = false;
+        
+        if (HealthHUD != null && UIManager.ShowHealthHUD) //TODO: Check if required
+        {
+            HealthHUD.gameObject.SetActive(true);
+        }
+
+        SetIdleState();
+    }
+
+    protected abstract void SetIdleState();
 
     public void GetNotified()
     {

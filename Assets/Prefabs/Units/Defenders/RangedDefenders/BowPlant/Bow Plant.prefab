@@ -674,6 +674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Bow Plant
+  <AliasIdentifier>k__BackingField: BowPlant
   <MaxHealth>k__BackingField: 150
   <Cost>k__BackingField: 80
   <Avatar>k__BackingField: {fileID: 21300000, guid: 2c755f543d127984bae1b580b95a4ca6, type: 3}

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class EnergyResource : MonoBehaviour
 {
+    [field:SerializeField] public string AliasIdentifier { get; private set; }
     [SerializeField] private int _energyAmount = 20;
     [SerializeField] private float _lifetime = 6f;
 
@@ -14,17 +15,23 @@ public class EnergyResource : MonoBehaviour
     [SerializeField] private float _aboutToDisappearFlashFrequencyInSeconds = 0.5f;
     [SerializeField] private Color _normalColor;
     [SerializeField] private Color _fadedColor;
-    
+
     private SpriteRenderer _spriteRenderer;
     
     private void Awake()
     {
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
-
-    private void Start()
-    {
+    
+    private void OnEnable()
+    {        
         StartCoroutine(ExpireCoroutine());
+        _spriteRenderer.color = _normalColor;
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     private IEnumerator ExpireCoroutine()
@@ -35,12 +42,12 @@ public class EnergyResource : MonoBehaviour
 
         yield return new WaitForSeconds(_lifetimeRemainingSecondsFlashTrigger);
         
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private IEnumerator AboutToDisappearFlashesCoroutine()
     {
-        while (true)
+        while (gameObject.activeInHierarchy)
         {
             _spriteRenderer.color = _normalColor;
             yield return new WaitForSeconds(_aboutToDisappearFlashFrequencyInSeconds);
@@ -54,7 +61,7 @@ public class EnergyResource : MonoBehaviour
         ShopManager.Instance.AddToBalance(_energyAmount);
         
         AudioManager.Instance.PlayOneShot(AudioManager.Instance.Miscellaneous, "EnergyCollect");
-
-        Destroy(gameObject);
+        
+        gameObject.SetActive(false);
     }
 }

@@ -38,4 +38,9 @@ public class RangedDefender : CombatDefender
             StateMachine.ChangeState(States.DeadState);
         }
     }
+
+    protected override void SetIdleState()
+    {
+        StateMachine.ChangeState(States.IdleState);
+    }
 }

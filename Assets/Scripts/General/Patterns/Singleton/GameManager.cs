@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Audio;
+using General.ObjectPooling;
 using General.Patterns.Observer;
 using General.Patterns.Singleton.Interfaces;
 using General.Patterns.State.FSM;
@@ -72,7 +73,7 @@ namespace General.Patterns.Singleton
 
         [field:Header("Passive Energy Resource")]
         [SerializeField] private EnergyResource _passiveEnergyResourcePrefab;
-        [SerializeField] private Transform _passiveEnergyResourceContainer;
+        [SerializeField] private Transform _passiveEnergyResourceSpawnPoint;
         [SerializeField] private float _passiveEnergyResourceCooldownInSeconds;
         private IEnumerator _spawningPassiveEnergyResource;
 
@@ -139,7 +140,7 @@ namespace General.Patterns.Singleton
             while (true)
             {
                 int randomDecider = Random.Range(1, 3);
-                Transform passiveEnergyContainerTransform = _passiveEnergyResourceContainer.transform;
+                Transform passiveEnergyContainerTransform = _passiveEnergyResourceSpawnPoint.transform;
 
                 if (randomDecider == 1)
                 {
@@ -154,7 +155,7 @@ namespace General.Patterns.Singleton
                     passiveEnergyContainerTransform.transform.position =
                         new Vector3(
                             -3.8f, 
-                            _passiveEnergyResourceContainer.transform.position.y,
+                            _passiveEnergyResourceSpawnPoint.transform.position.y,
                             0f);
                 }
 
@@ -166,8 +167,18 @@ namespace General.Patterns.Singleton
 
         private void SpawnPassiveEnergyResource()
         {
-            EnergyResource energy = Instantiate(_passiveEnergyResourcePrefab, _passiveEnergyResourceContainer);
-                
+            Vector3 position = _passiveEnergyResourceSpawnPoint.transform.position;
+            
+            #region Object Pooling
+
+            ObjectPooler.Instance.SpawnFromPool(
+                _passiveEnergyResourcePrefab.AliasIdentifier,
+                new Vector3(position.x, position.y,
+                    CameraInputLayer.PRIORITY_ENERGY_RESOURCE),
+                Quaternion.identity);
+            
+            #endregion
+            
             AudioManager.Instance.PlayOneShot(AudioManager.Instance.Miscellaneous, "PassiveEnergySpawn");
         }
         

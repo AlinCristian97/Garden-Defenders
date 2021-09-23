@@ -109,11 +109,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
       propertyPath: <Name>k__BackingField
-      value: FrankensteinZombie
+      value: Frankenstein Zombie
       objectReference: {fileID: 0}
     - target: {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
       propertyPath: <MaxHealth>k__BackingField
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106823622406518089, guid: 41a7d00420967d3448959fc3a8856946, type: 3}
+      propertyPath: <AliasIdentifier>k__BackingField
+      value: FrankensteinZombie
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41a7d00420967d3448959fc3a8856946, type: 3}

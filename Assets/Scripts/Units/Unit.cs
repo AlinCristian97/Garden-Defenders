@@ -62,6 +62,7 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
     #endregion
 
     [field:SerializeField] public string Name { get; private set; }
+    [field:SerializeField] public string AliasIdentifier { get; private set; }
 
     private int _currentHealth;
     public int CurrentHealth 

@@ -70,18 +70,29 @@ namespace SpawnAttackers
                     float timeBetweenSpawns = Random.Range(_minTimeBetweenSpawns, _maxTimeBetweenSpawns);
 
                     var smallRandomSpawnPositionOffset = new Vector3(Random.Range(-0.15f, 0.3f), 0f, 0f);
-                    GameObject instantiatedGameObject = ObjectPooler.Instance.SpawnFromPool(attacker.Name, transform.position + smallRandomSpawnPositionOffset, Quaternion.identity);
+
+                    #region Object Pooling
+
+                    GameObject instantiatedGameObject = ObjectPooler.Instance.SpawnFromPool(
+                        attacker.AliasIdentifier, 
+                        transform.position + smallRandomSpawnPositionOffset,
+                        Quaternion.identity,
+                        transform);
+                    
                     instantiatedAttackersCount++;
                     var instantiatedAttacker = instantiatedGameObject.GetComponent<Attacker>();
                     instantiatedAttacker.SpriteRenderer.sortingOrder = 0;
                     VisualsOrderInLayerAdjuster.SetYSortingOrder(instantiatedAttacker.SpriteRenderer, instantiatedAttacker.transform.position.y);
                     instantiatedAttacker.SpriteRenderer.sortingOrder -= instantiatedAttackersCount;
                     ShadowOrderInLayerAdjuster.SetShadowSortingOrder(instantiatedAttacker.GetComponentInChildren<Shadow>().SpriteRenderer, instantiatedAttacker.SpriteRenderer);
+                    
                     if (instantiatedAttacker.IsDead)
                     {
                         instantiatedAttacker.Revive();
                     }
-                    
+
+                    #endregion
+
                     if (waveNumber + 1 == SpawnManager.Instance.NumberOfWaves)
                     {
                         SpawnManager.Instance.LastWaveAttackersList.Add(instantiatedAttacker);

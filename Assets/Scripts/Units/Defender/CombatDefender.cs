@@ -103,7 +103,7 @@ public abstract class CombatDefender : Defender
     
     #region Animation Event Methods
 
-    private void SetIdleState()
+    protected override void SetIdleState()
     {
         StateMachine.ChangeState(States.IdleState);
     }

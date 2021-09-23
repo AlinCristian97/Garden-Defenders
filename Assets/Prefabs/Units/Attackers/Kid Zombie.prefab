@@ -443,7 +443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d3d2508bfb6fc49b3c8582dd52df8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: KidZombie
+  <Name>k__BackingField: Kid Zombie
+  <AliasIdentifier>k__BackingField: KidZombie
   <MaxHealth>k__BackingField: 200
   _isFacingRight: 0
   _movementSpeed: 0.75

@@ -26,21 +26,21 @@ namespace General.ObjectPooling
         #endregion
         
         [SerializeField] private List<Pool> _pools;
-        private Dictionary<string, Queue<GameObject>> _poolDictionary;
+        private Dictionary<string, List<GameObject>> _poolDictionary;
 
         private void Start()
         {
-            _poolDictionary = new Dictionary<string, Queue<GameObject>>();
+            _poolDictionary = new Dictionary<string, List<GameObject>>();
 
             foreach (Pool pool in _pools)
             {
-                Queue<GameObject> objectPool = new Queue<GameObject>();
+                List<GameObject> objectPool = new List<GameObject>();
 
                 for (int i = 0; i < pool.Size; i++)
                 {
                     GameObject obj = Instantiate(pool.Prefab, transform);
                     obj.SetActive(false);
-                    objectPool.Enqueue(obj);
+                    objectPool.Add(obj);
                 }
                 
                 _poolDictionary.Add(pool.Identifier, objectPool);
@@ -54,16 +54,19 @@ namespace General.ObjectPooling
                 Debug.LogWarning("Pool with identifier " + identifier + " doesn't exist.");
                 return null;
             }
-            
-            GameObject objectToSpawn = _poolDictionary[identifier].Dequeue();
-            
-            objectToSpawn.SetActive(true);
-            objectToSpawn.transform.position = position;
-            objectToSpawn.transform.rotation = rotation;
-            
-            _poolDictionary[identifier].Enqueue(objectToSpawn);
 
-            return objectToSpawn;
+            foreach (GameObject obj in _poolDictionary[identifier])
+            {
+                if (!obj.activeInHierarchy)
+                {
+                    obj.SetActive(true);
+                    obj.transform.position = position;
+                    obj.transform.rotation = rotation;
+                    return obj;
+                }
+            }
+
+            return null;
         }
         
         public GameObject SpawnFromPool(string identifier, Vector3 position, Quaternion rotation, Transform parent)
@@ -74,16 +77,19 @@ namespace General.ObjectPooling
                 return null;
             }
             
-            GameObject objectToSpawn = _poolDictionary[identifier].Dequeue();
-            
-            objectToSpawn.SetActive(true);
-            objectToSpawn.transform.position = position;
-            objectToSpawn.transform.rotation = rotation;
-            objectToSpawn.transform.SetParent(parent);
-            
-            _poolDictionary[identifier].Enqueue(objectToSpawn);
+            foreach (GameObject obj in _poolDictionary[identifier])
+            {
+                if (!obj.activeInHierarchy)
+                {
+                    obj.SetActive(true);
+                    obj.transform.position = position;
+                    obj.transform.rotation = rotation;
+                    obj.transform.SetParent(parent);
+                    return obj;
+                }
+            }
 
-            return objectToSpawn;
+            return null;
         }
     }
 }

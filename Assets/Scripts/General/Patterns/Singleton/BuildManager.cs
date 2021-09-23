@@ -1,3 +1,4 @@
+using General.ObjectPooling;
 using General.Patterns.Singleton.Interfaces;
 using UnityEngine;
 
@@ -41,16 +42,35 @@ namespace General.Patterns.Singleton
 
             _shopManager.RemoveFromBalance(_selectionManager.DefenderToBuild.Cost);
 
-            Defender defender = Instantiate(
-                _selectionManager.DefenderToBuild,
+            #region Object Pooling
+
+            GameObject instantiatedGameObject = ObjectPooler.Instance.SpawnFromPool(
+                _selectionManager.DefenderToBuild.AliasIdentifier,
                 buildPosition,
                 Quaternion.identity,
                 parent);
-            int spriteSortingOrderLogicOffset = 5;
-            VisualsOrderInLayerAdjuster.SetYSortingOrder(defender.SpriteRenderer, defender.transform.position.y);
-            defender.SpriteRenderer.sortingOrder += Mathf.RoundToInt(-defender.transform.position.x + spriteSortingOrderLogicOffset);
-            ShadowOrderInLayerAdjuster.SetShadowSortingOrder(defender.GetComponentInChildren<Shadow>().SpriteRenderer, defender.SpriteRenderer);
+            
+            var instantiatedDefender = instantiatedGameObject.GetComponent<Defender>();
 
+            #endregion
+            
+            // Defender defender = Instantiate(
+            //     _selectionManager.DefenderToBuild,
+            //     buildPosition,
+            //     Quaternion.identity,
+            //     parent);
+            
+            int spriteSortingOrderLogicOffset = 5;
+            VisualsOrderInLayerAdjuster.SetYSortingOrder(instantiatedDefender.SpriteRenderer, instantiatedDefender.transform.position.y);
+            instantiatedDefender.SpriteRenderer.sortingOrder += Mathf.RoundToInt(-instantiatedDefender.transform.position.x + spriteSortingOrderLogicOffset);
+            ShadowOrderInLayerAdjuster.SetShadowSortingOrder(instantiatedDefender.GetComponentInChildren<Shadow>().SpriteRenderer, instantiatedDefender.SpriteRenderer);
+
+                              
+            if (instantiatedDefender.IsDead)
+            {
+                instantiatedDefender.Revive();
+            }
+            
             _selectionManager.DeselectDefenderToBuild();
         }
 
@@ -62,7 +82,7 @@ namespace General.Patterns.Singleton
                 _selectionManager.DefenderToSell.Cost - 
                 (_selectionManager.DefenderToSell.Cost * _sellPenaltyPercent)));
 
-            Destroy(_selectionManager.DefenderToSell.Tile.CurrentDefender.gameObject);
+            _selectionManager.DefenderToSell.Tile.CurrentDefender.gameObject.SetActive(false);
 
             _selectionManager.DeselectDefenderToSell();
         }

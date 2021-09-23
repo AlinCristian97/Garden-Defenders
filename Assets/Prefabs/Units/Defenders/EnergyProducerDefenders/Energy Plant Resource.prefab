@@ -81,18 +81,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b4e28217ce404d94664bc64457a0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <AliasIdentifier>k__BackingField: EnergyResource
   _energyAmount: 30
   _lifetime: 6
   _lifetimeRemainingSecondsFlashTrigger: 3
   _aboutToDisappearFlashFrequencyInSeconds: 0.25
   _normalColor: {r: 1, g: 1, b: 1, a: 1}
   _fadedColor: {r: 1, g: 1, b: 1, a: 0.5019608}
-  _collectSound:
-    <Name>k__BackingField: CollectSFX
-    <Clip>k__BackingField: {fileID: 8300000, guid: 37230523b902e8d4881e2c5a0cbe1611, type: 3}
-    <Volume>k__BackingField: 0.5
-    <Pitch>k__BackingField: 1
-    <Loop>k__BackingField: 0
 --- !u!1 &2482017983145698010
 GameObject:
   m_ObjectHideFlags: 0

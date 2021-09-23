@@ -59,3 +59,24 @@ MonoBehaviour:
   - <Identifier>k__BackingField: FrankensteinZombie
     <Prefab>k__BackingField: {fileID: 6890844807573616121, guid: 588623daa64f0464589d2fa502a6acf5, type: 3}
     <Size>k__BackingField: 50
+  - <Identifier>k__BackingField: SwordPlant
+    <Prefab>k__BackingField: {fileID: 8281373511138843782, guid: 25c49556963c00246bab81a61684f358, type: 3}
+    <Size>k__BackingField: 50
+  - <Identifier>k__BackingField: ScythePlant
+    <Prefab>k__BackingField: {fileID: 5663279321000607350, guid: 47c790bf23fbb7e48a568211452cea12, type: 3}
+    <Size>k__BackingField: 50
+  - <Identifier>k__BackingField: HammerPlant
+    <Prefab>k__BackingField: {fileID: 5055294450497151649, guid: 3549606cc2963034190fb07aa5f1e77e, type: 3}
+    <Size>k__BackingField: 50
+  - <Identifier>k__BackingField: BowPlant
+    <Prefab>k__BackingField: {fileID: 8281373511138843782, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+    <Size>k__BackingField: 50
+  - <Identifier>k__BackingField: GunPlant
+    <Prefab>k__BackingField: {fileID: 9171184724860817576, guid: 73641bb637ba0b9418cb99355cfc3b0a, type: 3}
+    <Size>k__BackingField: 50
+  - <Identifier>k__BackingField: RiflePlant
+    <Prefab>k__BackingField: {fileID: 8477344282531942558, guid: d20c23474cab40d4795e4d938a63f8dc, type: 3}
+    <Size>k__BackingField: 50
+  - <Identifier>k__BackingField: EnergyPlant
+    <Prefab>k__BackingField: {fileID: 8281373511138843782, guid: f712f9f036dfe0343b916300046ed394, type: 3}
+    <Size>k__BackingField: 50

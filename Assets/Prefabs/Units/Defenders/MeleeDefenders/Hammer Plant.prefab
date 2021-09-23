@@ -44,6 +44,10 @@ PrefabInstance:
       value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
+      propertyPath: <AliasIdentifier>k__BackingField
+      value: HammerPlant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
       propertyPath: <MinimumLevelAvailability>k__BackingField
       value: 5
       objectReference: {fileID: 0}

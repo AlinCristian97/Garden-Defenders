@@ -132,7 +132,7 @@ public class Attacker : Unit
         gameObject.SetActive(false);
     }
 
-    public void Revive()
+    public void EnableComponents()
     {
         Collider.enabled = true;
 
@@ -140,8 +140,11 @@ public class Attacker : Unit
         {
             HealthHUD.gameObject.SetActive(true);
         }
-        
-        StateMachine.ChangeState(States.RiseState);
+
+        if (StateMachine.CurrentState != null)
+        {
+            StateMachine.ChangeState(States.RiseState);
+        }
 
         SetSpriteFullAlpha();
     }

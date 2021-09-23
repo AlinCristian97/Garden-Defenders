@@ -86,10 +86,7 @@ namespace SpawnAttackers
                     instantiatedAttacker.SpriteRenderer.sortingOrder -= instantiatedAttackersCount;
                     ShadowOrderInLayerAdjuster.SetShadowSortingOrder(instantiatedAttacker.GetComponentInChildren<Shadow>().SpriteRenderer, instantiatedAttacker.SpriteRenderer);
                     
-                    if (instantiatedAttacker.IsDead)
-                    {
-                        instantiatedAttacker.Revive();
-                    }
+                    instantiatedAttacker.EnableComponents();
 
                     #endregion
 

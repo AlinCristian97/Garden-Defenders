@@ -65,7 +65,7 @@ public abstract class Defender : Unit, IObserver
         gameObject.SetActive(false);
     }
 
-    public void Revive()
+    public void EnableComponents()
     {
         _isDying = false;
         
@@ -74,7 +74,10 @@ public abstract class Defender : Unit, IObserver
             HealthHUD.gameObject.SetActive(true);
         }
 
-        SetIdleState();
+        if (StateMachine.CurrentState != null)
+        {
+            SetIdleState();
+        } 
     }
 
     protected abstract void SetIdleState();

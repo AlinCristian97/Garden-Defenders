@@ -64,13 +64,9 @@ namespace General.Patterns.Singleton
             VisualsOrderInLayerAdjuster.SetYSortingOrder(instantiatedDefender.SpriteRenderer, instantiatedDefender.transform.position.y);
             instantiatedDefender.SpriteRenderer.sortingOrder += Mathf.RoundToInt(-instantiatedDefender.transform.position.x + spriteSortingOrderLogicOffset);
             ShadowOrderInLayerAdjuster.SetShadowSortingOrder(instantiatedDefender.GetComponentInChildren<Shadow>().SpriteRenderer, instantiatedDefender.SpriteRenderer);
-
-                              
-            if (instantiatedDefender.IsDead)
-            {
-                instantiatedDefender.Revive();
-            }
             
+            instantiatedDefender.EnableComponents();
+
             _selectionManager.DeselectDefenderToBuild();
         }
 

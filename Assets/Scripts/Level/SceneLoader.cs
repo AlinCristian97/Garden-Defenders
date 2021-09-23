@@ -67,7 +67,15 @@ namespace Level
 
         public void LoadNextScene()
         {
-            StartCoroutine(LoadScene(_currentSceneIndex + 1));
+            if (_currentSceneIndex + 1 <= SceneManager.sceneCount)
+            {
+                StartCoroutine(LoadScene(_currentSceneIndex + 1));
+            }
+            else
+            {
+                Debug.Log("There are no more scenes!");
+                StartCoroutine(LoadScene("MainMenuScene"));
+            }
         }
 
         private IEnumerator LoadScene(int sceneIndex)

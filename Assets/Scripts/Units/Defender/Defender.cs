@@ -22,12 +22,12 @@ public abstract class Defender : Unit, IObserver
 
     public Tile Tile => GetComponentInParent<Tile>();
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         _selectionManager.AttachObserver(this);
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         _selectionManager.DetachObserver(this);
     }

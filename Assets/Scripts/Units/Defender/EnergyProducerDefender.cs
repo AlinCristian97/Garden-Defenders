@@ -27,8 +27,6 @@ public class EnergyProducerDefender : Defender
         base.Awake();
         
         States = new EnergyProducerDefenderStates(this);
-        
-        UpdateNextDeliver();
     }
 
     protected override void SetDeadState()
@@ -37,6 +35,13 @@ public class EnergyProducerDefender : Defender
         {
             StateMachine.ChangeState(States.DeadState);
         }
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+
+        UpdateNextDeliver();
     }
 
     protected void Start()
@@ -48,7 +53,6 @@ public class EnergyProducerDefender : Defender
 
     #endregion
     
-   
     public void UpdateNextDeliver()
     {
         _nextDeliver = Time.time + _timeBetweenDelivers;
@@ -81,7 +85,7 @@ public class EnergyProducerDefender : Defender
             Quaternion.identity);
 
         #endregion
-
+        
     }
     
     private void PlayRandomDeliverSFX()

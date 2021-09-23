@@ -1,5 +1,6 @@
 ﻿using System;
 using General.ObjectPooling;
+using General.Patterns.Singleton;
 using UnityEngine;
 
 public class RangedDefender : CombatDefender
@@ -7,20 +8,6 @@ public class RangedDefender : CombatDefender
     [Header("Attacking")]
     [SerializeField] private Projectile _projectile;
     [SerializeField] private Transform _projectileSpawnPoint;
-
-    protected override float AttackRange
-    {
-        get
-        {
-            if (Camera.main != null)
-            {
-                float offset = 0.125f;
-                return Camera.main.orthographicSize * 2 - Tile.transform.position.x - Tile.transform.localScale.x - offset;
-            }
-
-            return 0f;
-        }
-    }
 
     protected override void Attack()
     {

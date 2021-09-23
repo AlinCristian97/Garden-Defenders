@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <AliasIdentifier>k__BackingField: EnergyResource
-  _energyAmount: 30
+  _energyAmount: 25
   _lifetime: 6
   _lifetimeRemainingSecondsFlashTrigger: 3
   _aboutToDisappearFlashFrequencyInSeconds: 0.25

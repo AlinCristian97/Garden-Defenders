@@ -445,10 +445,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Kid Zombie
   <AliasIdentifier>k__BackingField: KidZombie
-  <MaxHealth>k__BackingField: 200
+  <MaxHealth>k__BackingField: 320
   _isFacingRight: 0
   _movementSpeed: 0.75
-  _damage: 15
+  _damage: 5
   _detectTargetLayerMask:
     serializedVersion: 2
     m_Bits: 64

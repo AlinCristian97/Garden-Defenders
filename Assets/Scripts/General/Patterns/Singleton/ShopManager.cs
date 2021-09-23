@@ -70,7 +70,7 @@ namespace General.Patterns.Singleton
 
         public void AddToBalance(int amount)
         {
-            if (Balance > 0)
+            if (amount > 0)
             {
                 Balance += amount;
             }

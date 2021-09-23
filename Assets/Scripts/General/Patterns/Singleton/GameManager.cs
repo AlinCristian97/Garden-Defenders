@@ -90,6 +90,8 @@ namespace General.Patterns.Singleton
         [field: Header("Lose State")] 
         [field:SerializeField] public Collider2D LoseCollider { get; private set; }
 
+        public Camera Camera { get; private set; }
+
 
         #region Unity Callbacks
 
@@ -101,6 +103,11 @@ namespace General.Patterns.Singleton
             _spawningPassiveEnergyResource = PassiveEnergyResourceCoroutine();
 
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, false);
+
+            if (Camera.main != null)
+            {
+                Camera = Camera.main;
+            }
         }
 
         private void Start()
@@ -112,15 +119,15 @@ namespace General.Patterns.Singleton
         {
             StateMachine.CurrentState.Execute();
             
-            // if (Input.GetKeyDown(KeyCode.W))
-            // {
-            //     StateMachine.ChangeState(States.WinState);
-            // }
-            //
-            // if (Input.GetKeyDown(KeyCode.L))
-            // {
-            //     StateMachine.ChangeState(States.LoseState);
-            // }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                StateMachine.ChangeState(States.WinState);
+            }
+            
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                StateMachine.ChangeState(States.LoseState);
+            }
         }
 
         #endregion

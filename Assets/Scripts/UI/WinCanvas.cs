@@ -1,4 +1,5 @@
 using System.Collections;
+using General.Patterns.Singleton;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +11,7 @@ namespace UI
         [SerializeField] private Image _backgroundImage;
         [SerializeField] private CanvasGroup _panelGroup;
         private float _alphaValue;
-        private const float FADE_TIME = 1f;
+        private const float FADE_TIME = 2f;
 
         private IEnumerator Start()
         {

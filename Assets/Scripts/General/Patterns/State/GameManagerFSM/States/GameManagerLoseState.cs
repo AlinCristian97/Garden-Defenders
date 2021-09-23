@@ -1,4 +1,5 @@
-﻿using General.ObjectPooling;
+﻿using System.Collections;
+using General.ObjectPooling;
 using General.Patterns.Singleton;
 using UnityEngine;
 
@@ -17,19 +18,19 @@ namespace General.Patterns.State.GameManagerFSM.States
             WarnMessageManager.Instance.gameObject.SetActive(false);
             ObjectPooler.Instance.gameObject.SetActive(false);
 
-            StopBackgroundMusic();
-            PlayLoseMusic();
+            AudioManager.Instance.StartCoroutine(PlayLoseMusic());
         }
 
-        private void StopBackgroundMusic()
+        private IEnumerator PlayLoseMusic()
         {
+            const float durationInSeconds = 1f;
+            
+            yield return AudioManager.Instance.StartCoroutine(AudioManager.Instance.StartFade(durationInSeconds, 0.0001f));
             AudioManager.Instance.Stop(AudioManager.Instance.Music, "BackgroundMusic");
-        }
-
-        private void PlayLoseMusic()
-        {
+            AudioManager.Instance.StartCoroutine(AudioManager.Instance.StartFade(durationInSeconds, 1f));
             AudioManager.Instance.Play(AudioManager.Instance.Music, "LoseMusic");
         }
+        
         public override void Exit()
         {
         }

@@ -29,11 +29,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 92d554b5bc8feb9488698f021bd8992f, type: 3}
     - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: <Damage>k__BackingField
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: <MaxHealth>k__BackingField
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: <AliasIdentifier>k__BackingField
@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 7905421873102548798, guid: b90b223208f6ecd4398c709d5532c39b, type: 3}
     - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: <MinimumLevelAvailability>k__BackingField
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: <AttackSounds>k__BackingField.Array.data[0].<Clip>k__BackingField

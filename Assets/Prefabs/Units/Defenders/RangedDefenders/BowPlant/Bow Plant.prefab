@@ -509,12 +509,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Bow Plant
   <AliasIdentifier>k__BackingField: BowPlant
-  <MaxHealth>k__BackingField: 150
-  <Cost>k__BackingField: 80
+  <MaxHealth>k__BackingField: 80
+  <Cost>k__BackingField: 90
   <Avatar>k__BackingField: {fileID: 21300000, guid: 2c755f543d127984bae1b580b95a4ca6, type: 3}
   <TilePreviewSprite>k__BackingField: {fileID: 3989149012830817786, guid: 6d9448f5054e08546b0cd42b7440b61f, type: 3}
   <MinimumLevelAvailability>k__BackingField: 1
   _isFacingRight: 1
+  _attackRange: 9
   <Damage>k__BackingField: 30
   _detectTargetLayerMask:
     serializedVersion: 2

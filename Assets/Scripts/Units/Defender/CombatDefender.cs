@@ -13,7 +13,7 @@ public abstract class CombatDefender : Defender
     [Header("Stats")]
     [SerializeField] private bool _isFacingRight;
     private Vector2 _facingDirection;
-    protected abstract float AttackRange { get; }
+    [SerializeField] private float _attackRange;
     [field:SerializeField] protected int Damage { get; private set; }
 
     [Header("Attacking")]
@@ -85,7 +85,7 @@ public abstract class CombatDefender : Defender
     {        
         Vector2 startPoint = OffsetRayStartingPoint();
         
-        float distance = AttackRange;
+        float distance = _attackRange;
         Vector2 direction = _facingDirection;
         Vector2 endPoint = startPoint + distance * direction;
         
@@ -132,7 +132,7 @@ public abstract class CombatDefender : Defender
         
         Vector2 startPoint = OffsetRayStartingPoint();
         
-        float distance = AttackRange;
+        float distance = _attackRange;
         Vector2 direction = _facingDirection;
         Vector2 endPoint = startPoint + distance * direction;
         

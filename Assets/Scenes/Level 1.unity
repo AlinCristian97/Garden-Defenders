@@ -5177,7 +5177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4367174444598843806, guid: dff53bbffef10d54387dc0200abf48ee, type: 3}
       propertyPath: _balance
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4367174444598843807, guid: dff53bbffef10d54387dc0200abf48ee, type: 3}
       propertyPath: m_RootOrder
@@ -5632,7 +5632,7 @@ PrefabInstance:
       objectReference: {fileID: 338900380}
     - target: {fileID: 3356491320595978650, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: _passiveEnergyResourceCooldownInSeconds
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6488745883130792176, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: m_RootOrder

@@ -44,6 +44,10 @@ PrefabInstance:
       value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
+      propertyPath: <BuildCooldown>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
       propertyPath: <AliasIdentifier>k__BackingField
       value: ScythePlant
       objectReference: {fileID: 0}

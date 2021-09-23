@@ -5,12 +5,14 @@ using General;
 using General.Patterns.Observer;
 using General.Patterns.Singleton;
 using General.Patterns.Singleton.Interfaces;
+using UI;
 using UnityEngine;
 
 public abstract class Defender : Unit, IObserver
 {
     [field:SerializeField] public int Cost { get; private set; }
     [field:SerializeField] public Sprite Avatar { get; private set; }
+    [field:SerializeField] public float BuildCooldown { get; private set; }
     [field:SerializeField] public Sprite TilePreviewSprite { get; private set; }
     [field:SerializeField] public int MinimumLevelAvailability { get; private set; }
     
@@ -21,6 +23,12 @@ public abstract class Defender : Unit, IObserver
     private ISelectionManager _selectionManager;
 
     public Tile Tile => GetComponentInParent<Tile>();
+    public DefenderSlot DefenderSlot { get; private set; }
+
+    public void SetDefenderSlot(DefenderSlot defenderSlot)
+    {
+        DefenderSlot = defenderSlot;
+    }
 
     protected override void OnEnable()
     {

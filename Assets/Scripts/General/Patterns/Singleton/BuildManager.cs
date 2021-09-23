@@ -1,5 +1,8 @@
+using System.Collections.Generic;
 using General.ObjectPooling;
+using General.Patterns.Observer;
 using General.Patterns.Singleton.Interfaces;
+using UI;
 using UnityEngine;
 
 namespace General.Patterns.Singleton
@@ -53,13 +56,7 @@ namespace General.Patterns.Singleton
             var instantiatedDefender = instantiatedGameObject.GetComponent<Defender>();
 
             #endregion
-            
-            // Defender defender = Instantiate(
-            //     _selectionManager.DefenderToBuild,
-            //     buildPosition,
-            //     Quaternion.identity,
-            //     parent);
-            
+
             int spriteSortingOrderLogicOffset = 5;
             VisualsOrderInLayerAdjuster.SetYSortingOrder(instantiatedDefender.SpriteRenderer, instantiatedDefender.transform.position.y);
             instantiatedDefender.SpriteRenderer.sortingOrder += Mathf.RoundToInt(-instantiatedDefender.transform.position.x + spriteSortingOrderLogicOffset);
@@ -67,6 +64,14 @@ namespace General.Patterns.Singleton
             
             instantiatedDefender.EnableComponents();
 
+            foreach (DefenderSlot defenderSlot in FindObjectOfType<DefenderSlotsDisplay>().GetComponentsInChildren<DefenderSlot>())
+            {
+                if (defenderSlot.Defender.AliasIdentifier == instantiatedDefender.AliasIdentifier)
+                {
+                    defenderSlot.ProcessCooldown();
+                }
+            }
+            
             _selectionManager.DeselectDefenderToBuild();
         }
 

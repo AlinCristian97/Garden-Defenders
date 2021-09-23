@@ -1757,7 +1757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8987032146873755364, guid: 73e0e23c0a0b33045878001b818c0c88, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e0e23c0a0b33045878001b818c0c88, type: 3}
@@ -4623,10 +4623,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawn Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 2607128601107808417, guid: 377d98d3b21e3eb4aa6a8972f145af20, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2607128601107808422, guid: 377d98d3b21e3eb4aa6a8972f145af20, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4670,10 +4666,6 @@ PrefabInstance:
     - target: {fileID: 2607128601107808422, guid: 377d98d3b21e3eb4aa6a8972f145af20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2607128601107808423, guid: 377d98d3b21e3eb4aa6a8972f145af20, type: 3}
-      propertyPath: <TimeBetweenWaves>k__BackingField
-      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 377d98d3b21e3eb4aa6a8972f145af20, type: 3}
@@ -4730,7 +4722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
       propertyPath: _pools.Array.size
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
       propertyPath: _pools.Array.data[5].<Size>k__BackingField
@@ -4745,6 +4737,18 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
+      propertyPath: _pools.Array.data[14].<Size>k__BackingField
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
+      propertyPath: _pools.Array.data[15].<Size>k__BackingField
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
+      propertyPath: _pools.Array.data[16].<Size>k__BackingField
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
       propertyPath: _pools.Array.data[12].<Prefab>k__BackingField
       value: 
       objectReference: {fileID: 1620610993157542478, guid: 53fe74f7499e47c4490bf55d24745912, type: 3}
@@ -4753,12 +4757,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1979227511321728458, guid: b5ea609f01f68414580c1a33b5651fc1, type: 3}
     - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
+      propertyPath: _pools.Array.data[14].<Prefab>k__BackingField
+      value: 
+      objectReference: {fileID: 8771590164460599325, guid: 28a4c9d0e0a69b7418da968494ab30e0, type: 3}
+    - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
+      propertyPath: _pools.Array.data[15].<Prefab>k__BackingField
+      value: 
+      objectReference: {fileID: 8771590164460599325, guid: 323522aad4ef43747bc7e2d24b327e11, type: 3}
+    - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
+      propertyPath: _pools.Array.data[16].<Prefab>k__BackingField
+      value: 
+      objectReference: {fileID: 8771590164460599325, guid: 029b32bc777f8924587da40d3dc40965, type: 3}
+    - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
       propertyPath: _pools.Array.data[12].<Identifier>k__BackingField
       value: EnergyResource
       objectReference: {fileID: 0}
     - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
       propertyPath: _pools.Array.data[13].<Identifier>k__BackingField
       value: PassiveEnergyResource
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
+      propertyPath: _pools.Array.data[14].<Identifier>k__BackingField
+      value: BowProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
+      propertyPath: _pools.Array.data[15].<Identifier>k__BackingField
+      value: GunProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672861707910757583, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
+      propertyPath: _pools.Array.data[16].<Identifier>k__BackingField
+      value: RifleProjectile
       objectReference: {fileID: 0}
     - target: {fileID: 2672861707910757585, guid: 7e450888a0023484fad8cd7631ee2a20, type: 3}
       propertyPath: m_Name
@@ -5149,7 +5177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4367174444598843806, guid: dff53bbffef10d54387dc0200abf48ee, type: 3}
       propertyPath: _balance
-      value: 10000
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4367174444598843807, guid: dff53bbffef10d54387dc0200abf48ee, type: 3}
       propertyPath: m_RootOrder
@@ -5604,7 +5632,7 @@ PrefabInstance:
       objectReference: {fileID: 338900380}
     - target: {fileID: 3356491320595978650, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: _passiveEnergyResourceCooldownInSeconds
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6488745883130792176, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: m_RootOrder

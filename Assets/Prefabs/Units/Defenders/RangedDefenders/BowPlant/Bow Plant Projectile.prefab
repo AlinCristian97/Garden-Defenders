@@ -95,5 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf0dd52d58eb594c827e0a979599e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <AliasIdentifier>k__BackingField: BowProjectile
   _speed: 25
   _impactSoundName: BowImpact

@@ -1,4 +1,5 @@
 ﻿using System;
+using General.ObjectPooling;
 using UnityEngine;
 
 public class RangedDefender : CombatDefender
@@ -26,9 +27,19 @@ public class RangedDefender : CombatDefender
         if (GetTargetInAttackRange() == null) return;
         
         Target = GetTargetInAttackRange().GetComponent<Attacker>();
-        Projectile projectile = Instantiate(_projectile, _projectileSpawnPoint.position, Quaternion.identity);
-        projectile.SetDamage(Damage);
-        projectile.SetTarget(Target);
+
+        #region Object Pooling
+
+        GameObject instantiatedGameObject = ObjectPooler.Instance.SpawnFromPool(
+            _projectile.AliasIdentifier, 
+            _projectileSpawnPoint.position,
+            Quaternion.identity);
+        
+        var instantiatedProjectile = instantiatedGameObject.GetComponent<Projectile>();
+        instantiatedProjectile.SetDamage(Damage);
+        instantiatedProjectile.SetTarget(Target);
+        
+        #endregion
     }
 
     protected override void SetDeadState()

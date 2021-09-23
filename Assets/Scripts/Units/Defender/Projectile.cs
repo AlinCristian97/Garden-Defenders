@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Projectile : MonoBehaviour
 {
+    [field:SerializeField] public string AliasIdentifier { get; private set; }
     [SerializeField] private float _speed = 1f;
     private int _damage = 50;
     [SerializeField] private string _impactSoundName;
@@ -23,11 +24,11 @@ public class Projectile : MonoBehaviour
                 _target.TakeDamage(_damage);
                 PlayImpactSFX();
 
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
             else if (_target.IsDead)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

@@ -67,7 +67,7 @@ namespace Level
 
         public void LoadNextScene()
         {
-            if (_currentSceneIndex + 1 <= SceneManager.sceneCount)
+            if (_currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
             {
                 StartCoroutine(LoadScene(_currentSceneIndex + 1));
             }

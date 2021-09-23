@@ -9,15 +9,22 @@ namespace General.Patterns.State.GameManagerFSM.States
     {
         public override void Enter()
         {
+            GameManager.Instance.StartCoroutine(LoseDisplayCoroutine(0.5f));
+        }
+        
+        private IEnumerator LoseDisplayCoroutine(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, false);
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.LoseCanvas, true);
-
+            
             GameManager.Instance.gameObject.SetActive(false);
             SpawnManager.Instance.gameObject.SetActive(false);
             LanesGenerator.Instance.gameObject.SetActive(false);
             WarnMessageManager.Instance.gameObject.SetActive(false);
             ObjectPooler.Instance.gameObject.SetActive(false);
-
+            
             AudioManager.Instance.StartCoroutine(PlayLoseMusic());
         }
 

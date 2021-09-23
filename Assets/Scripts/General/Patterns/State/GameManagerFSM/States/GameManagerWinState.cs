@@ -13,6 +13,13 @@ namespace General.Patterns.State.GameManagerFSM.States
             UpdateProgress();
             SaveProgress();
             
+            GameManager.Instance.StartCoroutine(WinDisplayCoroutine(3f));
+        }
+
+        private IEnumerator WinDisplayCoroutine(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, false);
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.WinCanvas, true);
             
@@ -21,7 +28,7 @@ namespace General.Patterns.State.GameManagerFSM.States
             LanesGenerator.Instance.gameObject.SetActive(false);
             WarnMessageManager.Instance.gameObject.SetActive(false);
             ObjectPooler.Instance.gameObject.SetActive(false);
-
+            
             AudioManager.Instance.StartCoroutine(PlayWinMusic());
         }
         

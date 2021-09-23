@@ -102,6 +102,11 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
         CurrentHealth = MaxHealth;
     }
 
+    protected virtual void OnEnable()
+    {
+        CurrentHealth = MaxHealth;
+    }
+
     protected virtual void Update()
     {
         StateMachine.CurrentState.Execute();
@@ -111,11 +116,6 @@ public abstract class Unit : MonoBehaviour, IDamageable, IObservable
 
     public abstract void TakeDamage(int amount);
 
-    protected void SetFullHealth()
-    {
-        CurrentHealth = MaxHealth;
-    }
-    
     protected abstract IEnumerator ProcessDeath();
 
     protected abstract void SetDeadState();

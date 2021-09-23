@@ -119,15 +119,15 @@ namespace General.Patterns.Singleton
         {
             StateMachine.CurrentState.Execute();
             
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                StateMachine.ChangeState(States.WinState);
-            }
-            
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                StateMachine.ChangeState(States.LoseState);
-            }
+            // if (Input.GetKeyDown(KeyCode.W))
+            // {
+            //     StateMachine.ChangeState(States.WinState);
+            // }
+            //
+            // if (Input.GetKeyDown(KeyCode.L))
+            // {
+            //     StateMachine.ChangeState(States.LoseState);
+            // }
         }
 
         #endregion

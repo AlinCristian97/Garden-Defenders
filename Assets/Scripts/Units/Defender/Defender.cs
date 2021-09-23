@@ -22,8 +22,10 @@ public abstract class Defender : Unit, IObserver
 
     public Tile Tile => GetComponentInParent<Tile>();
 
-    protected virtual void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
+        
         _selectionManager.AttachObserver(this);
     }
 
@@ -37,16 +39,6 @@ public abstract class Defender : Unit, IObserver
         base.Awake();
         
         _selectionManager = SelectionManager.Instance;
-    }
-
-    protected override void Update()
-    {
-        base.Update();
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            TakeDamage(50);
-        }
     }
 
     protected override IEnumerator ProcessDeath()
@@ -75,7 +67,6 @@ public abstract class Defender : Unit, IObserver
 
     public void Revive()
     {
-        SetFullHealth();
         _isDying = false;
         
         if (HealthHUD != null && UIManager.ShowHealthHUD) //TODO: Check if required

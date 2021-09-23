@@ -23,7 +23,7 @@ namespace UI
         {
             _unit.AttachObserver(this);
             SetHealthColorByCurrentHealthValue(_unit);
-            _healthBar.fillAmount = 1;
+            _healthBar.fillAmount = _unit.CurrentHealth / (float)_unit.MaxHealth;
         }
     
         private void Awake()
@@ -34,6 +34,11 @@ namespace UI
             {
                 HideCanvasGroup();
             }
+        }
+
+        private void Start()
+        {
+            SetHealthColorByCurrentHealthValue(_unit);
         }
 
         private void HideCanvasGroup()
@@ -58,7 +63,7 @@ namespace UI
 
         private void SetHealthColorByCurrentHealthValue(Unit unit)
         {
-            //TODO: Refactor this method!
+            //TODO: Refactor for readability
 
             if (unit.CurrentHealth > unit.MaxHealth * 0.8f)
             {

@@ -134,7 +134,6 @@ public class Attacker : Unit
 
     public void Revive()
     {
-        SetFullHealth();
         Collider.enabled = true;
 
         if (HealthHUD != null && UIManager.ShowHealthHUD) //TODO: Check if required

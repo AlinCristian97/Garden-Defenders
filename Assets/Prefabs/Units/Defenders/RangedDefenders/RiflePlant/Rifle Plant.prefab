@@ -40,6 +40,10 @@ PrefabInstance:
       value: RiflePlant
       objectReference: {fileID: 0}
     - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
+      propertyPath: <TilePreviewSprite>k__BackingField
+      value: 
+      objectReference: {fileID: 4360122765351191449, guid: 0e662564e796c9c4b946bb13e2bf93d8, type: 3}
+    - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: <AttackSounds>k__BackingField.Array.size
       value: 3
       objectReference: {fileID: 0}

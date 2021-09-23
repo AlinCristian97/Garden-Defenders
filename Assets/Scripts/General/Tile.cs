@@ -12,6 +12,7 @@ namespace General
     {
         private bool IsEmpty => CurrentDefender == null;
         public Defender CurrentDefender => GetComponentInChildren<Defender>();
+        [SerializeField] private GameObject _defenderPreviewPrefab;
         private GameObject _defenderPreview;
 
         private Animator _animator;
@@ -30,6 +31,13 @@ namespace General
             
             _selectionManager = SelectionManager.Instance;
             _buildManager = BuildManager.Instance;
+
+            _defenderPreview = Instantiate(_defenderPreviewPrefab, transform);
+        }
+
+        private void Start()
+        {
+            _defenderPreview.SetActive(false);
         }
 
         private void OnDisable()
@@ -40,24 +48,19 @@ namespace General
         private void OnMouseEnter()
         {
             if (_selectionManager.DefenderToBuild == null) return;
-            if (_defenderPreview != null) return;
             if (!IsEmpty) return;
-                
-            _defenderPreview = Instantiate(
-                _selectionManager.DefenderToBuild.TilePreview,
-                transform.position - new Vector3(0f, 0.2f, 0f),
-                Quaternion.identity);
+
+            var defenderSpriteRenderer = _defenderPreview.GetComponent<SpriteRenderer>();
+            
+            _defenderPreview.transform.position = transform.position - new Vector3(0f, 0.2f, 0f);
+            defenderSpriteRenderer.color = new Color(255f, 255f, 255f, 0.5f);
+            defenderSpriteRenderer.sprite = _selectionManager.DefenderToBuild.TilePreviewSprite;
             _defenderPreview.SetActive(true);
-            _defenderPreview.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 0.5f);
         }
 
-        //TODO: Use object pooling to avoid creation/destruction many objects
         private void OnMouseExit()
         {
-            if (_defenderPreview != null)
-            {
-                Destroy(_defenderPreview.gameObject);
-            }
+            _defenderPreview.SetActive(false);
         }
 
         private void OnMouseDown()

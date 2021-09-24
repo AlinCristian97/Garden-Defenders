@@ -18,7 +18,8 @@ namespace General.Patterns.State.GameManagerFSM.States
             
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.MainCanvas, false);
             UIManager.Instance.ActivateDeactivateCanvas(UIManager.Instance.LoseCanvas, true);
-            
+            UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.LevelProgressionSlider, false);
+
             GameManager.Instance.gameObject.SetActive(false);
             SpawnManager.Instance.gameObject.SetActive(false);
             LanesGenerator.Instance.gameObject.SetActive(false);

@@ -7,12 +7,11 @@ namespace General.Patterns.State.GameManagerFSM.States
     {
         public override void Enter()
         {
-            UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.LevelProgressionSlider, true);
-
             if (SpawnManager.Instance.gameObject.activeSelf)
             {
                 SpawnManager.Instance.StartSpawningAttackers();
             }
+            UIManager.Instance.HideShowCanvasGroup(UIManager.Instance.LevelProgressionSlider, true);
             GameManager.StateMachine.ChangeState(GameManager.States.OnGoingState);
         }
 

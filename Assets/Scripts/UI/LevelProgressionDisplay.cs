@@ -1,24 +1,40 @@
 using System;
 using System.Collections;
 using General;
+using General.Patterns.Observer;
 using General.Patterns.Singleton;
 using General.Patterns.Singleton.Interfaces;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
 {
-    public class LevelProgressionDisplay : MonoBehaviour
+    public class LevelProgressionDisplay : MonoBehaviour, IObserver
     {
         [SerializeField] private Slider _slider;
         [SerializeField] private GameObject _checkpointImagePrefab;        
         [SerializeField] private Transform _checkPointsContainer;
-        
+        [SerializeField] private GameObject _nextWaveGameObject;
+        [SerializeField] private TextMeshProUGUI _bonusEnergyText;
+        [SerializeField] private float _nextWaveHideTime;
+        private int _bonusEnergy;
+
         private float _durationInSeconds;
         private ISpawnManager _spawnManager;
         private GameManager _gameManager;
 
         private float _sliderWidth;
+
+        private void OnEnable()
+        {
+            SpawnManager.Instance.AttachObserver(this);
+        }
+
+        private void OnDisable()
+        {
+            SpawnManager.Instance.DetachObserver(this);
+        }
 
         private void Awake()
         {
@@ -36,14 +52,50 @@ namespace UI
             yield return new WaitForSeconds(_gameManager.GetReadyTimeInSeconds);
 
             StartCoroutine(UpdateProgress());
+            StartCoroutine(UpdateBonusEnergy());
         }
 
+        private IEnumerator UpdateBonusEnergy()
+        {
+            const float updateFrequency = 3f;
+            
+            while (!SpawnManager.Instance.HasFinishedSpawningWaves)
+            {
+                _bonusEnergy = SpawnManager.Instance.BonusEnergy();
+                _bonusEnergyText.text = _bonusEnergy.ToString();
+                yield return new WaitForSeconds(updateFrequency);
+            }
+        }
+        
         private IEnumerator UpdateProgress()    
         {
             while (_slider.value <= _durationInSeconds)
             {
-                _slider.value += Time.deltaTime;
+                _slider.value = SpawnManager.Instance.TotalWaitTime();
                 yield return null;
+            }
+        }
+
+        public void SpawnNextWave()
+        {
+            ShopManager.Instance.AddToBalance(_bonusEnergy);
+            SpawnManager.Instance.SpawnNextWave();
+
+            StartCoroutine(TemporaryHideNextWaveButton());
+            
+            _bonusEnergy = Mathf.RoundToInt(SpawnManager.Instance.BonusEnergyInitialValue);
+            _bonusEnergyText.text = _bonusEnergy.ToString();
+        }
+
+        private IEnumerator TemporaryHideNextWaveButton()
+        {
+            _nextWaveGameObject.SetActive(false);
+
+            yield return new WaitForSeconds(_nextWaveHideTime);
+
+            if (!SpawnManager.Instance.HasFinishedSpawningWaves)
+            {
+                _nextWaveGameObject.SetActive(true);
             }
         }
 
@@ -73,5 +125,22 @@ namespace UI
         }
 
         private float GetLeftmostPointX() => -_sliderWidth / 2;
+        
+        public void GetNotified()
+        {
+            if (SpawnManager.Instance.HasFinishedSpawningWaves)
+            {
+                HandleHideNextWaveButton();
+            }
+            else
+            {
+                StartCoroutine(TemporaryHideNextWaveButton());
+            }
+        }
+
+        private void HandleHideNextWaveButton()
+        {
+            _nextWaveGameObject.SetActive(false);
+        }
     }
 }

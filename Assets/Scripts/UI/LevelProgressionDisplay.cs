@@ -33,7 +33,10 @@ namespace UI
 
         private void OnDisable()
         {
-            SpawnManager.Instance.DetachObserver(this);
+            if (SpawnManager.Instance != null)
+            {
+                SpawnManager.Instance.DetachObserver(this);
+            }
         }
 
         private void Awake()

@@ -43,8 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae75b7361df4867806461d9de84fc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainCanvasGroup: {fileID: 0}
-  _selectLevelDefendersCanvasGroup: {fileID: 0}
-  _pauseCanvasGroup: {fileID: 0}
+  <MainCanvas>k__BackingField: {fileID: 0}
+  <SelectLevelDefendersCanvas>k__BackingField: {fileID: 0}
+  <PauseCanvas>k__BackingField: {fileID: 0}
+  <LoseCanvas>k__BackingField: {fileID: 0}
+  <WinCanvas>k__BackingField: {fileID: 0}
+  <LevelProgressionSlider>k__BackingField: {fileID: 0}
   <AvailableCardsContainer>k__BackingField: {fileID: 0}
   <ChosenCardsContainer>k__BackingField: {fileID: 0}

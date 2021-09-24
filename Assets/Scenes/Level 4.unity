@@ -3403,11 +3403,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!225 &1548844714 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 1548844714, guid: b9078fa41c204e4418c1bed63a669bf5, type: 3}
-  m_PrefabInstance: {fileID: 1254995396522742120}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1584472390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3403841611067905414, guid: 3929fd4325f46be44b1fe2e4691fe100, type: 3}
@@ -4627,6 +4622,11 @@ PrefabInstance:
       objectReference: {fileID: 1963099477}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9078fa41c204e4418c1bed63a669bf5, type: 3}
+--- !u!225 &1254995396522742121 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 468724132, guid: b9078fa41c204e4418c1bed63a669bf5, type: 3}
+  m_PrefabInstance: {fileID: 1254995396522742120}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2607128601752736322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5116,7 +5116,7 @@ PrefabInstance:
     - target: {fileID: 4269989687785700640, guid: 5c7c5813fffa67d45bfa14b50369dc23, type: 3}
       propertyPath: <LevelProgressionSlider>k__BackingField
       value: 
-      objectReference: {fileID: 1548844714}
+      objectReference: {fileID: 1254995396522742121}
     - target: {fileID: 4269989687785700640, guid: 5c7c5813fffa67d45bfa14b50369dc23, type: 3}
       propertyPath: <AvailableCardsContainer>k__BackingField
       value: 

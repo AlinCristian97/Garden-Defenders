@@ -37,15 +37,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: eceb2343cb0eb604db0572a528062e83, type: 3}
     - target: {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
       propertyPath: <Damage>k__BackingField
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
       propertyPath: <MaxHealth>k__BackingField
-      value: 300
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
       propertyPath: <BuildCooldown>k__BackingField
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7335197713600292125, guid: 25c49556963c00246bab81a61684f358, type: 3}
       propertyPath: <AliasIdentifier>k__BackingField

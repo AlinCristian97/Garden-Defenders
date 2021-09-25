@@ -447,7 +447,7 @@ MonoBehaviour:
   <AliasIdentifier>k__BackingField: KidZombie
   <MaxHealth>k__BackingField: 320
   _isFacingRight: 0
-  _movementSpeed: 0.75
+  _movementSpeed: 0.4
   _damage: 5
   _detectTargetLayerMask:
     serializedVersion: 2

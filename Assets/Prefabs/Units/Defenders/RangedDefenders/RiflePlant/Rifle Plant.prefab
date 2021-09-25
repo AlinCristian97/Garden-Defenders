@@ -37,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: <BuildCooldown>k__BackingField
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191443210509570279, guid: a30b0c26cb9672340b849840cde50ad1, type: 3}
       propertyPath: <AliasIdentifier>k__BackingField

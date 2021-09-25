@@ -1476,10 +1476,10 @@ PrefabInstance:
     - target: {fileID: 7242737133306641176, guid: 8f8cde8332ae6db48b2f4fd68d3c0996, type: 3}
       propertyPath: <Music>k__BackingField.Array.data[1].<Clip>k__BackingField
       value: 
-      objectReference: {fileID: 8300000, guid: 540594420ac319e489f666b7dfbf90c0, type: 3}
+      objectReference: {fileID: 8300000, guid: 89e5694a41b2ef74e8633ee4fdff5014, type: 3}
     - target: {fileID: 7242737133306641176, guid: 8f8cde8332ae6db48b2f4fd68d3c0996, type: 3}
       propertyPath: <Music>k__BackingField.Array.data[1].<Loop>k__BackingField
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7242737133306641176, guid: 8f8cde8332ae6db48b2f4fd68d3c0996, type: 3}
       propertyPath: <Music>k__BackingField.Array.data[1].<Name>k__BackingField
@@ -4437,6 +4437,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2607128601107808423, guid: 377d98d3b21e3eb4aa6a8972f145af20, type: 3}
+      propertyPath: <NumberOfWaves>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 377d98d3b21e3eb4aa6a8972f145af20, type: 3}
 --- !u!1001 &2672861708378465182
@@ -5436,6 +5440,10 @@ PrefabInstance:
     - target: {fileID: 3356491320595978650, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: _passiveEnergyResourceCooldownInSeconds
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356491320595978650, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
+      propertyPath: <NumberOfDefenderCardsAllowed>k__BackingField
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6488745883130792176, guid: 3e9719de20d03064b82a04542ce9f411, type: 3}
       propertyPath: m_RootOrder

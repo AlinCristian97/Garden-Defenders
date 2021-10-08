@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace General.Patterns.Singleton
 {
-    public class SelectionManager : MonoBehaviour, ISelectionManager
+    public class SelectionManager : MonoBehaviour, ISelectionManager, IObserver
     {
         #region Singleton
 
@@ -110,6 +110,7 @@ namespace General.Patterns.Singleton
             }
 
             DefenderToSell = defender;
+            DefenderToSell.AttachObserver(this);
         }
         
         public void DeselectDefenderToBuild()
@@ -119,7 +120,13 @@ namespace General.Patterns.Singleton
 
         public void DeselectDefenderToSell()
         {
+            DefenderToSell.DetachObserver(this);
             DefenderToSell = null;
+        }
+
+        public void GetNotified()
+        {
+            NotifyObservers();
         }
     }
 }

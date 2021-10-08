@@ -9296,7 +9296,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1095854706592325663, guid: 73e0e23c0a0b33045878001b818c0c88, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1550721309485585690, guid: 73e0e23c0a0b33045878001b818c0c88, type: 3}
       propertyPath: m_SortingOrder
@@ -9348,7 +9348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3980285889101077216, guid: 73e0e23c0a0b33045878001b818c0c88, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5629709489064704981, guid: 73e0e23c0a0b33045878001b818c0c88, type: 3}
       propertyPath: _transitionTime

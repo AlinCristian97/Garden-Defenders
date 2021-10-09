@@ -1762,7 +1762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8987032146873755364, guid: 73e0e23c0a0b33045878001b818c0c88, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e0e23c0a0b33045878001b818c0c88, type: 3}
@@ -5777,37 +5777,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1082939507}
     m_Modifications:
-    - target: {fileID: 2296167909978340601, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296167909978340601, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296167909978340601, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2296167909978340601, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217675469205509498, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217675469205509498, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217675469205509498, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3217675469205509498, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
+    - target: {fileID: 1933909121, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3235535879121724990, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5817,30 +5789,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1963099477}
-    - target: {fileID: 6096396487381321058, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_margin.w
-      value: 3.6067677
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096396487381321058, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_margin.x
-      value: 0.07066347
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096396487381321058, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_margin.z
-      value: -0.73633575
-      objectReference: {fileID: 0}
-    - target: {fileID: 6377511447569630974, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_margin.w
-      value: 4.6630116
-      objectReference: {fileID: 0}
-    - target: {fileID: 6377511447569630974, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_margin.x
-      value: 0.070686355
-      objectReference: {fileID: 0}
-    - target: {fileID: 6377511447569630974, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_margin.z
-      value: 0.807518
-      objectReference: {fileID: 0}
     - target: {fileID: 7150944967304566530, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5928,10 +5876,6 @@ PrefabInstance:
     - target: {fileID: 7150944967304566534, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
       propertyPath: m_Name
       value: Select Level Defenders Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7150944967304566534, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8727230120150471756, guid: e5ffb677517711d4bae759f25cdf585e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
